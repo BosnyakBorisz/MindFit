@@ -48,3 +48,73 @@ Integráció viselhető eszközökkel:
 
 Az oldal képes lehet integrálódni okosórákkal vagy fitneszkarkötőkkel (például Fitbit, Garmin, Apple Watch), hogy az AI valós idejű adatokat kapjon a felhasználó aktivitásáról.
 Az AI ezeket az adatokat figyelembe véve frissítheti a napi tervet, és pontosabb ajánlásokat adhat.
+
+
+
+Weboldal elrendezés
+Főoldal (Landing Page)
+Fejléc (Header):
+
+Logo: A weboldal neve, "MindFit AI", modern, letisztult logóval. A logó mellett egy kis szimbólum is utalhatna az AI-ra, például egy agyformátumú ikon.
+Navigációs sáv: Az oldal tetején egy navigációs sáv, amely az alábbi linkeket tartalmazza:
+Kezdőlap
+Funkciók
+Árak
+Blog
+Kapcsolat
+Belépés/Regisztráció gomb kiemelve (többféle színváltozatban is).
+Hero szakasz:
+
+Nagy háttérkép, amely motiválja a felhasználót (pl. egy sportoló, meditáló személy, természetes táj).
+Fő üzenet: "Segítünk elérni a legjobb formádat AI segítségével!"
+CTA gomb: "Kezd el most!" (Narancssárga gomb)
+Alap információk: Kiemelt bullet pointok a legfontosabb előnyökről, mint például "Személyre szabott edzés", "Táplálkozási tervek", "Mentális egészség támogatása".
+Jellemzők bemutatása (Features):
+
+Három-négy blokk, amelyek röviden bemutatják a fő funkciókat, mindegyikhez egy illusztráció vagy ikon társítva:
+Edzéstervek és mozgás (Fitness ikon)
+Táplálkozási tanácsok (Táplálékpiramis ikon)
+Stresszkezelési eszközök (Meditációs ikon)
+Személyre szabott AI ajánlások (AI agy ikon)
+Minden blokk mellett egy rövid szöveg, amely elmagyarázza a funkciót.
+Funkciók oldal (Features Page)
+Részletes funkciók bemutatása:
+Itt részletesen bemutatjuk az AI és az egészséges életmód kombinációját, például az edzéstervek, táplálkozási tervek és szokáskövetés.
+Kép és szöveg kombináció: Minden funkció mellett egy egyedi illusztráció, amely segíti a vizuális magyarázatot.
+Kiemelt részletezés az AI működéséről: "Hogyan tanul az AI?" és "Miért személyre szabott a tanácsadás?".
+Regisztrációs oldal
+Egyszerű űrlap:
+Név, email cím, jelszó, és egyéni kérdések (például fitness célok, étkezési preferenciák).
+A "Regisztrálok" gomb kiemelt narancssárga színű.
+AI bemutató szakasz: "Hogyan működik az AI?" - egy rövid szöveges leírás és egy animációs videó.
+Profil oldal
+Dashboard nézet:
+
+Az oldal tetején egy köszöntő üzenet a felhasználónak: "Üdvözlünk, [Felhasználó neve]! Kezdj el dolgozni a céljaidért."
+Kártyák:
+Edzésterv: Egy kártya, amely az aktuális heti edzéstervet mutatja. Kattintásra részletes tervet nyithatunk meg.
+Táplálkozás: Kártya a napi étkezési tervvel és napi kalóriaszámlálással.
+Mentális egészség: Stresszkezelési ajánlások, meditációs időpontok, és napi motivációs üzenetek.
+Szokáskövető: Az egyéni szokások, mint vízfogyasztás, alvás és edzés naplója.
+Haladás nyomon követése:
+
+Grafikonok, amelyek mutatják a fejlődést az egyes területeken (pl. testsúly, edzés teljesítmény, hangulat).
+Blog és Közösség
+Blog szekció:
+
+Cikkek és tippek a helyes étkezésről, edzésről, stresszkezelésről és a legújabb AI trendekről az egészségügyben.
+Kép: Minden bejegyzéshez tartozik egy szép illusztráció.
+Közösségi fórum:
+
+Felhasználók megoszthatják tapasztalataikat, sikertörténeteiket, és kérdéseiket.
+AI támogatás: A fórumon AI ajánlásokat adhat, ha egy felhasználó kérdést tesz fel.
+3. Responszív dizájn
+Mobil optimalizálás:
+Mivel sok felhasználó mobil eszközről fogja használni a platformot, minden oldal reszponzív, azaz a dizájn alkalmazkodik a különböző képernyőméretekhez.
+Az egyes kártyák és funkciók mobilon is könnyen elérhetők lesznek, gombok és szövegek megfelelő méretben jelennek meg.
+4. Interakciók és animációk
+Átmenetek és animációk: Finom animációk a gombok és kártyák mozgásához, amelyek interaktívvá teszik a felhasználói élményt.
+Amikor a felhasználó rákattint egy funkcióra vagy kártyára, egy sima animáció mutatja a további információkat.
+Hover effektusok: Amikor a felhasználó az egérkurzort egy elem fölé viszi, az elemek színét vagy árnyékát megváltoztathatjuk, hogy hangsúlyozzuk az interakciót.
+
+slogen: MindFit – Tudd meg, mi rejlik benned!
