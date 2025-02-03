@@ -118,3 +118,7 @@ Amikor a felhasználó rákattint egy funkcióra vagy kártyára, egy sima anim�
 Hover effektusok: Amikor a felhasználó az egérkurzort egy elem fölé viszi, az elemek színét vagy árnyékát megváltoztathatjuk, hogy hangsúlyozzuk az interakciót.
 
 slogen: MindFit – Tudd meg, mi rejlik benned!
+
+
+https://iconscout.com/icon-pack/muscles
+
