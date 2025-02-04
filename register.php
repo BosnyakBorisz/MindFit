@@ -11,7 +11,7 @@
 <body>
     <div class="container mt-5">
         <div id="step1">
-            <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>">
+            <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
                 <h2>Regisztráció</h2>
                 <label>Név:</label>
                 <input type="text" id="name" class="form-control">

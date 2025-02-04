@@ -9,40 +9,10 @@
     <title>MindFit</title>
 </head>
 <body>
-    <header id="hero">
-        <nav class="navbar bg-transparent navbar-expand-lg z-1">
-            <div class="container-fluid">
-              <a class="navbar-brand text-white" href="#">MindFit</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="index.html">Kezdőlap</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="profil.html"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"/></svg></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </nav>
-
-          <section id="hero-text" class="text-white position-relative z-1 top-50 w-50">
-            <div>
-                <h1>Alakítsd át életstílusodat mesterséges intelligenciával!</h1>
-                <p>Emeld magasabb szintre jóléted a MindFit AI-alapú platformjával, amelyet arra terveztek, hogy inspiráljon és fenntarthatóvá tegye az egészséges szokásokat.</p>    
-                <button onclick="location.href='register.php'" class="w-50 h-50 d-flex justify-content-center align-items-center m-0 p-3 rounded-2"><p class="d-flex justify-content-center align-items-center m-0 p-0 fw-bold">Tedd meg az első lépést</p></button>
-            </div>
-        </section>
-    </header>
+  
+  <?php
+    include("header.html")
+  ?>
 
       <main>
         <section id="pros-list">
@@ -74,8 +44,14 @@
         <section id="reviews">
           <div class="container-fluid w-75">
             <h1 class="mt-5 pt-5">Elégedett felhasználók</h1>
-            <p class="mt-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia, accusamus maiores a quos repudiandae, perferendis consectetur tenetur sit est similique molestias aspernatur, laboriosam minima accusantium minus dolores et fugiat harum.</p>
-            <p class="m-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat, mollitia. Tempora ipsum, deleniti dolorum accusantium molestiae cupiditate quas eum corporis fugiat obcaecati assumenda labore beatae delectus, consequatur iusto vitae voluptates.</p>
+            <?php 
+            
+              include("database.php")
+
+              $sql = "SELECT * FROM users"
+              $result = mysqli_query($conn, $sql)
+
+            ?>
           </div>
         </section>
 
