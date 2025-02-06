@@ -48,42 +48,36 @@
         <section id="reviews">
           <div class="container-fluid w-75">
             <h1 class="mt-5 pt-5">Elégedett felhasználók</h1>
-            <div class="d-flex align-items-center justify-content-center">
-
               <?php 
             
-            include("database.php");
+              include("database.php");
 
-            $sql = "SELECT * FROM reviews, users where users.id = reviews.user_id";
-            $result = mysqli_query($conn, $sql);
+              $sql = "SELECT * FROM reviews, users where users.user_id = reviews.user_id limit 3";
+              $result = mysqli_query($conn, $sql);
 
             
-            if (mysqli_num_rows($result) > 0){
-
-              echo "<svg id='arrow' xmlns='http://www.w3.org/2000/svg' height='50px' viewBox='0 -960 960 960' fill='#5f6368'><path d='M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z'/></svg>";
-
-              while($row = mysqli_fetch_assoc($result)) {
+              if (mysqli_num_rows($result) > 0){
 
                 echo "
-                <div id='carouselExampleIndicators' class='carousel slide'>
+                <div id='carouselExampleIndicators' class='carousel slide p-5'>
                   <div class='carousel-indicators'>
                     <button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='0' class='active' aria-current='true' aria-label='Slide 1'></button>
                     <button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='1' aria-label='Slide 2'></button>
                     <button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='2' aria-label='Slide 3'></button>
                   </div>
                   <div class='carousel-inner mx-auto w-75'>
-                    <div class='carousel-item active'>
-                      <p>$row['review_text']</p>
-                      <p>$row['nev']</p>
-                    </div>
-                    <div class='carousel-item'>
-                      <p>$row['review_text']</p>
-                      <p>$row['nev']</p>
-                    </div>
-                    <div class='carousel-item'>
-                      <p>$row['review_text']</p>
-                      <p>$row['nev']</p>
-                    </div>
+                ";
+                  $first = true;
+
+                  while($row = mysqli_fetch_assoc($result)) {
+                     echo '<div class="carousel-item ' . ($first ? 'active' : '') . '">
+                      <p>' . htmlspecialchars($row['review_text']) . '</p>
+                      <p> - ' . htmlspecialchars($row['username']) . '</p>
+                    </div>';
+                    $first = false;
+                  }
+                   
+                  echo "
                   </div>
                   <button class='carousel-control-prev' type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='prev'>
                     <span class='carousel-control-prev-icon' aria-hidden='true'></span>
@@ -96,14 +90,9 @@
                 </div>
                 ";
                 
-
               }
 
-              echo "<svg id='arrow'  xmlns='http://www.w3.org/2000/svg' height='50px' viewBox='0 -960 960 960' fill='#5f6368'><path d='M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z'/></svg>";
-            };
-
-          ?>
-            </div>
+              ?>
           </div>
         </section>
 

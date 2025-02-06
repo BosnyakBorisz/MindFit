@@ -23,6 +23,8 @@
                     <option>Nő</option>
                     <option>Egyéb</option>
                 </select>
+                <label>Fizikai bizbasz:  mostani és cél | sulyt konnyen szedsz vagy adsz le | hány hét alatt szeretnel | milyen kondi |  hány edzés egy héten | milyen hosszu | érzékeny testrész | suly magassag </label>
+                <input type="text" id="" class="form-control">
             </form>
             <button class="btn btn-primary mt-3" onclick="nextStep()">Tovább</button>
         </div>
