@@ -1,0 +1,302 @@
+:root {
+    --a: #1F3A5F;
+    --b: #4d648d;
+    --c: #acc2ef;
+    --d: #3D5A80;
+    --s: #cee8ff;
+    --f: #0F1C2E;
+    --base-color: #1f2b3e;  
+    --h: #374357;
+    --text-color: #FFFFFF;
+    --i: #e0e0e0;
+}
+
+body {
+    background-color: var(--base-color);
+    color: var(--text-color);
+}
+
+#hero {
+    background-image: url(img/man-1282232_1920.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+#hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--base-color);
+    opacity: 0.5;
+}
+
+#hero-text {
+    left: 10%;
+}
+
+
+#pros-list svg{
+    height:  120px;
+    width: auto;
+}
+
+#reviews { 
+    background-color: var(--f);
+}
+
+#faq {
+    width:calc(100% / 2);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.calorie-bg {
+    background-color: var(--f);
+}
+
+.progress-container {
+    position: relative;
+    width: 400px;
+}
+
+.progress-circle {
+    width: 410px;
+    height: 410px;
+    border-radius: 50%;
+    background: conic-gradient(var(--b) 0deg, #ddd 0deg);
+}
+
+.progress-text {
+    position: absolute;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-color);
+    white-space: pre-line;
+
+}
+
+.progress-calorie {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: var(--h);
+}
+
+.steps, .water {
+    background-color: var(--f);
+    width: 48%;
+}
+
+#waterbar {
+    width: 30px !important;
+    height: 150px !important;
+}
+
+/* From Uiverse.io by elisapi */ 
+.card {
+  width: fit-content;
+  height: fit-content;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  gap: 20px;
+}
+
+/* for all social containers*/
+.socialContainer {
+  width: 52px;
+  height: 52px;
+  background-color: rgb(65, 29, 131);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  border-radius: 30px;
+}
+/* instagram*/
+.containerOne:hover {
+  background-color: #d62976;
+  transition-duration: 0.3s;
+  transform: scale(1.2);
+}
+/* twitter*/
+.containerTwo:hover {
+  background-color: #00acee;
+  transition-duration: 0.3s;
+  transform: scale(1.2);
+}
+/* linkdin*/
+.containerThree:hover {
+  background-color: #0072b1;
+  transition-duration: 0.3s;
+  transform: scale(1.2);
+}
+/* Whatsapp*/
+.containerFour:hover {
+  background-color: #128c7e;
+  transition-duration: 0.3s;
+  transform: scale(1.2);
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: 0.3s;
+}
+
+.socialSvg {
+  width: 17px;
+}
+
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/*footer*/
+#footer-content{
+    padding: 0 8rem;
+}
+#footer-oszlop3{
+    padding: 0 0 0 3rem;
+}
+.footer-emailbox{
+    display: flex;
+    align-items: center;
+}
+  
+.footer-emailmezo {
+    min-height: 35px;
+    max-width: 150px;
+    padding: 0 1rem;
+    color: #fff;
+    font-size: 15px;
+    border: 1px solid #fff;
+    border-radius: 6px 0 0 6px;
+    background-color: transparent;
+}
+  
+.footer-emailgomb {
+    min-height: 10px;
+    padding: .5em 1em;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    background-color: #2c13c9;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+}
+  
+.footer-emailgomb:hover {
+    background-color: #33268b;
+}
+  
+.input:focus, .input:focus-visible {
+    border-color: #3898EC;
+    outline: none;
+}
+/*ikonok*/
+#footer-icons{
+    padding: 0 0 0 5rem;
+}
+
+.social-icons{
+    display: flex;
+    align-items:start;
+    justify-content: start;
+    padding: 0;
+}
+
+.social-icons li{
+    padding: 1.5rem 1rem 0 1rem;
+    list-style-type: none;
+}
+
+.social-icons li:first-child{
+    padding-right: 1rem;
+}
+
+.social-icons a{
+    color: white;
+}
+
+.social-icons svg:hover{
+    color: #2c13c9;
+}
+/*ikonok*/
+/*footer*/
+
+/*media - xs(0-576) sm(576-768) md(768-992) lg(992-1200) xl(1200-1500)*/
+@media only screen and (max-width: 1400px) {
+    #footer-icons{
+        padding: 0 0 0 7rem;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    #footer-icons{
+        padding: 0 0 0 6rem;
+    }
+}
+@media only screen and (max-width: 992px) {
+    #footer-content{
+        padding: 0 6rem;
+    }
+    #footer-oszlop3{
+        padding: 0 0 0 1rem;
+    }
+    #footer-icons{
+        padding: 0 0 0 5rem;
+    }
+}
+@media only screen and (max-width: 850px) {
+    #footer-content{
+        padding: 0 3rem;
+    }
+    #footer-icons{
+        padding: 0 0 0 2.5rem;
+    }
+}
+@media only screen and (max-width: 800px) {
+    #footer-content{
+        padding: 0 2rem;
+    }
+}
+@media only screen and (max-width: 768px) {
+    #footer-oszlop1{
+        padding: 0.5rem 0;
+    }
+    #footer-oszlop2{
+        padding: 0.5rem 0;
+    }
+    #footer-oszlop3{
+        padding: 0.5rem 0 0.5rem 0rem;
+    }
+    #footer-icons{
+        padding: 0 0 0 0.5rem;
+    }
+}
