@@ -44,21 +44,37 @@
         <section id="reviews">
           <div class="container-fluid w-75">
             <h1 class="mt-5 pt-5">Elégedett felhasználók</h1>
+            <div class="d-flex align-items-center justify-content-center">
             <?php 
             
               include("database.php");
 
-              $sql = "SELECT * FROM users";
+              $sql = "SELECT * FROM reviews, users where users.id = reviews.user_id";
               $result = mysqli_query($conn, $sql);
 
               
               if (mysqli_num_rows($result) > 0){
-                $row = mysqli_fetch_assoc($result);
 
-                echo $row[]
-              }
+                echo "<svg id='arrow' xmlns='http://www.w3.org/2000/svg' height='50px' viewBox='0 -960 960 960' fill='#5f6368'><path d='M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z'/></svg>";
+
+                while($row = mysqli_fetch_assoc($result)) {
+
+                echo "<div class='reviewdiv w-50 m-1 '>";
+                  echo "<p class='fs-3'>";
+                    echo $row["review_text"];
+                  echo "</p>";
+                  echo "<p class='fs-6'>- ";
+                    echo $row["nev"];
+                  echo "</p>";
+                echo "</div>";
+
+                }
+
+                echo "<svg id='arrow'  xmlns='http://www.w3.org/2000/svg' height='50px' viewBox='0 -960 960 960' fill='#5f6368'><path d='M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z'/></svg>";
+              };
 
             ?>
+            </div>
           </div>
         </section>
 
@@ -92,5 +108,7 @@
       <footer style="height:300px; background-color: black;">
         <h2 class="text-center pt-5">Ez footer</h2>
       </footer>
+      
+      <script src="reviewslide.js"></script>
 </body>
 </html> 
