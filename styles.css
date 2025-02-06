@@ -98,3 +98,10 @@ body {
     width: 30px !important;
     height: 150px !important;
 }
+
+
+#arrow {
+    cursor: pointer;
+    pointer-events: all; 
+}
+  
