@@ -46,10 +46,17 @@
             <h1 class="mt-5 pt-5">Elégedett felhasználók</h1>
             <?php 
             
-              include("database.php")
+              include("database.php");
 
-              $sql = "SELECT * FROM users"
-              $result = mysqli_query($conn, $sql)
+              $sql = "SELECT * FROM users";
+              $result = mysqli_query($conn, $sql);
+
+              
+              if (mysqli_num_rows($result) > 0){
+                $row = mysqli_fetch_assoc($result);
+
+                echo $row[]
+              }
 
             ?>
           </div>
