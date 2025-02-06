@@ -99,9 +99,211 @@ body {
     height: 150px !important;
 }
 
-
 #arrow {
     cursor: pointer;
     pointer-events: all; 
 }
   
+/* From Uiverse.io by elisapi */ 
+.card {
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    gap: 20px;
+  }
+  
+  /* for all social containers*/
+  .socialContainer {
+    width: 52px;
+    height: 52px;
+    background-color: rgb(65, 29, 131);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-duration: 0.3s;
+    border-radius: 30px;
+  }
+  /* instagram*/
+  .containerOne:hover {
+    background-color: #d62976;
+    transition-duration: 0.3s;
+    transform: scale(1.2);
+  }
+  /* twitter*/
+  .containerTwo:hover {
+    background-color: #00acee;
+    transition-duration: 0.3s;
+    transform: scale(1.2);
+  }
+  /* linkdin*/
+  .containerThree:hover {
+    background-color: #0072b1;
+    transition-duration: 0.3s;
+    transform: scale(1.2);
+  }
+  /* Whatsapp*/
+  .containerFour:hover {
+    background-color: #128c7e;
+    transition-duration: 0.3s;
+    transform: scale(1.2);
+  }
+  
+  .socialContainer:active {
+    transform: scale(0.9);
+    transition-duration: 0.3s;
+  }
+  
+  .socialSvg {
+    width: 17px;
+  }
+  
+  .socialSvg path {
+    fill: rgb(255, 255, 255);
+  }
+  
+  .socialContainer:hover .socialSvg {
+    animation: slide-in-top 0.3s both;
+  }
+  
+  @keyframes slide-in-top {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /*footer*/
+  #footer-content{
+      padding: 0 8rem;
+  }
+  #footer-oszlop3{
+      padding: 0 0 0 3rem;
+  }
+  .footer-emailbox{
+      display: flex;
+      align-items: center;
+  }
+    
+  .footer-emailmezo {
+      min-height: 35px;
+      max-width: 150px;
+      padding: 0 1rem;
+      color: #fff;
+      font-size: 15px;
+      border: 1px solid #fff;
+      border-radius: 6px 0 0 6px;
+      background-color: transparent;
+  }
+    
+  .footer-emailgomb {
+      min-height: 10px;
+      padding: .5em 1em;
+      border: none;
+      border-radius: 0 6px 6px 0;
+      background-color: #2c13c9;
+      color: #fff;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background-color .3s ease-in-out;
+  }
+    
+  .footer-emailgomb:hover {
+      background-color: #33268b;
+  }
+    
+  .input:focus, .input:focus-visible {
+      border-color: #3898EC;
+      outline: none;
+  }
+  /*ikonok*/
+  #footer-icons{
+      padding: 0 0 0 5rem;
+  }
+  
+  .social-icons{
+      display: flex;
+      align-items:start;
+      justify-content: start;
+      padding: 0;
+  }
+  
+  .social-icons li{
+      padding: 1.5rem 1rem 0 1rem;
+      list-style-type: none;
+  }
+  
+  .social-icons li:first-child{
+      padding-right: 1rem;
+  }
+  
+  .social-icons a{
+      color: white;
+  }
+  
+  .social-icons svg:hover{
+      color: #2c13c9;
+  }
+  /*ikonok*/
+  /*footer*/
+  
+  /*media - xs(0-576) sm(576-768) md(768-992) lg(992-1200) xl(1200-1500)*/
+  @media only screen and (max-width: 1400px) {
+      #footer-icons{
+          padding: 0 0 0 7rem;
+      }
+  }
+  @media only screen and (max-width: 1200px) {
+      #footer-icons{
+          padding: 0 0 0 6rem;
+      }
+  }
+  @media only screen and (max-width: 992px) {
+      #footer-content{
+          padding: 0 6rem;
+      }
+      #footer-oszlop3{
+          padding: 0 0 0 1rem;
+      }
+      #footer-icons{
+          padding: 0 0 0 5rem;
+      }
+  }
+  @media only screen and (max-width: 850px) {
+      #footer-content{
+          padding: 0 3rem;
+      }
+      #footer-icons{
+          padding: 0 0 0 2.5rem;
+      }
+  }
+  @media only screen and (max-width: 800px) {
+      #footer-content{
+          padding: 0 2rem;
+      }
+  }
+  @media only screen and (max-width: 768px) {
+      #footer-oszlop1{
+          padding: 0.5rem 0;
+      }
+      #footer-oszlop2{
+          padding: 0.5rem 0;
+      }
+      #footer-oszlop3{
+          padding: 0.5rem 0 0.5rem 0rem;
+      }
+      #footer-icons{
+          padding: 0 0 0 0.5rem;
+      }
+  }
+  
+
