@@ -300,3 +300,12 @@ body {
         padding: 0 0 0 0.5rem;
     }
 }
+
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
