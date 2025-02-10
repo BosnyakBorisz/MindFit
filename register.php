@@ -10,42 +10,200 @@
 </head>
 <body>
     <div class="container mt-5">
-        <div id="step1">
-            <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
-                <h2>Regisztráció</h2>
-                <label>Név:</label>
-                <input type="text" id="name" class="form-control">
-                <label>Kor:</label>
-                <input type="number" id="age" class="form-control">
-                <label>Nem:</label>
-                <select id="gender" class="form-control">
-                    <option>Férfi</option>
-                    <option>Nő</option>
-                    <option>Egyéb</option>
-                </select>
-                <label>Fizikai bizbasz:  mostani és cél | sulyt konnyen szedsz vagy adsz le | hány hét alatt szeretnel | milyen kondi |  hány edzés egy héten | milyen hosszu | érzékeny testrész | suly magassag </label>
-                <input type="text" id="" class="form-control">
-            </form>
-            <button class="btn btn-primary mt-3" onclick="nextStep()">Tovább</button>
-        </div>
 
-        <div id="step2" class="hidden">
+        <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post" id="multiStepForm">
+            <div class="step active">
+                <h2>Regisztráció</h2>
+                <label>Felhasználónév:</label>
+                <input type="text" id="name" class="form-control">
+                <label>Email:</label>
+                <input type="number" id="age" class="form-control">
+                <label>Jelszó:</label>
+                <input type="text" id="password" class="form-control">
+                <label>Jelszó megerősítése</label>
+                <input type="text" id="" class="form-control">
+                <button type="button" onclick="nextStep()">Következő</button>
+            </div>
+
+            <div class="step">
             <h2>Életmódbeli kérdések</h2>
             <label>Milyen célokat szeretnél elérni?</label>
             <select class="form-control">
                 <option>Fogyás</option>
                 <option>Izomnövelés</option>
-                <option>Egészséges életmód</option>
+                <option>Fogyás és izomtömegnövelés</option>
             </select>
-            <button class="btn btn-success mt-3">Befejezés</button>
+            <button type="button" onclick="prevStep()">Vissza</button>
+            <button type="button" onclick="nextStep()">Következő</button>
         </div>
-    </div>
 
-    <script>
-        function nextStep() {
-            document.getElementById('step1').classList.add('hidden');
-            document.getElementById('step2').classList.remove('hidden');
-        }
-    </script>
+        <div class="step">
+           
+                <label>Nem:</label>
+                <input type="text" id="sex" class="form-control">
+                <label>Kor:</label>
+                <input type="text" id="age" class="form-control">
+                <label>Testsúly:</label>
+                <input type="number" id="weigth" class="form-control">
+                <label>Magasság:</label>
+                <input type="text" id="height" class="form-control">
+                <button type="button" onclick="prevStep()">Vissza</button>
+                <button type="button" onclick="nextStep()">Következő</button>
+           
+        </div>
+
+        <div class="step">
+                <h2>Jelenlegi testalkat</h2>
+                <input type="radio"><img class="w-25" src="img/belly-2354_1920.jpg" alt=""></input>
+                <input type="radio"><img class="w-25" src="img/belly-2354_1920.jpg" alt=""></input>
+                <input type="radio"><img class="w-25" src="img/belly-2354_1920.jpg" alt=""></input>
+                <button type="button" onclick="prevStep()">Vissza</button>
+                <button type="button" onclick="nextStep()">Következő</button>
+        </div>
+
+        <div class="step">
+                <h2>Cél testalkat</h2>
+                <input type="radio"><img class="w-25" src="img/belly-2354_1920.jpg" alt=""></input>
+                <input type="radio"><img class="w-25" src="img/belly-2354_1920.jpg" alt=""></input>
+                <input type="radio"><img class="w-25" src="img/belly-2354_1920.jpg" alt=""></input>
+                <button type="button" onclick="prevStep()">Vissza</button>
+                <button type="button" onclick="nextStep()">Következő</button>
+        </div>
+
+        <div class="step">
+                <label>Milyen gyakran edzel:</label>
+                <input type="radio"class="form-control">
+                <input type="radio"class="form-control">
+                <input type="radio"class="form-control">
+                <input type="radio"class="form-control">
+                <button type="button" onclick="prevStep()">Vissza</button>
+                <button type="button" onclick="nextStep()">Következő</button>
+        </div>
+
+        <div class="step">
+                <label>sulyvaltozas</label>
+                <label for="">könnyen leadsz</label>
+                <input type="radio"class="form-control">
+                <label for="">könnyen szedsz fel</label>
+                <input type="radio"class="form-control">
+                <label for="">könnyen szedsz adsz   </label>
+                <input type="radio"class="form-control">
+                <button type="button" onclick="prevStep()">Vissza</button>
+                <button type="button" onclick="nextStep()">Következő</button>
+        </div>
+
+        <div class="step">
+                <label>hány hét alatt</label>
+                <input type="range" class="form-control">
+                <label>hany edzés egy héten</label>
+                <input type="range" class="form-control">
+                <label for="">milyen hosszu edzés </label>
+                <input type="range" class="form-control">
+                <button type="button" onclick="prevStep()">Vissza</button>
+                <button type="button" onclick="nextStep()">Következő</button>
+        </div>
+
+        <div class="step">
+                <label>hol edzel </label>
+                <label for="">konditerem</label>
+                <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
+                <label for="">otthon</label>
+                <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
+                <label for="">hibrid</label>
+                <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
+                <button type="button" onclick="prevStep()">Vissza</button>
+                <button type="button" onclick="nextStep()">Következő</button>
+            
+        </div>
+
+        <div class="step">
+        
+                <label>ha otthon mekkora felszereltseg </label>
+                <label for="">testsuly</label>
+                <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
+                <label for="">keves cucc</label>
+                <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
+                <label for="">home gym</label>
+                <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
+                <button type="button" onclick="prevStep()">Vissza</button>
+                <button type="button" onclick="nextStep()">Következő</button>
+            
+        </div>
+
+        <div class="step">
+                <label>ha kondi mekkora felszereltseg </label>
+                <label for="">nagy kondi</label>
+                <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
+                <label for="">kis kondi limitalt cucc</label>
+                <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
+                <label for="">home gym</label>
+                <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
+                <button type="button" onclick="prevStep()">Vissza</button>
+                <button type="button" onclick="nextStep()">Következő</button>
+        </div>
+
+        <div class="step">
+                <label>fokuszalt izomcsoport </label>
+                <label for="">mell</label>
+                <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
+                <label for="">hat </label>
+                <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
+                <label for="">stb....</label>
+                <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
+                <button type="button" onclick="prevStep()">Vissza</button>
+                <button type="button" onclick="nextStep()">Következő</button>
+        </div>
+
+        <div class="step">
+                <label>érzékeny testrész</label>
+                <label for="">térd</label>
+                <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
+                <label for="">váll</label>
+                <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
+                <label for="">stb...</label>
+                <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
+                <button type="button" onclick="prevStep()">Vissza</button>
+                <button type="button" onclick="nextStep()">Következő</button>
+        </div>
+
+        <div class="step">
+                <label for="">testzsirszazalek</label>
+                <input type="range"></input>
+                <img src="" alt="">huzogatva mutatja mennyi keppel
+                <button type="button" onclick="prevStep()">Vissza</button>
+                <button type="button" onclick="nextStep()">Befejezés</button>
+        </div>
+        </form>
+    </div>
+    <input type="text" id="password" class="form-control hidden" >
+                <label class="hidden"> </label>
+
+        <script>
+                let currentStep = 0;
+                const steps = document.querySelectorAll(".step");
+
+                function showStep(stepIndex) {
+                        steps.forEach((step, index) => {
+                                step.classList.toggle("active", index === stepIndex);
+                                step.style.display = index === stepIndex ? "block" : "none";
+                        });
+                }
+
+                function nextStep() {
+                        if (currentStep < steps.length - 1) {
+                                currentStep++;
+                                showStep(currentStep);
+                        }
+                }
+
+                function prevStep() {
+                        if (currentStep > 0) {
+                                currentStep--;
+                                showStep(currentStep);
+                        }
+                }
+
+                showStep(currentStep);
+        </script>
 </body>
 </html>

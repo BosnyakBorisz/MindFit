@@ -120,5 +120,4 @@ Hover effektusok: Amikor a felhasználó az egérkurzort egy elem fölé viszi, 
 slogen: MindFit – Tudd meg, mi rejlik benned!
 
 
-https://iconscout.com/icon-pack/muscles
 
