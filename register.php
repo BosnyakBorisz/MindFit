@@ -32,6 +32,8 @@
                 <option>Fogyás</option>
                 <option>Izomnövelés</option>
                 <option>Fogyás és izomtömegnövelés</option>
+                <option>Formában tartás</option>
+                <option>Sportólói karrier elkezdése</option>
             </select>
             <button type="button" onclick="prevStep()">Vissza</button>
             <button type="button" onclick="nextStep()">Következő</button>
@@ -146,7 +148,7 @@
                 <label>fokuszalt izomcsoport </label>
                 <label for="">mell</label>
                 <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
-                <label for="">hat </label>
+                <label for="">hát </label>
                 <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
                 <label for="">stb....</label>
                 <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
@@ -155,7 +157,7 @@
         </div>
 
         <div class="step">
-                <label>érzékeny testrész</label>
+                <label>sérült testrész</label>
                 <label for="">térd</label>
                 <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
                 <label for="">váll</label>
