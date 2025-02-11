@@ -25,22 +25,8 @@
                 <button type="button" onclick="nextStep()">Következő</button>
             </div>
 
-            <div class="step">
-            <h2>Életmódbeli kérdések</h2>
-            <label>Milyen célokat szeretnél elérni?</label>
-            <select class="form-control">
-                <option>Fogyás</option>
-                <option>Izomnövelés</option>
-                <option>Fogyás és izomtömegnövelés</option>
-                <option>Formában tartás</option>
-                <option>Sportólói karrier elkezdése</option>
-            </select>
-            <button type="button" onclick="prevStep()">Vissza</button>
-            <button type="button" onclick="nextStep()">Következő</button>
-        </div>
 
         <div class="step">
-           
                 <label>Nem:</label>
                 <input type="text" id="sex" class="form-control">
                 <label>Kor:</label>
@@ -51,7 +37,19 @@
                 <input type="text" id="height" class="form-control">
                 <button type="button" onclick="prevStep()">Vissza</button>
                 <button type="button" onclick="nextStep()">Következő</button>
-           
+        </div>
+
+        <div class="step">
+            <label>Milyen célokat szeretnél elérni?</label>
+            <select class="form-control">
+                <option>Fogyás</option>
+                <option>Izomnövelés</option>
+                <option>Fogyás és izomtömegnövelés</option>
+                <option>Formában tartás</option>
+                <option>Sportólói karrier elkezdése</option>
+            </select>
+            <button type="button" onclick="prevStep()">Vissza</button>
+            <button type="button" onclick="nextStep()">Következő</button>
         </div>
 
         <div class="step">

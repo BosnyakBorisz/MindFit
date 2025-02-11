@@ -52,7 +52,7 @@
             
               include("database.php");
 
-              $sql = "SELECT * FROM reviews, users where users.user_id = reviews.user_id limit 3";
+              $sql = "SELECT * FROM reviews, users where users.id = reviews.user_id limit 3";
               $result = mysqli_query($conn, $sql);
 
             
@@ -72,7 +72,7 @@
                   while($row = mysqli_fetch_assoc($result)) {
                      echo '<div class="carousel-item ' . ($first ? 'active' : '') . '">
                       <p>' . htmlspecialchars($row['review_text']) . '</p>
-                      <p> - ' . htmlspecialchars($row['username']) . '</p>
+                      <p> - ' . htmlspecialchars($row['nev']) . '</p>
                     </div>';
                     $first = false;
                   }
