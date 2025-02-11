@@ -104,20 +104,20 @@
               <p>Teljesen ingyenes</p>
             </details>
             <details>
-              <summary>Mennyibe kerül?</summary>
-              <p>Teljesen ingyenes</p>
+              <summary>Miért fontos a személyre szabott táplálkozási terv és hogyan támogatja a céljaimat?</summary>
+              <p>Az AI figyelembe veszi a céljaidat és étkezési preferenciáidat, hogy napi étkezési tervekkel támogassa a fejlődésed.</p>
             </details>
             <details>
-              <summary>Mennyibe kerül?</summary>
-              <p>Teljesen ingyenes</p>
+              <summary>Milyen típusú stresszkezelési technikákat ajánl az AI a mentális egészség javításához?</summary>
+              <p>Meditációk, légzőgyakorlatok és jóga segítenek a stressz csökkentésében, napi célokkal.</p>
             </details>
             <details>
-              <summary>Mennyibe kerül?</summary>
-              <p>Teljesen ingyenes</p>
+              <summary>Milyen eszközökkel integrálható a weboldal?</summary>
+              <p>Az AI integrálható okosórákkal és fitneszkarkötőkkel (pl. Fitbit, Garmin), hogy valós idejű adatokat kapjon az aktivitásodról.</p>
             </details>
             <details>
-              <summary>Mennyibe kerül?</summary>
-              <p>Teljesen ingyenes</p>
+              <summary>Hogyan segít az AI a motiváció fenntartásában?</summary>
+              <p>Az AI napi személyre szabott motivációs üzeneteket küld, és emlékeztet a céljaidra, hogy mindig ösztönözve érezd magad.</p>
             </details>
           </div>
         </section>
