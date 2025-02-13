@@ -72,7 +72,7 @@
                   while($row = mysqli_fetch_assoc($result)) {
                      echo '<div class="carousel-item ' . ($first ? 'active' : '') . '">
                       <p>' . htmlspecialchars($row['review_text']) . '</p>
-                      <p> - ' . htmlspecialchars($row['nev']) . '</p>
+                      <p> - ' . htmlspecialchars($row['felhasznnev']) . '</p>
                     </div>';
                     $first = false;
                   }

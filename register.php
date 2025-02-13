@@ -11,17 +11,17 @@
 <body>
     <div class="container mt-5">
 
-        <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post" id="multiStepForm">
+        <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post" id="multiStepForm">
             <div class="step active">
                 <h2>Regisztráció</h2>
                 <label>Felhasználónév:</label>
-                <input type="text" id="name" class="form-control">
+                <input type="text" id="felhasznnev" class="form-control">
                 <label>Email:</label>
                 <input type="number" id="age" class="form-control">
                 <label>Jelszó:</label>
                 <input type="text" id="password" class="form-control">
                 <label>Jelszó megerősítése</label>
-                <input type="text" id="" class="form-control">
+                <input type="password" id="" class="form-control">
                 <button type="button" onclick="nextStep()">Következő</button>
             </div>
 
@@ -93,8 +93,6 @@
         </div>
 
         <div class="step">
-                <label>hány hét alatt</label>
-                <input type="range" class="form-control">
                 <label>hany edzés egy héten</label>
                 <input type="range" class="form-control">
                 <label for="">milyen hosszu edzés </label>
@@ -166,18 +164,43 @@
                 <button type="button" onclick="nextStep()">Következő</button>
         </div>
 
-        <div class="step">
-                <label for="">testzsirszazalek</label>
-                <input type="range"></input>
-                <img src="" alt="">huzogatva mutatja mennyi keppel
-                <button type="button" onclick="prevStep()">Vissza</button>
-                <button type="button" onclick="nextStep()">Befejezés</button>
-        </div>
         </form>
     </div>
     <input type="text" id="password" class="form-control hidden" >
                 <label class="hidden"> </label>
 
+        <?php
+
+        include("database.php");
+
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        
+            $felhasznnev = filter_var($_POST['felhasznnev'], FILTER_SANITIZE_STRING);
+            $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+            $jelszo = password_hash($_POST['jelszo'], PASSWORD_DEFAULT); 
+            $nem = $_POST['nem'];
+            $kor = filter_var($_POST['kor'], FILTER_VALIDATE_INT);
+            $testsuly = filter_var($_POST['testsuly'], FILTER_VALIDATE_FLOAT);
+            $magassag = filter_var($_POST['magassag'], FILTER_VALIDATE_FLOAT);
+            $cel = $_POST['cel'];
+            $jelenlegi_testalkat = $_POST['jelenlegi_testalkat'];
+            $cel_testalkat = $_POST['cel_testalkat'];
+            $edzes_per_het = filter_var($_POST['edzes_per_het'], FILTER_VALIDATE_INT);
+            $sulyvaltozas_nehezseg = implode(',', $_POST['sulyvaltozas_nehezseg']);
+            $kivant_edzes_per_het = filter_var($_POST['kivant_edzes_per_het'], FILTER_VALIDATE_INT);
+            $kivant_edzes_ideje = $_POST['kivant_edzes_ideje'];
+            $edzes_helye = $_POST['edzes_helye'];
+            $otthoni_felszereltseg = $_POST['otthoni_felszereltseg'];
+            $kondi_felszereltseg = $_POST['kondi_felszereltseg']; 
+            $fokuszalt_izomcsoport = implode(',', $_POST['fokuszalt_izomcsoport']);
+            $serult_testresz = implode(',', $_POST['serult_testresz']);
+        
+            $sql = "INSERT INTO felhasznalok (felhasznnev, email, jelszo, nem, kor, testsuly, magassag, cel, jelenlegi_testalkat, cel_testalkat, edzes_per_het, sulyvaltozas_nehezseg, kivant_edzes_per_het, kivant_edzes_ideje, edzes_helye, otthoni_felszereltseg, kondi_felszereltseg, fokuszalt_izomcsoport, serult_testresz)
+                    VALUES ($felhasznnev, $email, $jelszo, $nem, $kor, $testsuly, $magassag, $cel, $jelenlegi_testalkat, $cel_testalkat, $edzes_per_het, $sulyvaltozas_nehezseg, $kivant_edzes_per_het, $kivant_edzes_ideje, $edzes_helye, $otthoni_felszereltseg, $kondi_felszereltseg, $fokuszalt_izomcsoport, $serult_testresz)";
+        }
+        ?>
+        
         <script>
                 let currentStep = 0;
                 const steps = document.querySelectorAll(".step");
