@@ -17,9 +17,9 @@
                 <label>Felhasználónév:</label>
                 <input type="text" id="felhasznnev" class="form-control">
                 <label>Email:</label>
-                <input type="number" id="age" class="form-control">
+                <input type="email" id="email" class="form-control">
                 <label>Jelszó:</label>
-                <input type="text" id="password" class="form-control">
+                <input type="password" id="password" class="form-control">
                 <label>Jelszó megerősítése</label>
                 <input type="password" id="" class="form-control">
                 <button type="button" onclick="nextStep()">Következő</button>
@@ -28,13 +28,13 @@
 
         <div class="step">
                 <label>Nem:</label>
-                <input type="text" id="sex" class="form-control">
+                <input type="text" id="nem" class="form-control">
                 <label>Kor:</label>
-                <input type="text" id="age" class="form-control">
+                <input type="number" id="kor" class="form-control">
                 <label>Testsúly:</label>
-                <input type="number" id="weigth" class="form-control">
+                <input type="number" id="testsúly" class="form-control">
                 <label>Magasság:</label>
-                <input type="text" id="height" class="form-control">
+                <input type="number" id="magasság" class="form-control">
                 <button type="button" onclick="prevStep()">Vissza</button>
                 <button type="button" onclick="nextStep()">Következő</button>
         </div>
