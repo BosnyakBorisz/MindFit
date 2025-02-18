@@ -54,16 +54,16 @@
 
         <div class="step">
                 <h2>Jelenlegi testalkat</h2>
-                <input type="radio"><img class="w-25" src="img/belly-2354_1920.jpg" alt=""></input>
-                <input type="radio"><img class="w-25" src="img/belly-2354_1920.jpg" alt=""></input>
-                <input type="radio"><img class="w-25" src="img/belly-2354_1920.jpg" alt=""></input>
+                <input type="radio"><img class="w-25" src="img/ectomorph-ferfi.png" alt=""></input>
+                <input type="radio"><img class="w-25" src="img/mesomorph-ferfi.png" alt=""></input>
+                <input type="radio"><img class="w-25" src="img/endomorph-ferfi.png" alt=""></input>
                 <button type="button" onclick="prevStep()">Vissza</button>
                 <button type="button" onclick="nextStep()">Következő</button>
         </div>
 
         <div class="step">
                 <h2>Cél testalkat</h2>
-                <input type="radio"><img class="w-25" src="img/belly-2354_1920.jpg" alt=""></input>
+                <input type="radio"><img class="w-25" src=" "alt=""></input>
                 <input type="radio"><img class="w-25" src="img/belly-2354_1920.jpg" alt=""></input>
                 <input type="radio"><img class="w-25" src="img/belly-2354_1920.jpg" alt=""></input>
                 <button type="button" onclick="prevStep()">Vissza</button>
