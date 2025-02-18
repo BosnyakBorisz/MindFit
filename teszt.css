@@ -309,3 +309,74 @@ body {
 .step.active {
     display: block;
 }
+
+
+/*register.html*/
+#box1{
+    display: flex;
+    justify-content: center;
+}
+
+#keret{
+    background-color: transparent;
+    width: 30rem;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#nextgomb{
+    background-color: #eee;
+    border: none;
+    font-size: 1rem;
+    width: 8rem;
+    height: 2.5rem;
+    border-radius: 10px;
+    color: #4d648d;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+   
+#nextgomb:active {
+    color: #0072b1;
+    box-shadow: 0 0.2rem #dfd9d9;
+    transform: translateY(0.2rem);
+}
+   
+#nextgomb:hover:not(:disabled) {
+    background: #0F1C2E;
+    color: white;
+}
+   
+#nextgomb:disabled {
+    cursor: auto;
+    color: grey;
+}
+
+#backgomb{
+    background-color: #eee;
+    border: none;
+    font-size: 1rem;
+    width: 8rem;
+    height: 2.5rem;
+    border-radius: 10px;
+    color: #4d648d;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+   
+#backgomb:active {
+    color: #0072b1;
+    box-shadow: 0 0.2rem #dfd9d9;
+    transform: translateY(0.2rem);
+}
+   
+#backgomb:hover:not(:disabled) {
+    background: #0F1C2E;
+    color: white;
+}
+   
+#backgomb:disabled {
+    cursor: auto;
+    color: grey;
+}
+/*register.html*/
