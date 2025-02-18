@@ -188,3 +188,108 @@ slogen: MindFit – Tudd meg, mi rejlik benned!
 
 "A legnehezebb napok építenek a legerősebb emberekké. Tarts ki!" 🔥
 
+
+
+Ha egy olyan okos rendszert szeretnél a weboldaladra, mint én (ChatGPT), akkor integrálhatod egy chatbotot, ami képes válaszolni a látogatók kérdéseire és segíteni nekik különböző feladatokban. Ehhez OpenAI API-ját használhatod.
+
+Az alábbiakban bemutatok egy egyszerű megoldást, hogyan integrálhatod ChatGPT-t a weboldaladra JavaScript és HTML segítségével, az OpenAI API használatával.
+
+### 1. Először regisztrálj az OpenAI API-ra:
+- Látogass el az [OpenAI API oldalára](https://platform.openai.com/signup) és hozz létre egy fiókot.
+- Miután regisztráltál, szerezz egy API kulcsot, amit az API hívásokhoz használhatsz.
+
+### 2. HTML + JavaScript kód
+
+Az alábbi kódot beillesztheted a weboldaladba:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Web Chat</title>
+    <style>
+        #chatbox {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        #userInput {
+            width: 80%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        #sendBtn {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chat with ChatGPT</h1>
+
+    <div id="chatbox"></div>
+    
+    <input type="text" id="userInput" placeholder="Ask me anything...">
+    <button id="sendBtn">Send</button>
+
+    <script>
+        const apiKey = 'YOUR_API_KEY'; // Cseréld le a saját OpenAI API kulcsodra
+        const chatbox = document.getElementById('chatbox');
+        const userInput = document.getElementById('userInput');
+        const sendBtn = document.getElementById('sendBtn');
+
+        sendBtn.addEventListener('click', sendMessage);
+
+        async function sendMessage() {
+            const userMessage = userInput.value;
+            if (!userMessage) return;
+
+            // Display user message
+            chatbox.innerHTML += `<div><strong>You:</strong> ${userMessage}</div>`;
+            userInput.value = '';
+
+            // Send the message to OpenAI API
+            const response = await fetch('https://api.openai.com/v1/completions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`
+                },
+                body: JSON.stringify({
+                    model: "text-davinci-003", // Használhatod a megfelelő modellt
+                    prompt: userMessage,
+                    max_tokens: 150
+                })
+            });
+
+            const data = await response.json();
+            const botMessage = data.choices[0].text.trim();
+
+            // Display bot's response
+            chatbox.innerHTML += `<div><strong>ChatGPT:</strong> ${botMessage}</div>`;
+            chatbox.scrollTop = chatbox.scrollHeight; // Scroll to the latest message
+        }
+    </script>
+</body>
+</html>
+```
+
+### 3. Mi történik itt?
+
+- **HTML**: Az oldal tartalmaz egy szövegdobozt a válaszok megjelenítésére és egy input mezőt, ahol a felhasználó beírhatja a kérdését.
+- **JavaScript**: Az `API` hívásokat az OpenAI szerverére küldi, hogy lekérje a válaszokat, és ezeket megjeleníti a chatbox-ban.
+
+### 4. Ne felejtsd el:
+- Cseréld le a `YOUR_API_KEY` szöveget a saját OpenAI API kulcsodra.
+- A `model` paraméterben módosíthatod, hogy melyik modellt használja (pl. `"text-davinci-003"` vagy más elérhető modellek).
+
+### 5. Használat:
+- A felhasználók beírhatják a kérdéseiket a chatboxba.
+- Az OpenAI API válaszait megjeleníti a chat felületen, mintha egy valós idejű beszélgetés zajlana.
+
+Ez egy alapvető megoldás, amit testre szabhatsz a saját igényeid szerint! Ha segítségre van szükséged a telepítéshez vagy bármilyen kérdésed van, szólj!
