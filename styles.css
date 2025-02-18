@@ -94,6 +94,10 @@ body {
     width: 48%;
 }
 
+.workout-bg {
+    background-color: var(--f) !important;
+}
+
 #waterbar {
     width: 30px !important;
     height: 150px !important;
