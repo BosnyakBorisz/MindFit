@@ -11,7 +11,6 @@
 </head>
 <body>
     <div class="container mt-5">
-
         <form action="" method="post" id="multiStepForm">
             <div class="container">
                 <div class="row">
@@ -77,33 +76,50 @@
             </div>
         </div>
 
-
-        <div class="step">
-                <h2>Jelenlegi testalkat</h2>
-                <input type="radio"><img class="w-25" src="img/belly-2354_1920.jpg" alt=""></input>
-                <input type="radio"><img class="w-25" src="img/belly-2354_1920.jpg" alt=""></input>
-                <input type="radio"><img class="w-25" src="img/belly-2354_1920.jpg" alt=""></input>
-                <button type="button" onclick="prevStep()">Vissza</button>
-                <button type="button" onclick="nextStep()">Következő</button>
+        <div class="container">
+            <div class="row">
+                <div id="box1">
+                    <div class="step">
+                        <h2>Jelenlegi testalkat</h2>
+                        <input type="radio"><img class="w-25" src="img/belly-2354_1920.jpg" alt=""></input>
+                        <input type="radio"><img class="w-25" src="img/belly-2354_1920.jpg" alt=""></input>
+                        <input type="radio"><img class="w-25" src="img/belly-2354_1920.jpg" alt=""></input>
+                        <button type="button" onclick="prevStep()" id="backgomb">Vissza</button>
+                        <button type="button" onclick="nextStep()" id="nextgomb">Következő</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="step">
-                <h2>Cél testalkat</h2>
-                <input type="radio"><img class="w-25" src="img/belly-2354_1920.jpg" alt=""></input>
-                <input type="radio"><img class="w-25" src="img/belly-2354_1920.jpg" alt=""></input>
-                <input type="radio"><img class="w-25" src="img/belly-2354_1920.jpg" alt=""></input>
-                <button type="button" onclick="prevStep()">Vissza</button>
-                <button type="button" onclick="nextStep()">Következő</button>
+        <div class="container">
+            <div class="row">
+                <div id="box1">
+                    <div class="step">
+                        <h2>Cél testalkat</h2>
+                        <input type="radio"><img class="w-25" src="img/belly-2354_1920.jpg" alt=""></input>
+                        <input type="radio"><img class="w-25" src="img/belly-2354_1920.jpg" alt=""></input>
+                        <input type="radio"><img class="w-25" src="img/belly-2354_1920.jpg" alt=""></input>
+                        <button type="button" onclick="prevStep()" id="backgomb">Vissza</button>
+                        <button type="button" onclick="nextStep()" id="nextgomb">Következő</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="step">
-                <label>Milyen gyakran edzel:</label>
-                <input type="radio"class="form-control">
-                <input type="radio"class="form-control">
-                <input type="radio"class="form-control">
-                <input type="radio"class="form-control">
-                <button type="button" onclick="prevStep()">Vissza</button>
-                <button type="button" onclick="nextStep()">Következő</button>
+        <div class="container">
+            <div class="row">
+                <div id="box1">
+                    <div class="step">
+                        <label>Milyen gyakran edzel:</label>
+                        <input type="radio"class="form-control">
+                        <input type="radio"class="form-control">
+                        <input type="radio"class="form-control">
+                        <input type="radio"class="form-control">
+                        <button type="button" onclick="prevStep()" id="backgomb">Vissza</button>
+                        <button type="button" onclick="nextStep()" id="nextgomb">Következő</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="step">
@@ -114,8 +130,8 @@
                 <input type="radio"class="form-control">
                 <label for="">könnyen szedsz adsz   </label>
                 <input type="radio"class="form-control">
-                <button type="button" onclick="prevStep()">Vissza</button>
-                <button type="button" onclick="nextStep()">Következő</button>
+                <button type="button" onclick="prevStep()" id="backgomb">Vissza</button>
+                <button type="button" onclick="nextStep()" id="nextgomb">Következő</button>
         </div>
 
         <div class="step">
@@ -123,8 +139,8 @@
                 <input type="range" class="form-control">
                 <label for="">milyen hosszu edzés </label>
                 <input type="range" class="form-control">
-                <button type="button" onclick="prevStep()">Vissza</button>
-                <button type="button" onclick="nextStep()">Következő</button>
+                <button type="button" onclick="prevStep()" id="backgomb">Vissza</button>
+                <button type="button" onclick="nextStep()" id="nextgomb">Következő</button>
         </div>
 
         <div class="step">
@@ -135,8 +151,8 @@
                 <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
                 <label for="">hibrid</label>
                 <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
-                <button type="button" onclick="prevStep()">Vissza</button>
-                <button type="button" onclick="nextStep()">Következő</button>
+                <button type="button" onclick="prevStep()" id="backgomb">Vissza</button>
+                <button type="button" onclick="nextStep()" id="nextgomb">Következő</button>
             
         </div>
 
@@ -149,8 +165,8 @@
                 <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
                 <label for="">home gym</label>
                 <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
-                <button type="button" onclick="prevStep()">Vissza</button>
-                <button type="button" onclick="nextStep()">Következő</button>
+                <button type="button" onclick="prevStep()" id="backgomb">Vissza</button>
+                <button type="button" onclick="nextStep()" id="nextgomb">Következő</button>
             
         </div>
 
@@ -162,8 +178,8 @@
                 <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
                 <label for="">home gym</label>
                 <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
-                <button type="button" onclick="prevStep()">Vissza</button>
-                <button type="button" onclick="nextStep()">Következő</button>
+                <button type="button" onclick="prevStep()" id="backgomb">Vissza</button>
+                <button type="button" onclick="nextStep()" id="nextgomb">Következő</button>
         </div>
 
         <div class="step">
@@ -174,8 +190,8 @@
                 <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
                 <label for="">stb....</label>
                 <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
-                <button type="button" onclick="prevStep()">Vissza</button>
-                <button type="button" onclick="nextStep()">Következő</button>
+                <button type="button" onclick="prevStep()" id="backgomb">Vissza</button>
+                <button type="button" onclick="nextStep()" id="nextgomb">Következő</button>
         </div>
 
         <div class="step">
@@ -186,8 +202,7 @@
                 <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
                 <label for="">stb...</label>
                 <input type="radio"><img class="w-25" src="img/Mind.jpg" alt=""></input>
-                <button type="button" onclick="prevStep()">Vissza</button>
-                <button type="button" onclick="nextStep()">Következő</button>
+                <button type="button" onclick="prevStep()" id="backgomb">Vissza</button>
         </div>
 
         </form>
