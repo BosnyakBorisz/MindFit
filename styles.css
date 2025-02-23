@@ -82,6 +82,23 @@ body {
 
 }
 
+.error {
+    padding: 8px;
+    margin-top: 5px;
+    color: red;
+    border: red;
+    border-radius: 8px;
+    background-color: rgb(238, 133, 133);
+}
+
+.step {
+    display: none; 
+}
+.step.active {
+    display: flex;
+    justify-content: center
+}
+
 .progress-calorie {
     width: 400px;
     height: 400px;
@@ -310,3 +327,82 @@ body {
       }
   }
   
+
+/*register.html*/
+#box1{
+    display: flex;
+    justify-content: center;
+}
+
+#keret{
+    background-color: transparent;
+    width: 30rem;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#nextgomb{
+    background-color: #eee;
+    border: none;
+    font-size: 1rem;
+    width: 8rem;
+    height: 2.5rem;
+    border-radius: 10px;
+    color: #4d648d;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+   
+#nextgomb:active {
+    color: #0072b1;
+    box-shadow: 0 0.2rem #dfd9d9;
+    transform: translateY(0.2rem);
+}
+   
+#nextgomb:hover:not(:disabled) {
+    background: #0F1C2E;
+    color: white;
+}
+   
+#nextgomb:disabled {
+    cursor: auto;
+    color: grey;
+}
+
+#backgomb{
+    background-color: #eee;
+    border: none;
+    font-size: 1rem;
+    width: 8rem;
+    height: 2.5rem;
+    border-radius: 10px;
+    color: #4d648d;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+   
+#backgomb:active {
+    color: #0072b1;
+    box-shadow: 0 0.2rem #dfd9d9;
+    transform: translateY(0.2rem);
+}
+   
+#backgomb:hover:not(:disabled) {
+    background: #0F1C2E;
+    color: white;
+}
+   
+#backgomb:disabled {
+    cursor: auto;
+    color: grey;
+}
+
+.workout-card {
+    background-color: var(--d);
+    border-radius: 10px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+}
