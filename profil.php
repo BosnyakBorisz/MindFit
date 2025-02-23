@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+if (!isset($_SESSION["user"])) {
+    if (isset($_COOKIE["user"])) {
+        $_SESSION["user"] = $_COOKIE["user"];
+    } else {
+        header("Location: login.php");
+        exit();
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>
