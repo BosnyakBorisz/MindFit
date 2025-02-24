@@ -82,21 +82,24 @@ body {
 
 }
 
+.step { 
+    display: none; 
+}
+
+.active { 
+    display: flex;
+    justify-content: center;
+}
+
+
 .error {
+    display: none;
     padding: 8px;
     margin-top: 5px;
     color: red;
     border: red;
     border-radius: 8px;
     background-color: rgb(238, 133, 133);
-}
-
-.step {
-    display: none; 
-}
-.step.active {
-    display: flex;
-    justify-content: center
 }
 
 .progress-calorie {
@@ -341,7 +344,7 @@ body {
     border-radius: 5px;
 }
 
-#nextgomb{
+.nextgomb{
     background-color: #eee;
     border: none;
     font-size: 1rem;
@@ -353,23 +356,23 @@ body {
     margin: 1rem 0;
 }
    
-#nextgomb:active {
+.nextgomb:active {
     color: #0072b1;
     box-shadow: 0 0.2rem #dfd9d9;
     transform: translateY(0.2rem);
 }
    
-#nextgomb:hover:not(:disabled) {
+.nextgomb:hover:not(:disabled) {
     background: #0F1C2E;
     color: white;
 }
    
-#nextgomb:disabled {
+.nextgomb:disabled {
     cursor: auto;
     color: grey;
 }
 
-#backgomb{
+.backgomb{
     background-color: #eee;
     border: none;
     font-size: 1rem;
@@ -381,18 +384,18 @@ body {
     margin: 1rem 0;
 }
    
-#backgomb:active {
+.backgomb:active {
     color: #0072b1;
     box-shadow: 0 0.2rem #dfd9d9;
     transform: translateY(0.2rem);
 }
    
-#backgomb:hover:not(:disabled) {
+.backgomb:hover:not(:disabled) {
     background: #0F1C2E;
     color: white;
 }
    
-#backgomb:disabled {
+.backgomb:disabled {
     cursor: auto;
     color: grey;
 }
