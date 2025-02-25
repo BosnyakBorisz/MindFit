@@ -489,27 +489,27 @@
                         <h2>Sérült testrész</h2>
                         <div class="d-flex flex-column">
                             <label>
-                                <img class="w-25" src="img/vall.png" alt="Váll">
+                                <img class="w-25" src="img/váll.jpg" alt="Váll">
                                 <input type="radio"></input>
                             </label>
                             <label>
-                                <img class="w-25" src="img/konyok.png" alt="Könyök">
+                                <img class="w-25" src="img/konyok.jpg" alt="Könyök">
                                 <input type="radio"></input>
                             </label>
                             <label>
-                                <img class="w-25" src="img/csuklo.png" alt="Csukló">
+                                <img class="w-25" src="img/csuklo.jpg" alt="Csukló">
                                 <input type="radio"></input>
                             </label>
                             <label>
-                                <img class="w-25" src="img/alsohat-png" alt="Alsó hát">
+                                <img class="w-25" src="img/alsóháti.jpg" alt="Alsó hát">
                                 <input type="radio"></input>
                             </label>
                             <label>
-                                <img class="w-25" src="img/terd-png" alt="Térd">
+                                <img class="w-25" src="img/terd.jpg" alt="Térd">
                                 <input type="radio"></input>
                             </label>
                             <label>
-                                <img class="w-25" src="img/boka-png" alt="Boka">
+                                <img class="w-25" src="img/boka.jpg" alt="Boka">
                                 <input type="radio"></input>
                             </label>
                         </div>
