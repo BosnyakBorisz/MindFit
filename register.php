@@ -19,36 +19,6 @@
 </head>
 <body>
 
-    <?php
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["next1"])){
-
-        $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
-        $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
-        $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
-        $repeat_password = filter_input(INPUT_POST, "reapeat-password", FILTER_SANITIZE_SPECIAL_CHARS);
-
-        if (empty($username)){
-
-        }
-        elseif (empty($email)){
-
-        }
-        elseif (empty($password)){
-
-        }
-        elseif ($password != $repeat_password){
-            
-        }
-        else {
-
-        }
-
-    }
-
-    ?>
-
-
     <div class="container mt-5">
         <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="POST" id="multiStepForm">
             <div class="container">
@@ -207,6 +177,10 @@
                                 document.getElementById("ageError").style.display = "block";
                                 document.getElementById("ageError").textContent = "Add meg az életkorodat!";
                             }
+                            else if( 14 > age || age > 100){
+                                document.getElementById("ageError").style.display = "block";
+                                document.getElementById("ageError").textContent = "14 és 100 év közötti értéket adj meg!";
+                            }
                             else {
                                 document.getElementById("ageError").style.display = "none";
                                 document.getElementById("ageError").textContent = "";
@@ -226,11 +200,11 @@
                             }
 
                             if (height === ""){
-                                height.getElementById("heightError").style.display = "block";
+                                document.getElementById("heightError").style.display = "block";
                                 document.getElementById("heightError").textContent = "Add meg a magasságod!";
                             }
                             else if (120 > height || height > 250) {
-                                height.getElementById("heightError").style.display = "block";
+                                document.getElementById("heightError").style.display = "block";
                                 document.getElementById("heightError").textContent = "120 és 250cm közötti értéket adj meg!";
                             }
                             else {
@@ -255,9 +229,26 @@
                             <p class="error" id="goalError"></p>
 
                             <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
-                            <button type="button" onclick="nextStep()" class="nextgomb">Következő</button>
+                            <button type="button" onclick="nextStep3()" class="nextgomb">Következő</button>
                         </div>
                     </div>
+
+                    <script>
+                        function nextStep3() {
+
+                            let goal =  document.getElementById("goal").value;
+
+                            if (goal === ""){
+                                document.getElementById("goalError").style.display = "block";
+                                document.getElementById("goalError").textContent = "Válassz célt!";
+                            }
+                            else {
+                                document.getElementById("goalError").style.display = "none";
+                                document.getElementById("goalError").textContent = "";
+                            }
+
+                        }
+                    </script>
 
                     <div class="step">
                         <h2>Jelenlegi testalkat</h2>
@@ -277,8 +268,28 @@
                         </div>
                         <p class="error" id="bodytypeError"></p>
                         <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
-                        <button type="button" onclick="nextStep()" class="nextgomb">Következő</button>
+                        <button type="button" onclick="nextStep4()" class="nextgomb">Következő</button>
                     </div>
+
+                    <script>
+                        function nextStep4() {
+
+                            const ectoRadio = document.getElementById('bodytype-ecto');
+                            const mesoRadio = document.getElementById('bodytype-meso');
+                            const endoRadio = document.getElementById('bodytype-endo');
+
+
+                            if (!ectoRadio.checked && !mesoRadio.checked && !endoRadio.checked) {
+                                document.getElementById("bodytypeError").style.display = "block";
+                                document.getElementById("bodytypeError").textContent = "Válassz testalkatot!";
+                            }
+                            else {
+                                document.getElementById("bodytypeError").style.display = "none";
+                                document.getElementById("bodytypeError").textContent = "";
+                            }
+
+                        }
+                    </script>
                 
                     <div class="step">
                         <h2>Jelenlegi testzsírszázalék</h2>
@@ -286,7 +297,7 @@
                         <p id="bodyfat-text">15%</p>
                         <input class="form-control" type="range" min="1" max="8" value="3" id="bodyfat-range" name="bodyfat-range"></input>
                         <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
-                        <button type="button" onclick="nextStep()" class="nextgomb">Következő</button>
+                        <button type="button" onclick="nextStep5()" class="nextgomb">Következő</button>
                     </div>
                 
                     <div class="step">
@@ -295,7 +306,7 @@
                         <p id="bodyfat-text2">15%</p>
                         <input class="form-control" type="range" min="1" max="8" value="3" id="bodyfat-range2" name="bodyfat-range2"></input>
                         <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
-                        <button type="button" onclick="nextStep()" class="nextgomb">Következő</button>
+                        <button type="button" onclick="nextStep6()" class="nextgomb">Következő</button>
                     </div>
                 
                     <div class="step">
@@ -316,9 +327,30 @@
                         </div>   
                         <p class="error" id="workoutError"></p>
                         <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
-                        <button type="button" onclick="nextStep()" class="nextgomb">Következő</button>
+                        <button type="button" onclick="nextStep7()" class="nextgomb">Következő</button>
                     </div>
                 
+                    <script>
+                        function nextStep7() {
+
+                            const freq1 = document.getElementById('workout-frequency1');
+                            const freq2 = document.getElementById('workout-frequency2');
+                            const freq3 = document.getElementById('workout-frequency3');
+                            const freq4 = document.getElementById('workout-frequency4');
+
+
+                            if (!freq1.checked && !freq2.checked && !freq3.checked && !freq4.checked) {
+                                document.getElementById("workoutError").style.display = "block";
+                                document.getElementById("workoutError").textContent = "Válassz egy értéket!";
+                            }
+                            else {
+                                document.getElementById("workoutError").style.display = "none";
+                                document.getElementById("workoutError").textContent = "";
+                            }
+
+                        }
+                    </script>
+
                     <div class="step">
                         <h2>Hány alkalommal szeretnél edzeni?</h2>                                             
                         <div class="d-flex flex-column">
@@ -346,8 +378,10 @@
                         </div>   
                         <p class="error" id="wantedWorkoutError"></p>
                         <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
-                        <button type="button" onclick="nextStep()" class="nextgomb">Következő</button>
+                        <button type="button" onclick="nextStep8()" class="nextgomb">Következő</button>
                     </div>  
+
+                    
                 
                     <div class="step">
                         <h2>Hány percig szeretnél edzeni?</h2>                                             
@@ -373,7 +407,7 @@
                         </div>   
                         <p class="error" id="wantedTimeError"></p>
                         <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
-                        <button type="button" onclick="nextStep()" class="nextgomb">Következő</button>
+                        <button type="button" onclick="nextStep9()" class="nextgomb">Következő</button>
                     </div>  
             
                     <div class="step">
@@ -389,7 +423,7 @@
                             </label>
                             <p class="error" id="placeError"></p>
                             <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
-                            <button type="button" onclick="nextStep()" class="nextgomb">Következő</button>
+                            <button type="button" onclick="nextStep10()" class="nextgomb">Következő</button>
                     </div>
             
                     <div class="step">
@@ -405,7 +439,7 @@
                         </label>
                         <p class="error" id="felszereltsegError"></p>
                         <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
-                        <button type="button" onclick="nextStep()" class="nextgomb">Következő</button>
+                        <button type="button" onclick="nextStep11()" class="nextgomb">Következő</button>
                     </div>
                 
                     <div class="step">
@@ -434,7 +468,7 @@
                         </div>
                         <p class="error" id="fokuszError"></p>
                         <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
-                        <button type="button" onclick="nextStep()" class="nextgomb">Következő</button>
+                        <button type="button" onclick="nextStep12()" class="nextgomb">Következő</button>
                     </div>
             
                     <div class="step">
