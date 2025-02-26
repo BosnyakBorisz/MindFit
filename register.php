@@ -60,87 +60,10 @@
                             <input type="checkbox" onclick="showRepPass()">Jelszó mutatása
                             <p class="error" id="repeatPasswordError"></p>
 
-                            <button type="button" name="next1" onclick="checkEmail()" class="nextgomb">Következő</button>
+                            <button type="button" name="next1" onclick="nextStep1()" class="nextgomb">Következő</button>
                             <p>Van már fiókod? <a href="login.php">Jelentkezz be</a></p>
-                        </div>
+                        </div>  
                     </div>
-
-                    <script>
-                            
-                            function checkEmail() {
-                               
-                                let username = document.getElementById("username").value;
-                                let email = document.getElementById("email").value;
-                                let password = document.getElementById("password").value;
-                                let repeatPassword = document.getElementById("repeat-password").value;
-                                let error = document.getElementById("emailError");
-
-
-
-                                if (username === ""){
-                                    document.getElementById("usernameError").style.display = "block";
-                                    document.getElementById("usernameError").textContent = "Felhasználónév megadása kötelező!";
-                                }
-                                else if (username.length < 5){
-                                    document.getElementById("usernameError").style.display = "block";
-                                    document.getElementById("usernameError").textContent = "Felhasználónévnek minimum 5 karakterből kell állnia!";
-                                }
-                                else {
-                                    document.getElementById("usernameError").style.display = "none";
-                                    document.getElementById("usernameError").textContent = "";
-                                }
-                                
-                                let lower = /^(?=.*[a-z])/;
-                                let upper = /(?=.*[A-Z])/;
-                                let digit = /(?=.*\d)/;
-                                let special = /(?=.*[@$!%*?&])/;
-                                let long = /[A-Za-z\d@$!%*?&]{8,15}/;
-                                
-                                let pwdLower = lower.test(password);
-                                let pwdUpper = upper.test(password);
-                                let pwdDigit = digit.test(password);
-                                let pwdSPecial = special.test(password);
-                                let pwdLong = long.test(password);
-
-                                if (password === ""){
-                                    document.getElementById("passwordError").style.display = "block";
-                                    document.getElementById("passwordError").textContent = "Jelszó megadása kötelező!";
-                                }
-                                else if (!pwdLong){
-                                    document.getElementById("passwordError").style.display = "block";
-                                    document.getElementById("passwordError").textContent = "A jelszónak 8 és 15 karakter között kell lennie!";
-                                }
-                                else if (!pwdLower){
-                                    document.getElementById("passwordError").style.display = "block";
-                                    document.getElementById("passwordError").textContent = "A jelszónak tartalmaznia kell kis karaktert!";
-                                }
-                                else if (!pwdUpper){
-                                    document.getElementById("passwordError").style.display = "block";
-                                    document.getElementById("passwordError").textContent = "A jelszónak tartalmaznia kell nagy karaktert!";
-                                }
-                                else if (!pwdDigit){
-                                    document.getElementById("passwordError").style.display = "block";
-                                    document.getElementById("passwordError").textContent = "A jelszónak tartalmaznia kell szám karaktert!";
-                                }
-                                else if (!pwdSPecial){
-                                    document.getElementById("passwordError").style.display = "block";
-                                    document.getElementById("passwordError").textContent = "A jelszónak tartalmaznia kell speciális karaktert!";
-                                }
-                                else {
-                                    document.getElementById("passwordError").style.display = "none";
-                                    document.getElementById("passwordError").textContent = "";
-                                }
-
-                                if (repeatPassword !== password){
-                                    document.getElementById("repeatPasswordError").style.display = "block";
-                                    document.getElementById("repeatPasswordError").textContent = "A jelszavak nem egyeznek!";
-                                }
-                                else {
-                                    document.getElementById("repeatPasswordError").style.display = "none";
-                                    document.getElementById("repeatPasswordError").textContent = "";
-                                }
-                            }
-                    </script>
                 
                     <div class="step">
                         <div id="keret">
@@ -165,69 +88,10 @@
                             <input class="form-control" min="120" max="300" type="number" id="height" name="height">
                             <p class="error" id="heightError"></p>
 
-                            <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
+                            <button type="button" class="backgomb">Vissza</button>
                             <button type="button" onclick="nextStep2()" class="nextgomb">Következő</button>
                         </div>
                     </div>
-
-                    <script>
-                        function nextStep2(){
-
-                            let sex = document.getElementById("sex").value;
-                            let age = document.getElementById("age").value;
-                            let weight = document.getElementById("weight").value;
-                            let height = document.getElementById("height").value;
-                        
-                            if (sex === ""){
-                                document.getElementById("sexError").style.display = "block";
-                                document.getElementById("sexError").textContent = "Válassz nemet!";
-                            }
-                            else {
-                                document.getElementById("sexError").style.display = "none";
-                                document.getElementById("sexError").textContent = "";
-                            }
-
-                            if (age === ""){
-                                document.getElementById("ageError").style.display = "block";
-                                document.getElementById("ageError").textContent = "Add meg az életkorodat!";
-                            }
-                            else if( 14 > age || age > 100){
-                                document.getElementById("ageError").style.display = "block";
-                                document.getElementById("ageError").textContent = "14 és 100 év közötti értéket adj meg!";
-                            }
-                            else {
-                                document.getElementById("ageError").style.display = "none";
-                                document.getElementById("ageError").textContent = "";
-                            }
-
-                            if (weight === ""){
-                                document.getElementById("weightError").style.display = "block";
-                                document.getElementById("weightError").textContent = "Add meg a testsúlyod!";
-                            }
-                            else if (40 > weight || weight > 150){
-                                document.getElementById("weightError").style.display = "block";
-                                document.getElementById("weightError").textContent = "40 és 150kg közötti értéket adj meg!";
-                            }
-                            else {
-                                document.getElementById("weightError").style.display = "none";
-                                document.getElementById("weightError").textContent = "";
-                            }
-
-                            if (height === ""){
-                                document.getElementById("heightError").style.display = "block";
-                                document.getElementById("heightError").textContent = "Add meg a magasságod!";
-                            }
-                            else if (120 > height || height > 250) {
-                                document.getElementById("heightError").style.display = "block";
-                                document.getElementById("heightError").textContent = "120 és 250cm közötti értéket adj meg!";
-                            }
-                            else {
-                                document.getElementById("heightError").style.display = "none";
-                                document.getElementById("heightError").textContent = "";
-                            }
-                        }
-                        
-                    </script>
 
                     <div class="step">
                         <div id="keret">
@@ -242,68 +106,31 @@
                             </select>
                             <p class="error" id="goalError"></p>
 
-                            <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
+                            <button type="button" class="backgomb">Vissza</button>
                             <button type="button" onclick="nextStep3()" class="nextgomb">Következő</button>
                         </div>
                     </div>
-
-                    <script>
-                        function nextStep3() {
-
-                            let goal =  document.getElementById("goal").value;
-
-                            if (goal === ""){
-                                document.getElementById("goalError").style.display = "block";
-                                document.getElementById("goalError").textContent = "Válassz célt!";
-                            }
-                            else {
-                                document.getElementById("goalError").style.display = "none";
-                                document.getElementById("goalError").textContent = "";
-                            }
-
-                        }
-                    </script>
 
                     <div class="step">
                         <h2>Jelenlegi testalkat</h2>
                         <div class="d-flex">
                             <label>
                                 <img id="ectomorph-img" src="img/ectomorph-ferfi.png" alt="Mezmorf férfi">
-                                <input class="hidden" type="radio" id="bodytype-ecto" name="bodytype"></input>
+                                <input class="hidden" type="radio" id="bodytype-ecto" name="bodytype" value="Ectomorph"></input>
                             </label>
                             <label>
                                 <img id="mesomoph-img" src="img/mesomorph-ferfi.png" alt="Mezmorf férfi">
-                                <input class="hidden" type="radio" id="bodytype-meso" name="bodytype"></input>                            
+                                <input class="hidden" type="radio" id="bodytype-meso" name="bodytype" value="Mesomorph"></input>                            
                             </label>
                             <label>
                                 <img id="endomorph-img" src="img/endomorph-ferfi.png" alt="Mezomorf férfi">
-                                <input class="hidden" type="radio" id="bodytype-endo" name="bodytype"></input>                           
+                                <input class="hidden" type="radio" id="bodytype-endo" name="bodytype" value="Endomorph"></input>                           
                             </label>
                         </div>
                         <p class="error" id="bodytypeError"></p>
                         <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
                         <button type="button" onclick="nextStep4()" class="nextgomb">Következő</button>
                     </div>
-
-                    <script>
-                        function nextStep4() {
-
-                            const ectoRadio = document.getElementById('bodytype-ecto');
-                            const mesoRadio = document.getElementById('bodytype-meso');
-                            const endoRadio = document.getElementById('bodytype-endo');
-
-
-                            if (!ectoRadio.checked && !mesoRadio.checked && !endoRadio.checked) {
-                                document.getElementById("bodytypeError").style.display = "block";
-                                document.getElementById("bodytypeError").textContent = "Válassz testalkatot!";
-                            }
-                            else {
-                                document.getElementById("bodytypeError").style.display = "none";
-                                document.getElementById("bodytypeError").textContent = "";
-                            }
-
-                        }
-                    </script>
                 
                     <div class="step">
                         <h2>Jelenlegi testzsírszázalék</h2>
@@ -327,113 +154,90 @@
                         <h2>Hányszor edzel egy héten?</h2>    
                         <div class="d-flex flex-column">
                             <label class="workout-card">1-2x hetente 
-                                <input type="radio" name="workout-frequency" id="workout-frequency1"></input>
+                                <input type="radio" name="workout-frequency" id="workout-frequency1" value="1-2x hetente ">
                             </label>                                                     
                             <label class="workout-card">3x hetente
-                                <input type="radio" name="workout-frequency" id="workout-frequency2">
+                                <input type="radio" name="workout-frequency" id="workout-frequency2" value="3x hetente">
                             </label>  
                             <label class="workout-card">Több mint 4x hetente 
-                                <input type="radio" name="workout-frequency" id="workout-frequency3">
+                                <input type="radio" name="workout-frequency" id="workout-frequency3" value="Több mint 4x hetente ">
                             </label> 
                             <label class="workout-card">Nem edzek
-                                <input type="radio" name="workout-frequency" id="workout-frequency4">
+                                <input type="radio" name="workout-frequency" id="workout-frequency4" value="Nem edzek">
                             </label>  
                         </div>   
                         <p class="error" id="workoutError"></p>
                         <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
                         <button type="button" onclick="nextStep7()" class="nextgomb">Következő</button>
                     </div>
-                
-                    <script>
-                        function nextStep7() {
-
-                            const freq1 = document.getElementById('workout-frequency1');
-                            const freq2 = document.getElementById('workout-frequency2');
-                            const freq3 = document.getElementById('workout-frequency3');
-                            const freq4 = document.getElementById('workout-frequency4');
-
-
-                            if (!freq1.checked && !freq2.checked && !freq3.checked && !freq4.checked) {
-                                document.getElementById("workoutError").style.display = "block";
-                                document.getElementById("workoutError").textContent = "Válassz egy értéket!";
-                            }
-                            else {
-                                document.getElementById("workoutError").style.display = "none";
-                                document.getElementById("workoutError").textContent = "";
-                            }
-
-                        }
-                    </script>
 
                     <div class="step">
                         <h2>Hány alkalommal szeretnél edzeni?</h2>                                             
                         <div class="d-flex flex-column">
                             <label class="workout-card">1x hetente
-                                <input type="radio" name="wanted-workout-frequency" id="wanted-workout-frequency1"></input>
+                                <input type="radio" name="wanted-workout-frequency" id="wanted-workout-frequency1" value="1"></input>
                             </label>                                                     
                             <label class="workout-card">2x hetente
-                                <input type="radio"name="wanted-workout-frequency" id="wanted-workout-frequency2"></input>
+                                <input type="radio"name="wanted-workout-frequency" id="wanted-workout-frequency2" value="2"></input>
                             </label>  
                             <label class="workout-card">3x hetente
-                                <input type="radio"name="wanted-workout-frequency" id="wanted-workout-frequency3"></input>
+                                <input type="radio"name="wanted-workout-frequency" id="wanted-workout-frequency3" value="3"></input>
                             </label> 
                             <label class="workout-card">4x hetente
-                                <input type="radio"name="wanted-workout-frequency" id="wanted-workout-frequency4"></input>
+                                <input type="radio"name="wanted-workout-frequency" id="wanted-workout-frequency4" value="4"></input>
                             </label> 
                             <label class="workout-card">5x hetente
-                                <input type="radio" name="wanted-workout-frequency" id="wanted-workout-frequency5"></input>
+                                <input type="radio" name="wanted-workout-frequency" id="wanted-workout-frequency5" value="5"></input>
                             </label> 
                             <label class="workout-card">6x hetente
-                                <input type="radio" name="wanted-workout-frequency" id="wanted-workout-frequency6"></input>
+                                <input type="radio" name="wanted-workout-frequency" id="wanted-workout-frequency6" value="6"></input>
                             </label> 
                             <label class="workout-card">7x hetente
-                                <input type="radio" name="wanted-workout-frequency" id="wanted-workout-frequency7"></input>
+                                <input type="radio" name="wanted-workout-frequency" id="wanted-workout-frequency7" value="7"></input>
                             </label> 
                         </div>   
                         <p class="error" id="wantedWorkoutError"></p>
                         <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
                         <button type="button" onclick="nextStep8()" class="nextgomb">Következő</button>
-                    </div>  
-
-                    
+                    </div> 
                 
                     <div class="step">
                         <h2>Hány percig szeretnél edzeni?</h2>                                             
                         <div class="d-flex flex-column">
                             <label class="workout-card">30 perc
-                                <input type="radio" name="wanted-workout-time" id="wanted-workout-time1"></input>
+                                <input type="radio" name="wanted-workout-time" id="wanted-workout-time1" value="30"></input>
                             </label>                                                     
                             <label class="workout-card">45 perc
-                                <input type="radio" name="wanted-workout-time" id="wanted-workout-time2"></input>
+                                <input type="radio" name="wanted-workout-time" id="wanted-workout-time2" value="45"></input>
                             </label>     
                             <label class="workout-card">60 perc
-                                <input type="radio" name="wanted-workout-time" id="wanted-workout-time3"></input>
+                                <input type="radio" name="wanted-workout-time" id="wanted-workout-time3" value="60"></input>
                             </label>     
                             <label class="workout-card">75 perc
-                                <input type="radio" name="wanted-workout-time" id="wanted-workout-time4"></input>
+                                <input type="radio" name="wanted-workout-time" id="wanted-workout-time4" value="75"></input>
                             </label>     
                             <label class="workout-card">90 perc
-                                <input type="radio" name="wanted-workout-time" id="wanted-workout-time5"></input>
+                                <input type="radio" name="wanted-workout-time" id="wanted-workout-time5" value="90"></input>
                             </label>     
                             <label class="workout-card">120 perc
-                                <input type="radio" name="wanted-workout-time" id="wanted-workout-time6"></input>
+                                <input type="radio" name="wanted-workout-time" id="wanted-workout-time6" value="120"></input>
                             </label>     
                         </div>   
                         <p class="error" id="wantedTimeError"></p>
                         <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
                         <button type="button" onclick="nextStep9()" class="nextgomb">Következő</button>
                     </div>  
-            
+
                     <div class="step">
                             <h2>Hol edzel?</h2>
                             <label class="workout-card">Konditerem
-                                <input type="radio" name="edzeshelye"></input>
+                                <input type="radio" name="edzeshelye" id="workoutplace1" value="Konditerem"></input>
                             </label>
                             <label class="workout-card">Otthon
-                                <input type="radio" name="edzeshelye"></input>
+                                <input type="radio" name="edzeshelye" id="workoutplace2" value="Otthon"></input>
                             </label>
                             <label class="workout-card">Hibrid
-                                <input type="radio" name="edzeshelye"></input>
+                                <input type="radio" name="edzeshelye" id="workoutplace3" value="Hibrid"></input>
                             </label>
                             <p class="error" id="placeError"></p>
                             <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
@@ -443,13 +247,13 @@
                     <div class="step">
                         <h2>Felszeretlség</h2>
                         <label class="workout-card">Maximális felszereltség
-                            <input type="radio" name="felszereltseg"></input>
+                            <input type="radio" name="felszereltseg" id="equipment1" value="Maximális felszereltség"></input>
                         </label>
                         <label class="workout-card">Korlátozott felszereltség
-                            <input type="radio" name="felszereltseg"></input>
+                            <input type="radio" name="felszereltseg" id="equipment2" value="Korlátozott felszereltség"></input>
                         </label>
                         <label class="workout-card">Saját testsúly
-                            <input type="radio" name="felszereltseg"></input>
+                            <input type="radio" name="felszereltseg" id="equipment3" value="Saját testsúly"></input>
                         </label>
                         <p class="error" id="felszereltsegError"></p>
                         <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
@@ -461,23 +265,23 @@
                         <div class="d-flex flex-column">
                             <label>
                                 <img class="w-25" src="img/ferfi-mell.png" alt="Férfi mell">
-                                <input type="radio" name="fokuszaltizomcsoport"></input>
+                                <input type="checkbox" name="fokuszaltizomcsoport" value="Mell"></input>
                             </label>
                             <label>
                                 <img class="w-25" src="img/ferfi-hat.png" alt="Férfi hát">
-                                <input type="radio" name="fokuszaltizomcsoport"></input>
+                                <input type="checkbox" name="fokuszaltizomcsoport" value="Hát"></input>
                                 </label>
                             <label>
                                 <img class="w-25" src="img/ferfi-has.png" alt="Férfi has">
-                                <input type="radio" name="fokuszaltizomcsoport"></input>
+                                <input type="checkbox" name="fokuszaltizomcsoport" value="Has"></input>
                             </label>
                             <label>
                                 <img class="w-25" src="img/ferfi-bicepsz.png" alt="Férfi bicepsz">
-                                <input type="radio" name="fokuszaltizomcsoport"></input>
+                                <input type="checkbox" name="fokuszaltizomcsoport" value="Bicepsz"></input>
                             </label>
                             <label>
                                 <img class="w-25" src="img/ferfi-vall.png" alt="Férfi váll">
-                                <input type="radio" name="fokuszaltizomcsoport"></input>
+                                <input type="checkbox" name="fokuszaltizomcsoport" value="Váll"></input>
                             </label>
                         </div>
                         <p class="error" id="fokuszError"></p>
@@ -490,27 +294,27 @@
                         <div class="d-flex flex-column">
                             <label>
                                 <img class="w-25" src="img/váll.jpg" alt="Váll">
-                                <input type="radio"></input>
+                                <input type="checkbox" name="injured" value="Váll"></input>
                             </label>
                             <label>
                                 <img class="w-25" src="img/konyok.jpg" alt="Könyök">
-                                <input type="radio"></input>
+                                <input type="checkbox" name="injured" value="Könyök"></input>
                             </label>
                             <label>
                                 <img class="w-25" src="img/csuklo.jpg" alt="Csukló">
-                                <input type="radio"></input>
+                                <input type="checkbox" name="injured" value="Csukló"></input>
                             </label>
                             <label>
-                                <img class="w-25" src="img/alsóháti.jpg" alt="Alsó hát">
-                                <input type="radio"></input>
+                                <img class="w-25" src="img/alsóháti.jpg" alt="Alsóhát">
+                                <input type="checkbox" name="injured" value="Alsóhát"></input>
                             </label>
                             <label>
                                 <img class="w-25" src="img/terd.jpg" alt="Térd">
-                                <input type="radio"></input>
+                                <input type="checkbox" name="injured" value="Térd"></input>
                             </label>
                             <label>
                                 <img class="w-25" src="img/boka.jpg" alt="Boka">
-                                <input type="radio"></input>
+                                <input type="checkbox" name="injured" value="Boka"></input>
                             </label>
                         </div>
                         <p class="error" id="serultError"></p>
@@ -522,50 +326,194 @@
         </form>
     </div>
 
-        <script>
-            function showPass() {
-                let showPass = document.getElementById("password");
+    <?php
 
-                if (showPass.type === "password") {
-                    showPass.type = "text";
-                } else {
-                    showPass.type = "password";
-                }
+        include("database.php");
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+            $username = trim(filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS));
+            $email = trim(filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL));
+            $password = trim(filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS));            
+            $hash = password_hash($password, PASSWORD_BCRYPT);
+
+            $sql1 = "INSERT INTO `users`( `felhasznnev`, `email`, `jelszo`) VALUES ('$username', '$email', '$hash')";
+
+            try {
+                mysqli_query($conn, $sql1);
+            }
+            catch (mysqli_sql_exception) {
+                
             }
 
-            function showRepPass() {
-                let showRepPass = document.getElementById("repeat-password");
+            $sql2 = "SELECT `id` FROM `users` WHERE `email` LIKE '$email'";
 
-                if (showRepPass.type === "password") {
-                    showRepPass.type = "text";
-                } else {
-                    showRepPass.type = "password";
+            try {
+                $result = mysqli_query($conn, $sql2);
+
+                if (mysqli_num_rows($result) > 0){
+                    $row = mysqli_fetch_assoc($result);
+                    $userID = $row["id"];
+
+                    $sex = trim(filter_input(INPUT_POST, 'sex', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+                    $age = filter_input(INPUT_POST, 'age', FILTER_VALIDATE_INT);
+                    $weight = filter_input(INPUT_POST, 'weight', FILTER_VALIDATE_INT);
+                    $height = filter_input(INPUT_POST, 'height', FILTER_VALIDATE_INT);
+                    $goal = trim(filter_input(INPUT_POST, 'goal', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+                    $bodytype = filter_input(INPUT_POST, 'bodytype', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                    $currentBodyfat = filter_input(INPUT_POST, 'bodyfat-range', FILTER_SANITIZE_NUMBER_INT);
+                    $goalBodyfat = filter_input(INPUT_POST, 'bodyfat-range2', FILTER_SANITIZE_NUMBER_INT);
+                    $workoutFrequency = filter_input(INPUT_POST, 'workout-frequency', FILTER_SANITIZE_SPECIAL_CHARS);
+                    $wantedWorkoutFrequency = filter_input(INPUT_POST, 'wanted-workout-frequency', FILTER_SANITIZE_NUMBER_INT);
+                    $wantedWorkoutTime = filter_input(INPUT_POST, 'wanted-workout-time', FILTER_SANITIZE_NUMBER_INT);
+                    $workoutPlace = filter_input(INPUT_POST, 'edzeshelye', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                    $equipment = filter_input(INPUT_POST, 'felszereltseg', FILTER_SANITIZE_SPECIAL_CHARS);
+                    $focusedMuscle = filter_input(INPUT_POST, 'fokuszaltizomcsoport', FILTER_SANITIZE_SPECIAL_CHARS);
+                    $injured = filter_input(INPUT_POST, 'injured', FILTER_SANITIZE_SPECIAL_CHARS);
+
+                    $sql3 = "INSERT INTO `user_information` (`user_id`, `nem`, `kor`, `testsuly`, `magassag`, `cel`, `testalkat`, `jelenlegi_testzsir`, `cel_testzsir`, `jelenlegi_edzes_per_het`, `kivant_edzes_per_het`, `kivant_edzes_hossza`, `edzes_helye`, `felszereltseg`, `fokuszalt_izomcsoport`, `serult_testrész`) VALUES ('$userID','$sex','$age','$weight','$height','$goal','$bodytype','$currentBodyfat','$goalBodyfat','$workoutFrequency','$wantedWorkoutFrequency','$wantedWorkoutTime','$workoutPlace','$equipment','$focusedMuscle','$injured')";
+        
+                    try {
+                        mysqli_query($conn, $sql3);
+                    }
+                    catch (mysqli_sql_exception) {
+                        
+                    }
                 }
             }
-        </script>
+            catch (mysqli_sql_exception) {
+                
+            }
 
-        <script>
 
-            const rangeInput = document.getElementById('bodyfat-range');
-            const image = document.getElementById('bodyfat-image');
-            const valueText = document.getElementById('bodyfat-text');
+        }
 
-            const rangeInput2 = document.getElementById('bodyfat-range2');
-            const image2 = document.getElementById('bodyfat-image2');
-            const valueText2 = document.getElementById('bodyfat-text2');
+    ?>
 
-            rangeInput.addEventListener('input', function() {
-                const value = rangeInput.value * 5;
-                valueText.textContent = value + "%";
-                image.src = `img/ferfi-testzsir-${value}.jpg`;
+    <script src="nextStep.js"></script>
+
+    <script>
+
+        document.querySelectorAll('.nextgomb').forEach(button => {
+            button.addEventListener('click', function () {
+
+                let currentStep = document.querySelector('.step.active');
+                
+                let valid = false;
+
+                if (currentStep.classList.contains('active')) {
+                    if (currentStep === document.querySelector('.step:nth-child(1)')) {
+                        valid = nextStep1();
+                        console.log(valid)
+                    }
+                    else if (currentStep === document.querySelector('.step:nth-child(2)')) {
+                        valid = nextStep2();
+                    }
+                    else if (currentStep === document.querySelector('.step:nth-child(3)')) {
+                        valid = nextStep3();
+                    }
+                    else if (currentStep === document.querySelector('.step:nth-child(4)')) {
+                        valid = nextStep4();
+                    }
+                    else if (currentStep === document.querySelector('.step:nth-child(5)')) {
+                        valid = nextStep5();
+                    }
+                    else if (currentStep === document.querySelector('.step:nth-child(6)')) {
+                        valid = nextStep6();
+                    }
+                    else if (currentStep === document.querySelector('.step:nth-child(7)')) {
+                        valid = nextStep7();
+                    }
+                    else if (currentStep === document.querySelector('.step:nth-child(8)')) {
+                        valid = nextStep8();
+                    }
+                    else if (currentStep === document.querySelector('.step:nth-child(9)')) {
+                        valid = nextStep9();
+                    }
+                    else if (currentStep === document.querySelector('.step:nth-child(10)')) {
+                        valid = nextStep10();
+                    }
+                    else if (currentStep === document.querySelector('.step:nth-child(11)')) {
+                        valid = nextStep11();
+                    }
+                    else if (currentStep === document.querySelector('.step:nth-child(12)')) {
+                        valid = nextStep12();
+                    }
+                }
+
+                if (valid) {
+                    currentStep.classList.remove('active');
+                    let nextStep = currentStep.nextElementSibling;
+                    if (nextStep && nextStep.classList.contains('step')) {
+                        nextStep.classList.add('active');
+                        valid = false;
+                    }
+                }
             });
+        });
 
-            rangeInput2.addEventListener('input', function() {
-                const value = rangeInput2.value * 5;
-                valueText2.textContent = value + "%";
-                image2.src = `img/ferfi-testzsir-${value}.jpg`;
+        document.querySelectorAll('.backgomb').forEach(button => {
+            button.addEventListener('click', function () {
+
+                let currentStep = document.querySelector('.step.active'); 
+                let prevStep = currentStep.previousElementSibling;
+
+                if (prevStep && prevStep.classList.contains('step')) {
+
+                    currentStep.classList.remove('active');
+                    prevStep.classList.add('active');
+                }
             });
+        });
 
-        </script>
+
+    </script>
+
+    <script>
+        function showPass() {
+            let showPass = document.getElementById("password");
+
+            if (showPass.type === "password") {
+                showPass.type = "text";
+            } else {
+                showPass.type = "password";
+            }
+        }
+
+        function showRepPass() {
+            let showRepPass = document.getElementById("repeat-password");
+
+            if (showRepPass.type === "password") {
+                showRepPass.type = "text";
+            } else {
+                showRepPass.type = "password";
+            }
+        }
+    </script>
+
+    <script>
+
+        const rangeInput = document.getElementById('bodyfat-range');
+        const image = document.getElementById('bodyfat-image');
+        const valueText = document.getElementById('bodyfat-text');
+
+        const rangeInput2 = document.getElementById('bodyfat-range2');
+        const image2 = document.getElementById('bodyfat-image2');
+        const valueText2 = document.getElementById('bodyfat-text2');
+
+        rangeInput.addEventListener('input', function() {
+            const value = rangeInput.value * 5;
+            valueText.textContent = value + "%";
+            image.src = `img/ferfi-testzsir-${value}.jpg`;
+        });
+
+        rangeInput2.addEventListener('input', function() {
+            const value = rangeInput2.value * 5;
+            valueText2.textContent = value + "%";
+            image2.src = `img/ferfi-testzsir-${value}.jpg`;
+        });
+
+    </script>
+
 </body>
 </html>
