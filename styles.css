@@ -83,7 +83,7 @@ body {
 }
 
 .step { 
-    display: none; 
+   /*display: none; */
 }
 
 .active { 
@@ -342,6 +342,7 @@ body {
     width: 30rem;
     padding: 20px;
     border-radius: 5px;
+    margin: auto;
 }
 
 .nextgomb{
@@ -410,52 +411,61 @@ body {
     margin: 4px;
 }
 
-/* From Uiverse.io by catraco */ 
-/*------ Settings ------*/
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 35px; 
+}
+
 .container-szem {
     --color: var(--c);
     --size: 25px;
     display: flex;
     justify-content: end;
     align-items: end;
-    position: relative;
+    position: absolute;
     cursor: pointer;
     font-size: var(--size);
     user-select: none;
     fill: var(--color);
-  }
+    right: 10px;
+    top: 80%;
+    transform: translateY(-50%);
+}
   
-  .container-szem .szem1 {
+.container-szem .szem1 {
     position: absolute;
     animation: keyframes-fill .5s;
-  }
+}
   
-  .container-szem .szem2 {
+.container-szem .szem2 {
     position: absolute;
     animation: keyframes-fill .5s;
     display: none;
-  }
-  
-  /* ------ On check event ------ */
-  .container-szem1 input:checked ~ .szem1 {
+}
+
+.container-szem1 input:checked ~ .szem1 {
     display: none;
-  }
+}
   
-  .container-szem input:checked ~ .szem2 {
+.container-szem input:checked ~ .szem2 {
     display: block;
-  }
+}
   
-  /* ------ Hide the default checkbox ------ */
-  .container-szem input {
+.container-szem input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
-  }
+}
   
-  /* ------ Animation ------ */
-  @keyframes keyframes-fill {
+@keyframes keyframes-fill {
     0% {
       transform: scale(0);
       opacity: 0;
@@ -464,4 +474,5 @@ body {
     50% {
       transform: scale(1.2);
     }
-  }
+}
+
