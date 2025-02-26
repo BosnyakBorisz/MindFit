@@ -1,21 +1,34 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "mindfit";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) { die("Kapcsolódási hiba: " . $conn->connect_error); }
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "mindfit";
 
-$email = $_POST['email'];
-$sql = "SELECT id FROM users WHERE email = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $email);
-$stmt->execute();
-$stmt->store_result();
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-echo json_encode(["exists" => $stmt->num_rows > 0]);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
 
-$stmt->close();
-$conn->close();
+    $data = json_decode(file_get_contents('php://input'), true);
+    $email = $data['email'];
+
+    $sql = "SELECT * FROM users WHERE email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $response = [];
+    if ($result->num_rows > 0) {
+        $response['exists'] = true;
+    } else {
+        $response['exists'] = false;
+    }
+
+    echo json_encode($response);
+
+    $stmt->close();
+    $conn->close();
 ?>
