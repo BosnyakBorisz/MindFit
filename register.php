@@ -111,123 +111,136 @@
                     </div>
 
                     <div class="step">
-                        <h2>Jelenlegi testalkat</h2>
-                        <div class="d-flex">
-                            <label>
-                                <img id="ectomorph-img" src="img/ectomorph-ferfi.png" alt="Mezmorf férfi">
-                                <input class="hidden" type="radio" id="bodytype-ecto" name="bodytype" value="Ectomorph"></input>
-                            </label>
-                            <label>
-                                <img id="mesomoph-img" src="img/mesomorph-ferfi.png" alt="Mezmorf férfi">
-                                <input class="hidden" type="radio" id="bodytype-meso" name="bodytype" value="Mesomorph"></input>                            
-                            </label>
-                            <label>
-                                <img id="endomorph-img" src="img/endomorph-ferfi.png" alt="Mezomorf férfi">
-                                <input class="hidden" type="radio" id="bodytype-endo" name="bodytype" value="Endomorph"></input>                           
-                            </label>
+                        <div id="keret">
+                            <h2>Jelenlegi testalkat</h2>
+                            <div class="d-flex">
+                                <label>
+                                    <img id="ectomorph-img" src="img/ectomorph-ferfi.png" alt="Mezmorf férfi">
+                                    <input class="hidden" type="radio" id="bodytype-ecto" name="bodytype" value="Ectomorph"></input>
+                                </label>
+                                <label>
+                                    <img id="mesomoph-img" src="img/mesomorph-ferfi.png" alt="Mezmorf férfi">
+                                    <input class="hidden" type="radio" id="bodytype-meso" name="bodytype" value="Mesomorph"></input>                            
+                                </label>
+                                <label>
+                                    <img id="endomorph-img" src="img/endomorph-ferfi.png" alt="Mezomorf férfi">
+                                    <input class="hidden" type="radio" id="bodytype-endo" name="bodytype" value="Endomorph"></input>                           
+                                </label>
+                            </div>
+                            <p class="error" id="bodytypeError"></p>
+                            <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
+                            <button type="button" onclick="nextStep4()" class="nextgomb">Következő</button>
+                        <</div>
+                    </div>
+                
+                    <div class="step">
+                        <div id="keret">
+                            <h2>Jelenlegi testzsírszázalék</h2>
+                            <img id="bodyfat-image" src="img/ferfi-testzsir-15.jpg" alt="Testzsíszázalék">
+                            <p id="bodyfat-text">15%</p>
+                            <input class="form-control" type="range" min="1" max="8" value="3" id="bodyfat-range" name="bodyfat-range"></input>
+                            <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
+                            <button type="button" onclick="nextStep5()" class="nextgomb">Következő</button>
                         </div>
-                        <p class="error" id="bodytypeError"></p>
-                        <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
-                        <button type="button" onclick="nextStep4()" class="nextgomb">Következő</button>
                     </div>
                 
                     <div class="step">
-                        <h2>Jelenlegi testzsírszázalék</h2>
-                        <img id="bodyfat-image" src="img/ferfi-testzsir-15.jpg" alt="Testzsíszázalék">
-                        <p id="bodyfat-text">15%</p>
-                        <input class="form-control" type="range" min="1" max="8" value="3" id="bodyfat-range" name="bodyfat-range"></input>
-                        <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
-                        <button type="button" onclick="nextStep5()" class="nextgomb">Következő</button>
+                        <div id="keret">
+                            <h2>Cél testzsírszázalék</h2>
+                            <img id="bodyfat-image2" src="img/ferfi-testzsir-15.jpg" alt="Testzsíszázalék" >
+                            <p id="bodyfat-text2">15%</p>
+                            <input class="form-control" type="range" min="1" max="8" value="3" id="bodyfat-range2" name="bodyfat-range2"></input>
+                            <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
+                            <button type="button" onclick="nextStep6()" class="nextgomb">Következő</button>
+                        </div>
                     </div>
                 
                     <div class="step">
-                        <h2>Cél testzsírszázalék</h2>
-                        <img id="bodyfat-image2" src="img/ferfi-testzsir-15.jpg" alt="Testzsíszázalék">
-                        <p id="bodyfat-text2">15%</p>
-                        <input class="form-control" type="range" min="1" max="8" value="3" id="bodyfat-range2" name="bodyfat-range2"></input>
-                        <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
-                        <button type="button" onclick="nextStep6()" class="nextgomb">Következő</button>
-                    </div>
-                
-                    <div class="step">
-                        <h2>Hányszor edzel egy héten?</h2>    
-                        <div class="d-flex flex-column">
-                            <label class="workout-card">1-2x hetente 
-                                <input type="radio" name="workout-frequency" id="workout-frequency1" value="1-2x hetente ">
-                            </label>                                                     
-                            <label class="workout-card">3x hetente
-                                <input type="radio" name="workout-frequency" id="workout-frequency2" value="3x hetente">
-                            </label>  
-                            <label class="workout-card">Több mint 4x hetente 
-                                <input type="radio" name="workout-frequency" id="workout-frequency3" value="Több mint 4x hetente ">
-                            </label> 
-                            <label class="workout-card">Nem edzek
-                                <input type="radio" name="workout-frequency" id="workout-frequency4" value="Nem edzek">
-                            </label>  
-                        </div>   
-                        <p class="error" id="workoutError"></p>
-                        <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
-                        <button type="button" onclick="nextStep7()" class="nextgomb">Következő</button>
+                        <div id="keret">
+                            <h2>Hányszor edzel egy héten?</h2>    
+                            <div class="d-flex flex-column">
+                                <label class="workout-card">1-2x hetente 
+                                    <input type="radio" name="workout-frequency" id="workout-frequency2" value="3x hetente">
+                                </label>                                                     
+                                <label class="workout-card">3x hetente
+                                    <input type="radio" name="workout-frequency" id="workout-frequency2" value="3x hetente">
+                                </label>  
+                                <label class="workout-card">Több mint 4x hetente 
+                                    <input type="radio" name="workout-frequency" id="workout-frequency3" value="Több mint 4x hetente ">
+                                </label> 
+                                <label class="workout-card">Nem edzek
+                                    <input type="radio" name="workout-frequency" id="workout-frequency4" value="Nem edzek">
+                                </label>  
+                            </div>   
+                            <p class="error" id="workoutError"></p>
+                            <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
+                            <button type="button" onclick="nextStep7()" class="nextgomb">Következő</button>
+                        </div>  
                     </div>
 
                     <div class="step">
-                        <h2>Hány alkalommal szeretnél edzeni?</h2>                                             
-                        <div class="d-flex flex-column">
-                            <label class="workout-card">1x hetente
-                                <input type="radio" name="wanted-workout-frequency" id="wanted-workout-frequency1" value="1"></input>
-                            </label>                                                     
-                            <label class="workout-card">2x hetente
-                                <input type="radio"name="wanted-workout-frequency" id="wanted-workout-frequency2" value="2"></input>
-                            </label>  
-                            <label class="workout-card">3x hetente
-                                <input type="radio"name="wanted-workout-frequency" id="wanted-workout-frequency3" value="3"></input>
-                            </label> 
-                            <label class="workout-card">4x hetente
-                                <input type="radio"name="wanted-workout-frequency" id="wanted-workout-frequency4" value="4"></input>
-                            </label> 
-                            <label class="workout-card">5x hetente
-                                <input type="radio" name="wanted-workout-frequency" id="wanted-workout-frequency5" value="5"></input>
-                            </label> 
-                            <label class="workout-card">6x hetente
-                                <input type="radio" name="wanted-workout-frequency" id="wanted-workout-frequency6" value="6"></input>
-                            </label> 
-                            <label class="workout-card">7x hetente
-                                <input type="radio" name="wanted-workout-frequency" id="wanted-workout-frequency7" value="7"></input>
-                            </label> 
-                        </div>   
-                        <p class="error" id="wantedWorkoutError"></p>
-                        <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
-                        <button type="button" onclick="nextStep8()" class="nextgomb">Következő</button>
+                        <div id="keret">
+                            <h2>Hány alkalommal szeretnél edzeni?</h2>                                             
+                            <div class="d-flex flex-column">
+                                <label class="workout-card">1x hetente
+                                    <input type="radio" name="wanted-workout-frequency" id="wanted-workout-frequency1" value="1"></input>
+                                </label>                                                     
+                                <label class="workout-card">2x hetente
+                                    <input type="radio"name="wanted-workout-frequency" id="wanted-workout-frequency2" value="2"></input>
+                                </label>  
+                                <label class="workout-card">3x hetente
+                                    <input type="radio"name="wanted-workout-frequency" id="wanted-workout-frequency3" value="3"></input>
+                                </label> 
+                                <label class="workout-card">4x hetente
+                                    <input type="radio"name="wanted-workout-frequency" id="wanted-workout-frequency4" value="4"></input>
+                                </label> 
+                                <label class="workout-card">5x hetente
+                                    <input type="radio" name="wanted-workout-frequency" id="wanted-workout-frequency5" value="5"></input>
+                                </label> 
+                                <label class="workout-card">6x hetente
+                                    <input type="radio" name="wanted-workout-frequency" id="wanted-workout-frequency6" value="6"></input>
+                                </label> 
+                                <label class="workout-card">7x hetente
+                                    <input type="radio" name="wanted-workout-frequency" id="wanted-workout-frequency7" value="7"></input>
+                                </label> 
+                            </div>   
+                            <p class="error" id="wantedWorkoutError"></p>
+                            <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
+                            <button type="button" onclick="nextStep8()" class="nextgomb">Következő</button>
+                        </div>  
                     </div> 
                 
                     <div class="step">
-                        <h2>Hány percig szeretnél edzeni?</h2>                                             
-                        <div class="d-flex flex-column">
-                            <label class="workout-card">30 perc
-                                <input type="radio" name="wanted-workout-time" id="wanted-workout-time1" value="30"></input>
-                            </label>                                                     
-                            <label class="workout-card">45 perc
-                                <input type="radio" name="wanted-workout-time" id="wanted-workout-time2" value="45"></input>
-                            </label>     
-                            <label class="workout-card">60 perc
-                                <input type="radio" name="wanted-workout-time" id="wanted-workout-time3" value="60"></input>
-                            </label>     
-                            <label class="workout-card">75 perc
-                                <input type="radio" name="wanted-workout-time" id="wanted-workout-time4" value="75"></input>
-                            </label>     
-                            <label class="workout-card">90 perc
-                                <input type="radio" name="wanted-workout-time" id="wanted-workout-time5" value="90"></input>
-                            </label>     
-                            <label class="workout-card">120 perc
-                                <input type="radio" name="wanted-workout-time" id="wanted-workout-time6" value="120"></input>
-                            </label>     
-                        </div>   
-                        <p class="error" id="wantedTimeError"></p>
-                        <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
-                        <button type="button" onclick="nextStep9()" class="nextgomb">Következő</button>
+                        <div id="keret">
+                            <h2>Hány percig szeretnél edzeni?</h2>                                             
+                            <div class="d-flex flex-column">
+                                <label class="workout-card">30 perc
+                                    <input type="radio" name="wanted-workout-time" id="wanted-workout-time1" value="30"></input>
+                                </label>                                                       
+                                <label class="workout-card">45 perc
+                                    <input type="radio" name="wanted-workout-time" id="wanted-workout-time2" value="45"></input>
+                                </label>     
+                                <label class="workout-card">60 perc
+                                    <input type="radio" name="wanted-workout-time" id="wanted-workout-time3" value="60"></input>
+                                </label>     
+                                <label class="workout-card">75 perc
+                                    <input type="radio" name="wanted-workout-time" id="wanted-workout-time4" value="75"></input>
+                                </label>     
+                                <label class="workout-card">90 perc
+                                    <input type="radio" name="wanted-workout-time" id="wanted-workout-time5" value="90"></input>
+                                </label>     
+                                <label class="workout-card">120 perc
+                                    <input type="radio" name="wanted-workout-time" id="wanted-workout-time6" value="120"></input>
+                                </label>     
+                            </div>   
+                            <p class="error" id="wantedTimeError"></p>
+                            <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
+                            <button type="button" onclick="nextStep9()" class="nextgomb">Következő</button>
+                        </div>
                     </div>  
 
                     <div class="step">
+                        <div id="keret">
                             <h2>Hol edzel?</h2>
                             <label class="workout-card">Konditerem
                                 <input type="radio" name="edzeshelye" id="workoutplace1" value="Konditerem"></input>
@@ -241,84 +254,91 @@
                             <p class="error" id="placeError"></p>
                             <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
                             <button type="button" onclick="nextStep10()" class="nextgomb">Következő</button>
+                        </div>
                     </div>
             
                     <div class="step">
-                        <h2>Felszeretlség</h2>
-                        <label class="workout-card">Maximális felszereltség
-                            <input type="radio" name="felszereltseg" id="equipment1" value="Maximális felszereltség"></input>
-                        </label>
-                        <label class="workout-card">Korlátozott felszereltség
-                            <input type="radio" name="felszereltseg" id="equipment2" value="Korlátozott felszereltség"></input>
-                        </label>
-                        <label class="workout-card">Saját testsúly
-                            <input type="radio" name="felszereltseg" id="equipment3" value="Saját testsúly"></input>
-                        </label>
-                        <p class="error" id="felszereltsegError"></p>
-                        <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
-                        <button type="button" onclick="nextStep11()" class="nextgomb">Következő</button>
+                        <div id="keret">
+                            <h2>Felszeretlség</h2>
+                            <label class="workout-card">Maximális felszereltség
+                                <input type="radio" name="felszereltseg" id="equipment1" value="Maximális felszereltség"></input>
+                            </label>
+                            <label class="workout-card">Korlátozott felszereltség
+                                <input type="radio" name="felszereltseg" id="equipment2" value="Korlátozott felszereltség"></input>
+                            </label>
+                            <label class="workout-card">Saját testsúly
+                                <input type="radio" name="felszereltseg" id="equipment3" value="Saját testsúly"></input>
+                            </label>
+                            <p class="error" id="felszereltsegError"></p>
+                            <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
+                            <button type="button" onclick="nextStep11()" class="nextgomb">Következő</button>
+                        </div>
                     </div>
                 
                     <div class="step">
-                        <h2>Fókuszált izomcsoport</h2>
-                        <div class="d-flex flex-column">
-                            <label>
-                                <img class="w-25" src="img/ferfi-mell.png" alt="Férfi mell">
-                                <input type="checkbox" name="fokuszaltizomcsoport" value="Mell"></input>
-                            </label>
-                            <label>
-                                <img class="w-25" src="img/ferfi-hat.png" alt="Férfi hát">
-                                <input type="checkbox" name="fokuszaltizomcsoport" value="Hát"></input>
+                        <div id="keret">
+                            <h2>Fókuszált izomcsoport</h2>
+                            <div class="d-flex flex-column">
+                                <label>
+                                    <img class="w-25" src="img/ferfi-mell.png" alt="Férfi mell">
+                                    <input type="checkbox" name="fokuszaltizomcsoport" value="Mell"></input>
                                 </label>
-                            <label>
-                                <img class="w-25" src="img/ferfi-has.png" alt="Férfi has">
-                                <input type="checkbox" name="fokuszaltizomcsoport" value="Has"></input>
-                            </label>
-                            <label>
-                                <img class="w-25" src="img/ferfi-bicepsz.png" alt="Férfi bicepsz">
-                                <input type="checkbox" name="fokuszaltizomcsoport" value="Bicepsz"></input>
-                            </label>
-                            <label>
-                                <img class="w-25" src="img/ferfi-vall.png" alt="Férfi váll">
-                                <input type="checkbox" name="fokuszaltizomcsoport" value="Váll"></input>
-                            </label>
+                                <label>
+                                    <img class="w-25" src="img/ferfi-hat.png" alt="Férfi hát">
+                                    <input type="checkbox" name="fokuszaltizomcsoport" value="Hát"></input>
+                                </label>
+                                <label>
+                                    <img class="w-25" src="img/ferfi-has.png" alt="Férfi has">
+                                    <input type="checkbox" name="fokuszaltizomcsoport" value="Has"></input>
+                                </label>
+                                <label>
+                                    <img class="w-25" src="img/ferfi-bicepsz.png" alt="Férfi bicepsz">
+                                    <input type="checkbox" name="fokuszaltizomcsoport" value="Bicepsz"></input>
+                                </label>
+                                <label>
+                                    <img class="w-25" src="img/ferfi-vall.png" alt="Férfi váll">
+                                    <input type="checkbox" name="fokuszaltizomcsoport" value="Váll"></input>
+                                </label>
+                            </div>
+                            <p class="error" id="fokuszError"></p>
+                            <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
+                            <button type="button" onclick="nextStep12()" class="nextgomb">Következő</button>
                         </div>
-                        <p class="error" id="fokuszError"></p>
-                        <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
-                        <button type="button" onclick="nextStep12()" class="nextgomb">Következő</button>
                     </div>
             
                     <div class="step">
-                        <h2>Sérült testrész</h2>
-                        <div class="d-flex flex-column">
-                            <label>
-                                <img class="w-25" src="img/váll.jpg" alt="Váll">
-                                <input type="checkbox" name="injured" value="Váll"></input>
-                            </label>
-                            <label>
-                                <img class="w-25" src="img/konyok.jpg" alt="Könyök">
-                                <input type="checkbox" name="injured" value="Könyök"></input>
-                            </label>
-                            <label>
-                                <img class="w-25" src="img/csuklo.jpg" alt="Csukló">
-                                <input type="checkbox" name="injured" value="Csukló"></input>
-                            </label>
-                            <label>
-                                <img class="w-25" src="img/alsóháti.jpg" alt="Alsóhát">
-                                <input type="checkbox" name="injured" value="Alsóhát"></input>
-                            </label>
-                            <label>
-                                <img class="w-25" src="img/terd.jpg" alt="Térd">
-                                <input type="checkbox" name="injured" value="Térd"></input>
-                            </label>
-                            <label>
-                                <img class="w-25" src="img/boka.jpg" alt="Boka">
-                                <input type="checkbox" name="injured" value="Boka"></input>
-                            </label>
+                        <div id="keret">
+                            <h2>Sérült testrész</h2>
+                            <div class="d-flex flex-column">
+                                <label>
+                                    <img class="st_kep" src="img/váll.jpg" alt="Váll">
+                                    <input type="checkbox" name="injured" value="Váll"></input>
+                                </label>
+                                <label>
+                                    <img class="st_kep" src="img/konyok.jpg" alt="Könyök">
+                                    <input type="checkbox" name="injured" value="Könyök"></input>
+                                </label>
+                                <label>
+                                    <img class="st_kep" src="img/csuklo.jpg" alt="Csukló">
+                                    <input type="checkbox" name="injured" value="Csukló"></input>
+                                </label>
+                                <label>
+                                    <img class="st_kep" src="img/alsóháti.jpg" alt="Alsóhát">
+                                    <input type="checkbox" name="injured" value="Alsóhát"></input>
+                                </label>
+                                <label>
+                                    <img class="st_kep" src="img/terd.jpg" alt="Térd">
+                                    <input type="checkbox" name="injured" value="Térd"></input>
+                                </label>
+                                <label>
+                                    <img class="st_kep" src="img/boka.jpg" alt="Boka">
+                                    <input type="checkbox" name="injured" value="Boka"></input>
+                                </label>
+                            </div>
+                            <p class="error" id="serultError"></p>
+                            <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
+                            <button type="submit" class="nextgomb">Regisztrálás</button>
                         </div>
-                        <p class="error" id="serultError"></p>
-                        <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
-                        <button type="submit" class="nextgomb">Regisztrálás</button>
                     </div>
                 </div>
             </div>

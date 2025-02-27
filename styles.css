@@ -330,8 +330,6 @@ body {
       }
   }
   
-
-/*register.html*/
 #box1{
     display: flex;
     justify-content: center;
@@ -349,7 +347,7 @@ body {
     background-color: #eee;
     border: none;
     font-size: 1rem;
-    width: 8rem;
+    width: 13.5rem;
     height: 2.5rem;
     border-radius: 10px;
     color: #4d648d;
@@ -377,7 +375,7 @@ body {
     background-color: #eee;
     border: none;
     font-size: 1rem;
-    width: 8rem;
+    width: 13.5rem;
     height: 2.5rem;
     border-radius: 10px;
     color: #4d648d;
@@ -476,3 +474,16 @@ body {
     }
 }
 
+.st_kep{
+    width: 27.5rem;
+    height: 22rem;
+    margin-top: 1rem;
+}
+
+#bodyfat-image{
+    width: 27.5rem;
+}
+
+#bodyfat-image2{
+    width: 27.5rem;
+}
