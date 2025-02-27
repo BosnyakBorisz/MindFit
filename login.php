@@ -20,7 +20,7 @@
                             <input class="form-control" type="email" id="email" name="email" required>
                             <label for="password">Jelszó</label>
                             <input class="form-control" type="password" id="password" name="password" required>
-                            <button>Bejelentkezés</button>
+                            <button class="backgomb">Bejelentkezés</button>
                             <p>Még nincs fiókod? <a href="register.php">Regisztrálj</a></p>
                             <p><a href="recovery.php">Elfelejtett jelszó?</a></p>
                         </div>
