@@ -1,3 +1,41 @@
+<?php
+
+    session_start();
+
+    if (isset($_SESSION["email"])){
+        header("Location: profil.php");
+        exit();
+    }
+
+    include("database.php");
+
+    if (isset($_POST["login"])) {
+        
+        $email = trim(filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL));
+        $password = trim(filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS));    
+
+        $sql = "SELECT * FROM `users` WHERE `email` LIKE '$email'";
+        $result = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($result) > 0){
+            $row = mysqli_fetch_assoc($result);
+            if (password_verify($password, $row["jelszo"])){
+                $_SESSION["email"] = $email;
+                $_SESSION["username"] = $row["felhasznnev"];
+
+                header("Location: profil.php");
+                exit();
+            }
+        }
+        else {
+            header("Location: login.php");
+            exit();
+        }
+        exit();
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -20,7 +58,7 @@
                             <input class="form-control" type="email" id="email" name="email" required>
                             <label for="password">Jelszó</label>
                             <input class="form-control" type="password" id="password" name="password" required>
-                            <button class="backgomb">Bejelentkezés</button>
+                            <button type="submit" name="login" class="backgomb">Bejelentkezés</button>
                             <p>Még nincs fiókod? <a href="register.php">Regisztrálj</a></p>
                             <p><a href="recovery.php">Elfelejtett jelszó?</a></p>
                         </div>

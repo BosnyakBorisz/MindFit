@@ -33,29 +33,6 @@ function nextStep1() {
         error.style.display = "none";
         error.textContent = "";
     }
-
-    fetch('check_email.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email: email })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.exists) {
-            error.style.display = "block";
-            error.textContent = "Az email cím már regisztrálva van!";
-            valid = false;
-        } else {
-            error.style.display = "none";
-            error.textContent = "";
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-
    
     let password = document.getElementById("password").value;
     let repeatPassword = document.getElementById("repeat-password").value;
