@@ -3,52 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interaktív Izomtérkép</title>
+    <title>Interaktív Izomcsoport Kijelölés</title>
     <style>
         body {
             text-align: center;
-            background-color: #f0f0f0;
         }
         .container {
             position: relative;
             display: inline-block;
         }
         .muscle {
-            fill: rgba(255, 0, 0, 0);
-            transition: fill 0.3s;
-            cursor: pointer;
+            position: absolute;
+            background: rgba(255, 0, 0, 0.5);
+            border-radius: 50%;
+            display: none;
         }
         .muscle:hover {
-            fill: rgba(255, 0, 0, 0.5);
-        }
-        .background-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
+            display: block;
         }
     </style>
 </head>
 <body>
+    <h2>Vidd az egeret egy izomcsoport fölé!</h2>
     <div class="container">
-        <img src="man_musculature_front.png" alt="Izomtérkép" class="background-image">
-        <svg width="400" height="800" viewBox="0 0 400 800">
-            <!-- Mellizmok -->
-            <path class="muscle" d="M120,150 C150,100 250,100 280,150 L250,200 C200,220 150,200 120,150 Z"></path>
-            
-            <!-- Hasizmok -->
-            <path class="muscle" d="M170,220 L230,220 L230,350 L170,350 Z"></path>
-            
-            <!-- Bicepsz -->
-            <path class="muscle" d="M80,200 C70,250 90,300 100,320 C120,330 140,310 130,270 C120,240 110,220 80,200 Z"></path>
-            <path class="muscle" d="M320,200 C330,250 310,300 300,320 C280,330 260,310 270,270 C280,240 290,220 320,200 Z"></path>
-            
-            <!-- Combizmok -->
-            <path class="muscle" d="M140,360 L180,360 C190,450 190,550 180,600 C160,620 140,600 130,550 C120,500 130,400 140,360 Z"></path>
-            <path class="muscle" d="M260,360 L220,360 C210,450 210,550 220,600 C240,620 260,600 270,550 C280,500 270,400 260,360 Z"></path>
-        </svg>
+        <img src="img/man_musculature_front.png" alt="Izomcsoportok" width="400px">
+        
+        <!-- Mellizom -->
+        <div class="muscle" style="top: 80px; left: 140px; width: 120px; height: 50px;"></div>
+        <!-- Hasizom -->
+        <div class="muscle" style="top: 150px; left: 160px; width: 80px; height: 120px;"></div>
+        <!-- Combok -->
+        <div class="muscle" style="top: 280px; left: 120px; width: 60px; height: 150px;"></div>
+        <div class="muscle" style="top: 280px; left: 220px; width: 60px; height: 150px;"></div>
     </div>
+    
+    <script>
+        document.querySelectorAll('.muscle').forEach(muscle => {
+            muscle.addEventListener('mouseenter', () => {
+                muscle.style.display = 'block';
+            });
+            muscle.addEventListener('mouseleave', () => {
+                muscle.style.display = 'none';
+            });
+        });
+    </script>
+    
+        <style>
+            body {
+                text-align: center;
+                background-color: #222;
+                color: white;
+                font-family: Arial, sans-serif;
+            }
+    
+            .container {
+                position: relative;
+                display: inline-block;
+            }
+    
+            img {
+                width: 500px;
+                height: auto;
+                display: block;
+            }
+    
+            .muscle {
+                position: absolute;
+                background-color: rgba(255, 0, 0, 0);
+                transition: background-color 0.3s;
+                pointer-events: auto; /* Engedi az egérérzékelést */
+            }
+    
+            .muscle:hover {
+                background-color: rgba(255, 0, 0, 0.6);}
+    </style> 
+    
 </body>
 </html>
