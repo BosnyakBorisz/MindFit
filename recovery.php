@@ -18,7 +18,7 @@
                             <h2>Elfelejtett jelszó</h2>
                             <label for="email">Email</label>
                             <input class="form-control" type="email" id="email" name="email" required>
-                            <button>Elküldés</button>
+                            <button class="backgomb">Elküldés</button>
                             <p><a href="login.php">Mégse</a></p>
                         </div>
                     </div>
