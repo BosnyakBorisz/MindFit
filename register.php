@@ -1,8 +1,75 @@
 <?php
+
     session_start();
 
-    if (isset($_SESSION['username'])) {
+    if (isset($_SESSION["email"])){
         header("Location: profil.php");
+        exit();
+    }
+
+    include("database.php");
+
+    if (isset($_POST["register"])) {
+
+        $username = trim(filter_input(INPUT_POST, "username"));
+        $email = trim(filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL));
+        $password = trim(filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS));            
+        $hash = password_hash($password, PASSWORD_BCRYPT);
+
+        $sql1 = "INSERT INTO `users`( `felhasznnev`, `email`, `jelszo`) VALUES ('$username', '$email', '$hash')";
+
+        try {
+            mysqli_query($conn, $sql1);
+        }
+        catch (mysqli_sql_exception) {
+            
+        }
+
+        $sql2 = "SELECT `id` FROM `users` WHERE `email` LIKE '$email'";
+
+        try {
+            $result2 = mysqli_query($conn, $sql2);
+
+            if (mysqli_num_rows($result2) > 0){
+                $row = mysqli_fetch_assoc($result2);
+                $userID = $row["id"];
+
+                $sex = trim(filter_input(INPUT_POST, 'sex', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+                $age = filter_input(INPUT_POST, 'age', FILTER_VALIDATE_INT);
+                $weight = filter_input(INPUT_POST, 'weight', FILTER_VALIDATE_INT);
+                $height = filter_input(INPUT_POST, 'height', FILTER_VALIDATE_INT);
+                $goal = trim(filter_input(INPUT_POST, 'goal', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+                $bodytype = filter_input(INPUT_POST, 'bodytype', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                $currentBodyfat = filter_input(INPUT_POST, 'bodyfat-range', FILTER_SANITIZE_NUMBER_INT);
+                $goalBodyfat = filter_input(INPUT_POST, 'bodyfat-range2', FILTER_SANITIZE_NUMBER_INT);
+                $workoutFrequency = filter_input(INPUT_POST, 'workout-frequency', FILTER_SANITIZE_SPECIAL_CHARS);
+                $wantedWorkoutFrequency = filter_input(INPUT_POST, 'wanted-workout-frequency', FILTER_SANITIZE_NUMBER_INT);
+                $wantedWorkoutTime = filter_input(INPUT_POST, 'wanted-workout-time', FILTER_SANITIZE_NUMBER_INT);
+                $workoutPlace = filter_input(INPUT_POST, 'edzeshelye', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                $equipment = filter_input(INPUT_POST, 'felszereltseg', FILTER_SANITIZE_SPECIAL_CHARS);
+                $focusedMuscle = filter_input(INPUT_POST, 'fokuszaltizomcsoport', FILTER_SANITIZE_SPECIAL_CHARS);
+                $injured = filter_input(INPUT_POST, 'injured', FILTER_SANITIZE_SPECIAL_CHARS);
+
+                $sql3 = "INSERT INTO `user_information` (`user_id`, `nem`, `kor`, `testsuly`, `magassag`, `cel`, `testalkat`, `jelenlegi_testzsir`, `cel_testzsir`, `jelenlegi_edzes_per_het`, `kivant_edzes_per_het`, `kivant_edzes_hossza`, `edzes_helye`, `felszereltseg`, `fokuszalt_izomcsoport`, `serult_testrész`) VALUES ('$userID','$sex','$age','$weight','$height','$goal','$bodytype','$currentBodyfat','$goalBodyfat','$workoutFrequency','$wantedWorkoutFrequency','$wantedWorkoutTime','$workoutPlace','$equipment','$focusedMuscle','$injured')";
+    
+                try {
+                    mysqli_query($conn, $sql3);
+
+                }
+                catch (mysqli_sql_exception) {
+                    
+                }
+            }
+        }
+        catch (mysqli_sql_exception) {
+            
+        }
+
+        $_SESSION["email"] = $email;
+        $_SESSION["username"] = $username;
+
+        header("Location: profil.php");
+
         exit();
     }
 
@@ -160,7 +227,7 @@
                             <h2>Hányszor edzel egy héten?</h2>    
                             <div class="d-flex flex-column">
                                 <label class="workout-card">1-2x hetente 
-                                    <input type="radio" name="workout-frequency" id="workout-frequency2" value="3x hetente">
+                                    <input type="radio" name="workout-frequency" id="workout-frequency1" value="3x hetente">
                                 </label>                                                     
                                 <label class="workout-card">3x hetente
                                     <input type="radio" name="workout-frequency" id="workout-frequency2" value="3x hetente">
@@ -337,77 +404,14 @@
                             </div>
                             <p class="error" id="serultError"></p>
                             <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
-                            <button type="submit" class="nextgomb">Regisztrálás</button>
+                            <button type="submit" name="register" class="nextgomb">Regisztrálás</button>
+                            <input type="checkbox" name="remember">Emlékezz rám
                         </div>
                     </div>
                 </div>
             </div>
         </form>
     </div>
-
-    <?php
-
-        include("database.php");
-
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-            $username = trim(filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS));
-            $email = trim(filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL));
-            $password = trim(filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS));            
-            $hash = password_hash($password, PASSWORD_BCRYPT);
-
-            $sql1 = "INSERT INTO `users`( `felhasznnev`, `email`, `jelszo`) VALUES ('$username', '$email', '$hash')";
-
-            try {
-                mysqli_query($conn, $sql1);
-            }
-            catch (mysqli_sql_exception) {
-                
-            }
-
-            $sql2 = "SELECT `id` FROM `users` WHERE `email` LIKE '$email'";
-
-            try {
-                $result = mysqli_query($conn, $sql2);
-
-                if (mysqli_num_rows($result) > 0){
-                    $row = mysqli_fetch_assoc($result);
-                    $userID = $row["id"];
-
-                    $sex = trim(filter_input(INPUT_POST, 'sex', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
-                    $age = filter_input(INPUT_POST, 'age', FILTER_VALIDATE_INT);
-                    $weight = filter_input(INPUT_POST, 'weight', FILTER_VALIDATE_INT);
-                    $height = filter_input(INPUT_POST, 'height', FILTER_VALIDATE_INT);
-                    $goal = trim(filter_input(INPUT_POST, 'goal', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
-                    $bodytype = filter_input(INPUT_POST, 'bodytype', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-                    $currentBodyfat = filter_input(INPUT_POST, 'bodyfat-range', FILTER_SANITIZE_NUMBER_INT);
-                    $goalBodyfat = filter_input(INPUT_POST, 'bodyfat-range2', FILTER_SANITIZE_NUMBER_INT);
-                    $workoutFrequency = filter_input(INPUT_POST, 'workout-frequency', FILTER_SANITIZE_SPECIAL_CHARS);
-                    $wantedWorkoutFrequency = filter_input(INPUT_POST, 'wanted-workout-frequency', FILTER_SANITIZE_NUMBER_INT);
-                    $wantedWorkoutTime = filter_input(INPUT_POST, 'wanted-workout-time', FILTER_SANITIZE_NUMBER_INT);
-                    $workoutPlace = filter_input(INPUT_POST, 'edzeshelye', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-                    $equipment = filter_input(INPUT_POST, 'felszereltseg', FILTER_SANITIZE_SPECIAL_CHARS);
-                    $focusedMuscle = filter_input(INPUT_POST, 'fokuszaltizomcsoport', FILTER_SANITIZE_SPECIAL_CHARS);
-                    $injured = filter_input(INPUT_POST, 'injured', FILTER_SANITIZE_SPECIAL_CHARS);
-
-                    $sql3 = "INSERT INTO `user_information` (`user_id`, `nem`, `kor`, `testsuly`, `magassag`, `cel`, `testalkat`, `jelenlegi_testzsir`, `cel_testzsir`, `jelenlegi_edzes_per_het`, `kivant_edzes_per_het`, `kivant_edzes_hossza`, `edzes_helye`, `felszereltseg`, `fokuszalt_izomcsoport`, `serult_testrész`) VALUES ('$userID','$sex','$age','$weight','$height','$goal','$bodytype','$currentBodyfat','$goalBodyfat','$workoutFrequency','$wantedWorkoutFrequency','$wantedWorkoutTime','$workoutPlace','$equipment','$focusedMuscle','$injured')";
-        
-                    try {
-                        mysqli_query($conn, $sql3);
-                    }
-                    catch (mysqli_sql_exception) {
-                        
-                    }
-                }
-            }
-            catch (mysqli_sql_exception) {
-                
-            }
-
-
-        }
-
-    ?>
 
     <script src="nextStep.js"></script>
 
