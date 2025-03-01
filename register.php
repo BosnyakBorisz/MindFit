@@ -144,7 +144,7 @@
                         </div>
                     </div>
                 
-                    <div class="step">
+                    <div class="step">                                                                                                                      
                         <div id="keret">
                             <h2>Cél testzsírszázalék</h2>
                             <img id="bodyfat-image2" src="img/ferfi-testzsir-15.jpg" alt="Testzsíszázalék" >
