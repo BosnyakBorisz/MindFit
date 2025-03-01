@@ -29,7 +29,7 @@
 
   <main>
     
-    <h1 class="ms-5 mb-5">Üdvözlünk <?php $_SESSION["username"] ?></h1>
+    <h1 class="ms-5 mb-5">Üdvözlünk <?php echo "" . htmlspecialchars($_SESSION["username"]) ?></h1>
 
     <section id="calorie">
 
