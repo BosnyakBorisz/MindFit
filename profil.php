@@ -1,15 +1,11 @@
 <?php
 
-  session_start();
+    session_start();
 
-  if (!isset($_SESSION["user"])) {
-      if (isset($_COOKIE["user"])) {
-          $_SESSION["user"] = $_COOKIE["user"];
-      } else {
-          header("Location: login.php");
-          exit();
-      }
-  }
+    if (!isset($_SESSION["email"])){
+        header("Location: login.php");
+        exit();
+    }
 
 ?>
 
@@ -33,7 +29,7 @@
 
   <main>
     
-    <h1 class="ms-5 mb-5">Üdvözlünk Lajos!</h1>
+    <h1 class="ms-5 mb-5">Üdvözlünk <?php $_SESSION["username"] ?></h1>
 
     <section id="calorie">
 
@@ -103,6 +99,7 @@
           <img class="w-25" src="img/man_musculature_back.png" alt="">
         </div>
       </div>
+      <a href="logout.php">Kijelentkezés</a>
     </section>
 
   </main>
