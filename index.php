@@ -106,30 +106,46 @@
     </section>
 
     <section id="faq" class="mx-auto">
-      <div class="container-fluid">
-        <h1 class="text-center">Gyakran ismételt kérdések</h1>
-        <details>
-          <summary>Mennyibe kerül?</summary>
-          <p>Teljesen ingyenes</p>
-        </details>
-        <details>
-          <summary>Miért fontos a személyre szabott táplálkozási terv és hogyan támogatja a céljaimat?</summary>
-          <p>Az AI figyelembe veszi a céljaidat és étkezési preferenciáidat, hogy napi étkezési tervekkel támogassa a fejlődésed.</p>
-        </details>
-        <details>
-          <summary>Milyen típusú stresszkezelési technikákat ajánl az AI a mentális egészség javításához?</summary>
-          <p>Meditációk, légzőgyakorlatok és jóga segítenek a stressz csökkentésében, napi célokkal.</p>
-        </details>
-        <details>
-          <summary>Milyen eszközökkel integrálható a weboldal?</summary>
-          <p>Az AI integrálható okosórákkal és fitneszkarkötőkkel (pl. Fitbit, Garmin), hogy valós idejű adatokat kapjon az aktivitásodról.</p>
-        </details>
-        <details>
-          <summary>Hogyan segít az AI a motiváció fenntartásában?</summary>
-          <p>Az AI napi személyre szabott motivációs üzeneteket küld, és emlékeztet a céljaidra, hogy mindig ösztönözve érezd magad.</p>
-        </details>
+    <div div class="container-fluid">
+      <h1 class="text-center">Gyakran ismételt kérdések</h1>
+      <div class="row">
+        <div class="col-12" style="padding-right: 30px; margin:30px 0">
+          <h2 style="margin:20px 0;">Árak</h2>
+          <hr>
+          <details><summary>Mennyibe kerül?</summary><p>Teljesen ingyenes.</p></details>
+          <hr>
+          <details><summary>Van rejtett költség vagy előfizetés?</summary><p>Nincsenek rejtett költségek vagy előfizetések.</p></details>
+          
+          <h2 style="margin:20px 0;">Táplálkozás és Egészség</h2>
+          <hr>
+          <details><summary>Miért fontos a személyre szabott táplálkozási terv?</summary><p>Az AI figyelembe veszi a céljaidat és étkezési preferenciáidat.</p></details>
+          <hr>
+          <details><summary>Hogyan segít az AI az étkezési szokások kialakításában?</summary><p>Személyre szabott napi étrendi ajánlásokat biztosít.</p></details>
+          
+          <h2 style="margin:20px 0;">Stresszkezelés és Mentális Egészség</h2>
+          <hr>
+          <details><summary>Milyen technikákat ajánl a stressz csökkentésére?</summary><p>Meditáció, légzőgyakorlatok és jóga.</p></details>
+          <hr>
+          <details><summary>Van napi meditációs vagy légzőgyakorlatos ajánlás?</summary><p>Igen, az AI napi meditációs javaslatokat küld.</p></details>
+          <hr>
+          <details><summary>Hogyan segít az AI a jobb alvás elérésében?</summary><p>Relaxációs technikákat javasol.</p></details>
+          
+          <h2 style="margin:20px 0;">Adatkezelés</h2>
+          <hr>
+          <details><summary>Mennyire biztonságos az adataim kezelése?</summary><p>Az adatkezelés titkosított és megfelel a GDPR előírásoknak.</p></details>
+          
+          <h2 style="margin:20px 0;">Motiváció és Támogatás</h2>
+          <hr>
+          <details><summary>Hogyan segít az AI a motiváció fenntartásában?</summary><p>Napi motivációs üzenetekkel és célkitűzésekkel támogat.</p></details>
+          <hr>
+          <details><summary>Kapok emlékeztetőket a céljaim eléréséhez?</summary><p>Igen, az AI rendszeres emlékeztetőket küld.</p></details>
+          <hr>
+          <details><summary>Testre szabhatom a motivációs üzeneteket?</summary><p>Igen, az üzeneteket és célokat személyre szabhatod.</p></details>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
+
   </main>
 
   <?php
