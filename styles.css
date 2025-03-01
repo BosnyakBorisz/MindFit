@@ -343,6 +343,7 @@ body {
     margin: auto;
 }
 
+/*előre gomb regsztrációs oldalon*/
 .nextgomb{
     background-color: #eee;
     border: none;
@@ -382,7 +383,8 @@ body {
     cursor: pointer;
     margin: 1rem 0;
 }
-   
+ /*előre gomb regsztrációs oldalon*/
+ /*hátra gomb regsztrációs oldalon*/  
 .backgomb:active {
     color: #0072b1;
     box-shadow: 0 0.2rem #dfd9d9;
@@ -398,7 +400,8 @@ body {
     cursor: auto;
     color: grey;
 }
-
+/*hátra gomb regsztrációs oldalon*/  
+/*jelszót megjelenítő gomb*/
 .workout-card {
     background-color: var(--d);
     border-radius: 10px;
@@ -473,6 +476,7 @@ body {
       transform: scale(1.2);
     }
 }
+/*jelszót megjelenítő gomb*/
 
 .st_kep{
     width: 27.5rem;
@@ -487,3 +491,9 @@ body {
 #bodyfat-image2{
     width: 27.5rem;
 }
+
+/*FAQ*/
+#faq h1{
+    margin-top: 2rem;
+}
+/*FAQ*/
