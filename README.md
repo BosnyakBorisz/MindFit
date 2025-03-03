@@ -293,3 +293,4 @@ Az alábbi kódot beillesztheted a weboldaladba:
 - Az OpenAI API válaszait megjeleníti a chat felületen, mintha egy valós idejű beszélgetés zajlana.
 
 Ez egy alapvető megoldás, amit testre szabhatsz a saját igényeid szerint! Ha segítségre van szükséged a telepítéshez vagy bármilyen kérdésed van, szólj!
+

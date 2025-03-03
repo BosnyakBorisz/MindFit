@@ -1,5 +1,4 @@
 <?php
-
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -11,24 +10,22 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $data = json_decode(file_get_contents('php://input'), true);
-    $email = $data['email'];
+    if (isset($_POST['email'])) {
+        $email = $_POST['email'];
 
-    $sql = "SELECT * FROM users WHERE email = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
+        $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $stmt->store_result();
 
-    $response = [];
-    if ($result->num_rows > 0) {
-        $response['exists'] = true;
-    } else {
-        $response['exists'] = false;
+        if ($stmt->num_rows > 0) {
+            echo "exists";
+        } else {
+            echo "available";
+        }
+
+        $stmt->close();
     }
 
-    echo json_encode($response);
-
-    $stmt->close();
     $conn->close();
 ?>
