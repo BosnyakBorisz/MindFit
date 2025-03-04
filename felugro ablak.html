@@ -5,64 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adatkezelési Tájékoztató</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .popup {
+        #cookieModal {
+            display: flex;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
         }
-        .popup-content {
+        .modal-content {
             background: white;
             padding: 20px;
             border-radius: 8px;
-            width: 400px;
             text-align: center;
+            width: 80%;
+            max-width: 500px;
         }
-        .popup button {
+        button {
             margin-top: 10px;
             padding: 10px;
             border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
             cursor: pointer;
         }
-        .accept-btn {
-            background: green;
-            color: white;
-        }
-        .read-btn {
-            background: blue;
-            color: white;
+        #dataPolicy {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+            background: #f9f9f9;
         }
     </style>
 </head>
 <body>
-    <div class="popup" id="popup">
-        <div class="popup-content">
+    <div id="cookieModal">
+        <div class="modal-content">
             <h2>Adatkezelési Tájékoztató</h2>
-            <p>Kérjük, olvassa el adatkezelési tájékoztatónkat.</p>
-            <button class="read-btn" onclick="window.location.href='adatkezeles.html'">Elolvasom</button>
-            <button class="accept-btn" onclick="acceptPolicy()">Elfogadom</button>
+            <div id="dataPolicy">
+                
+                <p>Ha szeretne többet megtudni, kérjük, <a href="adatkezeles.html" target="_blank">olvassa el teljes adatkezelési szabályzatunkat</a>.</p>
+            </div>
+            <button onclick="acceptCookies()">Elfogadom</button>
         </div>
     </div>
-
+    
     <script>
-        function acceptPolicy() {
-            document.getElementById('popup').style.display = 'none';
-            localStorage.setItem('adatkezeles_elfogadva', 'true');
+        function acceptCookies() {
+            document.getElementById("cookieModal").style.display = "none";
+            localStorage.setItem("cookiesAccepted", "true");
         }
         
         window.onload = function() {
-            if (localStorage.getItem('adatkezeles_elfogadva')) {
-                document.getElementById('popup').style.display = 'none';
+            if (localStorage.getItem("cookiesAccepted")) {
+                document.getElementById("cookieModal").style.display = "none";
             }
-        };
+        }
     </script>
 </body>
 </html>
