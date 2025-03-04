@@ -112,35 +112,35 @@
         <div class="col-12" style="padding-right: 30px; margin:30px 0">
           <h2 style="margin:20px 0;">Árak</h2>
           <hr>
-          <details><summary>Mennyibe kerül?</summary><p>Teljesen ingyenes.</p></details>
+          <details><summary>Mennyibe kerül?</summary><p class="faq_informaciok">Teljesen ingyenes.</p></details>
           <hr>
-          <details><summary>Van rejtett költség vagy előfizetés?</summary><p>Nincsenek rejtett költségek vagy előfizetések.</p></details>
+          <details><summary>Van rejtett költség vagy előfizetés?</summary><p class="faq_informaciok">Nincsenek rejtett költségek vagy előfizetések.</p></details>
           
           <h2 style="margin:20px 0;">Táplálkozás és Egészség</h2>
           <hr>
-          <details><summary>Miért fontos a személyre szabott táplálkozási terv?</summary><p>Az AI figyelembe veszi a céljaidat és étkezési preferenciáidat.</p></details>
+          <details><summary>Miért fontos a személyre szabott táplálkozási terv?</summary><p class="faq_informaciok">Az AI figyelembe veszi a céljaidat és étkezési preferenciáidat.</p></details>
           <hr>
-          <details><summary>Hogyan segít az AI az étkezési szokások kialakításában?</summary><p>Személyre szabott napi étrendi ajánlásokat biztosít.</p></details>
+          <details><summary>Hogyan segít az AI az étkezési szokások kialakításában?</summary><p class="faq_informaciok">Személyre szabott napi étrendi ajánlásokat biztosít.</p></details>
           
           <h2 style="margin:20px 0;">Stresszkezelés és Mentális Egészség</h2>
           <hr>
-          <details><summary>Milyen technikákat ajánl a stressz csökkentésére?</summary><p>Meditáció, légzőgyakorlatok és jóga.</p></details>
+          <details><summary>Milyen technikákat ajánl a stressz csökkentésére?</summary><p class="faq_informaciok">Meditáció, légzőgyakorlatok és jóga.</p></details>
           <hr>
-          <details><summary>Van napi meditációs vagy légzőgyakorlatos ajánlás?</summary><p>Igen, az AI napi meditációs javaslatokat küld.</p></details>
+          <details><summary>Van napi meditációs vagy légzőgyakorlatos ajánlás?</summary><p class="faq_informaciok">Igen, az AI napi meditációs javaslatokat küld.</p></details>
           <hr>
-          <details><summary>Hogyan segít az AI a jobb alvás elérésében?</summary><p>Relaxációs technikákat javasol.</p></details>
+          <details><summary>Hogyan segít az AI a jobb alvás elérésében?</summary><p class="faq_informaciok">Relaxációs technikákat javasol.</p></details>
           
           <h2 style="margin:20px 0;">Adatkezelés</h2>
           <hr>
-          <details><summary>Mennyire biztonságos az adataim kezelése?</summary><p>Az adatkezelés titkosított és megfelel a GDPR előírásoknak.</p></details>
+          <details><summary>Mennyire biztonságos az adataim kezelése?</summary><p class="faq_informaciok">Az adatkezelés titkosított és megfelel a GDPR előírásoknak.</p></details>
           
           <h2 style="margin:20px 0;">Motiváció és Támogatás</h2>
           <hr>
-          <details><summary>Hogyan segít az AI a motiváció fenntartásában?</summary><p>Napi motivációs üzenetekkel és célkitűzésekkel támogat.</p></details>
+          <details><summary>Hogyan segít az AI a motiváció fenntartásában?</summary><p class="faq_informaciok">Napi motivációs üzenetekkel és célkitűzésekkel támogat.</p></details>
           <hr>
-          <details><summary>Kapok emlékeztetőket a céljaim eléréséhez?</summary><p>Igen, az AI rendszeres emlékeztetőket küld.</p></details>
+          <details><summary>Kapok emlékeztetőket a céljaim eléréséhez?</summary><p class="faq_informaciok">Igen, az AI rendszeres emlékeztetőket küld.</p></details>
           <hr>
-          <details><summary>Testre szabhatom a motivációs üzeneteket?</summary><p>Igen, az üzeneteket és célokat személyre szabhatod.</p></details>
+          <details><summary>Testre szabhatom a motivációs üzeneteket?</summary><p class="faq_informaciok">Igen, az üzeneteket és célokat személyre szabhatod.</p></details>
         </div>
       </div>
     </div>
