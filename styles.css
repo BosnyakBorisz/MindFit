@@ -1,14 +1,14 @@
 :root {
-    --a: #1F3A5F;
-    --b: #4d648d;
-    --c: #acc2ef;
-    --d: #3D5A80;
-    --s: #cee8ff;
-    --f: #0F1C2E;
-    --base-color: #1f2b3e;  
-    --h: #374357;
+    --a: #d8f3dc;
+    --b: #b7e4c7;
+    --c: #95d5b2;
+    --d: #74c69d;
+    --s: #52b788;
+    --f: #40916c;
+    --base-color: #2d6a4f;  
+    --h: #1b4332;
     --text-color: #FFFFFF;
-    --i: #e0e0e0;
+    --i: #081c15;
 }
 
 body {
@@ -503,3 +503,7 @@ body {
     margin: 2rem;
 }
 /*FAQ*/
+
+.w-plan-bg {
+    background-color: var(--f);
+}
