@@ -51,7 +51,10 @@ body {
 
 #faq {
     width:calc(100% / 2);
+    margin: 0;
 }
+
+
 
 .hidden {
     display: none !important;
@@ -242,7 +245,7 @@ body {
       padding: .5em 1em;
       border: none;
       border-radius: 0 6px 6px 0;
-      background-color: #2c13c9;
+      background-color: var(--s);
       color: #fff;
       font-size: 15px;
       cursor: pointer;
@@ -250,7 +253,7 @@ body {
   }
     
   .footer-emailgomb:hover {
-      background-color: #33268b;
+      background-color: var(--d);
   }
     
   .input:focus, .input:focus-visible {
@@ -283,13 +286,13 @@ body {
   }
   
   .social-icons svg:hover{
-      color: #2c13c9;
+      color: var(--s);
   }
   /*ikonok*/
   /*footer*/
   
   /*media - xs(0-576) sm(576-768) md(768-992) lg(992-1200) xl(1200-1500)*/
-  @media only screen and (max-width: 1400px) {
+  @media only screen and (max-width: 2000px) {
       #footer-icons{
           padding: 0 0 0 7rem;
       }
@@ -516,17 +519,14 @@ body {
 }
 
 #faq summary::after {
-    content: url(img/plus-lg.svg);  /*<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8"/>
-  </svg>*/
-    width: 20px;
+    content: url(img/icons8-plus-24\ \(1\).png);  
+    padding: 0 1rem 0 0;
     position: relative;
 }
 
 #faq details[open] summary::after {
-    content: "-"; 
+    content: url(img/icons8-minus-24\ \(1\).png); 
 }
-
 /*FAQ*/
 
 .w-plan-bg {
