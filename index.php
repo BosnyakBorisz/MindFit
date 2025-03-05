@@ -132,7 +132,7 @@
       </div>
     </section>
 
-    <section id="faq" class="mx-auto">
+    <section id="faq" class = "mx-auto">
     <div class="container-fluid">
       <h1 class="text-center">Gyakran ismételt kérdések</h1>
       <div class="row">
