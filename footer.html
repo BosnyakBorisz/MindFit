@@ -14,13 +14,14 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4" id="footer-oszlop3">
               <h5>Iratkozz fel hírlevelünkre!</h5>
-              <form>
-                <div class="footer-emailbox">
-                  <input type="email" class="footer-emailmezo" id="Email" name="Email" placeholder="pelda@mind.fit" autocomplete="off">
-                  <input class="footer-emailgomb" value="Küldés" type="submit">
-                </div>
+              <form id="newsletter-form">
+                  <div class="footer-emailbox">
+                      <input type="email" class="footer-emailmezo" id="email" name="email" placeholder="pelda@mind.fit" autocomplete="off" required>
+                      <input class="footer-emailgomb" value="Küldés" type="submit">
+                  </div>
               </form>
-            </div>
+              <p id="response-message"></p>
+          </div>
         </div>
     </div>
     <div class="container-fluid" id="footer-icons">
@@ -66,4 +67,25 @@
         </div>
       </div>
     </div>
+    <script>
+      document.getElementById("newsletter-form").addEventListener("submit", function(e) {
+          e.preventDefault();
+          let email = document.getElementById("email").value;
+      
+          fetch("subscribe.php", {
+              method: "POST",
+              headers: {
+                  "Content-Type": "application/x-www-form-urlencoded"
+              },
+              body: "email=" + encodeURIComponent(email)
+          })
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById("response-message").textContent = data;
+          })
+          .catch(error => {
+              console.error("Hiba történt:", error);
+          });
+      });
+      </script>
 </footer>

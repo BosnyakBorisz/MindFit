@@ -51,7 +51,10 @@ body {
 
 #faq {
     width:calc(100% / 2);
+    margin: 0;
 }
+
+
 
 .hidden {
     display: none !important;
@@ -521,7 +524,6 @@ body {
 #faq details[open] summary::after {
     content: url(img/icons8-minus-24\ \(1\).png); 
 }
-
 /*FAQ*/
 
 .w-plan-bg {
