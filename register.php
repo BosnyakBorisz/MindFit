@@ -227,7 +227,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <div class="step">
                         <div id="keret">
                             <h2>Jelenlegi testzsírszázalék</h2>
-                            <img id="bodyfat-image" src="img/ferfi-testzsir-15.jpg" alt="Testzsíszázalék">
+                            <img id="bodyfat-image" src="img/man-15-bodyfat.jpeg" alt="Testzsíszázalék">
                             <p id="bodyfat-text">15%</p>
                             <input class="form-control" type="range" min="1" max="8" value="3" id="bodyfat-range" name="bodyfat-range" required>
                             <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
@@ -238,7 +238,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <div class="step">                                                                                                                      
                         <div id="keret">
                             <h2>Cél testzsírszázalék</h2>
-                            <img id="bodyfat-image2" src="img/ferfi-testzsir-15.jpg" alt="Testzsíszázalék" >
+                            <img id="bodyfat-image2" src="img/man-15-bodyfat.jpeg" alt="Testzsíszázalék" >
                             <p id="bodyfat-text2">15%</p>
                             <input class="form-control" type="range" min="1" max="8" value="3" id="bodyfat-range2" name="bodyfat-range2" required>
                             <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
@@ -372,25 +372,35 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             <div class="d-flex flex-column">
                                 <label>
                                     <input class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Mell">
-                                    <img class="w-25" src="img/ferfi-mell.png" alt="Férfi mell">
+                                    <img class="w-25" src="img/fokusz-mell.png" alt="Férfi mell">
                                 </label>
                                 <label>
                                     <input class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Hát">
-                                    <img class="w-25" src="img/ferfi-hat.png" alt="Férfi hát">
+                                    <img class="w-25" src="img/fokusz-hat.png" alt="Férfi hát">
                                 </label>
                                 <label>
                                     <input class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Has">
-                                    <img class="w-25" src="img/ferfi-has.png" alt="Férfi has">
+                                    <img class="w-25" src="img/fokusz-has.png" alt="Férfi has">
 
                                 </label>
                                 <label>
                                     <input class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Bicepsz">
-                                    <img class="w-25" src="img/ferfi-bicepsz.png" alt="Férfi bicepsz">
+                                    <img class="w-25" src="img/fokusz-bicepsz.png" alt="Férfi bicepsz">
+
+                                </label>
+                                <label>
+                                    <input class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Tricepsz">
+                                    <img class="w-25" src="img/fokusz.tricepsz.png" alt="Férfi tricepsz">
 
                                 </label>
                                 <label>
                                     <input class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Váll">
-                                    <img class="w-25" src="img/ferfi-vall.png" alt="Férfi váll">
+                                    <img class="w-25" src="img/fokusz-vall.png" alt="Férfi váll">
+                                </label>
+                                <label>
+                                    <input class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Láb">
+                                    <img class="w-25" src="img/fokusz-lab.png" alt="Férfi Láb">
+
                                 </label>
                             </div>
                             <p class="error" id="fokuszError"></p>
