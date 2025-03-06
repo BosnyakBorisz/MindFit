@@ -1,77 +1,83 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatGPT Web Chat</title>
+    <title>Fitness Chatbot</title>
     <style>
-        #chatbox {
-            width: 100%;
-            height: 500px;
-            border: 1px solid #ccc;
-            padding: 10px;
-            overflow-y: auto;
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            text-align: center;
+            margin: 50px;
         }
-
-        #userInput {
+        #chat-container {
+            width: 350px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        #chat-box {
+            height: 300px;
+            overflow-y: scroll;
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        input {
             width: 80%;
             padding: 10px;
-            margin-top: 10px;
         }
-
-        #sendBtn {
+        button {
             padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <h1>Chat with ChatGPT</h1>
-
-    <div id="chatbox"></div>
-    
-    <input type="text" id="userInput" placeholder="Ask me anything...">
-    <button id="sendBtn">Send</button>
+    <div id="chat-container">
+        <h2>Fitness Chatbot</h2>
+        <div id="chat-box"></div>
+        <input type="text" id="user-input" placeholder="Írd be az üzeneted...">
+        <button onclick="sendMessage()">Küldés</button>
+    </div>
 
     <script>
-        const apiKey = 'YOUR_API_KEY'; // Cseréld le a saját OpenAI API kulcsodra
-        const chatbox = document.getElementById('chatbox');
-        const userInput = document.getElementById('userInput');
-        const sendBtn = document.getElementById('sendBtn');
-
-        sendBtn.addEventListener('click', sendMessage);
-
-        async function sendMessage() {
-            const userMessage = userInput.value;
-            if (!userMessage) return;
-
-            // Display user message
-            chatbox.innerHTML += `<div><strong>You:</strong> ${userMessage}</div>`;
-            userInput.value = '';
-
-            // Send the message to OpenAI API
-            const response = await fetch('https://api.openai.com/v1/completions', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${apiKey}`
-                },
-                body: JSON.stringify({
-                    model: "text-davinci-003", // Használhatod a megfelelő modellt
-                    prompt: userMessage,
-                    max_tokens: 150
-                })
-            });
-
-            const data = await response.json();
-            const botMessage = data.choices[0].text.trim();
-
-            // Display bot's response
-            chatbox.innerHTML += `<div><strong>ChatGPT:</strong> ${botMessage}</div>`;
-            chatbox.scrollTop = chatbox.scrollHeight; // Scroll to the latest message
+        let userData = {};
+        
+        function sendMessage() {
+            let inputField = document.getElementById("user-input");
+            let message = inputField.value.trim();
+            if (message === "") return;
+            
+            addChatMessage("Te: " + message);
+            handleUserInput(message);
+            inputField.value = "";
+        }
+        
+        function addChatMessage(message) {
+            let chatBox = document.getElementById("chat-box");
+            let p = document.createElement("p");
+            p.textContent = message;
+            chatBox.appendChild(p);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+        
+        function handleUserInput(message) {
+            if (message.toLowerCase().includes("nevem")) {
+                userData.name = message.split(" ").slice(-1)[0];
+                addChatMessage("Chatbot: Örülök, hogy megismerhetlek, " + userData.name + "!");
+            } else if (message.toLowerCase().includes("edzésterv")) {
+                addChatMessage("Chatbot: Milyen edzésterv érdekel? Súlyzós vagy kardió?");
+            } else {
+                addChatMessage("Chatbot: Ezt nem teljesen értem, de segíthetek az edzésekkel kapcsolatos kérdésekben!");
+            }
         }
     </script>
 </body>
 </html>
-
-
