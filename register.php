@@ -227,7 +227,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <div class="step">
                         <div id="keret">
                             <h2>Jelenlegi testzsírszázalék</h2>
-                            <img id="bodyfat-image" src="img/ferfi-testzsir-15.jpg" alt="Testzsíszázalék">
+                            <img id="bodyfat-image" src="img/man-15-bodyfat.jpeg" alt="Testzsíszázalék">
                             <p id="bodyfat-text">15%</p>
                             <input class="form-control" type="range" min="1" max="8" value="3" id="bodyfat-range" name="bodyfat-range" required>
                             <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
@@ -238,7 +238,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <div class="step">                                                                                                                      
                         <div id="keret">
                             <h2>Cél testzsírszázalék</h2>
-                            <img id="bodyfat-image2" src="img/ferfi-testzsir-15.jpg" alt="Testzsíszázalék" >
+                            <img id="bodyfat-image2" src="img/man-15-bodyfat.jpeg" alt="Testzsíszázalék" >
                             <p id="bodyfat-text2">15%</p>
                             <input class="form-control" type="range" min="1" max="8" value="3" id="bodyfat-range2" name="bodyfat-range2" required>
                             <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
