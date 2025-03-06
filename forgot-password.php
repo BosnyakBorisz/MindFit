@@ -31,7 +31,7 @@
             $stmt->bind_param("sss", $token, $expiry, $email);
             $stmt->execute();
 
-            $resetLink = "http://" . "localhost/code/mindfit/" . "/reset-password.php?token=" . $token;
+            $resetLink = "http://" . "localhost/mindfit/mindfit/" . "/reset-password.php?token=" . $token;
 
             $mail = new PHPMailer(true);
 

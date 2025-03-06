@@ -855,14 +855,21 @@ const rangeInput2 = document.getElementById('bodyfat-range2');
 const image2 = document.getElementById('bodyfat-image2');
 const valueText2 = document.getElementById('bodyfat-text2');
 
+let sex = document.getElementById("sex").value;
+
+
+
 rangeInput.addEventListener('input', function() {
     const value = rangeInput.value * 5;
     valueText.textContent = value + "%";
-    image.src = `img/ferfi-testzsir-${value}.jpg`;
+    image.src = `img/man-${value}-bodyfat.jpeg`;
 });
+
 
 rangeInput2.addEventListener('input', function() {
     const value = rangeInput2.value * 5;
     valueText2.textContent = value + "%";
-    image2.src = `img/ferfi-testzsir-${value}.jpg`;
+    image2.src = `img/man-${value}-bodyfat.jpeg`;
 });
+
+
