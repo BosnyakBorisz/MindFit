@@ -294,3 +294,5 @@ Az alábbi kódot beillesztheted a weboldaladba:
 
 Ez egy alapvető megoldás, amit testre szabhatsz a saját igényeid szerint! Ha segítségre van szükséged a telepítéshez vagy bármilyen kérdésed van, szólj!
 
+izomterkep oldal https://levelsprotein.com/blogs/guides/the-ultimate-muscle-groups-guide#shoulders
+
