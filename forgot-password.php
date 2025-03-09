@@ -14,8 +14,10 @@
     $message = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $email = $_POST["email"];
 
+        $email = $_POST["email"];
+        $_SESSION['email'] = $email; 
+        
         $stmt = $conn->prepare("SELECT id FROM users WHERE email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
@@ -31,7 +33,7 @@
             $stmt->bind_param("sss", $token, $expiry, $email);
             $stmt->execute();
 
-            $resetLink = "http://" . "localhost/mindfit/mindfit/" . "/reset-password.php?token=" . $token;
+            $resetLink = "http://" . "localhost/mindfit/mindfit/static" . "/reset-password.php?token=" . $token;
 
             $mail = new PHPMailer(true);
 
@@ -73,7 +75,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>Elfelejtett jelszó</title>
 </head>
 <body>
@@ -107,9 +109,10 @@
                                 <?php echo $message; ?>
                             </div>
                             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                                <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
-                                <button type="submit" class="ujrakuldgomb">Nem kaptad meg? Újraküldés</button>
-                            </form>
+                            <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
+                            <input type="hidden" name="email" value="<?php echo $_SESSION['email']; ?>"> <!-- Add this hidden input field -->
+                            <button type="submit" class="ujrakuldgomb">Nem kaptad meg? Újraküldés</button>
+                        </form>
                         </div>
                     </div>
                 </div>
