@@ -1,0 +1,552 @@
+:root {
+    --a: #d8f3dc;
+    --b: #b7e4c7;
+    --c: #95d5b2;
+    --d: #74c69d;
+    --s: #52b788;
+    --f: #40916c;
+    --base-color: #2d6a4f;  
+    --h: #1b4332;
+    --text-color: #FFFFFF;
+    --i: #081c15;
+}
+
+body {
+    background-color: var(--base-color);
+    color: var(--text-color);
+}
+
+#hero {
+    background-image: url(img/man-1282232_1920.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+#hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--base-color);
+    opacity: 0.25;
+}
+
+#hero-text {
+    left: 10%;
+}
+
+
+#pros-list svg{
+    height:  120px;
+    width: auto;
+}
+
+#reviews { 
+    background-color: var(--f);
+}
+
+#faq {
+    width:calc(100% / 2);
+    margin: 0;
+}
+
+
+
+.hidden {
+    display: none !important;
+}
+
+.calorie-bg {
+    background-color: var(--f);
+}
+
+.progress-container {
+    position: relative;
+    width: 400px;
+}
+
+.progress-circle {
+    width: 410px;
+    height: 410px;
+    border-radius: 50%;
+    background: conic-gradient(var(--b) 0deg, #ddd 0deg);
+}
+
+.progress-text {
+    position: absolute;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-color);
+    white-space: pre-line;
+
+}
+
+.testalkat {
+    width: 95%;
+    margin: 5px;
+    border-radius: 10px;
+    border: 0
+}
+
+.testalkatin:checked + .testalkat {
+    border: 3px solid var(--c);
+}
+
+.step { 
+    display: none;
+}
+
+.step.active { 
+    display: flex;
+    justify-content: center;
+}
+
+
+.error {
+    height: 25px;
+    padding: 0;
+    margin: 0;
+    color: red;
+}
+
+.progress-calorie {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: var(--h);
+}
+
+.steps, .water {
+    background-color: var(--f);
+    width: 48%;
+}
+
+.workout-bg {
+    background-color: var(--f) !important;
+}
+
+#waterbar {
+    width: 30px !important;
+    height: 150px !important;
+}
+
+#arrow {
+    cursor: pointer;
+    pointer-events: all; 
+}
+  
+/* From Uiverse.io by elisapi */ 
+.card {
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    gap: 20px;
+  }
+  
+  /* for all social containers*/
+  .socialContainer {
+    width: 52px;
+    height: 52px;
+    background-color: rgb(65, 29, 131);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-duration: 0.3s;
+    border-radius: 30px;
+  }
+  /* instagram*/
+  .containerOne:hover {
+    background-color: #d62976;
+    transition-duration: 0.3s;
+    transform: scale(1.2);
+  }
+  /* twitter*/
+  .containerTwo:hover {
+    background-color: #00acee;
+    transition-duration: 0.3s;
+    transform: scale(1.2);
+  }
+  /* linkdin*/
+  .containerThree:hover {
+    background-color: #0072b1;
+    transition-duration: 0.3s;
+    transform: scale(1.2);
+  }
+  /* Whatsapp*/
+  .containerFour:hover {
+    background-color: #128c7e;
+    transition-duration: 0.3s;
+    transform: scale(1.2);
+  }
+  
+  .socialContainer:active {
+    transform: scale(0.9);
+    transition-duration: 0.3s;
+  }
+  
+  .socialSvg {
+    width: 17px;
+  }
+  
+  .socialSvg path {
+    fill: rgb(255, 255, 255);
+  }
+  
+  .socialContainer:hover .socialSvg {
+    animation: slide-in-top 0.3s both;
+  }
+  
+  @keyframes slide-in-top {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /*footer*/
+  #footer-content{
+      padding: 0 8rem;
+  }
+  #footer-oszlop3{
+      padding: 0 0 0 3rem;
+  }
+  .footer-emailbox{
+      display: flex;
+      align-items: center;
+  }
+    
+  .footer-emailmezo {
+      min-height: 35px;
+      max-width: 150px;
+      padding: 0 1rem;
+      color: #fff;
+      font-size: 15px;
+      border: 1px solid #fff;
+      border-radius: 6px 0 0 6px;
+      background-color: transparent;
+  }
+    
+  .footer-emailgomb {
+      min-height: 10px;
+      padding: .5em 1em;
+      border: none;
+      border-radius: 0 6px 6px 0;
+      background-color: var(--s);
+      color: #fff;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background-color .3s ease-in-out;
+  }
+    
+  .footer-emailgomb:hover {
+      background-color: var(--d);
+  }
+    
+  .input:focus, .input:focus-visible {
+      border-color: #3898EC;
+      outline: none;
+  }
+  /*ikonok*/
+  #footer-icons{
+      padding: 0 0 0 5rem;
+  }
+  
+  .social-icons{
+      display: flex;
+      align-items:start;
+      justify-content: start;
+      padding: 0;
+  }
+  
+  .social-icons li{
+      padding: 1.5rem 1rem 0 1rem;
+      list-style-type: none;
+  }
+  
+  .social-icons li:first-child{
+      padding-right: 1rem;
+  }
+  
+  .social-icons a{
+      color: white;
+  }
+  
+  .social-icons svg:hover{
+      color: var(--s);
+  }
+  /*ikonok*/
+  /*footer*/
+  
+  /*media - xs(0-576) sm(576-768) md(768-992) lg(992-1200) xl(1200-1500)*/
+  @media only screen and (max-width: 2000px) {
+      #footer-icons{
+          padding: 0 0 0 7rem;
+      }
+  }
+  @media only screen and (max-width: 1200px) {
+      #footer-icons{
+          padding: 0 0 0 6rem;
+      }
+  }
+  @media only screen and (max-width: 992px) {
+      #footer-content{
+          padding: 0 6rem;
+      }
+      #footer-oszlop3{
+          padding: 0 0 0 1rem;
+      }
+      #footer-icons{
+          padding: 0 0 0 5rem;
+      }
+  }
+  @media only screen and (max-width: 850px) {
+      #footer-content{
+          padding: 0 3rem;
+      }
+      #footer-icons{
+          padding: 0 0 0 2.5rem;
+      }
+  }
+  @media only screen and (max-width: 800px) {
+      #footer-content{
+          padding: 0 2rem;
+      }
+  }
+  @media only screen and (max-width: 768px) {
+      #footer-oszlop1{
+          padding: 0.5rem 0;
+      }
+      #footer-oszlop2{
+          padding: 0.5rem 0;
+      }
+      #footer-oszlop3{
+          padding: 0.5rem 0 0.5rem 0rem;
+      }
+      #footer-icons{
+          padding: 0 0 0 0.5rem;
+      }
+  }
+  
+#box1{
+    display: flex;
+    justify-content: center;
+}
+
+#keret{
+    background-color: transparent;
+    width: 30rem;
+    padding: 20px;
+    border-radius: 5px;
+    margin: auto;
+}
+
+
+#keret  a{
+    color:var(--text-color);
+}
+#keret a:active{
+    color:var(--text-color);
+}
+#keret a:link{
+    color:var(--text-color);
+}
+#keret a:visited{
+    color: var(--text-color);
+}
+#keret a:hover{
+    color: var(--text-color);
+}
+
+.ujrakuldgomb {
+    background-color: #eee;
+    border: none;
+    font-size: 1rem;
+    width: 100%;
+    height: 60px;
+    border-radius: 10px;
+    color: #4d648d;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+
+/*előre gomb regsztrációs oldalon*/
+.nextgomb{
+    background-color: #eee;
+    border: none;
+    font-size: 1rem;
+    width: 13.5rem;
+    height: 2.5rem;
+    border-radius: 10px;
+    color: var(--h);
+    cursor: pointer;
+    margin: 1rem 0;
+}
+   
+.nextgomb:hover:not(:disabled) {
+    background: var(--h);
+    color: white;
+}
+   
+.nextgomb:disabled {
+    cursor: auto;
+    color: grey;
+}
+
+
+.backgomb{
+    background-color: #eee;
+    border: none;
+    font-size: 1rem;
+    width: 13.5rem;
+    height: 2.5rem;
+    border-radius: 10px;
+    color: var(--h);
+    cursor: pointer;
+    margin: 1rem 0;
+}
+ /*előre gomb regsztrációs oldalon*/
+ /*hátra gomb regsztrációs oldalon*/  
+
+   
+.backgomb:hover:not(:disabled) {
+    background: var(--h);
+    color: white;
+}
+   
+.backgomb:disabled {
+    cursor: auto;
+    color: grey;
+}
+/*hátra gomb regsztrációs oldalon*/  
+/*jelszót megjelenítő gomb*/
+.workout-card {
+    background-color: var(--h);
+    border-radius: 10px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+}
+
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 35px; 
+}
+
+.container-szem {
+    --color: var(--c);
+    --size: 25px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    position: absolute;
+    cursor: pointer;
+    font-size: var(--size);
+    user-select: none;
+    fill: var(--color);
+    right: 10px;
+    top: 80%;
+    transform: translateY(-50%);
+}
+  
+.container-szem .szem1 {
+    position: absolute;
+    animation: keyframes-fill .5s;
+}
+  
+.container-szem .szem2 {
+    position: absolute;
+    animation: keyframes-fill .5s;
+    display: none;
+}
+
+.container-szem1 input:checked ~ .szem1 {
+    display: none;
+}
+  
+.container-szem input:checked ~ .szem2 {
+    display: block;
+}
+  
+.container-szem input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+  
+@keyframes keyframes-fill {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  
+    50% {
+      transform: scale(1.2);
+    }
+}
+/*jelszót megjelenítő gomb*/
+
+.st_kep{
+    width: 100px;
+}
+
+#bodyfat-image{
+    width: 27.5rem;
+}
+
+#bodyfat-image2{
+    width: 27.5rem;
+}
+
+/*FAQ*/
+#faq h1{
+    margin: 2rem;
+}
+
+.faq_informaciok{
+    margin-left: 20px
+}
+
+#faq summary {
+    display: flex; 
+    justify-content: space-between; 
+}
+
+#faq summary::after {
+    content: url(img/icons8-plus-24\ \(1\).png);  
+    padding: 0 1rem 0 0;
+    position: relative;
+}
+
+#faq details[open] summary::after {
+    content: url(img/icons8-minus-24\ \(1\).png); 
+}
+/*FAQ*/
+
+.w-plan-bg {
+    background-color: var(--f);
+}
+
