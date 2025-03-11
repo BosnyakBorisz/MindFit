@@ -225,6 +225,64 @@ function nextStep2(){
         endo.alt = "Endomorph férfi"
     }
 
+    //A testzsírszázalékcsúszka
+    const rangeInput = document.getElementById('bodyfat-range');
+    const image = document.getElementById('bodyfat-image');
+    const valueText = document.getElementById('bodyfat-text');
+
+    const rangeInput2 = document.getElementById('bodyfat-range2');
+    const image2 = document.getElementById('bodyfat-image2');
+    const valueText2 = document.getElementById('bodyfat-text2');
+
+    if (sex === "Férfi") {
+        image.src = `img/man-15-bodyfat.jpeg`;
+        rangeInput.addEventListener('input', function() {
+            const value = rangeInput.value * 5;
+            valueText.textContent = value + "%";
+            image.src = `img/man-${value}-bodyfat.jpeg`;
+        });
+        
+        image2.src = `img/man-15-bodyfat.jpeg`;
+        rangeInput2.addEventListener('input', function() {
+            const value = rangeInput2.value * 5;
+            valueText2.textContent = value + "%";
+            image2.src = `img/man-${value}-bodyfat.jpeg`;
+        });
+        
+    }
+    else if (sex === "Nő")
+    {
+        image.src = `img/woman-15-bodyfat.jpeg`;
+        rangeInput.addEventListener('input', function() {
+            const value = (rangeInput.value * 5) + 5;
+            valueText.textContent = value + "%";
+            image.src = `img/woman-${value}-bodyfat.jpeg`;
+        });
+        
+        image2.src = `img/woman-15-bodyfat.jpeg`;
+        rangeInput2.addEventListener('input', function() {
+            const value = (rangeInput.value * 5) + 5;
+            valueText2.textContent = value + "%";
+            image2.src = `img/woman-${value}-bodyfat.jpeg`;
+        });
+        
+    }
+    else {
+        image.src = `img/man-15-bodyfat.jpeg`;
+        rangeInput.addEventListener('input', function() {
+            const value = rangeInput.value * 5;
+            valueText.textContent = value + "%";
+            image.src = `img/man-${value}-bodyfat.jpeg`;
+        });
+        
+        image2.src = `img/man-15-bodyfat.jpeg`;
+        rangeInput2.addEventListener('input', function() {
+            const value = rangeInput2.value * 5;
+            valueText2.textContent = value + "%";
+            image2.src = `img/man-${value}-bodyfat.jpeg`;
+        });    
+    }
+
 
     return valid;
 }
@@ -742,20 +800,86 @@ function nextStep12() {
     return valid;
 }
 
-const serult1Label = document.getElementById("serult1-label");
-const serult2Label = document.getElementById("serult2-label");
-const serult3Label = document.getElementById("serult3-label");
-const serult4Label = document.getElementById("serult4-label");
-const serult5Label = document.getElementById("serult5-label");
-const serult6Label = document.getElementById("serult6-label");
+const muscle1 = document.getElementById("focusmuscle1");
+const muscle2 = document.getElementById("focusmuscle2");
+const muscle3 = document.getElementById("focusmuscle3");
+const muscle4 = document.getElementById("focusmuscle4");
+const muscle5 = document.getElementById("focusmuscle5");
+const muscle6 = document.getElementById("focusmuscle6");
+const muscle7 = document.getElementById("focusmuscle7");
+const muscle8 = document.getElementById("focusmuscle8");
 
-function addBorder(label, checkbox) {
-  if (checkbox.checked) {
-    label.style.border = '3px solid var(--c)';
-  } else {
-    label.style.border = '';
-  }
-}
+muscle1.addEventListener("change", function() {
+    if (muscle1.checked) {
+        document.getElementById("focusmuscle1-label").style.border = "3px solid var(--c)";
+    }
+    else {
+        document.getElementById("focusmuscle1-label").style.border = "";
+    }
+});
+
+muscle2.addEventListener("change", function() {
+    if (muscle2.checked) {
+        document.getElementById("focusmuscle2-label").style.border = "3px solid var(--c)";
+    }
+    else {
+        document.getElementById("focusmuscle2-label").style.border = "";
+    }
+});
+
+muscle3.addEventListener("change", function() {
+    if (muscle3.checked) {
+        document.getElementById("focusmuscle3-label").style.border = "3px solid var(--c)";
+    }
+    else {
+        document.getElementById("focusmuscle3-label").style.border = "";
+    }
+});
+
+muscle4.addEventListener("change", function() {
+    if (muscle4.checked) {
+        document.getElementById("focusmuscle4-label").style.border = "3px solid var(--c)";
+    }
+    else {
+        document.getElementById("focusmuscle4-label").style.border = "";
+    }
+});
+
+muscle5.addEventListener("change", function() {
+    if (muscle5.checked) {
+        document.getElementById("focusmuscle5-label").style.border = "3px solid var(--c)";
+    }
+    else {
+        document.getElementById("focusmuscle5-label").style.border = "";
+    }
+});
+
+muscle6.addEventListener("change", function() {
+    if (muscle6.checked) {
+        document.getElementById("focusmuscle6-label").style.border = "3px solid var(--c)";
+    }
+    else {
+        document.getElementById("focusmuscle6-label").style.border = "";
+    }
+});
+
+muscle7.addEventListener("change", function() {
+    if (muscle7.checked) {
+        document.getElementById("focusmuscle7-label").style.border = "3px solid var(--c)";
+    }
+    else {
+        document.getElementById("focusmuscle7-label").style.border = "";
+    }
+});
+
+muscle8.addEventListener("change", function() {
+    if (muscle8.checked) {
+        document.getElementById("focusmuscle8-label").style.border = "3px solid var(--c)";
+    }
+    else {
+        document.getElementById("focusmuscle8-label").style.border = "";
+    }
+});
 
 const serult1 = document.getElementById("serult1");
 const serult2 = document.getElementById("serult2");
@@ -764,13 +888,59 @@ const serult4 = document.getElementById("serult4");
 const serult5 = document.getElementById("serult5");
 const serult6 = document.getElementById("serult6");
 
-serult1.addEventListener('change', () => addBorder(serult1Label, serult1));
-serult2.addEventListener('change', () => addBorder(serult2Label, serult2));
-serult3.addEventListener('change', () => addBorder(serult3Label, serult3));
-serult4.addEventListener('change', () => addBorder(serult4Label, serult4));
-serult5.addEventListener('change', () => addBorder(serult5Label, serult5));
-serult6.addEventListener('change', () => addBorder(serult6Label, serult6));
+serult1.addEventListener("change", function() {
+    if (serult1.checked) {
+        document.getElementById("serult1-label").style.border = "3px solid var(--c)";
+    }
+    else {
+        document.getElementById("serult1-label").style.border = "";
+    }
+});
 
+serult2.addEventListener("change", function() {
+    if (serult2.checked) {
+        document.getElementById("serult2-label").style.border = "3px solid var(--c)";
+    }
+    else {
+        document.getElementById("serult2-label").style.border = "";
+    }
+});
+
+serult3.addEventListener("change", function() {
+    if (serult3.checked) {
+        document.getElementById("serult3-label").style.border = "3px solid var(--c)";
+    }
+    else {
+        document.getElementById("serult3-label").style.border = "";
+    }
+});
+
+serult4.addEventListener("change", function() {
+    if (serult4.checked) {
+        document.getElementById("serult4-label").style.border = "3px solid var(--c)";
+    }
+    else {
+        document.getElementById("serult4-label").style.border = "";
+    }
+});
+
+serult5.addEventListener("change", function() {
+    if (serult5.checked) {
+        document.getElementById("serult5-label").style.border = "3px solid var(--c)";
+    }
+    else {
+        document.getElementById("serult5-label").style.border = "";
+    }
+});
+
+serult6.addEventListener("change", function() {
+    if (serult6.checked) {
+        document.getElementById("serult6-label").style.border = "3px solid var(--c)";
+    }
+    else {
+        document.getElementById("serult6-label").style.border = "";
+    }
+});
 
 //A lépegetés
 document.querySelectorAll('.nextgomb').forEach(button => {
@@ -843,33 +1013,3 @@ document.querySelectorAll('.backgomb').forEach(button => {
         }
     });
 });
-
-
-
-//A testzsírszázalékcsúszka
-const rangeInput = document.getElementById('bodyfat-range');
-const image = document.getElementById('bodyfat-image');
-const valueText = document.getElementById('bodyfat-text');
-
-const rangeInput2 = document.getElementById('bodyfat-range2');
-const image2 = document.getElementById('bodyfat-image2');
-const valueText2 = document.getElementById('bodyfat-text2');
-
-let sex = document.getElementById("sex").value;
-
-
-
-rangeInput.addEventListener('input', function() {
-    const value = rangeInput.value * 5;
-    valueText.textContent = value + "%";
-    image.src = `img/man-${value}-bodyfat.jpeg`;
-});
-
-
-rangeInput2.addEventListener('input', function() {
-    const value = rangeInput2.value * 5;
-    valueText2.textContent = value + "%";
-    image2.src = `img/man-${value}-bodyfat.jpeg`;
-});
-
-

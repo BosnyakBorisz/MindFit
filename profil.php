@@ -7,7 +7,16 @@
         exit();
     }
 
-?>
+
+    $mysqli = new mysqli("localhost", "root", "", "mindfit");
+  
+    $email = $_SESSION["email"];
+    $eredmeny = $mysqli->query("select user_information.nem FROM users, user_information where email like '$email' and users.id = user_information.user_id");
+    $sor = $eredmeny->fetch_assoc();
+    $nem = $sor['nem'];
+  
+?>  
+
 
 <!DOCTYPE html>
 <html lang="hu">
@@ -16,7 +25,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Profil</title>
 </head>
 <body>
@@ -107,7 +116,27 @@
 
   </main>
 
-  <script src="profil.js"></script>
+  <scrip src="js/profil.js"></script>
+  <script>
+    
+    let sex = "<?php echo $nem; ?>";
 
+    if (sex === 'Férfi') {
+        document.getElementById('izomterkep1').src = 'img/man_musculature_front.png';
+        document.getElementById('izomterkep1').alt = "Férfi izomtérkép";
+        document.getElementById('izomterkep2').src = "img/man_musculature_back.png";
+        document.getElementById('izomterkep2').alt = "Férfi izomtérkép";
+    } else if (sex === 'Nő') {
+        document.getElementById('izomterkep1').src = 'img/woman_musculature_front.png';
+        document.getElementById('izomterkep1').alt = "Nő izomtérkép";
+        document.getElementById('izomterkep2').src = "img/woman_musculature_back.png";
+        document.getElementById('izomterkep2').alt = "Nő izomtérkép";
+    } else {
+        document.getElementById('izomterkep1').src = 'img/man_musculature_front.png';
+        document.getElementById('izomterkep1').alt = "Férfi izomtérkép";
+        document.getElementById('izomterkep2').src = "img/man_musculature_back.png";
+        document.getElementById('izomterkep2').alt = "Férfi izomtérkép";
+    }
+    </script>
 </body>
 </html>

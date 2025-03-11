@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Regisztráció</title>
 </head>
 <body>
@@ -219,7 +219,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                 </label>
                             </div>
                             <p class="error" id="bodytypeError"></p>
-                            <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
+                            <button type="button" class="backgomb">Vissza</button>
                             <button type="button" onclick="nextStep4()" class="nextgomb">Következő</button>
                         </div>
                     </div>
@@ -227,10 +227,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <div class="step">
                         <div id="keret">
                             <h2>Jelenlegi testzsírszázalék</h2>
-                            <img id="bodyfat-image" src="img/man-15-bodyfat.jpeg" alt="Testzsíszázalék">
+                            <img id="bodyfat-image" src="" alt="Testzsíszázalék">
                             <p id="bodyfat-text">15%</p>
                             <input class="form-control" type="range" min="1" max="8" value="3" id="bodyfat-range" name="bodyfat-range" required>
-                            <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
+                            <button type="button" class="backgomb">Vissza</button>
                             <button type="button" onclick="nextStep5()" class="nextgomb">Következő</button>
                         </div>
                     </div>
@@ -238,10 +238,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <div class="step">                                                                                                                      
                         <div id="keret">
                             <h2>Cél testzsírszázalék</h2>
-                            <img id="bodyfat-image2" src="img/man-15-bodyfat.jpeg" alt="Testzsíszázalék" >
+                            <img id="bodyfat-image2" src="" alt="Testzsíszázalék" >
                             <p id="bodyfat-text2">15%</p>
                             <input class="form-control" type="range" min="1" max="8" value="3" id="bodyfat-range2" name="bodyfat-range2" required>
-                            <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
+                            <button type="button" class="backgomb">Vissza</button>
                             <button type="button" onclick="nextStep6()" class="nextgomb">Következő</button>
                         </div>
                     </div>
@@ -264,7 +264,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                 </label>  
                             </div>   
                             <p class="error" id="workoutError"></p>
-                            <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
+                            <button type="button"class="backgomb">Vissza</button>
                             <button type="button" onclick="nextStep7()" class="nextgomb">Következő</button>
                         </div>  
                     </div>
@@ -296,7 +296,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                 </label> 
                             </div>   
                             <p class="error" id="wantedWorkoutError"></p>
-                            <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
+                            <button type="button" class="backgomb">Vissza</button>
                             <button type="button" onclick="nextStep8()" class="nextgomb">Következő</button>
                         </div>  
                     </div> 
@@ -325,7 +325,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                 </label>     
                             </div>   
                             <p class="error" id="wantedTimeError"></p>
-                            <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
+                            <button type="button" class="backgomb">Vissza</button>
                             <button type="button" onclick="nextStep9()" class="nextgomb">Következő</button>
                         </div>
                     </div>  
@@ -343,7 +343,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                 <input class="hidden" type="radio" name="edzeshelye" id="workoutplace3" value="Hibrid">
                             </label>
                             <p class="error" id="placeError"></p>
-                            <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
+                            <button type="button" class="backgomb">Vissza</button>
                             <button type="button" onclick="nextStep10()" class="nextgomb">Következő</button>
                         </div>
                     </div>
@@ -361,7 +361,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                 <input class="hidden" type="radio" name="felszereltseg" id="equipment3" value="Saját testsúly">
                             </label>
                             <p class="error" id="felszereltsegError"></p>
-                            <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
+                            <button type="button" class="backgomb">Vissza</button>
                             <button type="button" onclick="nextStep11()" class="nextgomb">Következő</button>
                         </div>
                     </div>
@@ -372,48 +372,46 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             <div class="d-flex flex-column">
                                 <div class="row">
                                     <div class="col-6"> 
-                                    <label class="d-flex justify-content-center p-2">
-                                        <input class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Mell">
-                                        <img class="w-50" src="img/fokusz-mell.png" alt="Férfi mell">
-                                    </label>
-                                    <label class="d-flex justify-content-center p-2">
-                                        <input class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Hát">
-                                        <img class="w-50" src="img/fokusz-hat.png" alt="Férfi hát">
-                                    </label>
-                                    <label class="d-flex justify-content-center p-2">
-                                        <input class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Has">
-                                        <img class="w-50" src="img/fokusz-has.png" alt="Férfi has">
+                                        <label id="focusmuscle1-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
+                                            <input id="focusmuscle1" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Mell">
+                                            <img class="w-50" src="img/fokusz-mell.png" alt="Férfi mell">
+                                        </label>
+                                        <label id="focusmuscle2-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
+                                            <input id="focusmuscle2" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Hát">
+                                            <img class="w-50" src="img/fokusz-hat.png" alt="Férfi hát">
+                                        </label>
+                                        <label id="focusmuscle3-label"  class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
+                                            <input id="focusmuscle3" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Has">
+                                            <img class="w-50" src="img/fokusz-has.png" alt="Férfi has">
 
-                                    </label>
-                                    <label class="d-flex justify-content-center p-2">
-                                        <input class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Bicepsz">
-                                        <img class="w-50" src="img/fokusz-bicepsz.png" alt="Férfi bicepsz">
-
-                                    </label>
+                                        </label>
+                                        <label id="focusmuscle4-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
+                                            <input id="focusmuscle4" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Bicepsz">
+                                            <img class="w-50" src="img/fokusz-bicepsz.png" alt="Férfi bicepsz">
+                                        </label>
                                     </div>
                                     <div class="col-6"> 
-                                    <label class="d-flex justify-content-center p-2">
-                                        <input class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Tricepsz">
-                                        <img class="w-50" src="img/fokusz.tricepsz.png" alt="Férfi tricepsz">
-
-                                    </label>
-                                    <label class="d-flex justify-content-center p-2">
-                                        <input class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Váll">
-                                        <img class="w-50" src="img/fokusz-vall.png" alt="Férfi váll">
-                                    </label>
-                                    <label class="d-flex justify-content-center p-2">
-                                        <input class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Láb">
-                                        <img class="w-50" src="img/fokusz-lab.png" alt="Férfi Láb">
-                                    </label>
-                                    <label class="d-flex justify-content-center p-2">
-                                        <input class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Láb">
-                                        <img class="w-50" src="img/fokusz-vadli.png" alt="Férfi Láb">
-                                    </label>
+                                        <label id="focusmuscle5-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
+                                            <input id="focusmuscle5" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Tricepsz">
+                                            <img class="w-50" src="img/fokusz.tricepsz.png" alt="Férfi tricepsz">
+                                        </label>
+                                        <label id="focusmuscle6-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
+                                            <input id="focusmuscle6" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Váll">
+                                            <img class="w-50" src="img/fokusz-vall.png" alt="Férfi váll">
+                                        </label>
+                                        <label id="focusmuscle7-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
+                                            <input id="focusmuscle7" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Láb">
+                                            <img class="w-50" src="img/fokusz-lab.png" alt="Férfi Láb">
+                                        </label>
+                                        <label id="focusmuscle8-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
+                                            <input id="focusmuscle8" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Láb">
+                                            <img class="w-50" src="img/fokusz-vadli.png" alt="Férfi Láb">
+                                        </label>
                                     </div>
                                 </div>
                             </div>
                             <p class="error" id="fokuszError"></p>
-                            <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
+                            <button type="button" class="backgomb">Vissza</button>
                             <button type="button" onclick="nextStep12()" class="nextgomb">Következő</button>
                         </div>
                     </div>
@@ -422,33 +420,39 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <div id="keret">
                             <h2>Érzékeny testrész</h2>
                             <div class="d-flex flex-column">
-                                <label class="workout-card" id="serult1-label">
-                                    <input class="hidden" type="checkbox" name="injured[]" value="Váll" id="serult1">
-                                    <img class="w-25" src="img/váll.jpg" alt="">
-                                </label>
-                                <label class="workout-card" id="serult2-label">
-                                    <input class="hidden" type="checkbox" name="injured[]" value="Könyök" id="serult2">
-                                    <img class="w-25" src="img/konyok.jpg" alt="">
-                                </label>
-                                <label class="workout-card" id="serult3-label">
-                                    <input class="hidden" type="checkbox" name="injured[]" value="Csukló" id="serult3">
-                                    <img class="w-25" src="img/váll.jpg" alt="">
-                                </label>
-                                <label class="workout-card" id="serult4-label">                                   
-                                    <input class="hidden" type="checkbox" name="injured[]" value="Alsóhát" id="serult4">
-                                    <img class="w-25" src="img/váll.jpg" alt="">
-                                </label>
-                                <label class="workout-card" id="serult5-label">
-                                    <input class="hidden" type="checkbox" name="injured[]" value="Térd" id="serult5">
-                                    <img class="w-25" src="img/váll.jpg" alt="">
-                                </label>
-                                <label class="workout-card" id="serult6-label">
-                                    <input class="hidden" type="checkbox" name="injured[]" value="Boka" id="serult6">
-                                    <img class="w-25" src="img/váll.jpg" alt="">
-                                </label>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label id="serult1-label" class="serulttest m-1 d-flex justify-content-center align-items-center">
+                                            <input id="serult1" class="hidden" type="checkbox" name="injured[]" value="Váll">
+                                            <img class="st_kep" src="img/vall-fajdalom.jpg" alt="Váll">
+                                        </label>
+                                        <label id="serult2-label" class="serulttest m-1 d-flex justify-content-center align-items-center">
+                                            <img class="st_kep" src="img/konyok-fajdalom.jpg" alt="Könyök">
+                                            <input id="serult2" class="hidden" type="checkbox" name="injured[]" value="Könyök">
+                                        </label>
+                                        <label id="serult3-label" class="serulttest m-1 d-flex justify-content-center align-items-center">
+                                            <img class="st_kep" src="img/csuklo-fajdalom.jpg" alt="Csukló">
+                                            <input id="serult3" class="hidden" type="checkbox" name="injured[]" value="Csukló">
+                                        </label>
+                                    </div>
+                                    <div class="col-6">
+                                        <label id="serult4-label" class="serulttest m-1 d-flex justify-content-center align-items-center">
+                                            <img class="st_kep" src="img/alsohati-fajdalom.jpg" alt="Alsóhát">
+                                            <input id="serult4" class="hidden" type="checkbox" name="injured[]" value="Alsóhát">
+                                        </label>
+                                        <label id="serult5-label" class="serulttest m-1 d-flex justify-content-center align-items-center">
+                                            <img class="st_kep" src="img/terd-fajdalom.jpg" alt="Térd">
+                                            <input id="serult5" class="hidden" type="checkbox" name="injured[]" value="Térd">
+                                        </label>
+                                        <label id="serult6-label" class="serulttest m-1 d-flex justify-content-center align-items-center">
+                                            <img class="st_kep" src="img/boka-fajdalom.jpg" alt="Boka">
+                                            <input id="serult6" class="hidden" type="checkbox" name="injured[]" value="Boka">
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                             <p class="error" id="serultError"></p>
-                            <button type="button" onclick="prevStep()" class="backgomb">Vissza</button>
+                            <button type="button" class="backgomb">Vissza</button>
                             <button type="submit" name="register" class="nextgomb">Regisztrálás</button>
                         </div>
                     </div>
@@ -457,7 +461,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </form>
     </div>
 
-    <script src="nextStep.js"></script>
-    <script src="showPass.js"></script>
+    <script src="js/nextStep.js"></script>
+    <script src="js/showPass.js"></script>
 </body>
 </html>

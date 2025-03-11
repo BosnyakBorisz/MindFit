@@ -20,7 +20,6 @@
                       <input class="footer-emailgomb" value="Küldés" type="submit">
                   </div>
               </form>
-              <p id="response-message"></p>
           </div>
         </div>
     </div>
@@ -67,25 +66,4 @@
         </div>
       </div>
     </div>
-    <script>
-      document.getElementById("newsletter-form").addEventListener("submit", function(e) {
-          e.preventDefault();
-          let email = document.getElementById("email").value;
-      
-          fetch("subscribe.php", {
-              method: "POST",
-              headers: {
-                  "Content-Type": "application/x-www-form-urlencoded"
-              },
-              body: "email=" + encodeURIComponent(email)
-          })
-          .then(response => response.text())
-          .then(data => {
-              document.getElementById("response-message").textContent = data;
-          })
-          .catch(error => {
-              console.error("Hiba történt:", error);
-          });
-      });
-      </script>
 </footer>

@@ -296,3 +296,76 @@ Ez egy alapvető megoldás, amit testre szabhatsz a saját igényeid szerint! Ha
 
 izomterkep oldal https://levelsprotein.com/blogs/guides/the-ultimate-muscle-groups-guide#shoulders
 
+
+sablon edzesterv 
+Itt van néhány sablon edzésterv, amelyeket egészséges és sérült testrészekhez igazítva készítettem. Ezeket az igények szerint módosíthatod vagy személyre szabhatod.  
+
+---
+
+### **1. Általános Erőnléti Edzésterv (Egészséges Testrészekkel)**  
+**Cél:** Erőnövelés és állóképesség fejlesztése  
+**Frekvencia:** Heti 3-4 alkalom  
+**Időtartam:** 45-60 perc  
+
+**Edzésfelosztás:**  
+- **Bemelegítés** (10 perc): dinamikus nyújtás, ugrókötelezés, könnyű kardió  
+- **Fő rész:**  
+  - Guggolás – 4x8-10  
+  - Fekvenyomás – 4x8-10  
+  - Felhúzás – 4x6-8  
+  - Evezés rúddal – 4x8-10  
+  - Vállból nyomás – 3x10-12  
+  - Hasprés vagy plank – 3x max idő  
+
+- **Levezetés** (5-10 perc): nyújtás és hengerezés  
+
+---
+
+### **2. Edzésterv Sérült Vállal**  
+**Cél:** Láb- és törzserő fejlesztése vállterhelés nélkül  
+**Frekvencia:** Heti 3-4 alkalom  
+
+**Edzésfelosztás:**  
+- **Bemelegítés**: Gumiköteles mozgások, könnyű kardió (pl. séta, kerékpár)  
+- **Fő rész:**  
+  - Guggolás – 4x8-10  
+  - Lábnyomás – 3x12-15  
+  - RDL (román felhúzás) – 3x10-12  
+  - Egylábas guggolás – 3x12-15  
+  - Core erősítés (plank, orosz twist)  
+
+- **Levezetés**: Nyújtás és hengerezés  
+
+---
+
+### **3. Edzésterv Sérült Lábbal (Pl. térdprobléma, bokasérülés)**  
+**Cél:** Felsőtest és törzs erősítése, alsótest minimalizált terhelése  
+**Frekvencia:** Heti 3-4 alkalom  
+
+**Edzésfelosztás:**  
+- **Bemelegítés:** Könnyű felsőtest-mobilizáció, ülve végzett mozdulatok  
+- **Fő rész:**  
+  - Fekvenyomás – 4x8-10  
+  - Húzódzkodás (géppel vagy szalaggal segítve) – 4x8-10  
+  - Oldalemelés – 3x12-15  
+  - Bicepsz és tricepsz izoláció – 3x12-15  
+  - Core edzés (ülő helyzetben)  
+
+- **Levezetés:** Ülve végzett nyújtás, hengerezés  
+
+---
+
+### **4. Sérülés Utáni Regeneráló Edzés (Rehabilitációs Célú)**  
+**Cél:** Sérült terület lassú visszaerősítése  
+**Frekvencia:** Heti 2-3 alkalom  
+
+**Gyakorlatok:**  
+- Mobilizációs és nyújtógyakorlatok  
+- Gumikötéllel végzett könnyű ellenállásos mozgások  
+- Egyensúly- és koordinációs edzés (pl. BOSU labda)  
+- Alacsony intenzitású kardió (úszás, szobakerékpár)  
+
+---
+
+Ha szeretnéd ezeket még pontosabban személyre szabni (pl. konkrét sérülésekre, sportágspecifikus célokra), írj, és finomhangoljuk! 😊
+
