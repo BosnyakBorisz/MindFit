@@ -66,4 +66,30 @@
         </div>
       </div>
     </div>
+    <div id="cookie-banner">
+      <p>
+        Sütiket használunk, hogy javítsuk a weboldalunkon való élményt. Weboldalunk használatával hozzájárulsz a sütik használatához.
+      </p>
+      <button id="accept-cookies" class="btn btn-success">Elfogadás</button>
+      <button id="reject-cookies" class="btn btn-danger">Elutasítás</button>
+      <button id="customize-cookies" class="btn btn-secondary">Módosítás</button>
+    </div>
+    
+    <script>
+      window.onload = function() {
+        if (!localStorage.getItem("cookies_accepted")) {
+          document.getElementById("cookie-banner").style.display = "block";
+        }
+    
+        document.getElementById("accept-cookies").onclick = function() {
+          localStorage.setItem("cookies_accepted", "true");
+          document.getElementById("cookie-banner").style.display = "none";
+        }
+    
+        document.getElementById("reject-cookies").onclick = function() {
+          localStorage.setItem("cookies_accepted", "false");
+          document.getElementById("cookie-banner").style.display = "none";
+        }
+      }
+    </script>
 </footer>

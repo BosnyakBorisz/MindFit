@@ -564,3 +564,16 @@ body {
     background-color: var(--f);
 }
 
+#cookie-banner {
+    background-color: var(--f);
+    color: white;
+    padding: 20px; 
+    position: fixed;
+    bottom: 10px;
+    width: 99%;
+    margin: 5px;
+    min-width: 300px;
+    border-radius: 8px; 
+    text-align: center;
+    z-index: 3;
+}
