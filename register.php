@@ -422,23 +422,29 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <div id="keret">
                             <h2>Érzékeny testrész</h2>
                             <div class="d-flex flex-column">
-                                <label class="workout-card" id="serult1-label">Váll
+                                <label class="workout-card" id="serult1-label">
                                     <input class="hidden" type="checkbox" name="injured[]" value="Váll" id="serult1">
+                                    <img class="w-25" src="img/váll.jpg" alt="">
                                 </label>
-                                <label class="workout-card" id="serult2-label">Könyök
+                                <label class="workout-card" id="serult2-label">
                                     <input class="hidden" type="checkbox" name="injured[]" value="Könyök" id="serult2">
+                                    <img class="w-25" src="img/konyok.jpg" alt="">
                                 </label>
-                                <label class="workout-card" id="serult3-label">Csukló
+                                <label class="workout-card" id="serult3-label">
                                     <input class="hidden" type="checkbox" name="injured[]" value="Csukló" id="serult3">
+                                    <img class="w-25" src="img/váll.jpg" alt="">
                                 </label>
-                                <label class="workout-card" id="serult4-label">Alsóhát                                   
+                                <label class="workout-card" id="serult4-label">                                   
                                     <input class="hidden" type="checkbox" name="injured[]" value="Alsóhát" id="serult4">
+                                    <img class="w-25" src="img/váll.jpg" alt="">
                                 </label>
-                                <label class="workout-card" id="serult5-label">Térd
+                                <label class="workout-card" id="serult5-label">
                                     <input class="hidden" type="checkbox" name="injured[]" value="Térd" id="serult5">
+                                    <img class="w-25" src="img/váll.jpg" alt="">
                                 </label>
-                                <label class="workout-card" id="serult6-label">Boka
+                                <label class="workout-card" id="serult6-label">
                                     <input class="hidden" type="checkbox" name="injured[]" value="Boka" id="serult6">
+                                    <img class="w-25" src="img/váll.jpg" alt="">
                                 </label>
                             </div>
                             <p class="error" id="serultError"></p>
