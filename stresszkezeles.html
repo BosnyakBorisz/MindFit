@@ -6,38 +6,107 @@
     <title>Stresszkezelés</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background: linear-gradient(135deg, #E3F2FD, #B3E5FC);
             color: #333;
         }
         header {
-            background-color: #4CAF50;
+            background: linear-gradient(135deg, #43cea2, #185a9d);
             color: white;
             text-align: center;
-            padding: 15px 0;
+            padding: 50px 20px;
+            font-size: 32px;
+            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
         }
         .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 30px;
             background: white;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
         }
-        h2 {
-            color: #4CAF50;
-        }
-        ul {
+        .card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-size: 16px;
             line-height: 1.8;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        .card h2 {
+            color: #2E7D32;
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .card ul {
+            padding: 0;
+            list-style-type: none;
+        }
+        .card ul li {
+            margin-bottom: 12px;
+        }
+        .card ul li:before {
+            
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-size: 18px;
+        }
+        .card .card-footer {
+            margin-top: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #185a9d;
         }
         footer {
             text-align: center;
-            padding: 10px;
-            background-color: #4CAF50;
+            padding: 30px;
+            background: linear-gradient(135deg, #185a9d, #43cea2);
             color: white;
-            margin-top: 20px;
+            margin-top: 40px;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .social-icons a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            transition: transform 0.3s;
+        }
+        .social-icons a:hover {
+            transform: scale(1.2);
         }
     </style>
 </head>
@@ -46,32 +115,40 @@
         <h1>Stresszkezelés</h1>
     </header>
     <div class="container">
-        <h2>Miért fontos a stresszkezelés?</h2>
-        <p>A stressz hosszú távon káros hatással lehet az egészségünkre és közérzetünkre. Fontos, hogy megfelelő technikákat alkalmazzunk a csökkentésére.</p>
-        
-        <h2>Hatékony stresszkezelési módszerek:</h2>
-        <ul>
-            <li><strong>Rendszeres testmozgás:</strong> A sport és a fizikai aktivitás segít csökkenteni a stresszhormonokat és növeli a boldogsághormonok szintjét. Ajánlott mozgásformák: futás, jóga, úszás, súlyzós edzés vagy akár egy séta a természetben.</li>
-            <li><strong>Megfelelő alvás:</strong> Az elegendő és pihentető alvás elengedhetetlen a stressz kezeléséhez. Érdemes minden nap azonos időben lefeküdni és felkelni, valamint kerülni a képernyők használatát elalvás előtt.</li>
-            <li><strong>Légzőgyakorlatok:</strong>
-                <ul>
-                    <li><strong>4-7-8 technika:</strong> Lélegezz be 4 másodpercig, tartsd bent 7 másodpercig, majd fújd ki 8 másodperc alatt. Ez segít a test ellazításában.</li>
-                    <li><strong>Diafragmatikus (has) légzés:</strong> Mélyen lélegezz be az orrodon keresztül úgy, hogy a hasad kitáguljon, majd lassan fújd ki a levegőt a szádon keresztül. Ez csökkenti a szorongást és a vérnyomást.</li>
-                    <li><strong>Alternatív orrlyuk légzés:</strong> Az egyik orrlyukat befogva lélegezz be, majd a másik oldalon fújd ki. Ez segít az elme lecsendesítésében és a fókuszálásban.</li>
-                </ul>
-            </li>
-            <li><strong>Meditáció:</strong>
-                <ul>
-                    <li><strong>Mindfulness meditáció:</strong> Koncentrálj a jelen pillanatra, figyeld meg a gondolataidat ítélkezés nélkül, és fókuszálj a légzésedre.</li>
-                    <li><strong>Vezetett meditáció:</strong> Használj meditációs alkalmazásokat vagy hallgass vezetett meditációkat, amelyek segítenek a relaxációban.</li>
-                    <li><strong>Mantra meditáció:</strong> Ismételj egy nyugtató szót vagy mondatot, például "béke" vagy "nyugalom", hogy segíts a koncentrációban és a megnyugvásban.</li>
-                    <li><strong>Vizualizációs technika:</strong> Képzeld el magad egy nyugodt helyen, például egy tengerparton vagy egy erdőben, és próbáld meg átélni az érzéseket.</li>
-                </ul>
-            </li>
-            <li><strong>Pihentető hobbi és kikapcsolódás:</strong> Olyan tevékenységeket végezz, amelyek örömet okoznak, például olvasás, zenehallgatás, festés vagy kertészkedés.</li>
-            <li><strong>Pozitív gondolkodás:</strong> A negatív gondolatok átalakítása segít csökkenteni a stresszt. Próbáld meg hálanaplót vezetni, vagy minden nap pozitív dolgokra fókuszálni.</li>
-            <li><strong>Időmenedzsment és priorizálás:</strong> Tervezd meg a napodat, használj teendőlistát, és oszd be a feladatokat, hogy elkerüld a túlterheltséget.</li>
-        </ul>
+        <div class="card">
+            <h2>Rendszeres testmozgás</h2>
+            <p>A sport és a fizikai aktivitás segít csökkenteni a stresszhormonokat és növeli a boldogsághormonok szintjét. Ajánlott mozgásformák: futás, jóga, úszás, súlyzós edzés vagy akár egy séta a természetben.</p>
+            <div class="card-footer">Ajánlott testmozgások</div>
+        </div>
+        <div class="card">
+            <h2>Megfelelő alvás</h2>
+            <p>Az elegendő és pihentető alvás elengedhetetlen a stressz kezeléséhez. Érdemes minden nap azonos időben lefeküdni és felkelni, valamint kerülni a képernyők használatát elalvás előtt.</p>
+            <div class="card-footer">Az alvás szerepe</div>
+        </div>
+        <div class="card">
+            <h2>Légzőgyakorlatok</h2>
+            <ul>
+                <li><strong>4-7-8 technika:</strong> Lélegezz be 4 másodpercig, tartsd bent 7 másodpercig, majd fújd ki 8 másodperc alatt. Ez segít a test ellazításában és a nyugodt állapot elérésében.</li>
+                <li><strong>Diafragmatikus (has) légzés:</strong> Mélyen lélegezz be az orrodon keresztül úgy, hogy a hasad kitáguljon, majd lassan fújd ki a levegőt a szádon keresztül. Ez csökkenti a szorongást és a vérnyomást, miközben elősegíti a relaxációt.</li>
+                <li><strong>Alternatív orrlyuk légzés:</strong> Az egyik orrlyukat befogva lélegezz be, majd a másik oldalon fújd ki. Ez segít az elme lecsendesítésében, javítja a koncentrációt és tisztítja az elmét.</li>
+            </ul>
+            <div class="card-footer">Légzés technikák</div>
+        </div>
+        <div class="card">
+            <h2>Meditáció</h2>
+            <ul>
+                <li><strong>Mindfulness meditáció:</strong> Koncentrálj a jelen pillanatra, figyeld meg a gondolataidat ítélkezés nélkül, és fókuszálj a légzésedre. A mindfulness meditáció segít megszabadulni a felesleges gondolatoktól, és csökkenti a stresszt.</li>
+                <li><strong>Vezetett meditáció:</strong> Használj meditációs alkalmazásokat vagy hallgass vezetett meditációkat, amelyek segítenek a relaxációban. A vezetett meditációk segítenek elérni a mélyebb pihenést, miközben irányítják a gondolatokat.</li>
+                <li><strong>Mantra meditáció:</strong> Ismételj egy nyugtató szót vagy mondatot, például "béke" vagy "nyugalom", hogy segíts a koncentrációban és a megnyugvásban. A mantra meditáció segít az elme összpontosításában és a stressz csökkentésében.</li>
+                <li><strong>Vizualizációs technika:</strong> Képzeld el magad egy nyugodt helyen, például egy tengerparton vagy egy erdőben, és próbáld meg átélni az érzéseket. Ez a technika segíthet elterelni a figyelmet a stressztől és nyugodtabb állapotba hozni a testet és az elmét.</li>
+            </ul>
+            <div class="card-footer">Meditációs módszerek</div>
+        </div>
+        <div class="card">
+            <h2>Pihentető hobbi és kikapcsolódás</h2>
+            <p>Olyan tevékenységeket végezz, amelyek örömet okoznak, például olvasás, zenehallgatás, festés vagy kertészkedés. Ezek a hobbik segítenek feltöltődni.</p>
+            <div class="card-footer">Relaxáló hobbik</div>
+        </div>
     </div>
     <footer>
         <p>&copy; 2025 Stresszkezelés Tippek</p>
