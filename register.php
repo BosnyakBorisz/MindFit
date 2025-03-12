@@ -1,102 +1,161 @@
 <?php
-session_start();
-
-if (isset($_SESSION["email"])) {
-    header("Location: profil.php");
-    exit();
-}
-
-include("database.php");
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-
-    $username = trim($_POST["username"]);
-    $email = trim(filter_var($_POST["email"], FILTER_SANITIZE_EMAIL));
-    $password = trim($_POST["password"]);
+    session_start();
 
 
-    if (empty($username) || empty($email) || empty($password)) {
-        die("All fields are required!");
-    }
+    include("database.php");
 
-    $stmt = $conn->prepare("SELECT id FROM users WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $stmt->store_result();
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    if ($stmt->num_rows > 0) {
-        die("Email already in use!");
-    }
-    $stmt->close();
-
-    $hash = password_hash($password, PASSWORD_BCRYPT);
-
-    $stmt = $conn->prepare("INSERT INTO users (felhasznnev, email, jelszo) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $username, $email, $hash);
-    if (!$stmt->execute()) {
-        die("Database error: " . $stmt->error);
-    }
-    $userID = $stmt->insert_id;
-    $stmt->close();
-
-    $sex = trim($_POST['sex']);
-    $age = filter_var($_POST['age'], FILTER_VALIDATE_INT);
-    $weight = filter_var($_POST['weight'], FILTER_VALIDATE_INT);
-    $height = filter_var($_POST['height'], FILTER_VALIDATE_INT);
-    $goal = trim($_POST['goal']);
-    $bodytype = trim($_POST['bodytype']);
-
-    $currentBodyfatValue = filter_var($_POST['bodyfat-range'], FILTER_VALIDATE_INT);
-    $goalBodyfatValue = filter_var($_POST['bodyfat-range2'], FILTER_VALIDATE_INT);
-    if ($currentBodyfatValue < 1 || $currentBodyfatValue > 8 || $goalBodyfatValue < 1 || $goalBodyfatValue > 8) {
-        die("A testzsír értékeknek 1 és 8 között kell lenniük.");
-    }
-    $currentBodyfat = $currentBodyfatValue * 5;
-    $goalBodyfat = $goalBodyfatValue * 5;
-
-    $workoutFrequency = trim($_POST['workout-frequency']);
-    $wantedWorkoutFrequency = filter_var($_POST['wanted-workout-frequency'], FILTER_VALIDATE_INT);
-    $wantedWorkoutTime = filter_var($_POST['wanted-workout-time'], FILTER_VALIDATE_INT);
-    $workoutPlace = trim($_POST['edzeshelye']);
-    $equipment = trim($_POST['felszereltseg']);
-    $focusedMuscle = isset($_POST['fokuszaltizomcsoport']) ? implode(', ', $_POST['fokuszaltizomcsoport']) : 'nincs';
-    $injured = isset($_POST['injured']) ? implode(', ', $_POST['injured']) : 'nincs';   
-
-    $validGoals = ['Fogyás', 'Izomnövelés', 'Fogyás és izomtömegnövelés', 'Formában tartás', 'Sportólói karrier elkezdése'];
-    $validBodytypes = ['Ectomorph', 'Mesomorph', 'Endomorph'];
-    $validWorkoutPlaces = ['Konditerem', 'Otthon', 'Hibrid'];
-    $validEquipments = ['Maximális felszereltség', 'Korlátozott felszereltség', 'Saját testsúly'];
-
-    if (!in_array($goal, $validGoals) || !in_array($bodytype, $validBodytypes) || !in_array($workoutPlace, $validWorkoutPlaces) || !in_array($equipment, $validEquipments)) {
-        die("Invalid input data.");
-    }
-
-    $stmt = $conn->prepare("INSERT INTO user_information 
-        (user_id, nem, kor, testsuly, magassag, cel, testalkat, jelenlegi_testzsir, cel_testzsir, jelenlegi_edzes_per_het, kivant_edzes_per_het, kivant_edzes_hossza, edzes_helye, felszereltseg, fokuszalt_izomcsoport, serult_testrész)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-    $stmt->bind_param("isiiissiiiiissss", 
-        $userID, $sex, $age, $weight, $height, $goal, $bodytype, 
-        $currentBodyfat, $goalBodyfat, $workoutFrequency, 
-        $wantedWorkoutFrequency, $wantedWorkoutTime, $workoutPlace, 
-        $equipment, $focusedMuscle, $injured
-    );
-
-    if (!$stmt->execute()) {
-        die("Database error: " . $stmt->error);
-    }
+        $username = trim($_POST["username"]);
+        $email = trim(filter_var($_POST["email"], FILTER_SANITIZE_EMAIL));
+        $password = trim($_POST["password"]);
 
 
-    $stmt->close();
+        if (empty($username) || empty($email) || empty($password)) {
+            die("All fields are required!");
+        }
 
-    $_SESSION["email"] = $email;
-    $_SESSION["username"] = $username;
+        $stmt = $conn->prepare("SELECT id FROM users WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $stmt->store_result();
 
-    header("Location: profil.php");
+        if ($stmt->num_rows > 0) {
+            die("Email already in use!");
+        }
+        $stmt->close();
+
+        $hash = password_hash($password, PASSWORD_BCRYPT);
+
+        $stmt = $conn->prepare("INSERT INTO users (felhasznnev, email, jelszo) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $username, $email, $hash);
+        if (!$stmt->execute()) {
+            die("Database error: " . $stmt->error);
+        }
+        $userID = $stmt->insert_id;
+        $_SESSION["user_id"] = $userID;
+
+        $stmt->close();
+
+        $sex = trim($_POST['sex']);
+        $age = filter_var($_POST['age'], FILTER_VALIDATE_INT);
+        $weight = filter_var($_POST['weight'], FILTER_VALIDATE_INT);
+        $height = filter_var($_POST['height'], FILTER_VALIDATE_INT);
+        $goal = trim($_POST['goal']);
+        $bodytype = trim($_POST['bodytype']);
+
+        $currentBodyfatValue = filter_var($_POST['bodyfat-range'], FILTER_VALIDATE_INT);
+        $goalBodyfatValue = filter_var($_POST['bodyfat-range2'], FILTER_VALIDATE_INT);
+        if ($currentBodyfatValue < 1 || $currentBodyfatValue > 8 || $goalBodyfatValue < 1 || $goalBodyfatValue > 8) {
+            die("A testzsír értékeknek 1 és 8 között kell lenniük.");
+        }
+        $currentBodyfat = $currentBodyfatValue * 5;
+        $goalBodyfat = $goalBodyfatValue * 5;
+
+        $workoutFrequency = trim($_POST['workout-frequency']);
+        $wantedWorkoutFrequency = filter_var($_POST['wanted-workout-frequency'], FILTER_VALIDATE_INT);
+        $wantedWorkoutTime = filter_var($_POST['wanted-workout-time'], FILTER_VALIDATE_INT);
+        $workoutPlace = trim($_POST['edzeshelye']);
+        $equipment = trim($_POST['felszereltseg']);
+        $focusedMuscle = isset($_POST['fokuszaltizomcsoport']) ? implode(', ', $_POST['fokuszaltizomcsoport']) : 'nincs';
+        $injured = isset($_POST['injured']) ? implode(', ', $_POST['injured']) : 'nincs';   
+
+        $validGoals = ['Fogyás', 'Izomnövelés', 'Fogyás és izomtömegnövelés', 'Formában tartás', 'Sportólói karrier elkezdése'];
+        $validBodytypes = ['Ectomorph', 'Mesomorph', 'Endomorph'];
+        $validWorkoutPlaces = ['Konditerem', 'Otthon', 'Hibrid'];
+        $validEquipments = ['Maximális felszereltség', 'Korlátozott felszereltség', 'Saját testsúly'];
+
+        if (!in_array($goal, $validGoals) || !in_array($bodytype, $validBodytypes) || !in_array($workoutPlace, $validWorkoutPlaces) || !in_array($equipment, $validEquipments)) {
+            die("Invalid input data.");
+        }
+
+        $stmt = $conn->prepare("INSERT INTO user_information 
+            (user_id, nem, kor, testsuly, magassag, cel, testalkat, jelenlegi_testzsir, cel_testzsir, jelenlegi_edzes_per_het, kivant_edzes_per_het, kivant_edzes_hossza, edzes_helye, felszereltseg, fokuszalt_izomcsoport, serult_testrész)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+        $stmt->bind_param("isiiissiiiiissss", 
+            $userID, $sex, $age, $weight, $height, $goal, $bodytype, 
+            $currentBodyfat, $goalBodyfat, $workoutFrequency, 
+            $wantedWorkoutFrequency, $wantedWorkoutTime, $workoutPlace, 
+            $equipment, $focusedMuscle, $injured
+        );
+
+        if (!$stmt->execute()) {
+            die("Database error: " . $stmt->error);
+        }
+
+
+        $stmt->close();
+
+        $_SESSION["email"] = $email;
+        $_SESSION["username"] = $username;
+
+        $stmt = $conn->prepare("SELECT nem, kor, testsuly, magassag, cel, testalkat, jelenlegi_testzsir, cel_testzsir, jelenlegi_edzes_per_het, kivant_edzes_per_het, kivant_edzes_hossza, edzes_helye, felszereltseg, fokuszalt_izomcsoport, serult_testrész FROM user_information WHERE user_id = ?");
+        $stmt->bind_param("i", $userID);
+        $stmt->execute();
+        $result = $stmt->get_result();
     
-    exit();
-}
+        if ($result->num_rows > 0) {
+            $user = $result->fetch_assoc();
+            $user_data = json_encode($user, JSON_UNESCAPED_UNICODE);
+        } else {
+            die("Nincs ilyen felhasználó.");
+        }
+    
+        $stmt->close();
+
+        // Edzésterv létrehozása az AI API segítségével
+        $api_url = "http://127.0.0.1:5000/generate_workout";
+    
+        $options = [
+            "http" => [
+                "header"  => "Content-Type: application/json",
+                "method"  => "POST",
+                "content" => json_encode(["user_data" => $user], JSON_UNESCAPED_UNICODE)
+            ]
+        ];
+    
+        $context = stream_context_create($options);
+
+        $command = "ps aux | grep 'flask run'";
+
+        $output = shell_exec($command);
+
+        if (empty($output)) {
+            // Indítsuk el a Flask szervert, ha nem fut
+            exec("python3 /path/to/your/flask_app.py > /dev/null 2>&1 &");
+        }
+        $response = file_get_contents($api_url, false, $context);
+
+        
+        // JSON dekódolása
+        $data = json_decode($response, true);
+        if ($data === null || !isset($data['workout_plan'])) {
+            die("Hiba: Érvénytelen API válasz.");
+        }
+
+        $workout_plan = $data['workout_plan'];
+
+        echo $workout_plan;
+    
+        // Az edzésterv mentése az adatbázisba
+        $stmt = $conn->prepare("INSERT INTO user_workout_plan (user_id, plan) VALUES (?, ?)");
+        $stmt->bind_param("is", $userID, $workout_plan);
+    
+        if (!$stmt->execute()) {
+            die("Hiba: Nem sikerült elmenteni az edzéstervet.");
+        }
+    
+        $stmt->close();
+        $conn->close();
+
+        exit();
+    }
 ?>
+
+<form id="aiForm">
+    <input type="hidden" id="userData" value='<?php echo $user_data; ?>'>
+</form>
 
 <!DOCTYPE html>
 <html lang="hu">

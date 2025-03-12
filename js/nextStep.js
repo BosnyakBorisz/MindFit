@@ -261,7 +261,7 @@ function nextStep2(){
         
         image2.src = `img/woman-15-bodyfat.jpeg`;
         rangeInput2.addEventListener('input', function() {
-            const value = (rangeInput.value * 5) + 5;
+            const value = (rangeInput2.value * 5) + 5;
             valueText2.textContent = value + "%";
             image2.src = `img/woman-${value}-bodyfat.jpeg`;
         });
