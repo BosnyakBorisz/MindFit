@@ -4,7 +4,7 @@ import requests
 app = Flask(__name__)
 
 # Hugging Face API kulcs és modell beállítása
-API_KEY = "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"
+API_KEY = ""
 MODEL_NAME = "tiiuae/falcon-7b-instruct"
 API_URL = f"https://api-inference.huggingface.co/models/{MODEL_NAME}"
 
