@@ -550,13 +550,13 @@ body {
 }
 
 #faq summary::after {
-    content: url(img/icons8-plus-24\ \(1\).png);  
+    content: url(../img/icons8-plus-24\ \(1\).png);  
     padding: 0 1rem 0 0;
     position: relative;
 }
 
 #faq details[open] summary::after {
-    content: url(img/icons8-minus-24\ \(1\).png); 
+    content: url(../img/icons8-minus-24\ \(1\).png); 
 }
 /*FAQ*/
 
