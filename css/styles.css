@@ -50,7 +50,7 @@ body {
 }
 
 #faq {
-    width:calc(100% / 2);
+    width: 40rem;
     margin: 0;
 }
 
@@ -339,7 +339,62 @@ body {
       #footer-icons{
           padding: 0 0 0 0.5rem;
       }
+
+      #faq {
+          width: 35rem;
+          margin: 0;
+      }
+
+      #faq h5{
+        font-size:1.1rem;
+      }
   }
+  @media only screen and (max-width: 550px) {
+    #faq {
+        width: 30rem;
+        margin: 0;
+    }
+
+    #faq h5{
+      font-size:1.1rem;
+    }
+   }
+   @media only screen and (max-width: 480px) {
+    #faq {
+        width: 27rem;
+        margin: 0;
+    }
+    #faq h1{
+        font-size:1.5rem;
+    }
+    #faq h5{
+      font-size:1rem;
+    }
+   }
+   @media only screen and (max-width: 430px) {
+    #faq {
+        width: 24rem;
+        margin: 0;
+    }
+    #faq h1{
+        font-size:1.5rem;
+    }
+    #faq h5{
+      font-size:0.9rem;
+    }
+   }
+   @media only screen and (max-width: 382px) {
+    #faq {
+        width: 22rem;
+        margin: 0;
+    }
+    #faq h1{
+        font-size:1.3rem;
+    }
+    #faq h5{
+      font-size:0.8rem;
+    }
+   }
   
 #box1{
     display: flex;
@@ -551,13 +606,13 @@ body {
 }
 
 #faq summary::after {
-    content: url(img/icons8-plus-24\ \(1\).png);  
+    content: url(../img/icons8-plus-24\ \(1\).png);  
     padding: 0 1rem 0 0;
     position: relative;
 }
 
 #faq details[open] summary::after {
-    content: url(img/icons8-minus-24\ \(1\).png); 
+    content: url(../img/icons8-minus-24\ \(1\).png); 
 }
 /*FAQ*/
 
