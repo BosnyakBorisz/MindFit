@@ -138,8 +138,7 @@ body {
     cursor: pointer;
     pointer-events: all; 
 }
-  
-/* From Uiverse.io by elisapi */ 
+
 .card {
     width: fit-content;
     height: fit-content;
@@ -303,6 +302,7 @@ body {
       }
   }
   @media only screen and (max-width: 992px) {
+    
       #footer-content{
           padding: 0 6rem;
       }
@@ -348,8 +348,8 @@ body {
       #faq h5{
         font-size:1.1rem;
       }
-  }
-  @media only screen and (max-width: 550px) {
+}
+@media only screen and (max-width: 550px) {
     #faq {
         width: 30rem;
         margin: 0;
@@ -358,8 +358,8 @@ body {
     #faq h5{
       font-size:1.1rem;
     }
-   }
-   @media only screen and (max-width: 480px) {
+}
+@media only screen and (max-width: 480px) {
     #faq {
         width: 27rem;
         margin: 0;
@@ -370,8 +370,8 @@ body {
     #faq h5{
       font-size:1rem;
     }
-   }
-   @media only screen and (max-width: 430px) {
+}
+@media only screen and (max-width: 430px) {
     #faq {
         width: 24rem;
         margin: 0;
@@ -382,8 +382,8 @@ body {
     #faq h5{
       font-size:0.9rem;
     }
-   }
-   @media only screen and (max-width: 382px) {
+}
+@media only screen and (max-width: 382px) {
     #faq {
         width: 22rem;
         margin: 0;
@@ -394,8 +394,7 @@ body {
     #faq h5{
       font-size:0.8rem;
     }
-   }
-  
+}
 #box1{
     display: flex;
     justify-content: center;
@@ -633,3 +632,4 @@ body {
     text-align: center;
     z-index: 3;
 }
+
