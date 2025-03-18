@@ -26,21 +26,11 @@ def generate_workout_plan(user_data):
     - **Focused muscle groups**: Chest, Back
     - **Sensitive body part**: none
 
-    Please create a **detailed 6-day workout plan** with the following:
+    Please create a **detailed 5-day workout plan** with the following:
     - A warm-up (5-10 minutes)
     - 4-6 main exercises for each day (sets, reps, and rest times)
     - A cool-down/stretch (5-10 minutes)
     - Progressive overload recommendations
-
-    Please follow this weekly workout structure:
-
-    - **Monday**: Chest, Triceps, Shoulders
-    - **Tuesday**: Back, Biceps, Abs
-    - **Wednesday**: Legs, Hamstrings, Glutes
-    - **Thursday**: Chest, Triceps, Shoulders
-    - **Friday**: Back, Biceps, Abs
-    - **Saturday**: Legs, Hamstrings, Glutes
-    - **Sunday**: Rest
 
     For each day, provide:
     - Specific exercises for the focused muscle groups
