@@ -192,7 +192,7 @@
         $workout_plan = $data[0]['generated_text'];
 
         // Clean the workout plan by removing the prompt part
-        $clean_workout_plan = preg_replace("/.*(<h2>Monday</h2>)/s", "$1", $workout_plan);
+        $clean_workout_plan = preg_replace("#.*(<h2>Monday</h2>)#s", "$1", $workout_plan);
 
         // Now $clean_workout_plan contains only the actual workout plan, starting from "Monday"
             

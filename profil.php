@@ -7,13 +7,19 @@
         exit();
     }
 
+    include("database.php");
 
-    $mysqli = new mysqli("localhost", "root", "", "mindfit");
-  
     $email = $_SESSION["email"];
-    $eredmeny = $mysqli->query("select user_information.nem FROM users, user_information where email like '$email' and users.id = user_information.user_id");
-    $sor = $eredmeny->fetch_assoc();
+    $query = "SELECT user_information.nem FROM users, user_information WHERE email = ? AND users.id = user_information.user_id";
+
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $sor = $result->fetch_assoc();
     $nem = $sor['nem'];
+
+    $stmt->close();
   
 ?>  
 
@@ -121,12 +127,12 @@
     
     let sex = "<?php echo $nem; ?>";
 
-    if (sex === 'Férfi') {
+    if (sex === 'man') {
         document.getElementById('izomterkep1').src = 'img/man_musculature_front.png';
         document.getElementById('izomterkep1').alt = "Férfi izomtérkép";
         document.getElementById('izomterkep2').src = "img/man_musculature_back.png";
         document.getElementById('izomterkep2').alt = "Férfi izomtérkép";
-    } else if (sex === 'Nő') {
+    } else if (sex === 'woman') {
         document.getElementById('izomterkep1').src = 'img/woman_musculature_front.png';
         document.getElementById('izomterkep1').alt = "Nő izomtérkép";
         document.getElementById('izomterkep2').src = "img/woman_musculature_back.png";
