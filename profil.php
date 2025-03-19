@@ -104,7 +104,7 @@
           <div>
             <h2>Edzés</h2>
           </div>
-          <div class="d-flex justify-content-center">
+          <div class="d-flex justify-content-center" onclick="window.location.href='http://localhost/mindfit/MindFit/edzesterv.php'" style="cursor: pointer;">
             <img id="izomterkep1" class="w-25" src="" alt="">
             <img id="izomterkep2" class="w-25" src="" alt="">
           </div>

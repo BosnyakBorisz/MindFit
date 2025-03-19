@@ -577,3 +577,39 @@ body {
     text-align: center;
     z-index: 3;
 }
+
+.workout-table {
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.workout-table thead {
+    background-color: var(--f);
+    color: white;
+}
+
+.workout-table th {
+    padding: 10px;
+    text-align: left;
+    font-size: 16px;
+    border: 1px solid var(--b);
+    border-radius: 8%;
+}
+
+
+.workout-table tbody {
+    background-color: var(--h);
+}
+
+.workout-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid var(--b);
+    border-radius: 8%;
+    font-size: 14px;
+}
+
+.workout-table tbody tr:hover {
+    background-color: var(--f);
+}
+

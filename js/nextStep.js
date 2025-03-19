@@ -200,7 +200,7 @@ function nextStep2(){
     let meso = document.getElementById("mesomorph-img");
     let endo = document.getElementById("endomorph-img");
 
-    if (sex === "Férfi"){
+    if (sex === "man"){
         ecto.src = "img/ectomorph-ferfi.jpg"
         ecto.alt = "Ectomorph férfi";
         meso.src =  "img/mesomorph-ferfi.jpg"
@@ -208,7 +208,7 @@ function nextStep2(){
         endo.src = "img/endomorph-ferfi.jpg";
         endo.alt = "Endomorph férfi"
     }
-    else if (sex === "Nő"){
+    else if (sex === "woman"){
         ecto.src = "img/ectomorph-no.jpg"
         ecto.alt = "Mesomorph nő";
         meso.src =  "img/mesomorph-no.jpg"
@@ -234,7 +234,7 @@ function nextStep2(){
     const image2 = document.getElementById('bodyfat-image2');
     const valueText2 = document.getElementById('bodyfat-text2');
 
-    if (sex === "Férfi") {
+    if (sex === "man") {
         image.src = `img/man-15-bodyfat.jpeg`;
         rangeInput.addEventListener('input', function() {
             const value = rangeInput.value * 5;
@@ -250,7 +250,7 @@ function nextStep2(){
         });
         
     }
-    else if (sex === "Nő")
+    else if (sex === "woman")
     {
         image.src = `img/woman-15-bodyfat.jpeg`;
         rangeInput.addEventListener('input', function() {

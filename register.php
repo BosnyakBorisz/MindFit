@@ -1,6 +1,10 @@
 <?php
     session_start();
 
+    if (isset($_SESSION["email"])) {
+        header("Location: profil.php");
+        exit();
+    }
 
     include("database.php");
 
@@ -57,17 +61,8 @@
         $wantedWorkoutTime = filter_var($_POST['wanted-workout-time'], FILTER_VALIDATE_INT);
         $workoutPlace = trim($_POST['edzeshelye']);
         $equipment = trim($_POST['felszereltseg']);
-        $focusedMuscle = isset($_POST['fokuszaltizomcsoport']) ? implode(', ', $_POST['fokuszaltizomcsoport']) : 'nincs';
-        $injured = isset($_POST['injured']) ? implode(', ', $_POST['injured']) : 'nincs';   
-
-        $validGoals = ['Fogyás', 'Izomnövelés', 'Fogyás és izomtömegnövelés', 'Formában tartás', 'Sportólói karrier elkezdése'];
-        $validBodytypes = ['Ectomorph', 'Mesomorph', 'Endomorph'];
-        $validWorkoutPlaces = ['Konditerem', 'Otthon', 'Hibrid'];
-        $validEquipments = ['Maximális felszereltség', 'Korlátozott felszereltség', 'Saját testsúly'];
-
-        if (!in_array($goal, $validGoals) || !in_array($bodytype, $validBodytypes) || !in_array($workoutPlace, $validWorkoutPlaces) || !in_array($equipment, $validEquipments)) {
-            die("Invalid input data.");
-        }
+        $focusedMuscle = isset($_POST['fokuszaltizomcsoport']) ? implode(', ', $_POST['fokuszaltizomcsoport']) : 'none';
+        $injured = isset($_POST['injured']) ? implode(', ', $_POST['injured']) : 'none';   
 
         $stmt = $conn->prepare("INSERT INTO user_information 
             (user_id, nem, kor, testsuly, magassag, cel, testalkat, jelenlegi_testzsir, cel_testzsir, jelenlegi_edzes_per_het, kivant_edzes_per_het, kivant_edzes_hossza, edzes_helye, felszereltseg, fokuszalt_izomcsoport, serult_testrész)
@@ -105,49 +100,114 @@
         $stmt->close();
 
         // Edzésterv létrehozása az AI API segítségével
-        $api_url = "http://127.0.0.1:5000/generate_workout";
-    
-        $options = [
-            "http" => [
-                "header"  => "Content-Type: application/json",
-                "method"  => "POST",
-                "content" => json_encode(["user_data" => $user], JSON_UNESCAPED_UNICODE)
-            ]
-        ];
-    
-        $context = stream_context_create($options);
+        $api_url = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3";
+        $api_key = ""; // Hugging Face API token
+        
+        $data = json_encode([
+            "inputs" => "Generate a structured {$wantedWorkoutFrequency}-day hypertrophy workout plan for a {$age}-year-old man who weighs {$weight} kg, is {$height} cm tall, and aims to {$goal}. His current body fat percentage is {$currentBodyfat}, with a target of {$goalBodyfat}. 
+        
+            The workout plan should be designed for 5 days per week, with each session lasting {$wantedWorkoutTime} minutes. Training will take place at {$workoutPlace}, with available equipment being {$equipment}. 
+        
+            The plan should prioritize the following muscle groups: {$focusedMuscle}, while considering any injuries: {$injured}. 
 
-        $command = "ps aux | grep 'flask run'";
+            Each day there is only 2 muscle group OR an upper lower body workout.
 
-        $output = shell_exec($command);
+            Muscle groups:
+            - Chest
+            - Back
+            - Abs
+            - Shoulder
+            - Biceps
+            - Triceps
+            - Quads
+            - Hamstring
+            - Calves
 
-        if (empty($output)) {
-            // Indítsuk el a Flask szervert, ha nem fut
-            exec("python3 /path/to/your/flask_app.py > /dev/null 2>&1 &");
-        }
-        $response = file_get_contents($api_url, false, $context);
+            The workout plan should be structured strictly in **HTML format** and formatted as follows:
+            - Each day’s workout should be contained within an HTML `<h2>` tag for the day (e.g., Monday).
+            - Each day should have a table with the class 'workout-table' containing the following columns: Exercise, Sets, Reps, Rest.
+            - For each exercise, provide the following:
+                - **Exercise Name** (e.g., Barbell Squat)
+                - **Sets** (e.g., 4)
+                - **Reps** (e.g., 8-12)
+                - **Rest** (e.g., 60s)
+            - Ensure to do not exceed the time limit.
+                
+            **DO NOT** include any comments, instructions, or suggestions beyond the workout plan.
+
+            In the workout if you give rest day make them active rest days.
+        
+            Example Structure (DO NOT copy, generate NEW data based on user inputs):
+            <h2>Monday</h2>
+            <table class='workout-table'>
+                <thead>
+                    <tr>
+                        <th>Exercise</th>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Deadlift</td>
+                        <td>4</td>
+                        <td>8-12</td>
+                        <td>60s</td>
+                    </tr>
+                    <!-- More exercises for Monday here -->
+                </tbody>
+            </table>
+        
+            ONLY RETURN the generated workout plan in HTML format without any additional text, comments, or instructions."
+        ]);
 
         
-        // JSON dekódolása
+        
+        $options = [
+            "http" => [
+                "header" => "Authorization: Bearer " . $api_key . "\r\n" .
+                            "Content-Type: application/json\r\n",
+                "method" => "POST",
+                "content" => $data
+            ]
+        ];
+        
+        $context = stream_context_create($options);
+        $response = file_get_contents($api_url, false, $context);
+        
+        if ($response === false) {
+            die("Hiba: Nem sikerült lekérni az AI válaszát.");
+        }
+        
+        // AI API response is stored in $response
         $data = json_decode($response, true);
-        if ($data === null || !isset($data['workout_plan'])) {
-            die("Hiba: Érvénytelen API válasz.");
+
+        // Check if the AI response contains the necessary data
+        if (!isset($data[0]['generated_text'])) {
+            die("Hiba: A válasz nem tartalmaz érvényes edzéstervet.");
         }
 
-        $workout_plan = $data['workout_plan'];
+        // Extracting the raw workout plan
+        $workout_plan = $data[0]['generated_text'];
 
-        echo $workout_plan;
-    
-        // Az edzésterv mentése az adatbázisba
+        // Clean the workout plan by removing the prompt part
+        $clean_workout_plan = preg_replace("/.*(<h2>Monday</h2>)/s", "$1", $workout_plan);
+
+        // Now $clean_workout_plan contains only the actual workout plan, starting from "Monday"
+            
+        // Edzésterv mentése
         $stmt = $conn->prepare("INSERT INTO user_workout_plan (user_id, plan) VALUES (?, ?)");
-        $stmt->bind_param("is", $userID, $workout_plan);
-    
+        $stmt->bind_param("is", $userID, $clean_workout_plan);
+
         if (!$stmt->execute()) {
             die("Hiba: Nem sikerült elmenteni az edzéstervet.");
         }
-    
+
         $stmt->close();
         $conn->close();
+
+        header("Location: profil.php");
 
         exit();
     }
@@ -218,9 +278,9 @@
                             <label for="sex">Nem</label>
                             <select class="form-control" id="sex" name="sex" required>
                                 <option value="">Válassz...</option>
-                                <option value="Férfi">Férfi</option>
-                                <option value="Nő">Nő</option>
-                                <option value="Nem kívánom megválaszolni">Nem kívánom megválaszolni</option>
+                                <option value="man">Férfi</option>
+                                <option value="woman">Nő</option>
+                                <option value="gender not given">Nem kívánom megválaszolni</option>
                             </select>
                             <p class="error" id="sexError"></p>
 
@@ -246,11 +306,11 @@
                             <label for="goal">Milyen célokat szeretnél elérni?</label>
                             <select class="form-control" id="goal" name="goal" required>
                                 <option value="">Válassz...</option>
-                                <option value="Fogyás">Fogyás</option>
-                                <option value="Izomnövelés">Izomnövelés</option>
-                                <option value="Fogyás és izomtömegnövelés">Fogyás és izomtömegnövelés</option>
-                                <option value="Formában tartás">Formában tartás</option>
-                                <option value="Sportólói karrier elkezdése">Sportólói karrier elkezdése</option>
+                                <option value="lose weight">Fogyás</option>
+                                <option value="gain muscle">Izomnövelés</option>
+                                <option value="lose weight and gain muscle">Fogyás és izomtömegnövelés</option>
+                                <option value="stay in shape">Formában tartás</option>
+                                <option value="start an athletic career">Sportólói karrier elkezdése</option>
                             </select>
                             <p class="error" id="goalError"></p>
 
@@ -310,16 +370,16 @@
                             <h2>Hányszor edzel egy héten?</h2>    
                             <div class="d-flex flex-column">
                                 <label class="workout-card" id="workout-frequency1-label">1-2x hetente 
-                                    <input class="hidden" type="radio" name="workout-frequency" id="workout-frequency1" value="3x hetente" required>
+                                    <input class="hidden" type="radio" name="workout-frequency" id="workout-frequency1" value="3" required>
                                 </label>                                                     
                                 <label class="workout-card" id="workout-frequency2-label">3x hetente
-                                    <input class="hidden" type="radio" name="workout-frequency" id="workout-frequency2" value="3x hetente">
+                                    <input class="hidden" type="radio" name="workout-frequency" id="workout-frequency2" value="3">
                                 </label>  
                                 <label class="workout-card" id="workout-frequency3-label">Több mint 4x hetente 
-                                    <input class="hidden" type="radio" name="workout-frequency" id="workout-frequency3" value="Több mint 4x hetente" >
+                                    <input class="hidden" type="radio" name="workout-frequency" id="workout-frequency3" value="more than 4" >
                                 </label> 
                                 <label class="workout-card" id="workout-frequency4-label">Nem edzek
-                                    <input class="hidden" type="radio" name="workout-frequency" id="workout-frequency4" value="Nem edzek">
+                                    <input class="hidden" type="radio" name="workout-frequency" id="workout-frequency4" value="does not work out">
                                 </label>  
                             </div>   
                             <p class="error" id="workoutError"></p>
@@ -393,13 +453,13 @@
                         <div id="keret">
                             <h2>Hol edzel?</h2>
                             <label class="workout-card" id="place1-label">Konditerem
-                                <input class="hidden" type="radio" name="edzeshelye" id="workoutplace1" value="Konditerem" required>
+                                <input class="hidden" type="radio" name="edzeshelye" id="workoutplace1" value="GYM" required>
                             </label>
                             <label class="workout-card" id="place2-label">Otthon
-                                <input class="hidden" type="radio" name="edzeshelye" id="workoutplace2" value="Otthon">
+                                <input class="hidden" type="radio" name="edzeshelye" id="workoutplace2" value="Home">
                             </label>
                             <label class="workout-card" id="place3-label">Hibrid
-                                <input class="hidden" type="radio" name="edzeshelye" id="workoutplace3" value="Hibrid">
+                                <input class="hidden" type="radio" name="edzeshelye" id="workoutplace3" value="both in GYM and home">
                             </label>
                             <p class="error" id="placeError"></p>
                             <button type="button" class="backgomb">Vissza</button>
@@ -411,13 +471,13 @@
                         <div id="keret">
                             <h2>Felszeretlség</h2>
                             <label class="workout-card" id="equipment1-label">Maximális felszereltség
-                                <input class="hidden" type="radio" name="felszereltseg" id="equipment1" value="Maximális felszereltség">
+                                <input class="hidden" type="radio" name="felszereltseg" id="equipment1" value="max">
                             </label>
                             <label class="workout-card" id="equipment2-label">Korlátozott felszereltség
-                                <input class="hidden" type="radio" name="felszereltseg" id="equipment2" value="Korlátozott felszereltség">
+                                <input class="hidden" type="radio" name="felszereltseg" id="equipment2" value="limited">
                             </label>
                             <label class="workout-card" id="equipment3-label">Saját testsúly
-                                <input class="hidden" type="radio" name="felszereltseg" id="equipment3" value="Saját testsúly">
+                                <input class="hidden" type="radio" name="felszereltseg" id="equipment3" value="bodyweight">
                             </label>
                             <p class="error" id="felszereltsegError"></p>
                             <button type="button" class="backgomb">Vissza</button>
@@ -432,39 +492,39 @@
                                 <div class="row">
                                     <div class="col-6"> 
                                         <label id="focusmuscle1-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
-                                            <input id="focusmuscle1" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Mell">
+                                            <input id="focusmuscle1" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="chest">
                                             <img class="w-50" src="img/fokusz-mell.png" alt="Férfi mell">
                                         </label>
                                         <label id="focusmuscle2-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
-                                            <input id="focusmuscle2" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Hát">
+                                            <input id="focusmuscle2" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="back">
                                             <img class="w-50" src="img/fokusz-hat.png" alt="Férfi hát">
                                         </label>
                                         <label id="focusmuscle3-label"  class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
-                                            <input id="focusmuscle3" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Has">
+                                            <input id="focusmuscle3" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="abs">
                                             <img class="w-50" src="img/fokusz-has.png" alt="Férfi has">
 
                                         </label>
                                         <label id="focusmuscle4-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
-                                            <input id="focusmuscle4" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Bicepsz">
+                                            <input id="focusmuscle4" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="bicep">
                                             <img class="w-50" src="img/fokusz-bicepsz.png" alt="Férfi bicepsz">
                                         </label>
                                     </div>
                                     <div class="col-6"> 
                                         <label id="focusmuscle5-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
-                                            <input id="focusmuscle5" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Tricepsz">
+                                            <input id="focusmuscle5" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="tricep">
                                             <img class="w-50" src="img/fokusz.tricepsz.png" alt="Férfi tricepsz">
                                         </label>
                                         <label id="focusmuscle6-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
-                                            <input id="focusmuscle6" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Váll">
+                                            <input id="focusmuscle6" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="shoulder">
                                             <img class="w-50" src="img/fokusz-vall.png" alt="Férfi váll">
                                         </label>
                                         <label id="focusmuscle7-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
-                                            <input id="focusmuscle7" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Láb">
+                                            <input id="focusmuscle7" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="quads">
                                             <img class="w-50" src="img/fokusz-lab.png" alt="Férfi Láb">
                                         </label>
                                         <label id="focusmuscle8-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
-                                            <input id="focusmuscle8" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="Láb">
-                                            <img class="w-50" src="img/fokusz-vadli.png" alt="Férfi Láb">
+                                            <input id="focusmuscle8" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="calves">
+                                            <img class="w-50" src="img/fokusz-vadli.png" alt="Férfi vádli">
                                         </label>
                                     </div>
                                 </div>
@@ -482,30 +542,30 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <label id="serult1-label" class="serulttest m-1 d-flex justify-content-center align-items-center">
-                                            <input id="serult1" class="hidden" type="checkbox" name="injured[]" value="Váll">
+                                            <input id="serult1" class="hidden" type="checkbox" name="injured[]" value="shoulder">
                                             <img class="st_kep" src="img/vall-fajdalom.jpg" alt="Váll">
                                         </label>
                                         <label id="serult2-label" class="serulttest m-1 d-flex justify-content-center align-items-center">
                                             <img class="st_kep" src="img/konyok-fajdalom.jpg" alt="Könyök">
-                                            <input id="serult2" class="hidden" type="checkbox" name="injured[]" value="Könyök">
+                                            <input id="serult2" class="hidden" type="checkbox" name="injured[]" value="elbow">
                                         </label>
                                         <label id="serult3-label" class="serulttest m-1 d-flex justify-content-center align-items-center">
                                             <img class="st_kep" src="img/csuklo-fajdalom.jpg" alt="Csukló">
-                                            <input id="serult3" class="hidden" type="checkbox" name="injured[]" value="Csukló">
+                                            <input id="serult3" class="hidden" type="checkbox" name="injured[]" value="wrist">
                                         </label>
                                     </div>
                                     <div class="col-6">
                                         <label id="serult4-label" class="serulttest m-1 d-flex justify-content-center align-items-center">
                                             <img class="st_kep" src="img/alsohati-fajdalom.jpg" alt="Alsóhát">
-                                            <input id="serult4" class="hidden" type="checkbox" name="injured[]" value="Alsóhát">
+                                            <input id="serult4" class="hidden" type="checkbox" name="injured[]" value="lower back">
                                         </label>
                                         <label id="serult5-label" class="serulttest m-1 d-flex justify-content-center align-items-center">
                                             <img class="st_kep" src="img/terd-fajdalom.jpg" alt="Térd">
-                                            <input id="serult5" class="hidden" type="checkbox" name="injured[]" value="Térd">
+                                            <input id="serult5" class="hidden" type="checkbox" name="injured[]" value="knee">
                                         </label>
                                         <label id="serult6-label" class="serulttest m-1 d-flex justify-content-center align-items-center">
                                             <img class="st_kep" src="img/boka-fajdalom.jpg" alt="Boka">
-                                            <input id="serult6" class="hidden" type="checkbox" name="injured[]" value="Boka">
+                                            <input id="serult6" class="hidden" type="checkbox" name="injured[]" value="ankle">
                                         </label>
                                     </div>
                                 </div>
