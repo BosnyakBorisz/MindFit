@@ -47,7 +47,7 @@
     ?>
 
     <div class="d-flex align-items-center flex-column">
-        <?php     
+        <?php
             echo $workout_plan
         ?>
     </div>

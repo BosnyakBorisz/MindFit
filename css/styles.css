@@ -291,18 +291,47 @@ body {
   /*footer*/
   
   /*media - xs(0-576) sm(576-768) md(768-992) lg(992-1200) xl(1200-1500)*/
-  @media only screen and (max-width: 2000px) {
+@media only screen and (max-width: 2000px) {
+    .index_focim{
+        font-size: 2rem;
+    }
+    .index_foszoveg{
+        font-size: 1rem;
+    }
+    .index_alcim{
+        padding: 2rem 0;
+    }
+    .index_sokcim{
+        font-size: 1.9rem;
+    }  
+    .index_szoveg{
+        font-size: 1rem;
+    }
       #footer-icons{
           padding: 0 0 0 7rem;
       }
-  }
-  @media only screen and (max-width: 1200px) {
+}
+@media only screen and (max-width: 1200px) {
+    .index_alcim{
+        padding: 2rem 0;
+    }
+    .index_sokcim{
+        font-size: 1.9rem;
+    }  
+    .index_szoveg{
+        font-size: 1rem;
+    }
       #footer-icons{
           padding: 0 0 0 6rem;
       }
-  }
-  @media only screen and (max-width: 992px) {
-    
+}
+@media only screen and (max-width: 992px) {
+    .index_sokcim{
+        font-size: 1.5rem;
+    }  
+    .index_szoveg{
+        font-size: 0.9rem;
+    }
       #footer-content{
           padding: 0 6rem;
       }
@@ -312,21 +341,53 @@ body {
       #footer-icons{
           padding: 0 0 0 5rem;
       }
-  }
-  @media only screen and (max-width: 850px) {
+}
+@media only screen and (max-width: 850px) {
+    .index_focim{
+        font-size: 1.9rem;
+    }
+    .index_foszoveg{
+        font-size: 1rem;
+    }
+    .index_alcim{
+        padding: 2rem 0;
+        font-size: 1.9rem;
+    }
+    .index_sokcim{
+        font-size: 1.4rem;
+    } 
+    .index_szoveg{
+        font-size: 0.8rem;
+    } 
       #footer-content{
           padding: 0 3rem;
       }
       #footer-icons{
           padding: 0 0 0 2.5rem;
       }
-  }
-  @media only screen and (max-width: 800px) {
+}
+@media only screen and (max-width: 800px) {
+    .index_focim{
+        font-size: 1.8rem;
+    }
+    .index_foszoveg{
+        font-size: 1rem;
+    }
       #footer-content{
           padding: 0 2rem;
       }
-  }
-  @media only screen and (max-width: 768px) {
+}
+@media only screen and (max-width: 768px) {
+    .index_focim{
+        font-size: 1.6rem;
+    }
+    .index_foszoveg{
+        font-size: 1rem;
+    }
+    .index_alcim{
+        padding: 1rem 0rem;
+        font-size: 1.9rem;
+    }
       #footer-oszlop1{
           padding: 0.5rem 0;
       }
@@ -349,6 +410,33 @@ body {
         font-size:1.1rem;
       }
 }
+@media only screen and (max-width: 700px) {
+    .index_alcim{
+        font-size: 1.7rem;
+    }
+}  
+@media only screen and (max-width: 650px) {
+    .index_alcim{
+        font-size: 1.6rem;
+    }
+    .index_sokcim{
+        font-size: 1.3rem;
+    } 
+    .index_szoveg{
+        font-size: 0.8rem;
+    } 
+}  
+@media only screen and (max-width: 600px) {
+    .index_focim{
+        font-size: 1.5rem;
+    }
+    .index_foszoveg{
+        font-size: 0.9rem;
+    }
+    .index_alcim{
+        font-size: 1.5rem;
+    }
+}     
 @media only screen and (max-width: 550px) {
     #faq {
         width: 30rem;
@@ -360,6 +448,15 @@ body {
     }
 }
 @media only screen and (max-width: 480px) {
+    .index_alcim{
+        font-size: 1.5rem;
+    }
+    .index_sokcim{
+        font-size: 1.3rem;
+    } 
+    .index_szoveg{
+        font-size: 0.8rem;
+    } 
     #faq {
         width: 27rem;
         margin: 0;
