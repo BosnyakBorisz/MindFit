@@ -270,6 +270,4 @@ Itt van néhány sablon edzésterv, amelyeket egészséges és sérült testrés
 
 ---
 
-Ha szeretnéd ezeket még pontosabban személyre szabni (pl. konkrét sérülésekre, sportágspecifikus célokra), írj, és finomhangoljuk! 😊
-
 https://www.shutterstock.com/hu/image-illustration/gastrocnemius-blue-muscular-map-detail-332392370
