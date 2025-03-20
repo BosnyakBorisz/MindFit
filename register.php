@@ -493,38 +493,38 @@
                                     <div class="col-6"> 
                                         <label id="focusmuscle1-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
                                             <input id="focusmuscle1" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="chest">
-                                            <img class="w-50" src="img/fokusz-mell.png" alt="Férfi mell">
+                                            <img  src="img/fokusz-mell .png" alt="Férfi mell">
                                         </label>
                                         <label id="focusmuscle2-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
                                             <input id="focusmuscle2" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="back">
-                                            <img class="w-50" src="img/fokusz-hat.png" alt="Férfi hát">
+                                            <img  src="img/fokusz-hat.png" alt="Férfi hát">
                                         </label>
                                         <label id="focusmuscle3-label"  class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
                                             <input id="focusmuscle3" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="abs">
-                                            <img class="w-50" src="img/fokusz-has.png" alt="Férfi has">
+                                            <img  src="img/fokusz-has.png" alt="Férfi has">
 
                                         </label>
                                         <label id="focusmuscle4-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
                                             <input id="focusmuscle4" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="bicep">
-                                            <img class="w-50" src="img/fokusz-bicepsz.png" alt="Férfi bicepsz">
+                                            <img  src="img/fokusz.bicepsz.png" alt="Férfi bicepsz">
                                         </label>
                                     </div>
                                     <div class="col-6"> 
                                         <label id="focusmuscle5-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
                                             <input id="focusmuscle5" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="tricep">
-                                            <img class="w-50" src="img/fokusz.tricepsz.png" alt="Férfi tricepsz">
+                                            <img  src="img/fokusz-tricepsz.jpg" alt="Férfi tricepsz">
                                         </label>
                                         <label id="focusmuscle6-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
                                             <input id="focusmuscle6" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="shoulder">
-                                            <img class="w-50" src="img/fokusz-vall.png" alt="Férfi váll">
+                                            <img  src="img/fokusz-vall.png" alt="Férfi váll">
                                         </label>
                                         <label id="focusmuscle7-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
                                             <input id="focusmuscle7" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="quads">
-                                            <img class="w-50" src="img/fokusz-lab.png" alt="Férfi Láb">
+                                            <img  src="img/fokusz-lab.png" alt="Férfi Láb">
                                         </label>
                                         <label id="focusmuscle8-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
                                             <input id="focusmuscle8" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="calves">
-                                            <img class="w-50" src="img/fokusz-vadli.png" alt="Férfi vádli">
+                                            <img  src="img/foksuz-vadli.png" alt="Férfi vádli">
                                         </label>
                                     </div>
                                 </div>
