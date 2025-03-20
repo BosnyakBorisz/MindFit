@@ -159,7 +159,8 @@
                 </tbody>
             </table>
         
-            ONLY RETURN the generated workout plan in HTML format without any additional text, comments, or instructions."
+            ONLY RETURN the generated workout plan in table format without any additional text, comments, or instructions.
+            <h1>Workout Plan</h1>"
         ]);
 
         
@@ -192,7 +193,7 @@
         $workout_plan = $data[0]['generated_text'];
 
         // Clean the workout plan by removing the prompt part
-        $clean_workout_plan = preg_replace("#.*(<h2>Monday</h2>)#s", "$1", $workout_plan);
+        $clean_workout_plan = preg_replace("#.*(<h1>Workout Plan</h1>)#s", "$1", $workout_plan);
 
         // Now $clean_workout_plan contains only the actual workout plan, starting from "Monday"
             
