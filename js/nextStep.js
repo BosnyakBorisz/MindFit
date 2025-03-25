@@ -252,14 +252,16 @@ function nextStep2(){
     }
     else if (sex === "woman")
     {
-        image.src = `img/woman-15-bodyfat.jpeg`;
+        image.src = `img/woman-20-bodyfat.jpeg`;
+        valueText.textContent = "20%";
         rangeInput.addEventListener('input', function() {
             const value = (rangeInput.value * 5) + 5;
             valueText.textContent = value + "%";
             image.src = `img/woman-${value}-bodyfat.jpeg`;
         });
         
-        image2.src = `img/woman-15-bodyfat.jpeg`;
+        image2.src = `img/woman-20-bodyfat.jpeg`;
+        valueText2.textContent = "20%";
         rangeInput2.addEventListener('input', function() {
             const value = (rangeInput2.value * 5) + 5;
             valueText2.textContent = value + "%";
