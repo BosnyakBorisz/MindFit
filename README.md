@@ -271,3 +271,4 @@ Itt van néhány sablon edzésterv, amelyeket egészséges és sérült testrés
 ---
 
 https://www.shutterstock.com/hu/image-illustration/gastrocnemius-blue-muscular-map-detail-332392370
+https://gyuras.hu/tricepsz-edzes/
