@@ -53,5 +53,27 @@
         ?>
     </div>
 
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkbox = document.getElementById('exerciseCheckbox1');
+
+            const savedState = localStorage.getItem('exerciseCheckbox1');
+            if (savedState === 'checked') {
+                checkbox.checked = true;
+            } else {
+                checkbox.checked = false;
+            }
+
+            checkbox.addEventListener('change', () => {
+                if (checkbox.checked) {
+                    localStorage.setItem('exerciseCheckbox1', 'checked');
+                } else {
+                    localStorage.setItem('exerciseCheckbox1', 'unchecked');
+                }
+            });
+        });
+    </script>
+    
 </body>
 </html>

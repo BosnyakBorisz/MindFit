@@ -1015,3 +1015,8 @@ document.querySelectorAll('.backgomb').forEach(button => {
         }
     });
 });
+
+document.getElementById("multiStepForm").addEventListener("submit", function () {
+    document.getElementById("loader").style.display = "flex"; 
+    document.getElementById("multiStepForm").style.display = "none";
+});

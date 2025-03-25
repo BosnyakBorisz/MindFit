@@ -1,34 +1,25 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stresszkezelés</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="img/strong.png"></link:icon>
+    <title>Stresszkezelés</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #E3F2FD, #B3E5FC);
             color: #333;
-        }
-        header {
-            background: linear-gradient(135deg, #43cea2, #185a9d);
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-            font-size: 32px;
-            font-weight: bold;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            position: relative;
-            overflow: hidden;
         }
         .container {
             max-width: 1200px;
             margin: 40px auto;
             padding: 30px;
-            background: white;
+            background: var(--c);
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
             border-radius: 15px;
             text-align: center;
@@ -37,7 +28,7 @@
             gap: 30px;
         }
         .card {
-            background: #ffffff;
+            background: var(--a);
             padding: 25px;
             border-radius: 20px;
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
@@ -81,19 +72,7 @@
             margin-top: 20px;
             font-size: 12px;
             font-weight: 600;
-            color: #185a9d;
-        }
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: linear-gradient(135deg, #185a9d, #43cea2);
-            color: white;
-            margin-top: 40px;
-            font-size: 18px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            color: var(--h)
         }
         .social-icons {
             display: flex;
@@ -112,9 +91,13 @@
     </style>
 </head>
 <body>
+
     <header>
-        <h1>Stresszkezelés</h1>
+        <?php
+        include("header.html")
+        ?>
     </header>
+
     <div class="container">
         <div class="card">
             <h2>Rendszeres testmozgás</h2>
@@ -152,8 +135,8 @@
         </div>
        
     </div>
-    <footer>
-        <p>&copy; 2025 Stresszkezelés Tippek</p>
-    </footer>
+    <?php
+        include("footer.html")
+    ?>
 </body>
 </html>

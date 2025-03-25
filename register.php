@@ -106,11 +106,14 @@
         $data = json_encode([
             "inputs" => "Generate a structured {$wantedWorkoutFrequency}-day hypertrophy workout plan for a {$age}-year-old man who weighs {$weight} kg, is {$height} cm tall, and aims to {$goal}. His current body fat percentage is {$currentBodyfat}, with a target of {$goalBodyfat}. 
         
-            The workout plan should be designed for 5 days per week, with each session lasting {$wantedWorkoutTime} minutes. Training will take place at {$workoutPlace}, with available equipment being {$equipment}. 
+            The workout plan should be designed for {$wantedWorkoutFrequency} days per week, with each session lasting {$wantedWorkoutTime} minutes. Training will take place at {$workoutPlace}, with available equipment being {$equipment}. 
         
             The plan should prioritize the following muscle groups: {$focusedMuscle}, while considering any injuries: {$injured}. 
 
             Each day there is only 2 muscle group OR an upper lower body workout.
+
+            The workout days should consist of two or three muscle groups per day.
+            No muscle group should be worked two days in a row. Ensure that each muscle group gets a day off between workouts.
 
             Muscle groups:
             - Chest
@@ -135,13 +138,16 @@
                 
             **DO NOT** include any comments, instructions, or suggestions beyond the workout plan.
 
-            In the workout if you give rest day make them active rest days.
+            If a day is not a workout day, assign it as 'Active Rest' or 'Regular Rest' based on the following:
+            - If the person prefers to stay lightly active, assign it as 'Active Rest'.
+            - If the person prefers complete relaxation, assign it as 'Regular Rest'.
         
             Example Structure (DO NOT copy, generate NEW data based on user inputs):
             <h2>Monday</h2>
             <table class='workout-table'>
                 <thead>
                     <tr>
+                        <th>Completed</th>
                         <th>Exercise</th>
                         <th>Sets</th>
                         <th>Reps</th>
@@ -150,6 +156,18 @@
                 </thead>
                 <tbody>
                     <tr>
+                        <td class='kisebb'>
+                        <div class='checkbox-wrapper-44 d-flex justify-content-center'>
+                            <label class='toggleButton'>
+                                <input type='checkbox' class='exerciseCheckbox' data-id='1'>
+                                <div>
+                                    <svg viewBox='0 0 44 44'>
+                                        <path d='M14,24 L21,31 L39.7428882,11.5937758 C35.2809627,6.53125861 30.0333333,4 24,4 C12.95,4 4,12.95 4,24 C4,35.05 12.95,44 24,44 C35.05,44 44,35.05 44,24 C44,19.3 42.5809627,15.1645919 39.7428882,11.5937758' transform='translate(-2.000000, -2.000000)'></path>
+                                    </svg>
+                                </div>
+                            </label>
+                        </div>  
+                        </td>
                         <td>Deadlift</td>
                         <td>4</td>
                         <td>8-12</td>
@@ -159,8 +177,7 @@
                 </tbody>
             </table>
         
-            ONLY RETURN the generated workout plan in table format without any additional text, comments, or instructions.
-            <h1>Workout Plan</h1>"
+            ONLY RETURN the generated workout plan in HTML format without any additional text, comments, or instructions."
         ]);
 
         
@@ -193,10 +210,9 @@
         $workout_plan = $data[0]['generated_text'];
 
         // Clean the workout plan by removing the prompt part
-        $clean_workout_plan = preg_replace("#.*(<h1>Workout Plan</h1>)#s", "$1", $workout_plan);
+        $clean_workout_plan = preg_replace("#.*(<h2>Monday</h2>)#s", "$1", $workout_plan);
 
-        // Now $clean_workout_plan contains only the actual workout plan, starting from "Monday"
-            
+
         // Edzésterv mentése
         $stmt = $conn->prepare("INSERT INTO user_workout_plan (user_id, plan) VALUES (?, ?)");
         $stmt->bind_param("is", $userID, $clean_workout_plan);
@@ -227,9 +243,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css">
     <title>Regisztráció</title>
-    <link rel="icon" href="img/strong.png"></link:icon>
 </head>
 <body>
+
+    <div id="loader">
+        <div class="spinner-border text-light" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <span>Edzésterv generálása</span>
+    </div>
 
     <div class="container mt-5">
         <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="POST" id="multiStepForm">
@@ -495,38 +517,38 @@
                                     <div class="col-6"> 
                                         <label id="focusmuscle1-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
                                             <input id="focusmuscle1" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="chest">
-                                            <img  src="img/fokusz-mell .png" alt="Férfi mell">
+                                            <img class="w-50" src="img/fokusz-mell.png" alt="Férfi mell">
                                         </label>
                                         <label id="focusmuscle2-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
                                             <input id="focusmuscle2" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="back">
-                                            <img  src="img/fokusz-hat.png" alt="Férfi hát">
+                                            <img class="w-50" src="img/fokusz-hat.png" alt="Férfi hát">
                                         </label>
                                         <label id="focusmuscle3-label"  class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
                                             <input id="focusmuscle3" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="abs">
-                                            <img  src="img/fokusz-has.png" alt="Férfi has">
+                                            <img class="w-50" src="img/fokusz-has.png" alt="Férfi has">
 
                                         </label>
                                         <label id="focusmuscle4-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
                                             <input id="focusmuscle4" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="bicep">
-                                            <img  src="img/fokusz.bicepsz.png" alt="Férfi bicepsz">
+                                            <img class="w-50" src="img/fokusz-bicepsz.png" alt="Férfi bicepsz">
                                         </label>
                                     </div>
                                     <div class="col-6"> 
                                         <label id="focusmuscle5-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
                                             <input id="focusmuscle5" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="tricep">
-                                            <img  src="img/fokusz-tricepsz.jpg" alt="Férfi tricepsz">
+                                            <img class="w-50" src="img/fokusz.tricepsz.png" alt="Férfi tricepsz">
                                         </label>
                                         <label id="focusmuscle6-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
                                             <input id="focusmuscle6" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="shoulder">
-                                            <img  src="img/fokusz-vall.png" alt="Férfi váll">
+                                            <img class="w-50" src="img/fokusz-vall.png" alt="Férfi váll">
                                         </label>
                                         <label id="focusmuscle7-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
                                             <input id="focusmuscle7" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="quads">
-                                            <img  src="img/fokusz-lab.png" alt="Férfi Láb">
+                                            <img class="w-50" src="img/fokusz-lab.png" alt="Férfi Láb">
                                         </label>
                                         <label id="focusmuscle8-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
                                             <input id="focusmuscle8" class="hidden" type="checkbox" name="fokuszaltizomcsoport[]" value="calves">
-                                            <img  src="img/foksuz-vadli.png" alt="Férfi vádli">
+                                            <img class="w-50" src="img/fokusz-vadli.png" alt="Férfi vádli">
                                         </label>
                                     </div>
                                 </div>
@@ -574,7 +596,7 @@
                             </div>
                             <p class="error" id="serultError"></p>
                             <button type="button" class="backgomb">Vissza</button>
-                            <button type="submit" name="register" class="nextgomb">Regisztrálás</button>
+                            <button type="submit" name="register" class="nextgomb" id="registervege">Regisztrálás</button>
                         </div>
                     </div>
                 </div>
