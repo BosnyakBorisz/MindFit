@@ -822,6 +822,8 @@ const frontGroups = {
         ]
       }      
 };
+let hoveredGroup = null;
+let selectedGroups = []; // Több kijelölés támogatása
 
 function drawOverlayForCanvas(canvas, ctx) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -831,8 +833,7 @@ function drawOverlayForCanvas(canvas, ctx) {
 
   Object.entries(groupsToUse).forEach(([group, data]) => {
     const isHovered = hoveredGroup === group;
-    const isSelected = selectedGroup === group;
-
+    const isSelected = selectedGroups.includes(group); // több kijelölés
 
     const color = isSelected
       ? data.selectedColor
@@ -869,8 +870,14 @@ function highlightGroup(group, active) {
 }
 
 function selectGroup(group) {
-  selectedGroup = group;
+  // Ha már kijelölt, vegyük ki. Ha nem, adjuk hozzá.
+  if (selectedGroups.includes(group)) {
+    selectedGroups = selectedGroups.filter(g => g !== group);
+  } else {
+    selectedGroups.push(group);
+  }
   drawAllOverlays();
 }
+
   </script>
 </body>
