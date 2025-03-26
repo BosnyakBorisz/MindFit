@@ -212,10 +212,94 @@
         // Clean the workout plan by removing the prompt part
         $clean_workout_plan = preg_replace("#.*(<h2>Monday</h2>)#s", "$1", $workout_plan);
 
+        $dictionary = [
+            'Completed' => 'Kész',
+            'Exercise' => 'Gyakorlat',
+            'Sets' => 'Szettek',
+            'Reps' => 'Ismétlés',
+            'Rest' => 'Pihenő',
+            'Active' => 'Aktív',
+            'Day' => 'Nap',
+            'Monday' => 'Hétfő',
+            'Tuesday' => 'Kedd',
+            'Wednesday' => 'Szerda', 
+            'Thursday' => 'Csütörtök',
+            'Friday' => 'Péntek',
+            'Saturday' => 'Szombat',
+            'Sunday' => 'Vasárnap',
+            'Barbell Bench Press' => 'Fekvenyomás',
+            'Incline Barbell Bench Press' => 'Döntött pados fekvenyomás',
+            'Dumbbell Flyes' => 'Tárogatás súlyzóval',
+            'Barbell Bentover Rows' => 'Döntött törzsű evezés rúddal',
+            'Wide-Grip Pull-ups' => 'Széles fogású húzódzkodás',
+            'Seated Cable Rows' => 'Evezés kábellel ülve',
+            'Bodyweight Planks' => 'Plank (testsúlyos)',
+            'Bodyweight Squats' => 'Testsúlyos guggolás',
+            'Step-ups on Chair with Dumbbells' => 'Lépcsőzés kézi súlyzókkal',
+            'Bodyweight Lunges' => 'Kitörés',
+            'Close-grip Barbell Bench Press' => 'Szűk fogású fekvenyomás',
+            'Dumbbell Skull Crushers' => 'Súlyzós tricepsznyújtás',
+            'Seated Dumbbell Tricep Extension' => 'Ülő sulyzós tricepsznyújtás',
+            'Push-ups' => 'Fekvőtámasz',
+            'Bodyweight Dips' => 'Testsúlyos tolóckodás',
+            'Barbell Curls' => 'Sulyzós bicepsz hajltás',
+            'Hammer Curls' => 'Kalapács bicepsz hajlítás',
+            'Leg Press' => 'Lábtoló',
+            'Lat Pulldown' => 'Széles fogású lehúzás',
+            'Seated Leg Curl' => 'Ülő combhajlító',
+            'Leg Extension' => 'Combfeszítő',
+            'Deadlift' => 'Felhúzás',
+            'Romanian Deadlift' => 'Román felhúzás',
+            'Kettlebell Swings' => 'Gömbsúlyzó hintázás',
+            'Standing Calf Raises' => 'Álló vádliemelés',
+            'Seated Calf Raises' => 'Ülő vádliemelés',
+            'Overhead Shoulder Press' => 'Vállból nyomás rúddal',
+            'Lateral Raises' => 'Oldalsó emelés',
+            'Front Raises' => 'Elülső emelés',
+            'Rear Delt Flyes' => 'Hátsó váll repülés',
+            'Bicep Curls' => 'Bicepsz hajlítás',
+            'Tricep Dips' => 'Tricepsz lenyomás',
+            'Chest Flyes' => 'Mellkas repülés',
+            'Chest Press' => 'Mellkas nyomás',
+            'Hip Thrust' => 'Csípőemelés',
+            'Leg Curl' => 'Lábhajlítás',
+            'Crunches' => 'Felülés',
+            'Russian Twists' => 'Orosz csavarás',
+            'Mountain Climbers' => 'Hegymászó',
+            'Burpees' => 'Burpee',
+            'Jumping Jacks' => 'Táncos ugrás',
+            'Squat Jumps' => 'Guggolás ugrás',
+            'Box Jumps' => 'Doboz ugrás',
+            'Plank to Push-up' => 'Plank fekvőtámaszra',
+            'Wall Sit' => 'Fal mellett ülés',
+            'Leg Raises' => 'Lábemelés',
+            'Flutter Kicks' => 'Pillangó rúgás',
+            'V-Ups' => 'V-ülés',
+            'Hanging Leg Raises' => 'Függő lábemelés',
+            'Incline Dumbbell Press' => 'Döntött dumbbell nyomás',
+            'Decline Bench Press' => 'Lejtős fekvenyomás',
+            'Reverse Flyes' => 'Fordított repülés',
+            'Cable Kickbacks' => 'Kábel tricepsz lenyomás',
+            'Tricep Kickbacks' => 'Tricepsz rúgás',
+            'Dumbbell Rows' => 'Dumbbell evezés',
+            'T-Bar Rows' => 'T-bar evezés',
+            'Shrugs' => 'Vállvonogatás',
+            'Good Mornings' => 'Jó reggelt gyakorlat',
+            'Jump Rope' => 'Ugró kötél',
+        ];
+    
+        function translate($text, $dictionary) {
+            foreach ($dictionary as $english => $hungarian) {
+                $text = str_replace($english, $hungarian, $text);
+            }
+            return $text;
+        }
+        
+        $translated_workout_plan = translate($clean_workout_plan, $dictionary);
 
         // Edzésterv mentése
         $stmt = $conn->prepare("INSERT INTO user_workout_plan (user_id, plan) VALUES (?, ?)");
-        $stmt->bind_param("is", $userID, $clean_workout_plan);
+        $stmt->bind_param("is", $userID, $translated_workout_plan);
 
         if (!$stmt->execute()) {
             die("Hiba: Nem sikerült elmenteni az edzéstervet.");

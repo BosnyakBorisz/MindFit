@@ -89,6 +89,13 @@ body {
 
 }
 
+.progress-calorie {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: var(--h);
+}
+
 .testalkat {
     width: 95%;
     margin: 5px;
@@ -117,12 +124,6 @@ body {
     color: red;
 }
 
-.progress-calorie {
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    background-color: var(--h);
-}
 
 .steps, .water {
     background-color: var(--f);
