@@ -883,6 +883,51 @@ function selectGroup(group) {
   }
   drawAllOverlays();
 }
+/*
+egyszerre csak egy izmot lehet ezzel a kóddal kijelölöni
 
+function drawOverlayForCanvas(canvas, ctx) {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  const isBack = canvas.id === "overlay1";
+  const groupsToUse = isBack ? backGroups : frontGroups;
+  Object.entries(groupsToUse).forEach(([group, data]) => {
+    const isHovered = hoveredGroup === group;
+    const isSelected = selectedGroup === group;
+    const color = isSelected
+      ? data.selectedColor
+      : (isHovered ? data.color : null);
+    if (color) {
+      data.areas.forEach(coords => {
+        if (coords.length < 6 || coords.length % 2 !== 0) return;
+        ctx.beginPath();
+        ctx.moveTo(coords[0], coords[1]);
+        for (let i = 2; i < coords.length; i += 2) {
+          ctx.lineTo(coords[i], coords[i + 1]);
+        }
+        ctx.closePath();
+        ctx.fillStyle = color;
+        ctx.fill();
+      });
+    }
+  });
+}
+function drawAllOverlays() {
+  const canvases = ['overlay1', 'overlay2'];
+  canvases.forEach(id => {
+    const canvas = document.getElementById(id);
+    const ctx = canvas.getContext('2d');
+    drawOverlayForCanvas(canvas, ctx);
+  });
+}
+
+function highlightGroup(group, active) {
+  hoveredGroup = active ? group : null;
+  drawAllOverlays();
+}
+
+function selectGroup(group) {
+  selectedGroup = group;
+  drawAllOverlays();
+}*/
   </script>
 </body>
