@@ -1000,3 +1000,39 @@ body {
       transform: scale(0.3) translate(-50%, -50%) rotate(-45deg);
     }
 }
+
+/*bodymap*/
+#bodymap {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+#bodymap .container {
+    display: flex;
+    gap: 20px;
+} 
+.view {
+    position: relative;
+    width: 600px;
+    height: 1280px;
+}
+#bodymap img {
+    display: block;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+#bodymap canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 1280px;
+    pointer-events: none;
+    z-index: 2;
+    display: block;
+}
+map area {
+    cursor: pointer;
+}
