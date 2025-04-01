@@ -15,11 +15,17 @@
         <?php
             include("header.html")
         ?>
-    <section id="hero-text" class="text-white position-relative z-1 top-50 w-50">
-        <div>
-            <h1 class="index_focim">Alakítsd át életstílusodat mesterséges intelligenciával!</h1>
-            <p class="index_foszoveg">Emeld magasabb szintre jóléted a MindFit AI-alapú platformjával, amelyet arra terveztek, hogy inspiráljon és fenntarthatóvá tegye az egészséges szokásokat.</p>    
-            <button onclick="location.href='register.php'" class="w-50 h-50 d-flex justify-content-center align-items-center m-0 p-3 rounded-2"><p class="d-flex justify-content-center align-items-center m-0 p-0 fw-bold">Tedd meg az első lépést</p></button>
+    <section id="hero-text" class="z-1">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div id="header_box">
+                        <h1 class="index_focim">Alakítsd át életstílusodat mesterséges intelligenciával!</h1>
+                        <p class="index_foszoveg">Emeld magasabb szintre jóléted a MindFit AI-alapú platformjával, amelyet arra terveztek, hogy inspiráljon és fenntarthatóvá tegye az egészséges szokásokat.</p>    
+                        <button onclick="location.href='register.php'" class="header_gomb"><p class="d-flex justify-content-center align-items-center m-0 p-0 fw-bold">Tedd meg az első lépést</p></button>
+                    </div>
+                </div>
+            </div>    
         </div>
     </section>
     </header>

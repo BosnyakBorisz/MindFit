@@ -53,12 +53,22 @@ body {
     background-color: var(--f);
 }
 
+#header_box{
+    padding-top: 20rem;
+    padding-left: 8rem;
+    width: 50rem;
+}
+
+.header_gomb{
+    width: 15rem;
+    height: 4rem;
+    border-radius: 10px;
+}
+
 #faq {
     width: 40rem;
     margin: 0;
 }
-
-
 
 .hidden {
     display: none !important;
@@ -317,6 +327,19 @@ body {
       }
 }
 @media only screen and (max-width: 1200px) {
+    #header_box{
+        padding-top: 20rem;
+        padding-left: 8rem;
+        width: 45rem;
+    }
+    #header_box h1{
+        font-size: 0.5rem;
+    }
+    .header_gomb{
+        width: 15rem;
+        height: 4rem;
+        border-radius: 10px;
+    }
     .index_alcim{
         padding: 2rem 0;
     }
@@ -372,6 +395,16 @@ body {
       }
 }
 @media only screen and (max-width: 800px) {
+    #header_box{
+        padding-top: 20rem;
+        padding-left: 8rem;
+        width: 45rem;
+    }
+    .header_gomb{
+        width: 15rem;
+        height: 4rem;
+        border-radius: 10px;
+    }
     .index_focim{
         font-size: 1.8rem;
     }

@@ -76,7 +76,6 @@
     </section>
 
     <section id="steps-and-water">
-
         <div class="container-fluid w-50 mt-4 p-0">
             <div class="d-flex justify-content-between">
             <div class="steps p-3 rounded-2">
