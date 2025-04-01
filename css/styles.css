@@ -90,8 +90,8 @@ body {
 }
 
 .progress-calorie {
-    width: 400px;
-    height: 400px;
+    width: 380px;
+    height: 380px;
     border-radius: 50%;
     background-color: var(--h);
 }

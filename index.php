@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="icon" href="img/strong.png"></link:icon>
     <link rel="stylesheet" href="css/styles.css">
     <title>MindFit</title>
-    <link rel="icon" href="img/strong.png"></link:icon>
 </head>
 <body>
   
@@ -15,7 +15,7 @@
         <?php
             include("header.html")
         ?>
-    <section id="hero-text" class="text-white position-relative z-1 top-50 w-50">
+    <section id="hero-text" class="text-white position-relative z-1">
         <div>
             <h1 class="index_focim">Alakítsd át életstílusodat mesterséges intelligenciával!</h1>
             <p class="index_foszoveg">Emeld magasabb szintre jóléted a MindFit AI-alapú platformjával, amelyet arra terveztek, hogy inspiráljon és fenntarthatóvá tegye az egészséges szokásokat.</p>    
