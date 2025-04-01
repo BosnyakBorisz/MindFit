@@ -68,6 +68,8 @@
             </div>
             </div>
         </div>
+        <p id="kaloriaCel">Cél: </p>
+        <p id="kaloriJelenlegi">Jelenlegi:</p>
 
         <input type="number" id="calorieInput">
         <button class="btn" onclick="addCalories()">Hozzáadás</button>

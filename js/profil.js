@@ -41,13 +41,33 @@ else if (cel === "Formában tartás" || cel === "Fogyás és izomtömegnövelés
 
 let currentCalories = 0;
 let displayCalories = 0;
+let ideiglenes = 0;
+let firstCal = true;
+
 document.getElementById("calorie-text").textContent = calorieGoal + " kcal maradt";
+document.getElementById("kaloriaCel").textContent = "Cél: " + calorieGoal + " kcal";
+document.getElementById("kaloriJelenlegi").textContent = "Jelenlegi: " + currentCalories + " kcal";
 
 function addCalories() {
     let calories = Number(document.getElementById("calorieInput").value);
     currentCalories += calories;
     displayCalories = calorieGoal-currentCalories;
-    document.getElementById("calorie-text").textContent = displayCalories + " kcal maradt";
+    console.log(displayCalories);    
+
+    if (displayCalories >= 0) {
+        document.getElementById("calorie-text").textContent = displayCalories + " kcal maradt";
+        document.getElementById("kaloriJelenlegi").textContent = "Jelenlegi: " + currentCalories + " kcal";
+    }
+    else if (displayCalories < 0) {
+        ideiglenes = displayCalories * -1;
+        document.getElementById("calorie-text").textContent = "+" + ideiglenes + " kcal";
+        document.getElementById("kaloriJelenlegi").textContent = "Jelenlegi: " + currentCalories + " kcal";
+    }
+
+    if (firstCal && displayCalories < 0){
+        triggerConfetti();
+        firstCal = false;        
+    } 
 
     calories = document.getElementById("calorieInput").value = 0;
 }
