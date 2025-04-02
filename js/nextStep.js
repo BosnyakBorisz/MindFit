@@ -137,8 +137,10 @@ function nextStep2(){
     let age = document.getElementById("age").value;
     let ageError = document.getElementById("ageError");
     let weight = document.getElementById("weight").value;
+    weight.replace(".", ",");
     let weightError =  document.getElementById("weightError");
     let height = document.getElementById("height").value;
+    height.replace(".", ",");
     let heightError = document.getElementById("heightError");
 
     if (sex === ""){
@@ -612,6 +614,7 @@ const time3 = document.getElementById('wanted-workout-time3');
 const time4 = document.getElementById('wanted-workout-time4');
 const time5 = document.getElementById('wanted-workout-time5');
 const time6 = document.getElementById('wanted-workout-time6');
+const time7 = document.getElementById('wanted-workout-time7');
 
 
 time1.addEventListener("change", function() {
@@ -622,6 +625,7 @@ time1.addEventListener("change", function() {
         document.getElementById("w-time4-label").style.border = "";
         document.getElementById("w-time5-label").style.border = "";
         document.getElementById("w-time6-label").style.border = "";
+        document.getElementById("w-time7-label").style.border = "";
         document.getElementById("wantedTimeError").textContent = "";
     }
 });
@@ -634,6 +638,7 @@ time2.addEventListener("change", function() {
         document.getElementById("w-time4-label").style.border = "";
         document.getElementById("w-time5-label").style.border = "";
         document.getElementById("w-time6-label").style.border = "";
+        document.getElementById("w-time7-label").style.border = "";
         document.getElementById("wantedTimeError").textContent = "";
     }
 });
@@ -646,6 +651,7 @@ time3.addEventListener("change", function() {
         document.getElementById("w-time4-label").style.border = "";
         document.getElementById("w-time5-label").style.border = "";
         document.getElementById("w-time6-label").style.border = "";
+        document.getElementById("w-time7-label").style.border = "";
         document.getElementById("wantedTimeError").textContent = "";
     }
 });
@@ -658,6 +664,7 @@ time4.addEventListener("change", function() {
         document.getElementById("w-time4-label").style.border = "3px solid var(--c)";
         document.getElementById("w-time5-label").style.border = "";
         document.getElementById("w-time6-label").style.border = "";
+        document.getElementById("w-time7-label").style.border = "";
         document.getElementById("wantedTimeError").textContent = "";
     }
 });
@@ -670,6 +677,7 @@ time5.addEventListener("change", function() {
         document.getElementById("w-time4-label").style.border = "";
         document.getElementById("w-time5-label").style.border = "3px solid var(--c)";
         document.getElementById("w-time6-label").style.border = "";
+        document.getElementById("w-time7-label").style.border = "";
         document.getElementById("wantedTimeError").textContent = "";
     }
 });
@@ -682,6 +690,20 @@ time6.addEventListener("change", function() {
         document.getElementById("w-time4-label").style.border = "";
         document.getElementById("w-time5-label").style.border = "";
         document.getElementById("w-time6-label").style.border = "3px solid var(--c)";
+        document.getElementById("w-time7-label").style.border = "";
+        document.getElementById("wantedTimeError").textContent = "";
+    }
+});
+
+time7.addEventListener("change", function() {
+    if (time7.checked) {
+        document.getElementById("w-time1-label").style.border = "";
+        document.getElementById("w-time2-label").style.border = "";
+        document.getElementById("w-time3-label").style.border = "";
+        document.getElementById("w-time4-label").style.border = "";
+        document.getElementById("w-time5-label").style.border = "";
+        document.getElementById("w-time6-label").style.border = "";
+        document.getElementById("w-time7-label").style.border = "3px solid var(--c)";
         document.getElementById("wantedTimeError").textContent = "";
     }
 });
@@ -1018,5 +1040,5 @@ document.querySelectorAll('.backgomb').forEach(button => {
 
 document.getElementById("multiStepForm").addEventListener("submit", function () {
     document.getElementById("loader").style.display = "flex"; 
-    document.getElementById("multiStepForm").style.display = "none";
+    document.getElementById("multiStepFormDiv").style.display = "none";
 });

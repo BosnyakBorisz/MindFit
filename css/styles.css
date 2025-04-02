@@ -71,6 +71,14 @@ body {
 .progress-container {
     position: relative;
     width: 400px;
+} 
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.btn-close {
+    filter: invert(100%); 
 }
 
 .progress-circle {
@@ -798,6 +806,33 @@ body {
     box-shadow: 0 0 0 transparent;
 }
 
+#modalOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+        
+#deleteModal {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--h);
+    padding: 30px;
+    width: 400px;
+    height: 250px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    z-index: 1000;
+    text-align: center;
+}
 
 
 .checkbox-wrapper-44 input[type="checkbox"] {

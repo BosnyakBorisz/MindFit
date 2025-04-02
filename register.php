@@ -1,4 +1,7 @@
 <?php
+    error_reporting(0);
+    ini_set('display_errors', 0);
+
     session_start();
 
     if (isset($_SESSION["email"])) {
@@ -16,7 +19,7 @@
 
 
         if (empty($username) || empty($email) || empty($password)) {
-            die("All fields are required!");
+            die("Az összes mezőt ki kell tölteni!");
         }
 
         $stmt = $conn->prepare("SELECT id FROM users WHERE email = ?");
@@ -25,7 +28,7 @@
         $stmt->store_result();
 
         if ($stmt->num_rows > 0) {
-            die("Email already in use!");
+            die("Az email már használatban van!");
         }
         $stmt->close();
 
@@ -34,7 +37,7 @@
         $stmt = $conn->prepare("INSERT INTO users (felhasznnev, email, jelszo) VALUES (?, ?, ?)");
         $stmt->bind_param("sss", $username, $email, $hash);
         if (!$stmt->execute()) {
-            die("Database error: " . $stmt->error);
+            die("Adatbázis hiba: ");
         }
         $userID = $stmt->insert_id;
         $_SESSION["user_id"] = $userID;
@@ -43,16 +46,13 @@
 
         $sex = trim($_POST['sex']);
         $age = filter_var($_POST['age'], FILTER_VALIDATE_INT);
-        $weight = filter_var($_POST['weight'], FILTER_VALIDATE_INT);
-        $height = filter_var($_POST['height'], FILTER_VALIDATE_INT);
+        $weight = filter_var($_POST['weight'], FILTER_VALIDATE_FLOAT);
+        $height = filter_var($_POST['height'], FILTER_VALIDATE_FLOAT);
         $goal = trim($_POST['goal']);
         $bodytype = trim($_POST['bodytype']);
 
         $currentBodyfatValue = filter_var($_POST['bodyfat-range'], FILTER_VALIDATE_INT);
         $goalBodyfatValue = filter_var($_POST['bodyfat-range2'], FILTER_VALIDATE_INT);
-        if ($currentBodyfatValue < 1 || $currentBodyfatValue > 8 || $goalBodyfatValue < 1 || $goalBodyfatValue > 8) {
-            die("A testzsír értékeknek 1 és 8 között kell lenniük.");
-        }
         $currentBodyfat = $currentBodyfatValue * 5;
         $goalBodyfat = $goalBodyfatValue * 5;
 
@@ -76,7 +76,7 @@
         );
 
         if (!$stmt->execute()) {
-            die("Database error: " . $stmt->error);
+            die("Adatbázis hiba");
         }
 
 
@@ -195,7 +195,7 @@
         $response = file_get_contents($api_url, false, $context);
         
         if ($response === false) {
-            die("Hiba: Nem sikerült lekérni az AI válaszát.");
+            die("Nem sikerült edzéstervet generálni.");
         }
         
         // AI API response is stored in $response
@@ -203,7 +203,7 @@
 
         // Check if the AI response contains the necessary data
         if (!isset($data[0]['generated_text'])) {
-            die("Hiba: A válasz nem tartalmaz érvényes edzéstervet.");
+            die("Nem sikerült edzéstervet generálni.");
         }
 
         // Extracting the raw workout plan
@@ -227,6 +227,7 @@
             'Friday' => 'Péntek',
             'Saturday' => 'Szombat',
             'Sunday' => 'Vasárnap',
+            'Day' => 'Nap',
             'Barbell Bench Press' => 'Fekvenyomás',
             'Incline Barbell Bench Press' => 'Döntött pados fekvenyomás',
             'Dumbbell Flyes' => 'Tárogatás súlyzóval',
@@ -337,7 +338,7 @@
         <span>Edzésterv generálása</span>
     </div>
 
-    <div class="container mt-5">
+    <div class="container mt-5" id="multiStepFormDiv">
         <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="POST" id="multiStepForm">
             <div class="container">
                 <div class="row">
@@ -397,11 +398,11 @@
                             <p class="error" id="ageError"></p>
 
                             <label for="weight">Testsúly:</label>
-                            <input class="form-control" min="40" max="200" type="number" id="weight" name="weight" required>
+                            <input class="form-control" min="40" max="200" type="number" id="weight" name="weight" step="any"  required>
                             <p class="error" id="weightError"></p>
 
                             <label for="height">Magasság:</label>
-                            <input class="form-control" min="120" max="300" type="number" id="height" name="height" required>
+                            <input class="form-control" min="120" max="250" type="number" id="height" name="height" step="any"  required>
                             <p class="error" id="heightError"></p>
 
                             <button type="button" class="backgomb">Vissza</button>
@@ -478,7 +479,7 @@
                             <h2>Hányszor edzel egy héten?</h2>    
                             <div class="d-flex flex-column">
                                 <label class="workout-card" id="workout-frequency1-label">1-2x hetente 
-                                    <input class="hidden" type="radio" name="workout-frequency" id="workout-frequency1" value="3" required>
+                                    <input class="hidden" type="radio" name="workout-frequency" id="workout-frequency1" value="1-2" required>
                                 </label>                                                     
                                 <label class="workout-card" id="workout-frequency2-label">3x hetente
                                     <input class="hidden" type="radio" name="workout-frequency" id="workout-frequency2" value="3">
@@ -547,9 +548,12 @@
                                 <label class="workout-card" id="w-time5-label">90 perc
                                     <input class="hidden" type="radio" name="wanted-workout-time" id="wanted-workout-time5" value="90">
                                 </label>     
-                                <label class="workout-card" id="w-time6-label">120 perc
-                                    <input class="hidden" type="radio" name="wanted-workout-time" id="wanted-workout-time6" value="120">
+                                <label class="workout-card" id="w-time6-label">105 perc
+                                    <input class="hidden" type="radio" name="wanted-workout-time" id="wanted-workout-time6" value="105">
                                 </label>     
+                                <label class="workout-card" id="w-time7-label">120 perc
+                                    <input class="hidden" type="radio" name="wanted-workout-time" id="wanted-workout-time7" value="120">
+                                </label>  
                             </div>   
                             <p class="error" id="wantedTimeError"></p>
                             <button type="button" class="backgomb">Vissza</button>
