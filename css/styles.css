@@ -39,11 +39,6 @@ body {
     opacity: 0.25;
 }
 
-#hero-text {
-    left: 10%;
-}
-
-
 #pros-list svg{
     height:  120px;
     width: auto;
@@ -53,23 +48,60 @@ body {
     background-color: var(--f);
 }
 
-#header_box{
-    padding-top: 20rem;
-    padding-left: 8rem;
-    width: 50rem;
-}
-
-.header_gomb{
-    width: 15rem;
-    height: 4rem;
-    border-radius: 10px;
-}
-
 #faq {
     width: 40rem;
     margin: 0;
 }
 
+#hero-text {
+    left: 10%;
+    display: flex;
+}
+
+.index_box{
+}
+.index_box h1{
+    font-size: 2.5rem;
+}
+.index_box p{
+    font-size: 1.3rem;
+}
+.index_box p:nth-child(2){
+    width: 40rem;
+}
+.index_box button {
+    position: relative; 
+    cursor: pointer;
+    overflow: hidden;
+    width: 18rem;
+    height: 4em;
+    border: 2px solid var(--base-color);
+    border-radius: 10px;
+    background-color: var(--text-color);
+    color: var(--base-color);
+    transition: color 0.5s ease;
+    z-index: 1;
+}
+/*.index_box button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    
+    border-radius: inherit;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
+.index_box button:hover::before {
+    transform: scaleX(1);
+}  */
+.index_box button:hover {
+    color: white;
+    background: var(--base-color);
+}
+
+  
 .hidden {
     display: none !important;
 }
@@ -305,13 +337,22 @@ body {
   /*ikonok*/
   /*footer*/
   
-  /*media - xs(0-576) sm(576-768) md(768-992) lg(992-1200) xl(1200-1500)*/
+/*media - xs(0-576) sm(576-768) md(768-992) lg(992-1200) xl(1200-1500)*/
 @media only screen and (max-width: 2000px) {
-    .index_focim{
-        font-size: 2rem;
+    .index_box{
+        width: 60rem;
+        padding-top: 25rem;
+        padding-left: 10rem;
     }
-    .index_foszoveg{
-        font-size: 1rem;
+    .index_box h1{
+        font-size: 2.5rem;
+    }
+    .index_box p{
+        font-size: 1.3rem;
+    }
+    .index_box button {
+        width: 18rem;
+        height: 4em;
     }
     .index_alcim{
         padding: 2rem 0;
@@ -326,19 +367,76 @@ body {
           padding: 0 0 0 7rem;
       }
 }
-@media only screen and (max-width: 1200px) {
-    #header_box{
-        padding-top: 20rem;
+@media only screen and (max-width: 1500px) {
+    .index_box{
+        width: 55rem;
+        padding-top: 25rem;
+        padding-left: 9rem;
+    }
+    .index_box h1{
+        font-size: 2.3rem;
+    }
+    .index_box p{
+        font-size: 1.1rem;
+    }
+    .index_box p:nth-child(2){
+        width: 37rem;
+    }
+    .index_box button {
+        width: 18rem;
+        height: 4em;
+    }
+    .index_alcim{
+        padding: 2rem 0;
+    }
+    .index_sokcim{
+        font-size: 1.9rem;
+    }  
+    .index_szoveg{
+        font-size: 1rem;
+    }
+      #footer-icons{
+          padding: 0 0 0 7rem;
+      }
+}
+@media only screen and (max-width: 1300px) {
+    .index_box{
+        width: 50rem;
+        padding-top: 25rem;
         padding-left: 8rem;
+    }
+    .index_box h1{
+        font-size: 2.2rem;
+    }
+    .index_box p{
+        font-size: 1.1rem;
+    }
+    .index_box p:nth-child(2){
+        width: 37rem;
+    }
+    .index_box button {
+        width: 16rem;
+        height: 4em;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .index_box{
         width: 45rem;
+        padding-top: 25rem;
+        padding-left: 7rem;
     }
-    #header_box h1{
-        font-size: 0.5rem;
+    .index_box h1{
+        font-size: 2.2rem;
     }
-    .header_gomb{
-        width: 15rem;
-        height: 4rem;
-        border-radius: 10px;
+    .index_box p{
+        font-size: 1.1rem;
+    }
+    .index_box p:nth-child(2){
+        width: 34rem;
+    }
+    .index_box button {
+        width: 16rem;
+        height: 4em;
     }
     .index_alcim{
         padding: 2rem 0;
@@ -353,7 +451,45 @@ body {
           padding: 0 0 0 6rem;
       }
 }
+@media only screen and (max-width: 1100px) {
+    .index_box{
+        width: 45rem;
+        padding-top: 28rem;
+        padding-left: 7rem;
+    }
+    .index_box h1{
+        font-size: 2rem;
+    }
+    .index_box p{
+        font-size: 1rem;
+    }
+    .index_box p:nth-child(2){
+        width: 34rem;
+    }
+    .index_box button {
+        width: 16rem;
+        height: 4em;
+    }
+}
 @media only screen and (max-width: 992px) {
+    .index_box{
+        width: 40rem;
+        padding-top: 29rem;
+        padding-left: 6rem;
+    }
+    .index_box h1{
+        font-size: 1.9rem;
+    }
+    .index_box p{
+        font-size: 1rem;
+    }
+    .index_box p:nth-child(2){
+        width: 29rem;
+    }
+    .index_box button {
+        width: 16rem;
+        height: 3.5em;
+    }
     .index_sokcim{
         font-size: 1.5rem;
     }  
@@ -371,6 +507,24 @@ body {
       }
 }
 @media only screen and (max-width: 850px) {
+    .index_box{
+        width: 37rem;
+        padding-top: 30rem;
+        padding-left: 5rem;
+    }
+    .index_box h1{
+        font-size: 1.8rem;
+    }
+    .index_box p{
+        font-size: 0.9rem;
+    }
+    .index_box p:nth-child(2){
+        width: 29rem;
+    }
+    .index_box button {
+        width: 15rem;
+        height: 3.5em;
+    }
     .index_focim{
         font-size: 1.9rem;
     }
@@ -395,15 +549,23 @@ body {
       }
 }
 @media only screen and (max-width: 800px) {
-    #header_box{
-        padding-top: 20rem;
-        padding-left: 8rem;
-        width: 45rem;
+    .index_box{
+        width: 33rem;
+        padding-top: 30rem;
+        padding-left: 5rem;
     }
-    .header_gomb{
+    .index_box h1{
+        font-size: 1.6rem;
+    }
+    .index_box p{
+        font-size: 0.9rem;
+    }
+    .index_box p:nth-child(2){
+        width: 27rem;
+    }
+    .index_box button {
         width: 15rem;
-        height: 4rem;
-        border-radius: 10px;
+        height: 3.5em;
     }
     .index_focim{
         font-size: 1.8rem;
@@ -416,6 +578,24 @@ body {
       }
 }
 @media only screen and (max-width: 768px) {
+    .index_box{
+        width: 32rem;
+        padding-top: 30rem;
+        padding-left: 5rem;
+    }
+    .index_box h1{
+        font-size: 1.5rem;
+    }
+    .index_box p{
+        font-size: 0.9rem;
+    }
+    .index_box p:nth-child(2){
+        width: 26rem;
+    }
+    .index_box button {
+        width: 13rem;
+        height: 3.3em;
+    }
     .index_focim{
         font-size: 1.6rem;
     }
@@ -449,6 +629,24 @@ body {
       }
 }
 @media only screen and (max-width: 700px) {
+    .index_box{
+        width: 32rem;
+        padding-top: 30rem;
+        padding-left: 4rem;
+    }
+    .index_box h1{
+        font-size: 1.5rem;
+    }
+    .index_box p{
+        font-size: 0.9rem;
+    }
+    .index_box p:nth-child(2){
+        width: 26rem;
+    }
+    .index_box button {
+        width: 13rem;
+        height: 3.3em;
+    }
     .index_alcim{
         font-size: 1.7rem;
     }
@@ -465,6 +663,27 @@ body {
     } 
 }  
 @media only screen and (max-width: 600px) {
+    .index_box{
+        width: 26rem;
+        padding-top: 30rem;
+        padding-left: 3rem;
+    }
+    .index_box h1{
+        font-size: 1.3rem;
+    }
+    .index_box p{
+        font-size: 0.9rem;
+    }
+    .index_box p:nth-child(2){
+        width: 22rem;
+    }
+    .index_box p:nth-child(1){
+        font-size: 0.8rem;
+    }
+    .index_box button {
+        width: 11rem;
+        height: 3.3em;
+    }
     .index_focim{
         font-size: 1.5rem;
     }
@@ -476,16 +695,51 @@ body {
     }
 }     
 @media only screen and (max-width: 550px) {
+    .index_box{
+        width: 26rem;
+        padding-top: 31rem;
+        padding-left: 2.5rem;
+    }
+    .index_box h1{
+        font-size: 1.3rem;
+    }
+    .index_box p{
+        font-size: 0.9rem;
+    }
+    .index_box p:nth-child(2){
+        width: 22rem;
+    }
+    .index_box button {
+        width: 11rem;
+        height: 3.3em;
+    }
     #faq {
         width: 30rem;
         margin: 0;
     }
-
     #faq h5{
       font-size:1.1rem;
     }
 }
 @media only screen and (max-width: 480px) {
+    .index_box{
+        width: 24rem;
+        padding-top: 32rem;
+        padding-left: 2rem;
+    }
+    .index_box h1{
+        font-size: 1.25rem;
+    }
+    .index_box p{
+        font-size: 0.8rem;
+    }
+    .index_box p:nth-child(2){
+        width: 22rem;
+    }
+    .index_box button {
+        width: 11rem;
+        height: 3.3em;
+    }
     .index_alcim{
         font-size: 1.5rem;
     }
@@ -506,7 +760,45 @@ body {
       font-size:1rem;
     }
 }
+@media only screen and (max-width: 450px) {
+    .index_box{
+        width: 23rem;
+        padding-top: 32rem;
+        padding-left: 1.7rem;
+    }
+    .index_box h1{
+        font-size: 1.2rem;
+    }
+    .index_box p{
+        font-size: 0.8rem;
+    }
+    .index_box p:nth-child(2){
+        width: 22rem;
+    }
+    .index_box button {
+        width: 11rem;
+        height: 3.3em;
+    }
+}
 @media only screen and (max-width: 430px) {
+    .index_box{
+        width: 23rem;
+        padding-top: 30rem;
+        padding-left: 1.4rem;
+    }
+    .index_box h1{
+        font-size: 1.2rem;
+    }
+    .index_box p{
+        font-size: 0.8rem;
+    }
+    .index_box p:nth-child(2){
+        width: 22rem;
+    }
+    .index_box button {
+        width: 11rem;
+        height: 3.3em;
+    }
     #faq {
         width: 24rem;
         margin: 0;
@@ -516,6 +808,26 @@ body {
     }
     #faq h5{
       font-size:0.9rem;
+    }
+}
+@media only screen and (max-width: 392px) {
+    .index_box{
+        width: 21rem;
+        padding-top: 30rem;
+        padding-left: 1rem;
+    }
+    .index_box h1{
+        font-size: 1.15rem;
+    }
+    .index_box p{
+        font-size: 0.75rem;
+    }
+    .index_box p:nth-child(2){
+        width: 19rem;
+    }
+    .index_box button {
+        width: 10rem;
+        height: 3rem;
     }
 }
 @media only screen and (max-width: 382px) {
@@ -529,6 +841,8 @@ body {
     #faq h5{
       font-size:0.8rem;
     }
+}
+@media only screen and (max-width: 382px) {
 }
 #box1{
     display: flex;
