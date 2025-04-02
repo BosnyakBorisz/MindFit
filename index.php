@@ -12,20 +12,16 @@
 <body>
   
     <header id="hero">
-        <div id="header_box">
         <?php
-                include("header.html")
-            ?>
+            include("header.html")
+        ?>
         <section id="hero-text" class="z-1">
             <div class="index_box">
                 <h1>Alakítsd át életstílusodat mesterséges intelligenciával!</h1>
                 <p>Emeld magasabb szintre jóléted a MindFit AI-alapú platformjával, amelyet arra terveztek, hogy inspiráljon és fenntarthatóvá tegye az egészséges szokásokat.</p>
-                <button onclick="location.href='register.php'">
-                <p class="d-flex justify-content-center align-items-center m-0 p-0 fw-bold">Tedd meg az első lépést</p>
-                </button>
+                <button onclick="location.href='register.php'" ><p class="d-flex justify-content-center align-items-center m-0 p-0 fw-bold">Tedd meg az első lépést</p></button>
             </div>
         </section>
-        </div>
     </header>
 
   <main>
@@ -61,7 +57,7 @@
 
     <section id="reviews">
         <div class="container-fluid w-75">
-            <h1 class="mt-5 pt-5">Elégedett felhasználók</h1>
+            <h1 class="mt-5 pt-5 text-center">Elégedett felhasználók</h1>
             <?php 
             
             include("database.php");
