@@ -54,22 +54,10 @@ function addCalories() {
     let calories = Number(calorieInput.value);
 
     currentCalories += calories;
-    localStorage.setItem("currentCalories", currentCalories);
-    updateCalorieText();
-    calorieInput.value = "";
-}
+    displayCalories = calorieGoal-currentCalories;
+    document.getElementById("calorie-text").textContent = displayCalories + " kcal maradt";
 
-function updateCalorieText() {
-    let difference = calorieGoal - currentCalories;
-    let calorieText = document.getElementById("calorie-text");
-
-    if (firstKcal && difference <= 0) {
-        firstKcal = false;
-        localStorage.setItem("firstKcal", false);
-        triggerConfetti();
-    }
-
-    calorieText.textContent = difference >= 0 ? `${difference} kcal maradt` : `+${Math.abs(difference)} kcal`;
+    calories = document.getElementById("calorieInput").value = 0;
 }
 
 // Lépésszámláló
