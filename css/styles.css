@@ -20,6 +20,20 @@ body {
     color: var(--text-color);
 }
 
+#pros-list svg{
+    height:  120px;
+    width: auto;
+}
+
+#reviews { 
+    background-color: var(--f);
+}
+
+#faq {
+    width: 40rem;
+    margin: 0;
+}
+
 #hero {
     background-image: url(../img/man-1282232_1920.jpg);
     background-repeat: no-repeat;
@@ -37,28 +51,17 @@ body {
     height: 100vh;
     background-color: var(--base-color);
     opacity: 0.25;
-}
-
-#pros-list svg{
-    height:  120px;
-    width: auto;
-}
-
-#reviews { 
-    background-color: var(--f);
-}
-
-#faq {
-    width: 40rem;
-    margin: 0;
+    z-index: 0;
 }
 
 #hero-text {
-    left: 10%;
-    display: flex;
+    left: 10%;  
 }
 
 .index_box{
+    height: 100vh;
+    max-width: 60rem;
+    padding-left: 10px;
 }
 .index_box h1{
     font-size: 2.5rem;
@@ -340,9 +343,7 @@ body {
 /*media - xs(0-576) sm(576-768) md(768-992) lg(992-1200) xl(1200-1500)*/
 @media only screen and (max-width: 2000px) {
     .index_box{
-        width: 60rem;
-        padding-top: 25rem;
-        padding-left: 10rem;
+        max-width: 55rem;
     }
     .index_box h1{
         font-size: 2.5rem;
@@ -369,9 +370,7 @@ body {
 }
 @media only screen and (max-width: 1500px) {
     .index_box{
-        width: 55rem;
-        padding-top: 25rem;
-        padding-left: 9rem;
+        max-width: 50rem;
     }
     .index_box h1{
         font-size: 2.3rem;
@@ -400,11 +399,6 @@ body {
       }
 }
 @media only screen and (max-width: 1300px) {
-    .index_box{
-        width: 50rem;
-        padding-top: 25rem;
-        padding-left: 8rem;
-    }
     .index_box h1{
         font-size: 2.2rem;
     }
@@ -420,11 +414,6 @@ body {
     }
 }
 @media only screen and (max-width: 1200px) {
-    .index_box{
-        width: 45rem;
-        padding-top: 25rem;
-        padding-left: 7rem;
-    }
     .index_box h1{
         font-size: 2.2rem;
     }
@@ -453,9 +442,7 @@ body {
 }
 @media only screen and (max-width: 1100px) {
     .index_box{
-        width: 45rem;
-        padding-top: 28rem;
-        padding-left: 7rem;
+        max-width: 46rem;
     }
     .index_box h1{
         font-size: 2rem;
@@ -473,9 +460,7 @@ body {
 }
 @media only screen and (max-width: 992px) {
     .index_box{
-        width: 40rem;
-        padding-top: 29rem;
-        padding-left: 6rem;
+        max-width: 44rem;
     }
     .index_box h1{
         font-size: 1.9rem;
@@ -508,9 +493,7 @@ body {
 }
 @media only screen and (max-width: 850px) {
     .index_box{
-        width: 37rem;
-        padding-top: 30rem;
-        padding-left: 5rem;
+        max-width: 42rem;
     }
     .index_box h1{
         font-size: 1.8rem;
@@ -550,9 +533,7 @@ body {
 }
 @media only screen and (max-width: 800px) {
     .index_box{
-        width: 33rem;
-        padding-top: 30rem;
-        padding-left: 5rem;
+        max-width: 39rem;
     }
     .index_box h1{
         font-size: 1.6rem;
@@ -579,9 +560,7 @@ body {
 }
 @media only screen and (max-width: 768px) {
     .index_box{
-        width: 32rem;
-        padding-top: 30rem;
-        padding-left: 5rem;
+        max-width: 37rem;
     }
     .index_box h1{
         font-size: 1.5rem;
@@ -629,11 +608,6 @@ body {
       }
 }
 @media only screen and (max-width: 700px) {
-    .index_box{
-        width: 32rem;
-        padding-top: 30rem;
-        padding-left: 4rem;
-    }
     .index_box h1{
         font-size: 1.5rem;
     }
@@ -664,9 +638,7 @@ body {
 }  
 @media only screen and (max-width: 600px) {
     .index_box{
-        width: 26rem;
-        padding-top: 30rem;
-        padding-left: 3rem;
+        max-width: 30rem;
     }
     .index_box h1{
         font-size: 1.3rem;
@@ -695,11 +667,6 @@ body {
     }
 }     
 @media only screen and (max-width: 550px) {
-    .index_box{
-        width: 26rem;
-        padding-top: 31rem;
-        padding-left: 2.5rem;
-    }
     .index_box h1{
         font-size: 1.3rem;
     }
@@ -722,11 +689,6 @@ body {
     }
 }
 @media only screen and (max-width: 480px) {
-    .index_box{
-        width: 24rem;
-        padding-top: 32rem;
-        padding-left: 2rem;
-    }
     .index_box h1{
         font-size: 1.25rem;
     }
@@ -761,11 +723,6 @@ body {
     }
 }
 @media only screen and (max-width: 450px) {
-    .index_box{
-        width: 23rem;
-        padding-top: 32rem;
-        padding-left: 1.7rem;
-    }
     .index_box h1{
         font-size: 1.2rem;
     }
@@ -781,11 +738,6 @@ body {
     }
 }
 @media only screen and (max-width: 430px) {
-    .index_box{
-        width: 23rem;
-        padding-top: 30rem;
-        padding-left: 1.4rem;
-    }
     .index_box h1{
         font-size: 1.2rem;
     }
@@ -811,11 +763,6 @@ body {
     }
 }
 @media only screen and (max-width: 392px) {
-    .index_box{
-        width: 21rem;
-        padding-top: 30rem;
-        padding-left: 1rem;
-    }
     .index_box h1{
         font-size: 1.15rem;
     }

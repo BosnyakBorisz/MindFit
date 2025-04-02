@@ -12,22 +12,20 @@
 <body>
   
     <header id="hero">
+        <div id="header_box">
         <?php
-            include("header.html")
-        ?>
-    <section id="hero-text" class="z-1">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div class="index_box">
-                        <h1 class="">Alakítsd át életstílusodat mesterséges intelligenciával!</h1>
-                        <p class="">Emeld magasabb szintre jóléted a MindFit AI-alapú platformjával, amelyet arra terveztek, hogy inspiráljon és fenntarthatóvá tegye az egészséges szokásokat.</p>    
-                        <button onclick="location.href='register.php'"><p class="d-flex justify-content-center align-items-center m-0 p-0 fw-bold">Tedd meg az első lépést</p></button>
-                    </div>
-                </div>
+                include("header.html")
+            ?>
+        <section id="hero-text" class="z-1">
+            <div class="index_box">
+                <h1>Alakítsd át életstílusodat mesterséges intelligenciával!</h1>
+                <p>Emeld magasabb szintre jóléted a MindFit AI-alapú platformjával, amelyet arra terveztek, hogy inspiráljon és fenntarthatóvá tegye az egészséges szokásokat.</p>
+                <button onclick="location.href='register.php'">
+                <p class="d-flex justify-content-center align-items-center m-0 p-0 fw-bold">Tedd meg az első lépést</p>
+                </button>
             </div>
-        </div>    
-    </section>
+        </section>
+        </div>
     </header>
 
   <main>
