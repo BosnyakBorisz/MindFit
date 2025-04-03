@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Bodymap</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="img/strong.png"></link:icon>
+</head>
+<body>
+  <section id="bodymap">
+    <div class="container">   
+          <div class="view">
+            <img src="img/woman_musculature_front.png" usemap="#testmap" id="imgBack">
+            <canvas id="overlay1" width="600" height="1280"></canvas>
+          </div>
+          <div class="view">
+            <img src="img/woman_musculature_back.png" usemap="#testmap2" id="imgFront">
+            <canvas nvas id="overlay2" width="600" height="1280"></canvas>
+          </div>
+          <!--<div class="row"> 
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+            </div>
+          </div>-->
+
+
+    
+    <map name="testmap">
+
+
+    </map>
+    <map name="testmap2">
+
+    </map>
+  </div>
+  </section>
+    
+  <script>
+    const backGroups = {
+  
+};
+const frontGroups = { 
+    
+};
+let hoveredGroup = null;
+let selectedGroups = []; // Több kijelölés támogatása
+
+function drawOverlayForCanvas(canvas, ctx) {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  const isBack = canvas.id === "overlay1";
+  const groupsToUse = isBack ? backGroups : frontGroups;
+
+  Object.entries(groupsToUse).forEach(([group, data]) => {
+    const isHovered = hoveredGroup === group;
+    const isSelected = selectedGroups.includes(group); // több kijelölés
+
+    const color = isSelected
+      ? data.selectedColor
+      : (isHovered ? data.color : null);
+
+    if (color) {
+      data.areas.forEach(coords => {
+        if (coords.length < 6 || coords.length % 2 !== 0) return;
+        ctx.beginPath();
+        ctx.moveTo(coords[0], coords[1]);
+        for (let i = 2; i < coords.length; i += 2) {
+          ctx.lineTo(coords[i], coords[i + 1]);
+        }
+        ctx.closePath();
+        ctx.fillStyle = color;
+        ctx.fill();
+      });
+    }
+  });
+}
+
+function drawAllOverlays() {
+  const canvases = ['overlay1', 'overlay2'];
+  canvases.forEach(id => {
+    const canvas = document.getElementById(id);
+    const ctx = canvas.getContext('2d');
+    drawOverlayForCanvas(canvas, ctx);
+  });
+}
+
+function highlightGroup(group, active) {
+  hoveredGroup = active ? group : null;
+  drawAllOverlays();
+}
+
+function selectGroup(group) {
+  // Ha már kijelölt, vegyük ki. Ha nem, adjuk hozzá.
+  if (selectedGroups.includes(group)) {
+    selectedGroups = selectedGroups.filter(g => g !== group);
+  } else {
+    selectedGroups.push(group);
+  }
+  drawAllOverlays();
+}
+  </script>
+</body>

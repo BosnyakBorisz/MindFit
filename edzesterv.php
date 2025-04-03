@@ -22,13 +22,6 @@
     $stmt->execute();
     $stmt->bind_result($workout_plan);
 
-    if ($stmt->fetch()) {
-        $workout_plan;
-    } else {
-        echo "No workout plan found for this user.";
-    }
-
-    $stmt->close();
 ?>  
 <!DOCTYPE html>
 <html lang="hu">
@@ -49,7 +42,12 @@
 
     <div class="d-flex align-items-center flex-column">
         <?php
-            echo $workout_plan
+            if ($stmt->fetch()) {
+                echo $workout_plan;
+            } else {
+                echo "Nem található edzésterv.";
+            }
+            $stmt->close();
         ?>
     </div>
 
