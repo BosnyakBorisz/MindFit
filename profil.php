@@ -68,6 +68,7 @@
   <main>
     
     <h1 class="ms-5 mb-5">Üdvözlünk <?php echo "" . htmlspecialchars($_SESSION["username"]) ?></h1>
+    <p class="text-center" id="napiMoti">""</p>
 
     <section id="calorie">
 
@@ -86,7 +87,7 @@
         </div>
 
         <div class="d-flex flex-column align-items-center">
-            <input class="form-control m-1" type="number" id="calorieInput" style="width: 30%;">
+            <input value="0" class="form-control m-1" type="number" id="calorieInput" style="width: 30%;">
             <button class="btn m-1" onclick="addCalories()" style="background-color: var(--h); color: white;">Hozzáadás</button>
         </div>
 
@@ -118,7 +119,7 @@
                 <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                     <div id="stepbarbar" class="progress-bar"></div>
                 </div>
-                <input class="form-control m-2" type="number" id="stepsInput" style="width: 45%;">
+                <input value="0" class="form-control m-2" type="number" id="stepsInput" style="width: 45%;">
                 <button class="btn m-2" onclick="lepesHozzaAd()" style="background-color: var(--h); color: white;">Hozzáadás</button>
             </div>
             <div class="water p-3 d-flex rounded-2 justify-content-between">
@@ -126,7 +127,7 @@
                     <h2>Víz</h2>
                     <h4 id="waterGoal">Cél: </h4>
                     <div class="d-flex flex-row align-items-end m-2">
-                        <input class="form-control m-1" type="number" id="vizinput">
+                        <input value="0"  class="form-control m-1" type="number" id="vizinput">
                         <label>ml</label>
                     </div>
                     <button class="btn m-2" onclick="vizHozzaAd()" style="background-color: var(--h); color: white;">Hozzáadás</button>
