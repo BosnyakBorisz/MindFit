@@ -10,12 +10,12 @@
   <section id="bodymap">
     <div class="container">   
           <div class="view">
-            <img src="img/man_musculature_back.png" usemap="#testmap" id="imgBack">
-            <canvas id="overlay1" width="600" height="1280"></canvas>
+            <img src="img/man_musculature_front.png" usemap="#testmap" id="imgFront">
+            <canvas nvas id="overlay2" width="600" height="1280"></canvas>
           </div>
           <div class="view">
-            <img src="img/man_musculature_front.png" usemap="#testmap2" id="imgFront">
-            <canvas nvas id="overlay2" width="600" height="1280"></canvas>
+            <img src="img/man_musculature_back.png" usemap="#testmap2" id="imgBack">
+            <canvas id="overlay1" width="600" height="1280"></canvas>
           </div>
           <!--<div class="row"> 
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
@@ -25,8 +25,321 @@
           </div>-->
 
 
-    
-        <map name="testmap">
+              <map name="testmap">
+                <!--Vádli-->
+                <area shape="poly" title="Vádli" data-group="vadli" 
+                coords="227,891,227,903,227,915,226,932,226,946,227,962,230,979,234,1001,238,1017,242,1034,246,1051,249,1067,247,1078,244,1083,240,1089,240,1077,240,1071,237,1059,235,1048,231,1033,229,1020,226,1008,224,993,223,981,223,967,222,953,222,937,223,923,224,907" 
+                onclick="selectGroup('vadli'); return false;" 
+                onmouseover="highlightGroup('vadli', true)" 
+                onmouseout="highlightGroup('vadli', false)">
+                <area shape="poly" title="Vádli" data-group="vadli" 
+                coords="233,861,236,869,237,881,240,895,243,913,246,930,249,949,251,961,255,982,258,1004,260,1019,261,1037,261,1052,259,1061,254,1051,247,1034,242,1016,237,994,235,977,234,961,231,944,231,926,231,909,231,893,232,874,232,872" 
+                onclick="selectGroup('vadli'); return false;" 
+                onmouseover="highlightGroup('vadli', true)" 
+                onmouseout="highlightGroup('vadli', false)">
+                <area shape="poly" title="Vádli" data-group="vadli" 
+                coords="278,907,281,926,285,947,286,967,286,981,281,1000,274,1020,271,1036,267,1049,266,1027,265,1012,263,994,262,981,260,967,259,953,262,942,267,930,271,923,275,913" 
+                onclick="selectGroup('vadli'); return false;" 
+                onmouseover="highlightGroup('vadli', true)" 
+                onmouseout="highlightGroup('vadli', false)">
+                <area shape="poly" title="Vádli" data-group="vadli" 
+                coords="365,907,373,924,380,939,381,943,383,950,383,961,382,975,381,994,379,1011,378,1022,377,1034,376,1048,373,1039,371,1027,368,1014,363,1001,360,989,357,975,359,958,360,941,363,926,364,916" 
+                onclick="selectGroup('vadli'); return false;" 
+                onmouseover="highlightGroup('vadli', true)" 
+                onmouseout="highlightGroup('vadli', false)">
+                <area shape="poly" title="Vádli" data-group="vadli" 
+                coords="410,861,412,873,412,885,413,897,413,905,414,919,412,937,411,953,409,968,407,982,406,997,399,1021,394,1038,389,1051,384,1064,382,1048,384,1028,385,1008,388,988,390,971,393,959,394,947,397,931,401,911,403,895,407,878" 
+                onclick="selectGroup('vadli'); return false;" 
+                onmouseover="highlightGroup('vadli', true)" 
+                onmouseout="highlightGroup('vadli', false)">
+                <area shape="poly" title="Vádli" data-group="vadli" 
+                coords="402,1089,397,1075,395,1063,397,1055,398,1045,401,1034,404,1022,407,1012,410,999,413,988,414,974,416,962,417,950,417,935,417,919,417,905,416,890,418,896,421,910,421,925,422,942,422,957,421,969,420,980,420,993,418,1003,416,1013,414,1022,412,1035,410,1046,406,1058,403,1067,403,1077"
+                onclick="selectGroup('vadli'); return false;" 
+                onmouseover="highlightGroup('vadli', true)" 
+                onmouseout="highlightGroup('vadli', false)">
+                <!--Elsőcomb-->
+                <area shape="poly" title="Első comb" data-group="elsocomb_szaboizom"
+                coords="225,743,227,754,232,772,240,795,244,808,246,815,246,823,246,827,243,835,239,826,235,813,231,805,227,798,222,784,218,765,217,749,216,739,215,729,215,721,214,711,214,703,218,708,222,727,223,735"
+                onmouseover="highlightGroup('elsocomb_szaboizom', true)" 
+                onmouseout="highlightGroup('elsocomb_szaboizom', false)"
+                onclick="selectGroup('elsocomb_szaboizom'); return false;">
+                <area shape="poly" title="Első comb" data-group="elsocomb_szaboizom"
+                coords="235,591,244,618,253,646,260,668,267,695,271,725,273,751,272,775,269,806,266,820,259,828,252,818,247,807,243,790,236,766,229,736,223,710,217,680,217,666,217,646,220,627,225,611,230,599"
+                onmouseover="highlightGroup('elsocomb_szaboizom', true)" 
+                onmouseout="highlightGroup('elsocomb_szaboizom', false)"
+                onclick="selectGroup('elsocomb_szaboizom'); return false;">
+                <area shape="poly" title="Első comb" data-group="elsocomb_szaboizom"
+                coords="287,811,288,798,287,778,282,760,280,752,275,741,276,761,277,773,276,786,273,803,272,812,272,821,273,830,277,834,280,836,283,836,286,818,284,834,285,823"
+                onmouseover="highlightGroup('elsocomb_szaboizom', true)" 
+                onmouseout="highlightGroup('elsocomb_szaboizom', false)"
+                onclick="selectGroup('elsocomb_szaboizom'); return false;">
+                <area shape="poly" title="Első comb" data-group="elsocomb_szaboizom"
+                coords="366,766,366,778,368,791,369,802,370,814,371,822,368,830,362,838,359,835,358,821,356,807,355,793,356,778,359,765,361,757,367,740,367,750,367,757,366,762"
+                onmouseover="highlightGroup('elsocomb_szaboizom', true)" 
+                onmouseout="highlightGroup('elsocomb_szaboizom', false)"
+                onclick="selectGroup('elsocomb_szaboizom'); return false;">
+                <area shape="poly" title="Első comb" data-group="elsocomb_szaboizom"
+                coords="420,616,424,634,427,651,427,673,425,689,420,713,414,736,407,764,399,792,393,811,388,823,383,827,378,820,374,807,372,788,371,770,371,751,371,733,373,716,377,695,382,676,387,654,394,635,399,618,404,606,406,597,407,590,411,599,415,604"
+                onmouseover="highlightGroup('elsocomb_szaboizom', true)" 
+                onmouseout="highlightGroup('elsocomb_szaboizom', false)"
+                onclick="selectGroup('elsocomb_szaboizom'); return false;">
+                <area shape="poly" title="Első comb" data-group="elsocomb_szaboizom"
+                coords="427,748,425,767,421,784,415,800,409,811,405,825,399,835,397,822,399,811,402,797,405,789,409,778,414,761,419,743,421,730,423,718,426,708,429,701,428,719,427,736,426,741"
+                onmouseover="highlightGroup('elsocomb_szaboizom', true)" 
+                onmouseout="highlightGroup('elsocomb_szaboizom', false)"
+                onclick="selectGroup('elsocomb_szaboizom'); return false;">
+                <!--Adduktorok-->
+                <area shape="poly" title="Adduktorok" data-group="adduktorok"
+                coords="282,614,289,627,293,636,298,649,300,658,303,665,304,672,303,678,300,685,294,690,289,678,286,668,279,651,273,633,268,621,263,607,256,593,250,581,247,572,256,581,264,588,273,599,277,606"
+                onmouseover="highlightGroup('adduktorok', true)" 
+                onmouseout="highlightGroup('adduktorok', false)" 
+                onclick="selectGroup('adduktorok'); return false;">
+                <area shape="poly" title="Adduktorok" data-group="adduktorok"
+                coords="311,688,310,702,308,715,307,725,305,740,303,750,300,726,298,717,297,707,295,699,299,691,304,685,310,680"
+                onmouseover="highlightGroup('adduktorok', true)" 
+                onmouseout="highlightGroup('adduktorok', false)" 
+                onclick="selectGroup('adduktorok'); return false;">
+                <area shape="poly" title="Adduktorok" data-group="adduktorok"
+                coords="336,721,335,708,333,695,333,688,333,680,338,685,342,690,346,695,349,700,348,707,346,716,344,726,342,734,340,749,338,739,337,730"
+                onmouseover="highlightGroup('adduktorok', true)" 
+                onmouseout="highlightGroup('adduktorok', false)" 
+                onclick="selectGroup('adduktorok'); return false;">
+                <area shape="poly" title="Adduktorok" data-group="adduktorok"
+                coords="346,646,351,633,359,619,369,602,375,596,379,589,385,583,397,572,388,591,383,603,380,609,376,619,370,634,367,644,363,653,359,665,355,677,353,682,350,689,343,684,339,676,339,670,341,661,344,652"
+                onmouseover="highlightGroup('adduktorok', true)" 
+                onmouseout="highlightGroup('adduktorok', false)" 
+                onclick="selectGroup('adduktorok'); return false;">
+                <!--Szaboizom-->
+                <area shape="poly" title="Szaboizom" data-group="elsocomb_szaboizom"
+                coords="280,670,285,686,290,705,293,715,297,739,298,755,297,773,296,782,293,791,291,776,288,761,284,743,280,724,274,700,269,684,265,666,261,651,258,638,256,628,252,615,249,603,246,595,241,575,245,591,248,596,246,595,254,607,260,619,265,631,269,643,274,656,277,664,279,669"
+                onmouseover="highlightGroup('elsocomb_szaboizom', true)" 
+                onmouseout="highlightGroup('elsocomb_szaboizom', false)" 
+                onclick="selectGroup('elsocomb_szaboizom'); return false;">
+                <area shape="poly" title="Szaboizom" data-group="elsocomb_szaboizom"
+                coords="264,902,260,910,257,918,254,925,254,929,254,937,260,929,265,922,269,911,274,901,280,887,283,878,285,869,287,862,285,854,283,853,280,862,277,870,276,875,273,883,268,892,265,899,261,907"
+                onmouseover="highlightGroup('elsocomb_szaboizom', true)" 
+                onmouseout="highlightGroup('elsocomb_szaboizom', false)" 
+                onclick="selectGroup('elsocomb_szaboizom'); return false;">
+                <area shape="poly" title="Szaboizom" data-group="elsocomb_szaboizom"
+                coords="374,685,369,702,365,717,362,732,360,741,358,753,354,769,353,777,351,793,347,780,346,766,346,751,347,741,350,723,353,705,358,691,362,675,367,664,373,648,377,638,382,628,384,623,387,613,391,605,401,583,397,598,392,612,390,620,386,636,383,647,379,660,377,671"
+                onmouseover="highlightGroup('elsocomb_szaboizom', true)" 
+                onmouseout="highlightGroup('elsocomb_szaboizom', false)" 
+                onclick="selectGroup('elsocomb_szaboizom'); return false;">
+                <area shape="poly" title="Szaboizom" data-group="elsocomb_szaboizom"
+                coords="374,890,378,898,382,906,385,915,389,924,390,937,385,933,379,922,373,906,367,894,361,879,358,868,357,859,359,852,363,859,365,862,367,872,371,882,363,859"
+                onmouseover="highlightGroup('elsocomb_szaboizom', true)" 
+                onmouseout="highlightGroup('elsocomb_szaboizom', false)" 
+                onclick="selectGroup('elsocomb_szaboizom'); return false;">
+                <!--Ferdehasizom-->
+                <area shape="poly" title="Ferdehasizom" data-group="ferdehas"
+                coords="237,511,237,524,236,536,236,541,236,550,241,554,248,561,257,571,263,578,267,579,274,581,272,570,269,558,268,545,268,537,267,522,266,514,256,510,246,502,240,495,238,503,238,505,238,507"
+                onmouseover="highlightGroup('ferdehas', true)"
+                onmouseout="highlightGroup('ferdehas', false)"
+                onclick="selectGroup('ferdehas'); return false;">
+                <area shape="poly" title="Ferdehasizom" data-group="ferdehas"
+                coords="244,494,250,498,257,504,265,508,265,497,265,487,257,479,250,473,246,471,241,464,240,474,240,482,240,487"
+                onmouseover="highlightGroup('ferdehas', true)"
+                onmouseout="highlightGroup('ferdehas', false)"
+                onclick="selectGroup('ferdehas'); return false;">
+                <area shape="poly" title="Ferdehasizom" data-group="ferdehas"
+                coords="248,467,253,471,259,476,265,482,266,468,265,459,257,453,248,447,238,439,238,447,238,455,243,463"
+                onmouseover="highlightGroup('ferdehas', true)"
+                onmouseout="highlightGroup('ferdehas', false)"
+                onclick="selectGroup('ferdehas'); return false;">
+                <area shape="poly" title="Ferdehasizom" data-group="ferdehas"
+                coords="244,422,257,432,263,435,265,440,265,453,257,448,248,442,242,437,241,434,242,432,243,425,241,434,242,430"
+                onmouseover="highlightGroup('ferdehas', true)"
+                onmouseout="highlightGroup('ferdehas', false)"
+                onclick="selectGroup('ferdehas'); return false;">
+                <area shape="poly" title="Ferdehasizom" data-group="ferdehas"
+                coords="265,413,265,422,265,432,257,427,251,422,244,416,254,406,265,397,265,404"
+                onmouseover="highlightGroup('ferdehas', true)"
+                onmouseout="highlightGroup('ferdehas', false)"
+                onclick="selectGroup('ferdehas'); return false;">
+                <area shape="poly" title="Ferdehasizom" data-group="ferdehas"
+                coords="376,535,375,549,375,559,374,566,371,574,369,581,376,579,383,575,392,566,399,558,408,549,407,536,407,524,406,513,406,505,404,495,397,502,387,510,378,514,377,522"
+                onmouseover="highlightGroup('ferdehas', true)"
+                onmouseout="highlightGroup('ferdehas', false)"
+                onclick="selectGroup('ferdehas'); return false;">
+                <area shape="poly" title="Ferdehasizom" data-group="ferdehas"
+                coords="404,476,404,481,402,489,397,497,389,503,378,510,378,498,378,486,385,481,392,474,404,464"
+                onmouseover="highlightGroup('ferdehas', true)"
+                onmouseout="highlightGroup('ferdehas', false)"
+                onclick="selectGroup('ferdehas'); return false;">
+                <area shape="poly" title="Ferdehasizom" data-group="ferdehas"
+                coords="378,464,378,472,378,480,387,474,394,468,399,464,404,457,405,447,404,440,397,447,387,453,378,460,378,468"
+                onmouseover="highlightGroup('ferdehas', true)"
+                onmouseout="highlightGroup('ferdehas', false)"
+                onclick="selectGroup('ferdehas'); return false;">
+                <area shape="poly" title="Ferdehasizom" data-group="ferdehas"
+                coords="379,437,379,444,379,453,389,448,397,442,404,435,401,430,399,424,393,429,386,432"
+                onmouseover="highlightGroup('ferdehas', true)"
+                onmouseout="highlightGroup('ferdehas', false)"
+                onclick="selectGroup('ferdehas'); return false;">
+                <area shape="poly" title="Ferdehasizom" data-group="ferdehas"
+                coords="378,411,378,423,378,433,386,427,393,422,399,416,391,408,385,403,378,396,378,405"
+                onmouseover="highlightGroup('ferdehas', true)"
+                onmouseout="highlightGroup('ferdehas', false)"
+                onclick="selectGroup('ferdehas'); return false;">
+                <!--Hasizom-->
+                <area shape="poly" title="Hasizom" data-group="hasizom"
+                coords="283,578,285,588,289,599,292,608,297,619,301,625,308,630,319,634,319,617,319,602,319,588,319,575,319,560,319,551,319,536,319,529,319,520,314,519,304,517,293,516,285,516,274,517,275,526,276,540,277,550,280,562"
+                onmouseover="highlightGroup('hasizom', true)"
+                onmouseout="highlightGroup('hasizom', false)"
+                onclick="selectGroup('hasizom'); return false;">
+                <area shape="poly" title="Hasizom" data-group="hasizom"
+                coords="324,560,324,573,326,591,326,607,326,618,327,625,327,634,336,629,345,621,350,613,353,605,357,595,360,583,363,568,366,552,367,541,368,527,369,517,361,516,350,516,337,517,326,520,326,529,326,536,324,544"
+                onmouseover="highlightGroup('hasizom', true)"
+                onmouseout="highlightGroup('hasizom', false)"
+                onclick="selectGroup('hasizom'); return false;">
+                <area shape="poly" title="Hasizom" data-group="hasizom"
+                coords="274,495,274,503,276,508,284,510,296,511,304,511,315,511,318,510,319,498,319,487,318,474,306,474,296,475,285,479,274,480,273,487"
+                onmouseover="highlightGroup('hasizom', true)"
+                onmouseout="highlightGroup('hasizom', false)"
+                onclick="selectGroup('hasizom'); return false;">
+                <area shape="poly" title="Hasizom" data-group="hasizom"
+                coords="324,489,324,498,326,505,327,511,337,511,349,511,360,511,368,508,370,497,370,489,369,480,355,477,345,475,337,474,326,474,324,481"
+                onmouseover="highlightGroup('hasizom', true)"
+                onmouseout="highlightGroup('hasizom', false)"
+                onclick="selectGroup('hasizom'); return false;">
+                <area shape="poly" title="Hasizom" data-group="hasizom"
+                coords="275,458,275,469,287,470,297,471,307,471,318,470,319,457,319,446,319,438,318,431,312,427,305,431,296,435,282,443,277,449"
+                onmouseover="highlightGroup('hasizom', true)"
+                onmouseout="highlightGroup('hasizom', false)"
+                onclick="selectGroup('hasizom'); return false;">
+                <area shape="poly" title="Hasizom" data-group="hasizom"
+                coords="326,449,326,457,327,466,329,470,335,471,346,471,360,471,369,470,368,454,363,446,351,438,340,433,334,427,329,427,326,433,326,441"
+                onmouseover="highlightGroup('hasizom', true)"
+                onmouseout="highlightGroup('hasizom', false)"
+                onclick="selectGroup('hasizom'); return false;">
+                <area shape="poly" title="Hasizom" data-group="hasizom"
+                coords="271,412,272,424,273,433,275,441,287,435,297,429,304,424,310,419,318,416,318,402,318,395,316,386,315,380,308,379,299,384,292,386,281,392,276,395,271,404,269,410"
+                onmouseover="highlightGroup('hasizom', true)"
+                onmouseout="highlightGroup('hasizom', false)"
+                onclick="selectGroup('hasizom'); return false;">
+                <area shape="poly" title="Hasizom" data-group="hasizom"
+                coords="327,394,327,403,326,410,327,416,334,419,339,424,346,428,355,433,362,437,368,441,371,428,374,412,371,400,363,393,354,388,345,384,338,380,332,379,329,385"
+                onmouseover="highlightGroup('hasizom', true)"
+                onmouseout="highlightGroup('hasizom', false)"
+                onclick="selectGroup('hasizom'); return false;">
+                <!--Szeleshatizom-->
+                <area shape="poly" title="Szeleshatizom" data-group="szeleshat"
+                coords="404,419,405,426,407,435,413,427,415,421,417,411,416,403,412,409,408,413"
+                onmouseover="highlightGroup('szeleshat', true)"
+                onmouseout="highlightGroup('szeleshat', false)"
+                onclick="selectGroup('szeleshat'); return false;">
+                <area shape="poly" title="Szeleshatizom" data-group="szeleshat"
+                coords="396,405,399,408,405,412,408,408,413,401,416,394,417,390,416,382,413,390,405,394,398,396,390,400,396,405,397,406"
+                onmouseover="highlightGroup('szeleshat', true)"
+                onmouseout="highlightGroup('szeleshat', false)"
+                onclick="selectGroup('szeleshat'); return false;">
+                <area shape="poly" title="Szeleshatizom" data-group="szeleshat"
+                coords="398,390,405,388,410,385,414,378,414,370,413,370,407,375,401,379,394,384,390,387,387,390,390,392"
+                onmouseover="highlightGroup('szeleshat', true)"
+                onmouseout="highlightGroup('szeleshat', false)"
+                onclick="selectGroup('szeleshat'); return false;">
+                <area shape="poly" title="Szeleshatizom" data-group="szeleshat"
+                coords="229,419,233,429,236,434,238,426,240,418,233,410,227,403,227,410"
+                onmouseover="highlightGroup('szeleshat', true)"
+                onmouseout="highlightGroup('szeleshat', false)"
+                onclick="selectGroup('szeleshat'); return false;">
+                <area shape="poly" title="Szeleshatizom" data-group="szeleshat"
+                coords="230,400,233,404,238,413,245,408,249,404,253,400,246,398,240,394,236,393,232,388,226,382,227,388,228,394,229,397,230,400,230,400"
+                onmouseover="highlightGroup('szeleshat', true)"
+                onmouseout="highlightGroup('szeleshat', false)"
+                onclick="selectGroup('szeleshat'); return false;">
+                <area shape="poly" title="Szeleshatizom" data-group="szeleshat"
+                coords="235,372,241,378,246,382,251,385,256,387,256,390,254,393,250,392,242,390,235,386,232,382,229,375,229,369"
+                onmouseover="highlightGroup('szeleshat', true)"
+                onmouseout="highlightGroup('szeleshat', false)"
+                onclick="selectGroup('szeleshat'); return false;">
+                <!--Mellizom-->
+                <area shape="poly" title="Mellizom" data-group="mellizom"
+                coords="226,318,226,327,226,334,227,346,229,356,234,364,238,371,246,378,253,380,269,384,277,385,288,382,296,380,303,377,310,371,313,364,315,349,316,337,316,322,315,309,312,296,306,288,299,283,289,281,277,281,264,282,251,287,241,293,232,301,228,309"
+                onmouseover="highlightGroup('mellizom', true)"
+                onmouseout="highlightGroup('mellizom', false)"
+                onclick="selectGroup('mellizom'); return false;">            
+                <area shape="poly" title="Mellizom" data-group="mellizom"
+                coords="327,327,327,336,328,345,329,354,330,363,335,371,340,374,347,379,355,383,366,385,374,385,383,383,392,381,402,372,409,365,415,354,418,335,417,318,415,308,409,297,399,290,391,285,382,282,370,281,360,281,349,282,339,287,335,293,331,298,328,308,328,314"
+                onmouseover="highlightGroup('mellizom', true)"
+                onmouseout="highlightGroup('mellizom', false)"
+                onclick="selectGroup('mellizom'); return false;">
+                <!--Váll-->
+                <area shape="poly" title="Váll" data-group="vall"
+                coords="399,284,406,287,415,291,420,295,424,303,424,309,425,320,428,329,433,338,437,341,444,349,452,348,460,343,465,335,470,326,472,312,469,302,465,295,457,285,448,277,439,272,430,269,418,268,410,271,402,275,399,278"
+                onmouseover="highlightGroup('vall', true)"
+                onmouseout="highlightGroup('vall', false)"
+                onclick="selectGroup('vall'); return false;">
+                <area shape="poly" title="Váll" data-group="vall"
+                coords="172,320,175,331,185,341,191,348,196,350,204,346,210,339,217,329,219,317,219,308,219,301,224,295,232,290,238,285,246,282,241,275,230,269,219,268,207,271,197,277,189,283,181,292,175,301,173,308"
+                onmouseover="highlightGroup('vall', true)"
+                onmouseout="highlightGroup('vall', false)"
+                onclick="selectGroup('vall'); return false;">
+                <!--Csuklya-->
+                <area shape="poly" title="Csuklya" data-group="trapezius"
+                coords="265,274,272,275,280,275,283,274,287,268,287,259,285,249,284,249,279,253,271,259,264,263,258,268,251,271"
+                onmouseover="highlightGroup('trapezius', true)"
+                onmouseout="highlightGroup('trapezius', false)"
+                onclick="selectGroup('trapezius'); return false;"> 
+                <area shape="poly" title="Csuklya" data-group="trapezius"
+                coords="358,263,358,264,359,272,363,275,370,275,377,274,383,274,392,270,381,264,375,260,368,255,363,251,359,249,358,249,358,259,358,263,358,264"
+                onmouseover="highlightGroup('trapezius', true)"
+                onmouseout="highlightGroup('trapezius', false)"
+                onclick="selectGroup('trapezius'); return false;">
+                <!--Bicepsz-->
+                <area shape="poly" title="Bicepsz" data-group="bicepsz"
+                coords="163,397,162,409,162,419,162,427,162,433,166,434,173,433,180,429,186,420,189,410,193,401,196,390,197,377,195,366,190,361,187,359,182,362,177,369,171,377,169,382,165,389,171,377"
+                onmouseover="highlightGroup('bicepsz', true)"
+                onmouseout="highlightGroup('bicepsz', false)"
+                onclick="selectGroup('bicepsz'); return false;">
+                <area shape="poly" title="Bicepsz" data-group="bicepsz"
+                coords="195,406,191,416,188,424,185,433,181,439,179,443,178,449,180,453,183,455,189,448,194,442,202,430,206,419,211,408,216,395,219,386,221,377,221,367,221,357,219,348,216,341,213,349,211,361,209,370,205,380,201,393,178,449"
+                onmouseover="highlightGroup('bicepsz', true)"
+                onmouseout="highlightGroup('bicepsz', false)"
+                onclick="selectGroup('bicepsz'); return false;">
+                <area shape="poly" title="Bicepsz" data-group="bicepsz"
+                coords="438,375,441,388,446,400,452,411,455,421,460,430,463,440,465,447,464,450,464,453,457,452,448,440,440,425,434,413,429,398,426,389,423,378,422,370,422,362,423,355,425,348,428,341,431,348,433,362,434,366"
+                onmouseover="highlightGroup('bicepsz', true)"
+                onmouseout="highlightGroup('bicepsz', false)"
+                onclick="selectGroup('bicepsz'); return false;">
+                <area shape="poly" title="Bicepsz" data-group="bicepsz"
+                coords="476,381,479,390,481,400,483,410,483,422,483,428,481,434,472,434,463,427,459,418,454,409,452,401,448,392,447,380,447,372,449,365,452,361,456,359,461,361,467,367,471,372"
+                onmouseover="highlightGroup('bicepsz', true)"
+                onmouseout="highlightGroup('bicepsz', false)"
+                onclick="selectGroup('bicepsz'); return false;">
+                <!--Alkar-->
+                <area shape="poly" title="Alkar" data-group="alkar"
+                coords="127,512,125,525,123,535,120,549,118,562,116,572,115,578,112,589,111,598,112,604,118,597,123,586,127,574,132,562,138,548,142,537,147,525,151,515,156,502,159,489,162,476,162,460,162,449,159,442,157,442,154,443,149,448,143,456,136,469,133,476,131,484,130,494,128,501"
+                onmouseover="highlightGroup('alkar', true)"
+                onmouseout="highlightGroup('alkar', false)"
+                onclick="selectGroup('alkar'); return false;">
+                <area shape="poly" title="Alkar" data-group="alkar"
+                coords="136,563,133,571,130,581,127,586,124,596,124,599,124,602,128,598,132,591,134,583,139,574,142,564,146,557,150,545,156,535,164,524,169,515,173,504,178,493,180,480,179,474,178,468,175,466,171,468,169,473,166,484,164,490,162,501,158,509,154,519,149,531,146,539,142,548,140,552,136,563"
+                onmouseover="highlightGroup('alkar', true)"
+                onmouseout="highlightGroup('alkar', false)"
+                onclick="selectGroup('alkar'); return false;">
+                <area shape="poly" title="Alkar" data-group="alkar"
+                coords="149,558,155,545,162,534,169,526,174,515,179,502,181,493,183,477,188,482,187,490,183,500,179,509,173,521,167,532,162,542,156,554,149,569,144,579,141,587,136,596,131,607,138,589,142,578,146,568"
+                onmouseover="highlightGroup('alkar', true)"
+                onmouseout="highlightGroup('alkar', false)"
+                onclick="selectGroup('alkar'); return false;">
+                <area shape="poly" title="Alkar" data-group="alkar"
+                coords="470,513,473,523,480,534,486,542,492,553,496,564,502,576,506,589,507,595,514,607,511,600,502,587,499,579,495,570,492,562,488,552,481,539,475,529,469,518,462,503,457,493,455,485,460,477,462,487,463,495,464,499,467,507"
+                onmouseover="highlightGroup('alkar', true)"
+                onmouseout="highlightGroup('alkar', false)"
+                onclick="selectGroup('alkar'); return false;">
+                <area shape="poly" title="Alkar" data-group="alkar"
+                coords="481,501,487,513,492,524,498,537,502,550,509,565,512,575,516,586,518,592,519,598,520,602,517,599,515,594,508,581,504,573,501,564,498,556,493,547,486,532,480,523,472,509,467,493,464,481,464,473,465,466,472,466,476,473,478,484,480,492"
+                onmouseover="highlightGroup('alkar', true)"
+                onmouseout="highlightGroup('alkar', false)"
+                onclick="selectGroup('alkar'); return false;">
+                <area shape="poly" title="Alkar" data-group="alkar"
+                coords="519,525,522,539,524,551,526,564,528,574,530,583,532,591,532,598,532,604,526,597,523,588,518,576,515,566,510,553,504,542,500,528,494,517,490,504,486,494,484,480,483,469,481,457,483,448,485,442,491,443,495,449,500,456,503,462,508,470,512,479,514,488,515,501,516,513"
+                onmouseover="highlightGroup('alkar', true)"
+                onmouseout="highlightGroup('alkar', false)"
+                onclick="selectGroup('alkar'); return false;">
+        </map>
+        <map name="testmap2">
             <!-- Vádlik -->
             <area shape="poly" title="Vádli" data-group="vadli"
             coords="257,859,256,881,255,905,254,928,255,955,254,971,254,989,254,1002,252,1014,244,1017,237,1015,231,996,228,978,227,955,227,939,228,931,230,914,233,898,238,887,247,872"
@@ -70,30 +383,60 @@
             onclick="selectGroup('vadli'); return false;">
         
             <!-- Hátsó comb -->
-            <area shape="poly" title="Hátsó comb" data-group="hatsocomb" coords="245,699,245,714,244,738,245,762,244,782,244,801,243,819,241,836,238,852,234,881,247,858,253,840,260,817,265,798,268,767,269,736,270,714,270,700,264,686,255,674,249,676,246,685"
-            onmouseover="highlightGroup('hatsocomb', true)" onmouseout="highlightGroup('hatsocomb', false)" onclick="selectGroup('hatsocomb'); return false;">
-            <area shape="poly" title="Hátsó comb" data-group="hatsocomb" coords="274,725,273,742,271,769,272,787,269,804,269,828,270,854,274,878,279,841,283,811,287,783,295,758,296,743,293,724,287,710,280,700,275,713"
-            onmouseover="highlightGroup('hatsocomb', true)" onmouseout="highlightGroup('hatsocomb', false)" onclick="selectGroup('hatsocomb'); return false;">
-            <area shape="poly" title="Hátsó comb" data-group="hatsocomb" coords="299,758,303,772,301,785,297,796,294,811,291,828,292,842,290,854,284,882,285,866,286,847,285,835,289,817,292,799,296,778"
-            onmouseover="highlightGroup('hatsocomb', true)" onmouseout="highlightGroup('hatsocomb', false)" onclick="selectGroup('hatsocomb'); return false;">
-            <area shape="poly" title="Hátsó comb" data-group="hatsocomb" coords="361,730,359,746,361,757,366,772,369,793,374,820,375,834,376,851,383,869,386,844,386,822,386,798,385,770,382,744,381,720,378,708,375,699,369,709,363,720"
-            onmouseover="highlightGroup('hatsocomb', true)" onmouseout="highlightGroup('hatsocomb', false)" onclick="selectGroup('hatsocomb'); return false;">
-            <area shape="poly" title="Hátsó comb" data-group="hatsocomb" coords="355,758,357,768,361,785,366,807,369,837,369,856,373,884,368,871,365,843,363,822,358,796,355,776"
-            onmouseover="highlightGroup('hatsocomb', true)" onmouseout="highlightGroup('hatsocomb', false)" onclick="selectGroup('hatsocomb'); return false;">
-            <area shape="poly" title="Hátsó comb" data-group="hatsocomb" coords="385,704,387,732,388,754,391,796,398,825,406,846,416,870,421,876,417,850,412,812,411,773,411,738,411,700,409,680,405,673,399,676,393,686"
-            onmouseover="highlightGroup('hatsocomb', true)" onmouseout="highlightGroup('hatsocomb', false)" onclick="selectGroup('hatsocomb'); return false;">
+            <area shape="poly" title="Hátsó comb" data-group="hatsocomb" 
+            coords="245,699,245,714,244,738,245,762,244,782,244,801,243,819,241,836,238,852,234,881,247,858,253,840,260,817,265,798,268,767,269,736,270,714,270,700,264,686,255,674,249,676,246,685"
+            onmouseover="highlightGroup('hatsocomb', true)"
+            onmouseout="highlightGroup('hatsocomb', false)" 
+            onclick="selectGroup('hatsocomb'); return false;">
+            <area shape="poly" title="Hátsó comb" data-group="hatsocomb" 
+            coords="274,725,273,742,271,769,272,787,269,804,269,828,270,854,274,878,279,841,283,811,287,783,295,758,296,743,293,724,287,710,280,700,275,713"
+            onmouseover="highlightGroup('hatsocomb', true)" 
+            onmouseout="highlightGroup('hatsocomb', false)" 
+            onclick="selectGroup('hatsocomb'); return false;">
+            <area shape="poly" title="Hátsó comb" data-group="hatsocomb" 
+            coords="299,758,303,772,301,785,297,796,294,811,291,828,292,842,290,854,284,882,285,866,286,847,285,835,289,817,292,799,296,778"
+            onmouseover="highlightGroup('hatsocomb', true)" 
+            onmouseout="highlightGroup('hatsocomb', false)" 
+            onclick="selectGroup('hatsocomb'); return false;">
+            <area shape="poly" title="Hátsó comb" data-group="hatsocomb" 
+            coords="361,730,359,746,361,757,366,772,369,793,374,820,375,834,376,851,383,869,386,844,386,822,386,798,385,770,382,744,381,720,378,708,375,699,369,709,363,720"
+            onmouseover="highlightGroup('hatsocomb', true)" 
+            onmouseout="highlightGroup('hatsocomb', false)" 
+            onclick="selectGroup('hatsocomb'); return false;">
+            <area shape="poly" title="Hátsó comb" data-group="hatsocomb" 
+            coords="355,758,357,768,361,785,366,807,369,837,369,856,373,884,368,871,365,843,363,822,358,796,355,776"
+            onmouseover="highlightGroup('hatsocomb', true)" 
+            onmouseout="highlightGroup('hatsocomb', false)" 
+            onclick="selectGroup('hatsocomb'); return false;">
+            <area shape="poly" title="Hátsó comb" data-group="hatsocomb" 
+            coords="385,704,387,732,388,754,391,796,398,825,406,846,416,870,421,876,417,850,412,812,411,773,411,738,411,700,409,680,405,673,399,676,393,686"
+            onmouseover="highlightGroup('hatsocomb', true)" 
+            onmouseout="highlightGroup('hatsocomb', false)"
+             onclick="selectGroup('hatsocomb'); return false;">
 
             <!-- Abduktor -->
-            <area shape="poly" title="Abduktor" data-group="adduktorok" coords="288,696,295,704,299,714,303,727,305,737,307,751,304,761,311,740,313,728,317,707,317,698,314,694,306,695,299,693,294,696"
-            onmouseover="highlightGroup('adduktorok', true)" onmouseout="highlightGroup('adduktorok', false)" onclick="selectGroup('adduktorok'); return false;">
-            <area shape="poly" title="Abduktor" data-group="adduktorok" coords="338,704,340,719,342,727,343,738,351,758,349,744,351,728,356,712,365,696,359,695,354,694,347,694,339,696"
-            onmouseover="highlightGroup('adduktorok', true)" onmouseout="highlightGroup('adduktorok', false)" onclick="selectGroup('adduktorok'); return false;">
+            <area shape="poly" title="Abduktor" data-group="adduktorok" 
+            coords="288,696,295,704,299,714,303,727,305,737,307,751,304,761,311,740,313,728,317,707,317,698,314,694,306,695,299,693,294,696"
+            onmouseover="highlightGroup('adduktorok', true)" 
+            onmouseout="highlightGroup('adduktorok', false)" 
+            onclick="selectGroup('adduktorok'); return false;">
+            <area shape="poly" title="Abduktor" data-group="adduktorok" 
+            coords="338,704,340,719,342,727,343,738,351,758,349,744,351,728,356,712,365,696,359,695,354,694,347,694,339,696"
+            onmouseover="highlightGroup('adduktorok', true)" 
+            onmouseout="highlightGroup('adduktorok', false)" 
+            onclick="selectGroup('adduktorok'); return false;">
 
-            <!-- Első comb -->
-            <area shape="poly" title="Bal hátsó comb" data-group="elsocomb" coords="220,673,222,695,221,711,222,725,223,738,224,751,225,762,227,774,229,785,234,805,234,789,235,764,237,739,239,722,237,701,233,686,231,674,223,654"
-            onmouseover="highlightGroup('elsocomb', true)" onmouseout="highlightGroup('elsocomb', false)" onclick="selectGroup('elsocomb'); return false;">
-            <area shape="poly" title="Jobb hátsó comb" data-group="elsocomb" coords="417,727,419,746,421,761,421,774,420,798,421,808,425,792,429,774,431,754,432,736,434,714,434,702,435,679,436,668,435,654,429,662,424,676,422,692,420,702,419,714,419,729"
-            onmouseover="highlightGroup('elsocomb', true)" onmouseout="highlightGroup('elsocomb', false)" onclick="selectGroup('elsocomb'); return false;">
+            <!-- Első comb vagy hátsó idk-->
+            <area shape="poly" title="Hátsó comb" data-group="hatsocomb" 
+            coords="220,673,222,695,221,711,222,725,223,738,224,751,225,762,227,774,229,785,234,805,234,789,235,764,237,739,239,722,237,701,233,686,231,674,223,654"
+            onmouseover="highlightGroup('hatsocomb', true)"
+            onmouseout="highlightGroup('hatsocomb', false)" 
+            onclick="selectGroup('hatsocomb'); return false;">
+            <area shape="poly" title="Hátsó comb" data-group="hatsocomb" 
+            coords="417,727,419,746,421,761,421,774,420,798,421,808,425,792,429,774,431,754,432,736,434,714,434,702,435,679,436,668,435,654,429,662,424,676,422,692,420,702,419,714,419,729"
+            onmouseover="highlightGroup('hatsocomb', true)" 
+            onmouseout="highlightGroup('hatsocomb', false)" 
+            onclick="selectGroup('hatsocomb'); return false;">
 
             <!-- Farizom -->
             <area shape="poly" title="Farizom" data-group="farizom"
@@ -285,301 +628,141 @@
             onclick="selectGroup('alkar'); return false;">
 
     </map>
-    <map name="testmap2">
-            <!--Vádli-->
-            <area shape="poly" title="Vádli" data-group="vadli" coords="227,891,227,903,227,915,226,932,226,946,227,962,230,979,234,1001,238,1017,242,1034,246,1051,249,1067,247,1078,244,1083,240,1089,240,1077,240,1071,237,1059,235,1048,231,1033,229,1020,226,1008,224,993,223,981,223,967,222,953,222,937,223,923,224,907" onclick="selectGroup('vadli'); return false;" onmouseover="highlightGroup('vadli', true)" onmouseout="highlightGroup('vadli', false)">
-            <area shape="poly" title="Vádli" data-group="vadli" coords="233,861,236,869,237,881,240,895,243,913,246,930,249,949,251,961,255,982,258,1004,260,1019,261,1037,261,1052,259,1061,254,1051,247,1034,242,1016,237,994,235,977,234,961,231,944,231,926,231,909,231,893,232,874,232,872" onclick="selectGroup('vadli'); return false;" onmouseover="highlightGroup('vadli', true)" onmouseout="highlightGroup('vadli', false)">
-            <area shape="poly" title="Vádli" data-group="vadli" coords="278,907,281,926,285,947,286,967,286,981,281,1000,274,1020,271,1036,267,1049,266,1027,265,1012,263,994,262,981,260,967,259,953,262,942,267,930,271,923,275,913" onclick="selectGroup('vadli'); return false;" onmouseover="highlightGroup('vadli', true)" onmouseout="highlightGroup('vadli', false)">
-            <area shape="poly" title="Vádli" data-group="vadli" coords="365,907,373,924,380,939,381,943,383,950,383,961,382,975,381,994,379,1011,378,1022,377,1034,376,1048,373,1039,371,1027,368,1014,363,1001,360,989,357,975,359,958,360,941,363,926,364,916" onclick="selectGroup('vadli'); return false;" onmouseover="highlightGroup('vadli', true)" onmouseout="highlightGroup('vadli', false)">
-            <area shape="poly" title="Vádli" data-group="vadli" coords="410,861,412,873,412,885,413,897,413,905,414,919,412,937,411,953,409,968,407,982,406,997,399,1021,394,1038,389,1051,384,1064,382,1048,384,1028,385,1008,388,988,390,971,393,959,394,947,397,931,401,911,403,895,407,878" onclick="selectGroup('vadli'); return false;" onmouseover="highlightGroup('vadli', true)" onmouseout="highlightGroup('vadli', false)">
-            <area shape="poly" title="Vádli" data-group="vadli" coords="402,1089,397,1075,395,1063,397,1055,398,1045,401,1034,404,1022,407,1012,410,999,413,988,414,974,416,962,417,950,417,935,417,919,417,905,416,890,418,896,421,910,421,925,422,942,422,957,421,969,420,980,420,993,418,1003,416,1013,414,1022,412,1035,410,1046,406,1058,403,1067,403,1077" onclick="selectGroup('vadli'); return false;" onmouseover="highlightGroup('vadli', true)" onmouseout="highlightGroup('vadli', false)">
-            <!--Elsőcomb-->
-            <area shape="poly" title="Első comb" data-group="elsocomb_szaboizom"
-            coords="225,743,227,754,232,772,240,795,244,808,246,815,246,823,246,827,243,835,239,826,235,813,231,805,227,798,222,784,218,765,217,749,216,739,215,729,215,721,214,711,214,703,218,708,222,727,223,735"
-            onmouseover="highlightGroup('elsocomb_szaboizom', true)" 
-            onmouseout="highlightGroup('elsocomb_szaboizom', false)"
-            onclick="selectGroup('elsocomb_szaboizom'); return false;">
-            <area shape="poly" title="Első comb" data-group="elsocomb_szaboizom"
-            coords="235,591,244,618,253,646,260,668,267,695,271,725,273,751,272,775,269,806,266,820,259,828,252,818,247,807,243,790,236,766,229,736,223,710,217,680,217,666,217,646,220,627,225,611,230,599"
-            onmouseover="highlightGroup('elsocomb_szaboizom', true)" 
-            onmouseout="highlightGroup('elsocomb_szaboizom', false)"
-            onclick="selectGroup('elsocomb_szaboizom'); return false;">
-            <area shape="poly" title="Első comb" data-group="elsocomb_szaboizom"
-            coords="287,811,288,798,287,778,282,760,280,752,275,741,276,761,277,773,276,786,273,803,272,812,272,821,273,830,277,834,280,836,283,836,286,818,284,834,285,823"
-            onmouseover="highlightGroup('elsocomb_szaboizom', true)" 
-            onmouseout="highlightGroup('elsocomb_szaboizom', false)"
-            onclick="selectGroup('elsocomb_szaboizom'); return false;">
-            <area shape="poly" title="Első comb" data-group="elsocomb_szaboizom"
-            coords="366,766,366,778,368,791,369,802,370,814,371,822,368,830,362,838,359,835,358,821,356,807,355,793,356,778,359,765,361,757,367,740,367,750,367,757,366,762"
-            onmouseover="highlightGroup('elsocomb_szaboizom', true)" 
-            onmouseout="highlightGroup('elsocomb_szaboizom', false)"
-            onclick="selectGroup('elsocomb_szaboizom'); return false;">
-            <area shape="poly" title="Első comb" data-group="elsocomb_szaboizom"
-            coords="420,616,424,634,427,651,427,673,425,689,420,713,414,736,407,764,399,792,393,811,388,823,383,827,378,820,374,807,372,788,371,770,371,751,371,733,373,716,377,695,382,676,387,654,394,635,399,618,404,606,406,597,407,590,411,599,415,604"
-            onmouseover="highlightGroup('elsocomb_szaboizom', true)" 
-            onmouseout="highlightGroup('elsocomb_szaboizom', false)"
-            onclick="selectGroup('elsocomb_szaboizom'); return false;">
-            <area shape="poly" title="Első comb" data-group="elsocomb_szaboizom"
-            coords="427,748,425,767,421,784,415,800,409,811,405,825,399,835,397,822,399,811,402,797,405,789,409,778,414,761,419,743,421,730,423,718,426,708,429,701,428,719,427,736,426,741"
-            onmouseover="highlightGroup('elsocomb_szaboizom', true)" 
-            onmouseout="highlightGroup('elsocomb_szaboizom', false)"
-            onclick="selectGroup('elsocomb_szaboizom'); return false;">
-            <!--Adduktorok-->
-            <area shape="poly" title="Adduktorok" data-group="adduktorok"
-            coords="282,614,289,627,293,636,298,649,300,658,303,665,304,672,303,678,300,685,294,690,289,678,286,668,279,651,273,633,268,621,263,607,256,593,250,581,247,572,256,581,264,588,273,599,277,606"
-            onmouseover="highlightGroup('adduktorok', true)" 
-            onmouseout="highlightGroup('adduktorok', false)" 
-            onclick="selectGroup('adduktorok'); return false;">
-            <area shape="poly" title="Adduktorok" data-group="adduktorok"
-            coords="311,688,310,702,308,715,307,725,305,740,303,750,300,726,298,717,297,707,295,699,299,691,304,685,310,680"
-            onmouseover="highlightGroup('adduktorok', true)" 
-            onmouseout="highlightGroup('adduktorok', false)" 
-            onclick="selectGroup('adduktorok'); return false;">
-            <area shape="poly" title="Adduktorok" data-group="adduktorok"
-            coords="336,721,335,708,333,695,333,688,333,680,338,685,342,690,346,695,349,700,348,707,346,716,344,726,342,734,340,749,338,739,337,730"
-            onmouseover="highlightGroup('adduktorok', true)" 
-            onmouseout="highlightGroup('adduktorok', false)" 
-            onclick="selectGroup('adduktorok'); return false;">
-            <area shape="poly" title="Adduktorok" data-group="adduktorok"
-            coords="346,646,351,633,359,619,369,602,375,596,379,589,385,583,397,572,388,591,383,603,380,609,376,619,370,634,367,644,363,653,359,665,355,677,353,682,350,689,343,684,339,676,339,670,341,661,344,652"
-            onmouseover="highlightGroup('adduktorok', true)" 
-            onmouseout="highlightGroup('adduktorok', false)" 
-            onclick="selectGroup('adduktorok'); return false;">
-            <!--Szaboizom-->
-            <area shape="poly" title="Szaboizom" data-group="elsocomb_szaboizom"
-            coords="280,670,285,686,290,705,293,715,297,739,298,755,297,773,296,782,293,791,291,776,288,761,284,743,280,724,274,700,269,684,265,666,261,651,258,638,256,628,252,615,249,603,246,595,241,575,245,591,248,596,246,595,254,607,260,619,265,631,269,643,274,656,277,664,279,669"
-            onmouseover="highlightGroup('elsocomb_szaboizom', true)" 
-            onmouseout="highlightGroup('elsocomb_szaboizom', false)" 
-            onclick="selectGroup('elsocomb_szaboizom'); return false;">
-            <area shape="poly" title="Szaboizom" data-group="elsocomb_szaboizom"
-            coords="264,902,260,910,257,918,254,925,254,929,254,937,260,929,265,922,269,911,274,901,280,887,283,878,285,869,287,862,285,854,283,853,280,862,277,870,276,875,273,883,268,892,265,899,261,907"
-            onmouseover="highlightGroup('elsocomb_szaboizom', true)" 
-            onmouseout="highlightGroup('elsocomb_szaboizom', false)" 
-            onclick="selectGroup('elsocomb_szaboizom'); return false;">
-            <area shape="poly" title="Szaboizom" data-group="elsocomb_szaboizom"
-            coords="374,685,369,702,365,717,362,732,360,741,358,753,354,769,353,777,351,793,347,780,346,766,346,751,347,741,350,723,353,705,358,691,362,675,367,664,373,648,377,638,382,628,384,623,387,613,391,605,401,583,397,598,392,612,390,620,386,636,383,647,379,660,377,671"
-            onmouseover="highlightGroup('elsocomb_szaboizom', true)" 
-            onmouseout="highlightGroup('elsocomb_szaboizom', false)" 
-            onclick="selectGroup('elsocomb_szaboizom'); return false;">
-            <area shape="poly" title="Szaboizom" data-group="elsocomb_szaboizom"
-            coords="374,890,378,898,382,906,385,915,389,924,390,937,385,933,379,922,373,906,367,894,361,879,358,868,357,859,359,852,363,859,365,862,367,872,371,882,363,859"
-            onmouseover="highlightGroup('elsocomb_szaboizom', true)" 
-            onmouseout="highlightGroup('elsocomb_szaboizom', false)" 
-            onclick="selectGroup('elsocomb_szaboizom'); return false;">
-            <!--Ferdehasizom-->
-            <area shape="poly" title="Ferdehasizom" data-group="ferdehas"
-            coords="237,511,237,524,236,536,236,541,236,550,241,554,248,561,257,571,263,578,267,579,274,581,272,570,269,558,268,545,268,537,267,522,266,514,256,510,246,502,240,495,238,503,238,505,238,507"
-            onmouseover="highlightGroup('ferdehas', true)"
-            onmouseout="highlightGroup('ferdehas', false)"
-            onclick="selectGroup('ferdehas'); return false;">
-            <area shape="poly" title="Ferdehasizom" data-group="ferdehas"
-            coords="244,494,250,498,257,504,265,508,265,497,265,487,257,479,250,473,246,471,241,464,240,474,240,482,240,487"
-            onmouseover="highlightGroup('ferdehas', true)"
-            onmouseout="highlightGroup('ferdehas', false)"
-            onclick="selectGroup('ferdehas'); return false;">
-            <area shape="poly" title="Ferdehasizom" data-group="ferdehas"
-            coords="248,467,253,471,259,476,265,482,266,468,265,459,257,453,248,447,238,439,238,447,238,455,243,463"
-            onmouseover="highlightGroup('ferdehas', true)"
-            onmouseout="highlightGroup('ferdehas', false)"
-            onclick="selectGroup('ferdehas'); return false;">
-            <area shape="poly" title="Ferdehasizom" data-group="ferdehas"
-            coords="244,422,257,432,263,435,265,440,265,453,257,448,248,442,242,437,241,434,242,432,243,425,241,434,242,430"
-            onmouseover="highlightGroup('ferdehas', true)"
-            onmouseout="highlightGroup('ferdehas', false)"
-            onclick="selectGroup('ferdehas'); return false;">
-            <area shape="poly" title="Ferdehasizom" data-group="ferdehas"
-            coords="265,413,265,422,265,432,257,427,251,422,244,416,254,406,265,397,265,404"
-            onmouseover="highlightGroup('ferdehas', true)"
-            onmouseout="highlightGroup('ferdehas', false)"
-            onclick="selectGroup('ferdehas'); return false;">
-            <area shape="poly" title="Ferdehasizom" data-group="ferdehas"
-            coords="376,535,375,549,375,559,374,566,371,574,369,581,376,579,383,575,392,566,399,558,408,549,407,536,407,524,406,513,406,505,404,495,397,502,387,510,378,514,377,522"
-            onmouseover="highlightGroup('ferdehas', true)"
-            onmouseout="highlightGroup('ferdehas', false)"
-            onclick="selectGroup('ferdehas'); return false;">
-            <area shape="poly" title="Ferdehasizom" data-group="ferdehas"
-            coords="404,476,404,481,402,489,397,497,389,503,378,510,378,498,378,486,385,481,392,474,404,464"
-            onmouseover="highlightGroup('ferdehas', true)"
-            onmouseout="highlightGroup('ferdehas', false)"
-            onclick="selectGroup('ferdehas'); return false;">
-            <area shape="poly" title="Ferdehasizom" data-group="ferdehas"
-            coords="378,464,378,472,378,480,387,474,394,468,399,464,404,457,405,447,404,440,397,447,387,453,378,460,378,468"
-            onmouseover="highlightGroup('ferdehas', true)"
-            onmouseout="highlightGroup('ferdehas', false)"
-            onclick="selectGroup('ferdehas'); return false;">
-            <area shape="poly" title="Ferdehasizom" data-group="ferdehas"
-            coords="379,437,379,444,379,453,389,448,397,442,404,435,401,430,399,424,393,429,386,432"
-            onmouseover="highlightGroup('ferdehas', true)"
-            onmouseout="highlightGroup('ferdehas', false)"
-            onclick="selectGroup('ferdehas'); return false;">
-            <area shape="poly" title="Ferdehasizom" data-group="ferdehas"
-            coords="378,411,378,423,378,433,386,427,393,422,399,416,391,408,385,403,378,396,378,405"
-            onmouseover="highlightGroup('ferdehas', true)"
-            onmouseout="highlightGroup('ferdehas', false)"
-            onclick="selectGroup('ferdehas'); return false;">
-            <!--Hasizom-->
-            <area shape="poly" title="Hasizom" data-group="hasizom"
-            coords="283,578,285,588,289,599,292,608,297,619,301,625,308,630,319,634,319,617,319,602,319,588,319,575,319,560,319,551,319,536,319,529,319,520,314,519,304,517,293,516,285,516,274,517,275,526,276,540,277,550,280,562"
-            onmouseover="highlightGroup('hasizom', true)"
-            onmouseout="highlightGroup('hasizom', false)"
-            onclick="selectGroup('hasizom'); return false;">
-            <area shape="poly" title="Hasizom" data-group="hasizom"
-            coords="324,560,324,573,326,591,326,607,326,618,327,625,327,634,336,629,345,621,350,613,353,605,357,595,360,583,363,568,366,552,367,541,368,527,369,517,361,516,350,516,337,517,326,520,326,529,326,536,324,544"
-            onmouseover="highlightGroup('hasizom', true)"
-            onmouseout="highlightGroup('hasizom', false)"
-            onclick="selectGroup('hasizom'); return false;">
-            <area shape="poly" title="Hasizom" data-group="hasizom"
-            coords="274,495,274,503,276,508,284,510,296,511,304,511,315,511,318,510,319,498,319,487,318,474,306,474,296,475,285,479,274,480,273,487"
-            onmouseover="highlightGroup('hasizom', true)"
-            onmouseout="highlightGroup('hasizom', false)"
-            onclick="selectGroup('hasizom'); return false;">
-            <area shape="poly" title="Hasizom" data-group="hasizom"
-            coords="324,489,324,498,326,505,327,511,337,511,349,511,360,511,368,508,370,497,370,489,369,480,355,477,345,475,337,474,326,474,324,481"
-            onmouseover="highlightGroup('hasizom', true)"
-            onmouseout="highlightGroup('hasizom', false)"
-            onclick="selectGroup('hasizom'); return false;">
-            <area shape="poly" title="Hasizom" data-group="hasizom"
-            coords="275,458,275,469,287,470,297,471,307,471,318,470,319,457,319,446,319,438,318,431,312,427,305,431,296,435,282,443,277,449"
-            onmouseover="highlightGroup('hasizom', true)"
-            onmouseout="highlightGroup('hasizom', false)"
-            onclick="selectGroup('hasizom'); return false;">
-            <area shape="poly" title="Hasizom" data-group="hasizom"
-            coords="326,449,326,457,327,466,329,470,335,471,346,471,360,471,369,470,368,454,363,446,351,438,340,433,334,427,329,427,326,433,326,441"
-            onmouseover="highlightGroup('hasizom', true)"
-            onmouseout="highlightGroup('hasizom', false)"
-            onclick="selectGroup('hasizom'); return false;">
-            <area shape="poly" title="Hasizom" data-group="hasizom"
-            coords="271,412,272,424,273,433,275,441,287,435,297,429,304,424,310,419,318,416,318,402,318,395,316,386,315,380,308,379,299,384,292,386,281,392,276,395,271,404,269,410"
-            onmouseover="highlightGroup('hasizom', true)"
-            onmouseout="highlightGroup('hasizom', false)"
-            onclick="selectGroup('hasizom'); return false;">
-            <area shape="poly" title="Hasizom" data-group="hasizom"
-            coords="327,394,327,403,326,410,327,416,334,419,339,424,346,428,355,433,362,437,368,441,371,428,374,412,371,400,363,393,354,388,345,384,338,380,332,379,329,385"
-            onmouseover="highlightGroup('hasizom', true)"
-            onmouseout="highlightGroup('hasizom', false)"
-            onclick="selectGroup('hasizom'); return false;">
-            <!--Szeleshatizom-->
-            <area shape="poly" title="Szeleshatizom" data-group="szeleshat"
-            coords="404,419,405,426,407,435,413,427,415,421,417,411,416,403,412,409,408,413"
-            onmouseover="highlightGroup('szeleshat', true)"
-            onmouseout="highlightGroup('szeleshat', false)"
-            onclick="selectGroup('szeleshat'); return false;">
-            <area shape="poly" title="Szeleshatizom" data-group="szeleshat"
-            coords="396,405,399,408,405,412,408,408,413,401,416,394,417,390,416,382,413,390,405,394,398,396,390,400,396,405,397,406"
-            onmouseover="highlightGroup('szeleshat', true)"
-            onmouseout="highlightGroup('szeleshat', false)"
-            onclick="selectGroup('szeleshat'); return false;">
-            <area shape="poly" title="Szeleshatizom" data-group="szeleshat"
-            coords="398,390,405,388,410,385,414,378,414,370,413,370,407,375,401,379,394,384,390,387,387,390,390,392"
-            onmouseover="highlightGroup('szeleshat', true)"
-            onmouseout="highlightGroup('szeleshat', false)"
-            onclick="selectGroup('szeleshat'); return false;">
-            <area shape="poly" title="Szeleshatizom" data-group="szeleshat"
-            coords="229,419,233,429,236,434,238,426,240,418,233,410,227,403,227,410"
-            onmouseover="highlightGroup('szeleshat', true)"
-            onmouseout="highlightGroup('szeleshat', false)"
-            onclick="selectGroup('szeleshat'); return false;">
-            <area shape="poly" title="Szeleshatizom" data-group="szeleshat"
-            coords="230,400,233,404,238,413,245,408,249,404,253,400,246,398,240,394,236,393,232,388,226,382,227,388,228,394,229,397,230,400,230,400"
-            onmouseover="highlightGroup('szeleshat', true)"
-            onmouseout="highlightGroup('szeleshat', false)"
-            onclick="selectGroup('szeleshat'); return false;">
-            <area shape="poly" title="Szeleshatizom" data-group="szeleshat"
-            coords="235,372,241,378,246,382,251,385,256,387,256,390,254,393,250,392,242,390,235,386,232,382,229,375,229,369"
-            onmouseover="highlightGroup('szeleshat', true)"
-            onmouseout="highlightGroup('szeleshat', false)"
-            onclick="selectGroup('szeleshat'); return false;">
-            <!--Mellizom-->
-            <area shape="poly" title="Mellizom" data-group="mellizom"
-            coords="226,318,226,327,226,334,227,346,229,356,234,364,238,371,246,378,253,380,269,384,277,385,288,382,296,380,303,377,310,371,313,364,315,349,316,337,316,322,315,309,312,296,306,288,299,283,289,281,277,281,264,282,251,287,241,293,232,301,228,309"
-            onmouseover="highlightGroup('mellizom', true)"
-            onmouseout="highlightGroup('mellizom', false)"
-            onclick="selectGroup('mellizom'); return false;">            
-            <area shape="poly" title="Mellizom" data-group="mellizom"
-            coords="327,327,327,336,328,345,329,354,330,363,335,371,340,374,347,379,355,383,366,385,374,385,383,383,392,381,402,372,409,365,415,354,418,335,417,318,415,308,409,297,399,290,391,285,382,282,370,281,360,281,349,282,339,287,335,293,331,298,328,308,328,314"
-            onmouseover="highlightGroup('mellizom', true)"
-            onmouseout="highlightGroup('mellizom', false)"
-            onclick="selectGroup('mellizom'); return false;">
-            <!--Váll-->
-            <area shape="poly" title="Váll" data-group="vall"
-            coords="399,284,406,287,415,291,420,295,424,303,424,309,425,320,428,329,433,338,437,341,444,349,452,348,460,343,465,335,470,326,472,312,469,302,465,295,457,285,448,277,439,272,430,269,418,268,410,271,402,275,399,278"
-            onmouseover="highlightGroup('vall', true)"
-            onmouseout="highlightGroup('vall', false)"
-            onclick="selectGroup('vall'); return false;">
-            <area shape="poly" title="Váll" data-group="vall"
-            coords="172,320,175,331,185,341,191,348,196,350,204,346,210,339,217,329,219,317,219,308,219,301,224,295,232,290,238,285,246,282,241,275,230,269,219,268,207,271,197,277,189,283,181,292,175,301,173,308"
-            onmouseover="highlightGroup('vall', true)"
-            onmouseout="highlightGroup('vall', false)"
-            onclick="selectGroup('vall'); return false;">
-            <!--Csuklya-->
-            <area shape="poly" title="Csuklya" data-group="trapezius"
-            coords="265,274,272,275,280,275,283,274,287,268,287,259,285,249,284,249,279,253,271,259,264,263,258,268,251,271"
-            onmouseover="highlightGroup('trapezius', true)"
-            onmouseout="highlightGroup('trapezius', false)"
-            onclick="selectGroup('trapezius'); return false;"> 
-            <area shape="poly" title="Csuklya" data-group="trapezius"
-            coords="358,263,358,264,359,272,363,275,370,275,377,274,383,274,392,270,381,264,375,260,368,255,363,251,359,249,358,249,358,259,358,263,358,264"
-            onmouseover="highlightGroup('trapezius', true)"
-            onmouseout="highlightGroup('trapezius', false)"
-            onclick="selectGroup('trapezius'); return false;">
-            <!--Bicepsz-->
-            <area shape="poly" title="Bicepsz" data-group="bicepsz"
-            coords="163,397,162,409,162,419,162,427,162,433,166,434,173,433,180,429,186,420,189,410,193,401,196,390,197,377,195,366,190,361,187,359,182,362,177,369,171,377,169,382,165,389,171,377"
-            onmouseover="highlightGroup('bicepsz', true)"
-            onmouseout="highlightGroup('bicepsz', false)"
-            onclick="selectGroup('bicepsz'); return false;">
-            <area shape="poly" title="Bicepsz" data-group="bicepsz"
-            coords="195,406,191,416,188,424,185,433,181,439,179,443,178,449,180,453,183,455,189,448,194,442,202,430,206,419,211,408,216,395,219,386,221,377,221,367,221,357,219,348,216,341,213,349,211,361,209,370,205,380,201,393,178,449"
-            onmouseover="highlightGroup('bicepsz', true)"
-            onmouseout="highlightGroup('bicepsz', false)"
-            onclick="selectGroup('bicepsz'); return false;">
-            <area shape="poly" title="Bicepsz" data-group="bicepsz"
-            coords="438,375,441,388,446,400,452,411,455,421,460,430,463,440,465,447,464,450,464,453,457,452,448,440,440,425,434,413,429,398,426,389,423,378,422,370,422,362,423,355,425,348,428,341,431,348,433,362,434,366"
-            onmouseover="highlightGroup('bicepsz', true)"
-            onmouseout="highlightGroup('bicepsz', false)"
-            onclick="selectGroup('bicepsz'); return false;">
-            <area shape="poly" title="Bicepsz" data-group="bicepsz"
-            coords="476,381,479,390,481,400,483,410,483,422,483,428,481,434,472,434,463,427,459,418,454,409,452,401,448,392,447,380,447,372,449,365,452,361,456,359,461,361,467,367,471,372"
-            onmouseover="highlightGroup('bicepsz', true)"
-            onmouseout="highlightGroup('bicepsz', false)"
-            onclick="selectGroup('bicepsz'); return false;">
-            <!--Alkar-->
-            <area shape="poly" title="Alkar" data-group="alkar"
-            coords="127,512,125,525,123,535,120,549,118,562,116,572,115,578,112,589,111,598,112,604,118,597,123,586,127,574,132,562,138,548,142,537,147,525,151,515,156,502,159,489,162,476,162,460,162,449,159,442,157,442,154,443,149,448,143,456,136,469,133,476,131,484,130,494,128,501"
-            onmouseover="highlightGroup('alkar', true)"
-            onmouseout="highlightGroup('alkar', false)"
-            onclick="selectGroup('alkar'); return false;">
-           <area shape="poly" title="Alkar" data-group="alkar"
-            coords="136,563,133,571,130,581,127,586,124,596,124,599,124,602,128,598,132,591,134,583,139,574,142,564,146,557,150,545,156,535,164,524,169,515,173,504,178,493,180,480,179,474,178,468,175,466,171,468,169,473,166,484,164,490,162,501,158,509,154,519,149,531,146,539,142,548,140,552,136,563"
-            onmouseover="highlightGroup('alkar', true)"
-            onmouseout="highlightGroup('alkar', false)"
-            onclick="selectGroup('alkar'); return false;">
-            <area shape="poly" title="Alkar" data-group="alkar"
-            coords="149,558,155,545,162,534,169,526,174,515,179,502,181,493,183,477,188,482,187,490,183,500,179,509,173,521,167,532,162,542,156,554,149,569,144,579,141,587,136,596,131,607,138,589,142,578,146,568"
-            onmouseover="highlightGroup('alkar', true)"
-            onmouseout="highlightGroup('alkar', false)"
-            onclick="selectGroup('alkar'); return false;">
-            <area shape="poly" title="Alkar" data-group="alkar"
-            coords="470,513,473,523,480,534,486,542,492,553,496,564,502,576,506,589,507,595,514,607,511,600,502,587,499,579,495,570,492,562,488,552,481,539,475,529,469,518,462,503,457,493,455,485,460,477,462,487,463,495,464,499,467,507"
-            onmouseover="highlightGroup('alkar', true)"
-            onmouseout="highlightGroup('alkar', false)"
-            onclick="selectGroup('alkar'); return false;">
-            <area shape="poly" title="Alkar" data-group="alkar"
-            coords="481,501,487,513,492,524,498,537,502,550,509,565,512,575,516,586,518,592,519,598,520,602,517,599,515,594,508,581,504,573,501,564,498,556,493,547,486,532,480,523,472,509,467,493,464,481,464,473,465,466,472,466,476,473,478,484,480,492"
-            onmouseover="highlightGroup('alkar', true)"
-            onmouseout="highlightGroup('alkar', false)"
-            onclick="selectGroup('alkar'); return false;">
-            <area shape="poly" title="Alkar" data-group="alkar"
-            coords="519,525,522,539,524,551,526,564,528,574,530,583,532,591,532,598,532,604,526,597,523,588,518,576,515,566,510,553,504,542,500,528,494,517,490,504,486,494,484,480,483,469,481,457,483,448,485,442,491,443,495,449,500,456,503,462,508,470,512,479,514,488,515,501,516,513"
-            onmouseover="highlightGroup('alkar', true)"
-            onmouseout="highlightGroup('alkar', false)"
-            onclick="selectGroup('alkar'); return false;">
-    </map>
   </div>
   </section>
     
   <script>
-    const backGroups = {
+    const frontGroups = { 
+      vadli: {
+        color: 'rgba(255, 0, 0, 0.4)',
+        selectedColor: 'rgba(255, 0, 0, 0.8)',
+        areas: [
+          [227,891,227,903,227,915,226,932,226,946,227,962,230,979,234,1001,238,1017,242,1034,246,1051,249,1067,247,1078,244,1083,240,1089,240,1077,240,1071,237,1059,235,1048,231,1033,229,1020,226,1008,224,993,223,981,223,967,222,953,222,937,223,923,224,907],
+          [233,861,236,869,237,881,240,895,243,913,246,930,249,949,251,961,255,982,258,1004,260,1019,261,1037,261,1052,259,1061,254,1051,247,1034,242,1016,237,994,235,977,234,961,231,944,231,926,231,909,231,893,232,874,232,872],
+          [278,907,281,926,285,947,286,967,286,981,281,1000,274,1020,271,1036,267,1049,266,1027,265,1012,263,994,262,981,260,967,259,953,262,942,267,930,271,923,275,913],
+          [365,907,373,924,380,939,381,943,383,950,383,961,382,975,381,994,379,1011,378,1022,377,1034,376,1048,373,1039,371,1027,368,1014,363,1001,360,989,357,975,359,958,360,941,363,926,364,916],
+          [410,861,412,873,412,885,413,897,413,905,414,919,412,937,411,953,409,968,407,982,406,997,399,1021,394,1038,389,1051,384,1064,382,1048,384,1028,385,1008,388,988,390,971,393,959,394,947,397,931,401,911,403,895,407,878],
+          [402,1089,397,1075,395,1063,397,1055,398,1045,401,1034,404,1022,407,1012,410,999,413,988,414,974,416,962,417,950,417,935,417,919,417,905,416,890,418,896,421,910,421,925,422,942,422,957,421,969,420,980,420,993,418,1003,416,1013,414,1022,412,1035,410,1046,406,1058,403,1067,403,1077]
+        ]
+      },
+      elsocomb_szaboizom: {
+        color: 'rgba(255, 0, 0, 0.4)',
+        selectedColor: 'rgba(255, 0, 0, 0.8)',
+        areas: [
+        //első comb
+          [225,743,227,754,232,772,240,795,244,808,246,815,246,823,246,827,243,835,239,826,235,813,231,805,227,798,222,784,218,765,217,749,216,739,215,729,215,721,214,711,214,703,218,708,222,727,223,735],
+          [235,591,244,618,253,646,260,668,267,695,271,725,273,751,272,775,269,806,266,820,259,828,252,818,247,807,243,790,236,766,229,736,223,710,217,680,217,666,217,646,220,627,225,611,230,599],
+          [287,811,288,798,287,778,282,760,280,752,275,741,276,761,277,773,276,786,273,803,272,812,272,821,273,830,277,834,280,836,283,836,286,818,284,834,285,823],
+          [366,766,366,778,368,791,369,802,370,814,371,822,368,830,362,838,359,835,358,821,356,807,355,793,356,778,359,765,361,757,367,740,367,750,367,757,366,762],
+          [420,616,424,634,427,651,427,673,425,689,420,713,414,736,407,764,399,792,393,811,388,823,383,827,378,820,374,807,372,788,371,770,371,751,371,733,373,716,377,695,382,676,387,654,394,635,399,618,404,606,406,597,407,590,411,599,415,604],
+          [427,748,425,767,421,784,415,800,409,811,405,825,399,835,397,822,399,811,402,797,405,789,409,778,414,761,419,743,421,730,423,718,426,708,429,701,428,719,427,736,426,741],
+        //szaboizom 
+          [280,670,285,686,290,705,293,715,297,739,298,755,297,773,296,782,293,791,291,776,288,761,284,743,280,724,274,700,269,684,265,666,261,651,258,638,256,628,252,615,249,603,246,595,241,575,245,591,248,596,246,595,254,607,260,619,265,631,269,643,274,656,277,664,279,669],
+          [264,902,260,910,257,918,254,925,254,929,254,937,260,929,265,922,269,911,274,901,280,887,283,878,285,869,287,862,285,854,283,853,280,862,277,870,276,875,273,883,268,892,265,899,261,907],
+          [374,685,369,702,365,717,362,732,360,741,358,753,354,769,353,777,351,793,347,780,346,766,346,751,347,741,350,723,353,705,358,691,362,675,367,664,373,648,377,638,382,628,384,623,387,613,391,605,401,583,397,598,392,612,390,620,386,636,383,647,379,660,377,671],
+          [374,890,378,898,382,906,385,915,389,924,390,937,385,933,379,922,373,906,367,894,361,879,358,868,357,859,359,852,363,859,365,862,367,872,371,882,363,859]
+      ]
+    },
+    adduktorok: {
+      color: 'rgba(255,0,0,0.4)',
+      selectedColor: 'rgba(255,0,0,0.8)',
+      areas: [
+        [282,614,289,627,293,636,298,649,300,658,303,665,304,672,303,678,300,685,294,690,289,678,286,668,279,651,273,633,268,621,263,607,256,593,250,581,247,572,256,581,264,588,273,599,277,606],
+        [311,688,310,702,308,715,307,725,305,740,303,750,300,726,298,717,297,707,295,699,299,691,304,685,310,680],
+        [336,721,335,708,333,695,333,688,333,680,338,685,342,690,346,695,349,700,348,707,346,716,344,726,342,734,340,749,338,739,337,730],
+        [346,646,351,633,359,619,369,602,375,596,379,589,385,583,397,572,388,591,383,603,380,609,376,619,370,634,367,644,363,653,359,665,355,677,353,682,350,689,343,684,339,676,339,670,341,661,344,652]
+      ]
+    },
+    ferdehas: {
+      color: 'rgba(255, 0, 0, 0.4)',
+      selectedColor: 'rgba(255, 0, 0, 0.8)',
+      areas: [
+        [237,511,237,524,236,536,236,541,236,550,241,554,248,561,257,571,263,578,267,579,274,581,272,570,269,558,268,545,268,537,267,522,266,514,256,510,246,502,240,495,238,503,238,505,238,507],
+        [244,494,250,498,257,504,265,508,265,497,265,487,257,479,250,473,246,471,241,464,240,474,240,482,240,487],
+        [248,467,253,471,259,476,265,482,266,468,265,459,257,453,248,447,238,439,238,447,238,455,243,463],
+        [244,422,257,432,263,435,265,440,265,453,257,448,248,442,242,437,241,434,242,432,243,425,241,434,242,430],
+        [265,413,265,422,265,432,257,427,251,422,244,416,254,406,265,397,265,404],
+        [376,535,375,549,375,559,374,566,371,574,369,581,376,579,383,575,392,566,399,558,408,549,407,536,407,524,406,513,406,505,404,495,397,502,387,510,378,514,377,522],
+        [404,476,404,481,402,489,397,497,389,503,378,510,378,498,378,486,385,481,392,474,404,464],
+        [378,464,378,472,378,480,387,474,394,468,399,464,404,457,405,447,404,440,397,447,387,453,378,460,378,468],
+        [379,437,379,444,379,453,389,448,397,442,404,435,401,430,399,424,393,429,386,432],
+        [378,411,378,423,378,433,386,427,393,422,399,416,391,408,385,403,378,396,378,405]
+      ]
+    },  
+    hasizom: {
+      color: 'rgba(255, 0, 0, 0.4)',
+      selectedColor: 'rgba(255, 0, 0, 0.8)',
+      areas: [
+        [283,578,285,588,289,599,292,608,297,619,301,625,308,630,319,634,319,617,319,602,319,588,319,575,319,560,319,551,319,536,319,529,319,520,314,519,304,517,293,516,285,516,274,517,275,526,276,540,277,550,280,562],
+        [324,560,324,573,326,591,326,607,326,618,327,625,327,634,336,629,345,621,350,613,353,605,357,595,360,583,363,568,366,552,367,541,368,527,369,517,361,516,350,516,337,517,326,520,326,529,326,536,324,544],
+        [274,495,274,503,276,508,284,510,296,511,304,511,315,511,318,510,319,498,319,487,318,474,306,474,296,475,285,479,274,480,273,487],
+        [324,489,324,498,326,505,327,511,337,511,349,511,360,511,368,508,370,497,370,489,369,480,355,477,345,475,337,474,326,474,324,481],
+        [275,458,275,469,287,470,297,471,307,471,318,470,319,457,319,446,319,438,318,431,312,427,305,431,296,435,282,443,277,449],
+        [326,449,326,457,327,466,329,470,335,471,346,471,360,471,369,470,368,454,363,446,351,438,340,433,334,427,329,427,326,433,326,441],
+        [271,412,272,424,273,433,275,441,287,435,297,429,304,424,310,419,318,416,318,402,318,395,316,386,315,380,308,379,299,384,292,386,281,392,276,395,271,404,269,410],
+        [327,394,327,403,326,410,327,416,334,419,339,424,346,428,355,433,362,437,368,441,371,428,374,412,371,400,363,393,354,388,345,384,338,380,332,379,329,385]
+      ]
+    },      
+    szeleshat: {
+      color: 'rgba(255, 0, 0, 0.4)',
+      selectedColor: 'rgba(255, 0, 0, 0.8)',
+      areas: [
+        [404,419,405,426,407,435,413,427,415,421,417,411,416,403,412,409,408,413],
+        [396,405,399,408,405,412,408,408,413,401,416,394,417,390,416,382,413,390,405,394,398,396,390,400,396,405,397,406],
+        [398,390,405,388,410,385,414,378,414,370,413,370,407,375,401,379,394,384,390,387,387,390,390,392],
+        [229,419,233,429,236,434,238,426,240,418,233,410,227,403,227,410],
+        [230,400,233,404,238,413,245,408,249,404,253,400,246,398,240,394,236,393,232,388,226,382,227,388,228,394,229,397,230,400,230,400],
+        [235,372,241,378,246,382,251,385,256,387,256,390,254,393,250,392,242,390,235,386,232,382,229,375,229,369]
+      ]
+    },
+    vall: {
+      color: 'rgba(255, 0, 0, 0.4)',
+      selectedColor: 'rgba(255, 0, 0, 0.8)',
+      areas: [
+        [399,284,406,287,415,291,420,295,424,303,424,309,425,320,428,329,433,338,437,341,444,349,452,348,460,343,465,335,470,326,472,312,469,302,465,295,457,285,448,277,439,272,430,269,418,268,410,271,402,275,399,278],
+        [172,320,175,331,185,341,191,348,196,350,204,346,210,339,217,329,219,317,219,308,219,301,224,295,232,290,238,285,246,282,241,275,230,269,219,268,207,271,197,277,189,283,181,292,175,301,173,308]
+      ]
+    }, 
+    mellizom: {
+      color: 'rgba(255, 0, 0, 0.4)',
+      selectedColor: 'rgba(255, 0, 0, 0.8)',
+      areas: [
+        [226,318,226,327,226,334,227,346,229,356,234,364,238,371,246,378,253,380,269,384,277,385,288,382,296,380,303,377,310,371,313,364,315,349,316,337,316,322,315,309,312,296,306,288,299,283,289,281,277,281,264,282,251,287,241,293,232,301,228,309],
+        [327,327,327,336,328,345,329,354,330,363,335,371,340,374,347,379,355,383,366,385,374,385,383,383,392,381,402,372,409,365,415,354,418,335,417,318,415,308,409,297,399,290,391,285,382,282,370,281,360,281,349,282,339,287,335,293,331,298,328,308,328,314]
+      ]
+    },      
+    trapezius: {
+      color: 'rgba(255, 0, 0, 0.4)',
+      selectedColor: 'rgba(255, 0, 0, 0.8)',
+      areas: [
+        [265,274,272,275,280,275,283,274,287,268,287,259,285,249,284,249,279,253,271,259,264,263,258,268,251,271],
+        [358,263,358,264,359,272,363,275,370,275,377,274,383,274,392,270,381,264,375,260,368,255,363,251,359,249,358,249,358,259,358,263,358,264]
+      ]
+    },
+    bicepsz: {
+      color: 'rgba(255, 0, 0, 0.4)',
+      selectedColor: 'rgba(255, 0, 0, 0.8)',
+      areas: [
+        [163,397,162,409,162,419,162,427,162,433,166,434,173,433,180,429,186,420,189,410,193,401,196,390,197,377,195,366,190,361,187,359,182,362,177,369,171,377,169,382,165,389,171,377],
+        [195,406,191,416,188,424,185,433,181,439,179,443,178,449,180,453,183,455,189,448,194,442,202,430,206,419,211,408,216,395,219,386,221,377,221,367,221,357,219,348,216,341,213,349,211,361,209,370,205,380,201,393,178,449],
+        [438,375,441,388,446,400,452,411,455,421,460,430,463,440,465,447,464,450,464,453,457,452,448,440,440,425,434,413,429,398,426,389,423,378,422,370,422,362,423,355,425,348,428,341,431,348,433,362,434,366],
+        [476,381,479,390,481,400,483,410,483,422,483,428,481,434,472,434,463,427,459,418,454,409,452,401,448,392,447,380,447,372,449,365,452,361,456,359,461,361,467,367,471,372]
+      ]
+    }, 
+    alkar: {
+      color: 'rgba(255, 0, 0, 0.4)',
+      selectedColor: 'rgba(255, 0, 0, 0.8)',
+      areas: [
+        [127,512,125,525,123,535,120,549,118,562,116,572,115,578,112,589,111,598,112,604,118,597,123,586,127,574,132,562,138,548,142,537,147,525,151,515,156,502,159,489,162,476,162,460,162,449,159,442,157,442,154,443,149,448,143,456,136,469,133,476,131,484,130,494,128,501],
+        [136,563,133,571,130,581,127,586,124,596,124,599,124,602,128,598,132,591,134,583,139,574,142,564,146,557,150,545,156,535,164,524,169,515,173,504,178,493,180,480,179,474,178,468,175,466,171,468,169,473,166,484,164,490,162,501,158,509,154,519,149,531,146,539,142,548,140,552,136,563],
+        [149,558,155,545,162,534,169,526,174,515,179,502,181,493,183,477,188,482,187,490,183,500,179,509,173,521,167,532,162,542,156,554,149,569,144,579,141,587,136,596,131,607,138,589,142,578,146,568],
+        [470,513,473,523,480,534,486,542,492,553,496,564,502,576,506,589,507,595,514,607,511,600,502,587,499,579,495,570,492,562,488,552,481,539,475,529,469,518,462,503,457,493,455,485,460,477,462,487,463,495,464,499,467,507],
+        [481,501,487,513,492,524,498,537,502,550,509,565,512,575,516,586,518,592,519,598,520,602,517,599,515,594,508,581,504,573,501,564,498,556,493,547,486,532,480,523,472,509,467,493,464,481,464,473,465,466,472,466,476,473,478,484,480,492],
+        [519,525,522,539,524,551,526,564,528,574,530,583,532,591,532,598,532,604,526,597,523,588,518,576,515,566,510,553,504,542,500,528,494,517,490,504,486,494,484,480,483,469,481,457,483,448,485,442,491,443,495,449,500,456,503,462,508,470,512,479,514,488,515,501,516,513]
+      ]
+    }      
+};
+const backGroups = {
         vadli: {
             color: 'rgba(255,0,0,0.4)',
             selectedColor: 'rgba(255,0,0,0.8)',
@@ -598,12 +781,16 @@
             color: 'rgba(255,0,0,0.4)',
             selectedColor: 'rgba(255,0,0,0.8)',
             areas: [
+            //hátsó
               [245,699,245,714,244,738,245,762,244,782,244,801,243,819,241,836,238,852,234,881,247,858,253,840,260,817,265,798,268,767,269,736,270,714,270,700,264,686,255,674,249,676,246,685],
               [274,725,273,742,271,769,272,787,269,804,269,828,270,854,274,878,279,841,283,811,287,783,295,758,296,743,293,724,287,710,280,700,275,713],
               [299,758,303,772,301,785,297,796,294,811,291,828,292,842,290,854,284,882,285,866,286,847,285,835,289,817,292,799,296,778],
               [361,730,359,746,361,757,366,772,369,793,374,820,375,834,376,851,383,869,386,844,386,822,386,798,385,770,382,744,381,720,378,708,375,699,369,709,363,720],
               [355,758,357,768,361,785,366,807,369,837,369,856,373,884,368,871,365,843,363,822,358,796,355,776],
               [385,704,387,732,388,754,391,796,398,825,406,846,416,870,421,876,417,850,412,812,411,773,411,738,411,700,409,680,405,673,399,676,393,686],
+            //hátsó
+              [220,673,222,695,221,711,222,725,223,738,224,751,225,762,227,774,229,785,234,805,234,789,235,764,237,739,239,722,237,701,233,686,231,674,223,654],
+              [417,727,419,746,421,761,421,774,420,798,421,808,425,792,429,774,431,754,432,736,434,714,434,702,435,679,436,668,435,654,429,662,424,676,422,692,420,702,419,714,419,729]
             ]
         },
         adduktorok: {
@@ -613,14 +800,14 @@
             [288,696,295,704,299,714,303,727,305,737,307,751,304,761,311,740,313,728,317,707,317,698,314,694,306,695,299,693,294,696],
             [338,704,340,719,342,727,343,738,351,758,349,744,351,728,356,712,365,696,359,695,354,694,347,694,339,696]]
         },
-        elsocomb:{
+        /*elsocomb:{
             color: 'rgba(255,0,0,0.4)',
             selectedColor: 'rgba(255,0,0,0.8)',
             areas: [
               [220,673,222,695,221,711,222,725,223,738,224,751,225,762,227,774,229,785,234,805,234,789,235,764,237,739,239,722,237,701,233,686,231,674,223,654],
               [417,727,419,746,421,761,421,774,420,798,421,808,425,792,429,774,431,754,432,736,434,714,434,702,435,679,436,668,435,654,429,662,424,676,422,692,420,702,419,714,419,729]
             ]
-        },
+        },*/
         farizom: {
             color: 'rgba(255,0,0,0.4)',
             selectedColor: 'rgba(255,0,0,0.8)',
@@ -696,136 +883,6 @@
             [518,483,520,495,522,508,526,530,529,551,533,570,538,585,543,606,537,597,530,584,526,566,522,545,519,527,517,516,517,501,516,489]
             ]
         }  
-};
-const frontGroups = { 
-        vadli: {
-          color: 'rgba(255, 0, 0, 0.4)',
-          selectedColor: 'rgba(255, 0, 0, 0.8)',
-          areas: [
-            [227,891,227,903,227,915,226,932,226,946,227,962,230,979,234,1001,238,1017,242,1034,246,1051,249,1067,247,1078,244,1083,240,1089,240,1077,240,1071,237,1059,235,1048,231,1033,229,1020,226,1008,224,993,223,981,223,967,222,953,222,937,223,923,224,907],
-            [233,861,236,869,237,881,240,895,243,913,246,930,249,949,251,961,255,982,258,1004,260,1019,261,1037,261,1052,259,1061,254,1051,247,1034,242,1016,237,994,235,977,234,961,231,944,231,926,231,909,231,893,232,874,232,872],
-            [278,907,281,926,285,947,286,967,286,981,281,1000,274,1020,271,1036,267,1049,266,1027,265,1012,263,994,262,981,260,967,259,953,262,942,267,930,271,923,275,913],
-            [365,907,373,924,380,939,381,943,383,950,383,961,382,975,381,994,379,1011,378,1022,377,1034,376,1048,373,1039,371,1027,368,1014,363,1001,360,989,357,975,359,958,360,941,363,926,364,916],
-            [410,861,412,873,412,885,413,897,413,905,414,919,412,937,411,953,409,968,407,982,406,997,399,1021,394,1038,389,1051,384,1064,382,1048,384,1028,385,1008,388,988,390,971,393,959,394,947,397,931,401,911,403,895,407,878],
-            [402,1089,397,1075,395,1063,397,1055,398,1045,401,1034,404,1022,407,1012,410,999,413,988,414,974,416,962,417,950,417,935,417,919,417,905,416,890,418,896,421,910,421,925,422,942,422,957,421,969,420,980,420,993,418,1003,416,1013,414,1022,412,1035,410,1046,406,1058,403,1067,403,1077]
-          ]
-        },
-        elsocomb_szaboizom: {
-          color: 'rgba(255, 0, 0, 0.4)',
-          selectedColor: 'rgba(255, 0, 0, 0.8)',
-          areas: [
-          //első comb
-            [225,743,227,754,232,772,240,795,244,808,246,815,246,823,246,827,243,835,239,826,235,813,231,805,227,798,222,784,218,765,217,749,216,739,215,729,215,721,214,711,214,703,218,708,222,727,223,735],
-            [235,591,244,618,253,646,260,668,267,695,271,725,273,751,272,775,269,806,266,820,259,828,252,818,247,807,243,790,236,766,229,736,223,710,217,680,217,666,217,646,220,627,225,611,230,599],
-            [287,811,288,798,287,778,282,760,280,752,275,741,276,761,277,773,276,786,273,803,272,812,272,821,273,830,277,834,280,836,283,836,286,818,284,834,285,823],
-            [366,766,366,778,368,791,369,802,370,814,371,822,368,830,362,838,359,835,358,821,356,807,355,793,356,778,359,765,361,757,367,740,367,750,367,757,366,762],
-            [420,616,424,634,427,651,427,673,425,689,420,713,414,736,407,764,399,792,393,811,388,823,383,827,378,820,374,807,372,788,371,770,371,751,371,733,373,716,377,695,382,676,387,654,394,635,399,618,404,606,406,597,407,590,411,599,415,604],
-            [427,748,425,767,421,784,415,800,409,811,405,825,399,835,397,822,399,811,402,797,405,789,409,778,414,761,419,743,421,730,423,718,426,708,429,701,428,719,427,736,426,741],
-          //szaboizom 
-            [280,670,285,686,290,705,293,715,297,739,298,755,297,773,296,782,293,791,291,776,288,761,284,743,280,724,274,700,269,684,265,666,261,651,258,638,256,628,252,615,249,603,246,595,241,575,245,591,248,596,246,595,254,607,260,619,265,631,269,643,274,656,277,664,279,669],
-            [264,902,260,910,257,918,254,925,254,929,254,937,260,929,265,922,269,911,274,901,280,887,283,878,285,869,287,862,285,854,283,853,280,862,277,870,276,875,273,883,268,892,265,899,261,907],
-            [374,685,369,702,365,717,362,732,360,741,358,753,354,769,353,777,351,793,347,780,346,766,346,751,347,741,350,723,353,705,358,691,362,675,367,664,373,648,377,638,382,628,384,623,387,613,391,605,401,583,397,598,392,612,390,620,386,636,383,647,379,660,377,671],
-            [374,890,378,898,382,906,385,915,389,924,390,937,385,933,379,922,373,906,367,894,361,879,358,868,357,859,359,852,363,859,365,862,367,872,371,882,363,859]
-        ]
-      },
-      adduktorok: {
-        color: 'rgba(255,0,0,0.4)',
-        selectedColor: 'rgba(255,0,0,0.8)',
-        areas: [
-          [282,614,289,627,293,636,298,649,300,658,303,665,304,672,303,678,300,685,294,690,289,678,286,668,279,651,273,633,268,621,263,607,256,593,250,581,247,572,256,581,264,588,273,599,277,606],
-          [311,688,310,702,308,715,307,725,305,740,303,750,300,726,298,717,297,707,295,699,299,691,304,685,310,680],
-          [336,721,335,708,333,695,333,688,333,680,338,685,342,690,346,695,349,700,348,707,346,716,344,726,342,734,340,749,338,739,337,730],
-          [346,646,351,633,359,619,369,602,375,596,379,589,385,583,397,572,388,591,383,603,380,609,376,619,370,634,367,644,363,653,359,665,355,677,353,682,350,689,343,684,339,676,339,670,341,661,344,652]
-        ]
-      },
-      ferdehas: {
-        color: 'rgba(255, 0, 0, 0.4)',
-        selectedColor: 'rgba(255, 0, 0, 0.8)',
-        areas: [
-          [237,511,237,524,236,536,236,541,236,550,241,554,248,561,257,571,263,578,267,579,274,581,272,570,269,558,268,545,268,537,267,522,266,514,256,510,246,502,240,495,238,503,238,505,238,507],
-          [244,494,250,498,257,504,265,508,265,497,265,487,257,479,250,473,246,471,241,464,240,474,240,482,240,487],
-          [248,467,253,471,259,476,265,482,266,468,265,459,257,453,248,447,238,439,238,447,238,455,243,463],
-          [244,422,257,432,263,435,265,440,265,453,257,448,248,442,242,437,241,434,242,432,243,425,241,434,242,430],
-          [265,413,265,422,265,432,257,427,251,422,244,416,254,406,265,397,265,404],
-          [376,535,375,549,375,559,374,566,371,574,369,581,376,579,383,575,392,566,399,558,408,549,407,536,407,524,406,513,406,505,404,495,397,502,387,510,378,514,377,522],
-          [404,476,404,481,402,489,397,497,389,503,378,510,378,498,378,486,385,481,392,474,404,464],
-          [378,464,378,472,378,480,387,474,394,468,399,464,404,457,405,447,404,440,397,447,387,453,378,460,378,468],
-          [379,437,379,444,379,453,389,448,397,442,404,435,401,430,399,424,393,429,386,432],
-          [378,411,378,423,378,433,386,427,393,422,399,416,391,408,385,403,378,396,378,405]
-        ]
-      },  
-      hasizom: {
-        color: 'rgba(255, 0, 0, 0.4)',
-        selectedColor: 'rgba(255, 0, 0, 0.8)',
-        areas: [
-          [283,578,285,588,289,599,292,608,297,619,301,625,308,630,319,634,319,617,319,602,319,588,319,575,319,560,319,551,319,536,319,529,319,520,314,519,304,517,293,516,285,516,274,517,275,526,276,540,277,550,280,562],
-          [324,560,324,573,326,591,326,607,326,618,327,625,327,634,336,629,345,621,350,613,353,605,357,595,360,583,363,568,366,552,367,541,368,527,369,517,361,516,350,516,337,517,326,520,326,529,326,536,324,544],
-          [274,495,274,503,276,508,284,510,296,511,304,511,315,511,318,510,319,498,319,487,318,474,306,474,296,475,285,479,274,480,273,487],
-          [324,489,324,498,326,505,327,511,337,511,349,511,360,511,368,508,370,497,370,489,369,480,355,477,345,475,337,474,326,474,324,481],
-          [275,458,275,469,287,470,297,471,307,471,318,470,319,457,319,446,319,438,318,431,312,427,305,431,296,435,282,443,277,449],
-          [326,449,326,457,327,466,329,470,335,471,346,471,360,471,369,470,368,454,363,446,351,438,340,433,334,427,329,427,326,433,326,441],
-          [271,412,272,424,273,433,275,441,287,435,297,429,304,424,310,419,318,416,318,402,318,395,316,386,315,380,308,379,299,384,292,386,281,392,276,395,271,404,269,410],
-          [327,394,327,403,326,410,327,416,334,419,339,424,346,428,355,433,362,437,368,441,371,428,374,412,371,400,363,393,354,388,345,384,338,380,332,379,329,385]
-        ]
-      },      
-      szeleshat: {
-        color: 'rgba(255, 0, 0, 0.4)',
-        selectedColor: 'rgba(255, 0, 0, 0.8)',
-        areas: [
-          [404,419,405,426,407,435,413,427,415,421,417,411,416,403,412,409,408,413],
-          [396,405,399,408,405,412,408,408,413,401,416,394,417,390,416,382,413,390,405,394,398,396,390,400,396,405,397,406],
-          [398,390,405,388,410,385,414,378,414,370,413,370,407,375,401,379,394,384,390,387,387,390,390,392],
-          [229,419,233,429,236,434,238,426,240,418,233,410,227,403,227,410],
-          [230,400,233,404,238,413,245,408,249,404,253,400,246,398,240,394,236,393,232,388,226,382,227,388,228,394,229,397,230,400,230,400],
-          [235,372,241,378,246,382,251,385,256,387,256,390,254,393,250,392,242,390,235,386,232,382,229,375,229,369]
-        ]
-      },
-      vall: {
-        color: 'rgba(255, 0, 0, 0.4)',
-        selectedColor: 'rgba(255, 0, 0, 0.8)',
-        areas: [
-          [399,284,406,287,415,291,420,295,424,303,424,309,425,320,428,329,433,338,437,341,444,349,452,348,460,343,465,335,470,326,472,312,469,302,465,295,457,285,448,277,439,272,430,269,418,268,410,271,402,275,399,278],
-          [172,320,175,331,185,341,191,348,196,350,204,346,210,339,217,329,219,317,219,308,219,301,224,295,232,290,238,285,246,282,241,275,230,269,219,268,207,271,197,277,189,283,181,292,175,301,173,308]
-        ]
-      }, 
-      mellizom: {
-        color: 'rgba(255, 0, 0, 0.4)',
-        selectedColor: 'rgba(255, 0, 0, 0.8)',
-        areas: [
-          [226,318,226,327,226,334,227,346,229,356,234,364,238,371,246,378,253,380,269,384,277,385,288,382,296,380,303,377,310,371,313,364,315,349,316,337,316,322,315,309,312,296,306,288,299,283,289,281,277,281,264,282,251,287,241,293,232,301,228,309],
-          [327,327,327,336,328,345,329,354,330,363,335,371,340,374,347,379,355,383,366,385,374,385,383,383,392,381,402,372,409,365,415,354,418,335,417,318,415,308,409,297,399,290,391,285,382,282,370,281,360,281,349,282,339,287,335,293,331,298,328,308,328,314]
-        ]
-      },      
-      trapezius: {
-        color: 'rgba(255, 0, 0, 0.4)',
-        selectedColor: 'rgba(255, 0, 0, 0.8)',
-        areas: [
-          [265,274,272,275,280,275,283,274,287,268,287,259,285,249,284,249,279,253,271,259,264,263,258,268,251,271],
-          [358,263,358,264,359,272,363,275,370,275,377,274,383,274,392,270,381,264,375,260,368,255,363,251,359,249,358,249,358,259,358,263,358,264]
-        ]
-      },
-      bicepsz: {
-        color: 'rgba(255, 0, 0, 0.4)',
-        selectedColor: 'rgba(255, 0, 0, 0.8)',
-        areas: [
-          [163,397,162,409,162,419,162,427,162,433,166,434,173,433,180,429,186,420,189,410,193,401,196,390,197,377,195,366,190,361,187,359,182,362,177,369,171,377,169,382,165,389,171,377],
-          [195,406,191,416,188,424,185,433,181,439,179,443,178,449,180,453,183,455,189,448,194,442,202,430,206,419,211,408,216,395,219,386,221,377,221,367,221,357,219,348,216,341,213,349,211,361,209,370,205,380,201,393,178,449],
-          [438,375,441,388,446,400,452,411,455,421,460,430,463,440,465,447,464,450,464,453,457,452,448,440,440,425,434,413,429,398,426,389,423,378,422,370,422,362,423,355,425,348,428,341,431,348,433,362,434,366],
-          [476,381,479,390,481,400,483,410,483,422,483,428,481,434,472,434,463,427,459,418,454,409,452,401,448,392,447,380,447,372,449,365,452,361,456,359,461,361,467,367,471,372]
-        ]
-      }, 
-      alkar: {
-        color: 'rgba(255, 0, 0, 0.4)',
-        selectedColor: 'rgba(255, 0, 0, 0.8)',
-        areas: [
-          [127,512,125,525,123,535,120,549,118,562,116,572,115,578,112,589,111,598,112,604,118,597,123,586,127,574,132,562,138,548,142,537,147,525,151,515,156,502,159,489,162,476,162,460,162,449,159,442,157,442,154,443,149,448,143,456,136,469,133,476,131,484,130,494,128,501],
-          [136,563,133,571,130,581,127,586,124,596,124,599,124,602,128,598,132,591,134,583,139,574,142,564,146,557,150,545,156,535,164,524,169,515,173,504,178,493,180,480,179,474,178,468,175,466,171,468,169,473,166,484,164,490,162,501,158,509,154,519,149,531,146,539,142,548,140,552,136,563],
-          [149,558,155,545,162,534,169,526,174,515,179,502,181,493,183,477,188,482,187,490,183,500,179,509,173,521,167,532,162,542,156,554,149,569,144,579,141,587,136,596,131,607,138,589,142,578,146,568],
-          [470,513,473,523,480,534,486,542,492,553,496,564,502,576,506,589,507,595,514,607,511,600,502,587,499,579,495,570,492,562,488,552,481,539,475,529,469,518,462,503,457,493,455,485,460,477,462,487,463,495,464,499,467,507],
-          [481,501,487,513,492,524,498,537,502,550,509,565,512,575,516,586,518,592,519,598,520,602,517,599,515,594,508,581,504,573,501,564,498,556,493,547,486,532,480,523,472,509,467,493,464,481,464,473,465,466,472,466,476,473,478,484,480,492],
-          [519,525,522,539,524,551,526,564,528,574,530,583,532,591,532,598,532,604,526,597,523,588,518,576,515,566,510,553,504,542,500,528,494,517,490,504,486,494,484,480,483,469,481,457,483,448,485,442,491,443,495,449,500,456,503,462,508,470,512,479,514,488,515,501,516,513]
-        ]
-      }      
 };
 let hoveredGroup = null;
 let selectedGroups = []; // Több kijelölés támogatása
