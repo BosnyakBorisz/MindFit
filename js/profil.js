@@ -67,10 +67,15 @@ function addCalories() {
         calorieInput.value = "";
     }
 }
-
 function updateCalorieText() {
     let displayCalories = calorieGoal - currentCalories;
-    document.getElementById("calorie-text").textContent = `${displayCalories} kcal maradt`;
+    let textElement = document.getElementById("calorie-text");
+
+    if (displayCalories >= 0) {
+        textElement.textContent = `${displayCalories} kcal maradt`;
+    } else {
+        textElement.textContent = `+${Math.abs(displayCalories)} kcal`;
+    }
 
     // progress frissítése
     let progress = (currentCalories / calorieGoal) * 100;
@@ -79,7 +84,6 @@ function updateCalorieText() {
     document.querySelector('.progress-circle').style.background = 
         `conic-gradient(#00ff00 ${progress}%, #ddd ${progress}%)`;
 }
-
 
 // Lépésszámláló
 const stepsGoal = 10000;

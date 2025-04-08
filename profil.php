@@ -115,7 +115,7 @@
                     
                     <p id="stepsCount">0</p>
                 </div>
-                <p id="stepsGoal">Cél:</p>
+                <p id="stepsGoal">Cél: 10000</p>
                 <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                     <div id="stepbarbar" class="progress-bar"></div>
                 </div>
