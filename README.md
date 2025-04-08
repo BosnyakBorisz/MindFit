@@ -106,6 +106,91 @@ Cikkek és tippek a helyes étkezésről, edzésről, stresszkezelésről és a 
 Kép: Minden bejegyzéshez tartozik egy szép illusztráció.
 Közösségi fórum:
 
+cikkek ötletek:
+
+  Kezdőknek szóló edzéstervek – pl. „Heti 3 napos edzésterv kezdőknek”
+      1. rész: Heti 3 napos edzésterv kezdőknek – Az alapok elsajátítása
+      Szeretnél fittebb lenni, de nem tudod, hol kezdd? Semmi gond! Ez a heti 3 napos edzésterv tökéletes belépő a rendszeres mozgás világába, még akkor is, ha most kezdesz el edzeni. Az a cél, hogy megerősödj, fejlődj, és jól érezd magad közben!
+
+      🗓 Heti beosztás:
+      Hétfő – Teljes testes erősítő edzés
+
+      Szerda – Kardió + core
+
+      Péntek – Saját testsúlyos edzés + mobilizáció
+
+      💪 Hétfő – Teljes testes erősítő edzés (súlyzós vagy saját testsúlyos)
+      Bemelegítés (5-10 perc):
+
+      Helyben futás
+
+      Vállkörzés, térdkörzés, karkörzés
+
+      Fő gyakorlatok (3 kör):
+
+      Guggolás: 12 ismétlés
+
+      Fekvőtámasz (vagy térdelve): 10 ismétlés
+
+      Evezés (súlyzóval vagy gumiszalaggal): 12 ismétlés
+
+      Plank: 30 másodperc
+
+      Levezetés: Nyújtás, mély légzés
+
+      ❤️ Szerda – Kardió + Core
+      Bemelegítés (ugrás, láblendítés)
+
+      Kardió blokk (3 kör):
+
+      Jumping Jack: 30 mp
+
+      Hegymászó: 30 mp
+
+      Térdemelés helyben: 30 mp
+
+      1 perc pihenő
+
+      Core blokk:
+
+      Plank: 30–45 mp
+
+      Lábemelés: 12 ismétlés
+
+      Kerékpáros hasprés: 15 mp oldalanként
+
+      🧘 Péntek – Saját testsúlyos edzés + mobilizáció
+      Gyakorlatok (körben, 3x):
+
+      Kitörés váltott lábbal: 10-10 ismétlés
+
+      Fekvőtámasz falnál vagy padnál: 10 ismétlés
+
+      Oldalsó kitartott plank: 20 mp oldalanként
+
+      Híd: 12 ismétlés
+
+      Zárás – Dinamikus nyújtás:
+
+      Mély guggolás nyújtással
+
+      Hídban hátralépések
+
+      Nyak- és vállkörzés
+
+      ✅ TIPP:
+      Ne törekedj tökéletességre. Az a fontos, hogy elkezdj mozogni, és élvezd, amit csinálsz. Ha valami túl nehéz, egyszerűsítsd – ha túl könnyű, jöhet a következő szint!
+      
+  Zsírégetés és fogyás – pl. „Hogyan gyorsítsd fel az anyagcseréd edzéssel?”
+
+  Izomnövelés – pl. „A legjobb gyakorlatok tömegnöveléshez”
+
+  Otthoni edzés – pl. „Teljes testes edzés saját testsúllyal”
+
+  Táplálkozás edzéshez – pl. „Mit egyél edzés előtt és után?”
+
+  Motiváció és mentális erő – pl. „Hogyan maradj motivált, ha nincs kedved edzeni?”
+
 Felhasználók megoszthatják tapasztalataikat, sikertörténeteiket, és kérdéseiket.
 AI támogatás: A fórumon AI ajánlásokat adhat, ha egy felhasználó kérdést tesz fel.
 3. Responszív dizájn
