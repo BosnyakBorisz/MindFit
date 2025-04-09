@@ -180,7 +180,7 @@ cikkek ötletek:
 
       ✅ TIPP:
       Ne törekedj tökéletességre. Az a fontos, hogy elkezdj mozogni, és élvezd, amit csinálsz. Ha valami túl nehéz, egyszerűsítsd – ha túl könnyű, jöhet a következő szint!
-      
+
   Zsírégetés és fogyás – pl. „Hogyan gyorsítsd fel az anyagcseréd edzéssel?”
 
   Izomnövelés – pl. „A legjobb gyakorlatok tömegnöveléshez”
@@ -356,3 +356,42 @@ Itt van néhány sablon edzésterv, amelyeket egészséges és sérült testrés
 
 https://www.shutterstock.com/hu/image-illustration/gastrocnemius-blue-muscular-map-detail-332392370
 https://gyuras.hu/tricepsz-edzes/
+
+
+
+Kezdő fitnesz és táplálkozás: 5 fontos téma, amiről tudnod kell
+Lehet-e egyszerre izmot építeni és zsírt veszíteni?
+Lehet-e egyszerre izmot építeni és zsírt veszíteni? Sokan teszik fel ezt a kérdést, főleg amikor a tükörben egyszerre szeretnénk látni a formás izmokat és a kevesebb zsírt. A jó hír az, hogy bizonyos körülmények között lehetséges! Ezt a folyamatot gyakran testkompozíció változtatásnak (angolul body recomposition) nevezik, amikor izomtömeg növekedést és zsírcsökkenést érünk el egyszerre. Hogyan működik? Ha kezdő vagy a súlyzós edzésben, vagy hosszabb kihagyás után térsz vissza, a tested meglepően jól reagál: egyszerre épít izmot és bontja a zsírt. Tudományos vizsgálatok is igazolják, hogy még edzett sportolóknál is előfordulhat ez az egyidejű változás​
+JOURNALS.LWW.COM
+ megfelelő edzés és étrend mellett. A kulcs a progresszív ellenállásos edzés (értsd: fokozatosan nagyobb súlyok és terhelés) és a tudományosan megalapozott táplálkozási stratégia​
+JOURNALS.LWW.COM
+. Magyarul: eddz kitartóan, egyél elegendő fehérjét és figyelj a kalóriákra. Fontos megjegyezni, hogy a türelem is nagy szerepet játszik. Az izom- és zsírarány optimalizálása nem megy egyik napról a másikra, de ha következetes vagy, idővel látni fogod az eredményt. Ne feledd, hogy a pihenés és a megfelelő alvás is hozzájárul a sikerhez (a regeneráció csodákra képes!). Összességében tehát nem kell választanod az "izom vagy zsírvesztés" között – okos edzéssel és étkezéssel mindkettő elérhető egyszerre, és ez remek hír minden kezdő életmódváltónak!
+Alap edzésfelosztások kezdőknek
+Kezdőként könnyű elveszni a különféle edzésterv-tervek tengerében. Jó hír, hogy nem kell rögtön bonyolult, ötnapos "izomcsoportonként egy nap" programmal indítanod. Az alap edzésfelosztások lényege, hogy a hét folyamán hogyan osztod el az edzéseidet és az izomcsoportokat. Kezdőként érdemes az egyszerűbb módszereknél maradni, amik bizonyítottan hatékonyak. Az egyik legjobb választás a teljes testes edzés, heti 2-3 alkalommal. Ilyenkor egy edzésen átmozgatod az összes fő izomcsoportot. Kutatások szerint egy ilyen, heti két alkalmas teljes test program is ugyanúgy eredményes lehet, mint a gyakrabban (pl. heti négyszer) végzett, osztott edzés, amiben külön napokon edzed a felső- és alsótested​
+BMCSPORTSSCIMEDREHABIL.BIOMEDCENTRAL.COM
+. Sőt, a kevesebb edzésnap miatt talán könnyebb is tartani a lendületet – kevesebb az esélye, hogy beleunj vagy idő hiányában kihagyj edzéseket. Egy másik opció a felsőtest-alsótest felosztás, mondjuk heti 4 edzésnappal (két felső- és két alsótest nap). Ne feledd, a híres push-pull-leg (toló-húzó-láb) vagy a testépítő stílusú, izomcsoportonkénti bontást ráérsz később kipróbálni, ha már tapasztaltabb vagy. A lényeg, hogy találj olyan beosztást, ami illik az időbeosztásodhoz és regenerációs képességedhez. Kezdőként a fókusz legyen a helyes gyakorlat-végrehajtáson és a fokozatos fejlődésen – bármilyen felosztást is követsz, a következetesség fogja meghozni az eredményt! Emlékezz: a legrosszabb edzésterv az, amit nem csinálsz meg – szóval válassz olyat, amit hosszú távon is tudsz követni.
+Kalóriaszámolás alapjai – miért nem ördögtől való?
+A kalóriaszámolás sokak számára ijesztően hangzik elsőre. Pedig nincs benne semmi varázslat vagy ördöngösség – egyszerűen arról szól, hogy nyomon követed, mennyi energiát (kalóriát) viszel be az ételekkel. Manapság ezt könnyedén megteheted mobilappokkal vagy akár egy noteszben, nem kell hozzá PhD fokozat. De miért is érdemes foglalkozni vele? Azért, mert a fogyás és hízás alapja a kalóriaegyensúly: ha több kalóriát eszel, mint amennyit elégetsz, hízni fogsz, ha kevesebbet, fogyni. Hiába próbálja ezt néhány divatdiéta megkerülni, a tudomány makacs dolog. Kutatások szerint akik következetesen vezetik az étrendjüket, átlagosan ~3,3 kg-mal többet fogynak, mint akik nem, és minél rendszeresebben jegyzed fel, annál jobb eredményt érsz el​
+HEALTHLINE.COM
+. A számolás segít tudatosítani, hogy például egy "könnyű kis nasiban" mennyi energia is van valójában. Fontos megjegyezni, hogy a kalóriaszámolás nem kötelező. Lehet anélkül is sikeres életmódot folytatni, és nem szabad túlzásokba esni (nem kell minden falatot mániákusan méricskélni). Viszont kezdőként érdemes legalább egy rövid időre kipróbálni, mert rengeteget tanulhatsz belőle a saját étkezési szokásaidról. Később már szemre is menni fog a dolog, de a kezdeti időszakban ez a kis extra erőfeszítés óriási aha-élményeket adhat. Rájössz, hogy a kalória nem ellenség vagy boszorkányság, csak egy hasznos mérőszám, ami segít a céljaid elérésében.
+Étkezési szokások, amiket érdemes kialakítani
+Az egészséges táplálkozás alapja nem a szigorú tiltások, hanem a jó szokások. Ha ezeket sikerül megszilárdítanod, az hosszú távon óriási pozitív hatással lesz a közérzetedre és az alakodra. Íme néhány olyan étkezési szokás, amit kezdőként érdemes kialakítani:
+Zöldség és gyümölcs minden nap: Törekedj rá, hogy minden étkezésedben legyen valamilyen zöldség vagy gyümölcs. Tele vannak rosttal, vitaminokkal, ásványi anyagokkal, és a zöldség-gyümölcsben gazdag étrend bizonyítottan csökkenti az elhízás és számos krónikus betegség kockázatát​
+WHO.INT
+.
+Fehérjét minden étkezéshez: A megfelelő fehérjebevitel segít abban, hogy tovább jóllakottnak érezd magad, és támogatja az izmaid épülését és megtartását. Építs be sovány fehérjeforrásokat (pl. csirke, hal, tojás, túró, babfélék) minden főétkezésbe.
+Igyál elég vizet: Napközben is figyelj a hidratálásra. Egy pohár víz csodákra képes – gyakran az éhségérzetünk valójában szomjúság. Célozz meg napi ~2 liter folyadékot (leginkább víz formájában).
+Limitáld a cukros ételeket és italokat: Nem arról van szó, hogy soha többé ne egyél sütit vagy ne igyál üdítőt, de ne ezek legyenek a mindennapi étrended alapjai. A hozzáadott cukor üres kalóriákat jelent, amik könnyen súlygyarapodáshoz vezetnek. Tartogasd az édességeket inkább különleges alkalmakra, a hétköznapokon pedig válaszd az egészségesebb alternatívákat (pl. gyümölcs, magvak egy kis csokival).
+Étkezz rendszeresen és tudatosan: Próbálj meg kialakítani egy olyan étkezési rutint, ami számodra tartható (pl. napi három főétkezés és két kisebb étkezés). Ha rendszert viszel az étkezéseidbe, kisebb eséllyel tör rád kontrollálhatatlan éhség. Evés közben figyelj magadra: egyél lassan, élvezd az ízeket, és hagyd abba, amikor már kellemesen jóllaktál – ne várd meg, míg kipukkadni érzed magad. A tudatos, lassú evés segít időben érzékelni a teltségérzetet, így elkerülheted a túlevést.
+Gyakori fitnesz és táplálkozási tévhitek
+A fitnesz világában rengeteg mítosz terjed szájról szájra. Fontos, hogy ezeket felismerd, és a tényekre hallgass. Lássunk néhány gyakori tévhitet és a mögöttük lévő valóságot:
+Tévhit: "Este 6 után nem lehet enni, mert az már egyből zsírként raktározódik." Valóság: Nincs semmi mágikus időpont, ami után a kalóriák automatikusan duplán hizlalnának. Nem attól fogsz hízni, hogy mikor eszel, hanem hogy mennyit eszel összesen a nap folyamán​
+ATRIUSHEALTH.ORG
+. Ha késő este megéhezel, nyugodtan ehetsz valami könnyűt, csak figyelj a teljes napi mennyiségre.
+Tévhit: "A felülésektől lapos lesz a hasam (helyi zsírégetés)." Valóság: Sajnos a zsír nem helyileg ég: nem tudod csak a hasadról leolvasztani pusztán hasizomgyakorlatokkal. Egy 6 hetes vizsgálatban napi hasizomedzéssel sem csökkent a derék körfogata vagy a hasi zsír mennyisége​
+PUBMED.NCBI.NLM.NIH.GOV
+. Ettől még érdemes hasra edzeni az izomerő miatt, de a kockahashoz az egész testzsírszázalékot kell csökkenteni (főleg megfelelő étrenddel).
+Tévhit: "Ha abbahagyom az edzést, a izmaim zsírba fognak átalakulni." Valóság: Az izom soha nem "alakul át" zsírrá – a két szövet teljesen különböző. Edzés abbahagyásakor az izmok egyszerűen leépülnek (elveszted őket, ha nem használod), és ha közben ugyanannyit vagy többet eszel, a felesleges energia zsírként raktározódik el. Ezért tűnhet úgy, mintha az izom "zsírrá vált" volna, pedig valójában csak az izomtömeg csökkent és a zsírtömeg nőtt​
+FITANDWELL.COM
+. A megoldás? Igyekezz megtartani az izmaidat valamennyi mozgással, és figyelj oda az étrendedre akkor is, ha szünetet tartasz a kemény edzésekben.
+Források: Az állítások alátámasztására tudományos publikációk és szakértői anyagok szolgálnak, melyek a fenti szövegben hivatkozásként szerepelnek. Ezen források (pl. tudományos cikkek, klinikai vizsgálatok, szakértői cikkek) biztosítják, hogy a fenti tanácsok megalapozottak és naprakészek legyenek.

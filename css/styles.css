@@ -155,7 +155,7 @@ body {
 }
 
 .step { 
-    display: none;
+   display: none;
 }
 
 .step.active { 
