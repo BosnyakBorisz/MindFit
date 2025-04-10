@@ -1330,7 +1330,7 @@ body {
 }
 
 /*bodymap*/
-/*#bodymap {
+#bodymap {
     margin: 0;
     padding: 0;
     display: flex;
@@ -1366,9 +1366,9 @@ body {
 }
 map area {
     cursor: pointer;
-}*/
+}
 
-#bodymap {
+/*#bodymap {
     display: flex;
     justify-content: center;
     padding: 20px;
@@ -1410,7 +1410,7 @@ map area {
   
 map area {
     cursor: pointer;
-}
+}*/
 /* From Uiverse.io by themrsami */  /*Thank you <3*/
 #hatter {
     width: 100%;

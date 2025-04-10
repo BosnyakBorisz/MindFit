@@ -634,6 +634,7 @@
   <script>
     let hoveredGroup = null;
 let selectedGroups = [];
+
     const frontGroups = { 
       vadli: {
         color: 'rgba(255, 0, 0, 0.4)',
@@ -886,27 +887,17 @@ const backGroups = {
             ]
         }  
 };
-// Skálázás frissítése a canvas tényleges méretére
-function resizeCanvasToDisplaySize(canvas) {
-  const width = canvas.clientWidth;
-  const height = canvas.clientHeight;
-  if (canvas.width !== width || canvas.height !== height) {
-    canvas.width = width;
-    canvas.height = height;
-  }
-}
-
-// Újrarajzolás minden kijelölt területre
 function drawOverlayForCanvas(canvas, ctx) {
-  resizeCanvasToDisplaySize(canvas);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+  
   const isBack = canvas.id === "overlay1";
   const groupsToUse = isBack ? backGroups : frontGroups;
 
   Object.entries(groupsToUse).forEach(([group, data]) => {
     const isHovered = hoveredGroup === group;
-    const isSelected = selectedGroups.includes(group);
+    const isSelected = selectedGroup === group;
+
+
     const color = isSelected
       ? data.selectedColor
       : (isHovered ? data.color : null);
@@ -942,76 +933,9 @@ function highlightGroup(group, active) {
 }
 
 function selectGroup(group) {
-  if (selectedGroups.includes(group)) {
-    selectedGroups = selectedGroups.filter(g => g !== group);
-  } else {
-    selectedGroups.push(group);
-  }
+  selectedGroup = group;
   drawAllOverlays();
 }
-
-// Visszaadja a kattintás pozícióját, skálázva a canvas belső méreteihez
-function getMousePos(canvas, evt) {
-  const rect = canvas.getBoundingClientRect();
-  const scaleX = canvas.width / rect.width;
-  const scaleY = canvas.height / rect.height;
-  return {
-    x: (evt.clientX - rect.left) * scaleX,
-    y: (evt.clientY - rect.top) * scaleY
-  };
-}
-
-// Ellenőrzi, hogy a pont benne van-e a polygonban
-function pointInPolygon(point, vs) {
-  const x = point.x, y = point.y;
-  let inside = false;
-  for (let i = 0, j = vs.length - 2; i < vs.length; i += 2) {
-    const xi = vs[i], yi = vs[i + 1];
-    const xj = vs[j], yj = vs[j + 1];
-    const intersect = ((yi > y) !== (yj > y)) &&
-                      (x < (xj - xi) * (y - yi) / (yj - yi + 0.00001) + xi);
-    if (intersect) inside = !inside;
-    j = i;
-  }
-  return inside;
-}
-
-// Kattintáskezelés front canvason
-document.getElementById("overlay2").addEventListener("click", (e) => {
-  const pos = getMousePos(e.target, e);
-  const group = "quad";
-  const polygon = frontGroups[group].areas[0];
-  if (pointInPolygon(pos, polygon)) {
-    selectGroup(group);
-  }
-});
-
-// Kattintáskezelés back canvason
-document.getElementById("overlay1").addEventListener("click", (e) => {
-  const pos = getMousePos(e.target, e);
-  const group = "hamstrings";
-  const polygon = backGroups[group].areas[0];
-  if (pointInPolygon(pos, polygon)) {
-    selectGroup(group);
-  }
-});
-
-// Automatikus rajzolás induláskor és átméretezéskor
-window.addEventListener("load", drawAllOverlays);
-window.addEventListener("resize", drawAllOverlays);
-
-
-
-  function highlightGroup(group, hover) {
-    console.log("Hovered group:", group, hover); 
-    // Itt jöhet a hover hatás megjelenítése, pl. canvas-on kirajzolás
-  }
-  
-  function selectGroup(group) {
-    console.log("Selected group:", group);
-    // Itt jöhet a kiválasztás logikája (pl. színváltoztatás, adatok betöltése stb.)
-    return false;
-  }
 
   
   </script>
