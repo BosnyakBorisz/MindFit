@@ -1384,7 +1384,7 @@ map area {
   }
 .view {
     position: relative;
-    flex: 1 1 500px; /* alapértelmezett szélesség, de csökkenhet kisebb képernyőn */
+    flex: 1 1 500px; alapértelmezett szélesség, de csökkenhet kisebb képernyőn 
     aspect-ratio: 600 / 1280;
     min-width: 300px;
     max-width: 600px;
@@ -1411,7 +1411,6 @@ map area {
 map area {
     cursor: pointer;
 }*/
-/* From Uiverse.io by themrsami */  /*Thank you <3*/
 #hatter {
     width: 100%;
     height: 100vh;
