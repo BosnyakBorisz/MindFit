@@ -113,47 +113,49 @@
             <div class="col-12" style="margin:30px 0">
             <hr>
             <details>
-                <summary><h5>Mennyibe kerül?</h5></summary><p class="faq_informaciok">Az oldal és az AI használata teljesen ingyesen!</p>
+                <summary><h5>💸 Mennyibe kerül az oldal használata?</h5></summary><p class="faq_informaciok">Teljesen ingyenes! Az oldal és az AI funkciói is díjmentesen elérhetők.</p>
             </details>
             <hr>
             <details>
-                <summary><h5>Van rejtett költség vagy előfizetés?</h5></summary><p class="faq_informaciok">Nincsenek rejtett költségek vagy előfizetések.</p>
+                <summary><h5>❌ Vannak rejtett költségek vagy előfizetés?</h5></summary><p class="faq_informaciok">Nem, nálunk nincsenek apró betűs részek – sem előfizetés, sem extra költség!</p>
             </details>
             <hr>
             <details>
-                <summary><h5>Miért fontos a személyre szabott táplálkozási terv?</h5></summary><p class="faq_informaciok">Az AI figyelembe veszi a céljaidat és étkezési preferenciáidat,hogy hamarabb elérd a céljaidat.</p>
+                <summary><h5>🔄 Módosíthatom a céljaimat később?</h5></summary><p class="faq_informaciok">Természetesen! Bármikor újracélozhatsz</p>
             </details>
             <hr>
             <details>
-                <summary><h5>Hogyan segít az AI az étkezési szokások kialakításában?</h5></summary><p class="faq_informaciok">Személyre szabott napi étrendi ajánlásokat biztosít.</p>
+                <summary><h5>🗑️ Hogyan kérhetem az adataim teljes törlését a rendszerből?</h5></summary><p class="faq_informaciok">A menüpontok között lévő fiók adatoknál</p>
             </details>
             <hr>
             <details>
-                <summary><h5>Milyen technikákat ajánl a stressz csökkentésére?</h5></summary><p class="faq_informaciok">Meditáció, légzőgyakorlatok és jóga.</p>
+                <summary><h5>🧘 Milyen technikákat ajánl a stressz csökkentésére?</h5></summary><p class="faq_informaciok">Meditáció, légzőgyakorlatok és jóga.</p>
             </details>
             <hr>
             <details>
-                <summary><h5>Meditációs gyakorlatokra helyes kivitelezésére van lehetőség?</h5></summary><p class="faq_informaciok">Igen, a Stresszkezelési oldalunkon megtalálsz mindent!</p>
+                <summary><h5>🧑‍🏫 Meditációs gyakorlatokra helyes kivitelezésre van lehetőség?</h5></summary><p class="faq_informaciok">Igen, a Stresszkezelési oldalunkon megtalálsz mindent!</p>
             </details>
             <hr>
             <details>
-                <summary><h5>Hogyan segít az AI a jobb alvás elérésében?</h5></summary><p class="faq_informaciok">Relaxációs technikákat javasol.</p>
+                <summary><h5>🧠 Szükséges technikai tudás a használatához?</h5></summary><p class="faq_informaciok">Nem, a felület egyszerű és felhasználóbarát – bárki el tudja kezdeni használni különösebb előképzettség nélkül.</p>
             </details>
             <hr>
             <details>
-                <summary><h5>Mennyire biztonságos az adataim kezelése?</h5></summary><p class="faq_informaciok">Az adatkezelés titkosított és megfelel a GDPR előírásoknak. Megtekintheted az adatkezelési tájékoztatoban</p>
+                <summary><h5>🔐 Mennyire biztonságos az adataim kezelése?</h5></summary><p class="faq_informaciok">Az adatkezelés titkosított és megfelel a GDPR előírásoknak. Megtekintheted az adatkezelési tájékoztatoban</p>
             </details>
             <hr>
             <details>
-                <summary><h5>Hogyan segít az AI a motiváció fenntartásában?</h5></summary><p class="faq_informaciok">Napi motivációs üzenetekkel és célkitűzésekkel támogat.</p>
+                <summary><h5>💪 Hogyan segít az AI a motiváció fenntartásában?</h5></summary><p class="faq_informaciok">Napi motivációs üzenetekkel támogat.</p>
             </details>
             <hr>
             <details>
-                <summary><h5>Kapok emlékeztetőket a céljaim eléréséhez?</h5></summary><p class="faq_informaciok">Igen, az AI rendszeres emlékeztetőket küld.</p>
+                <summary><h5>🛡️ Milyen biztonsági intézkedések védik az adataimat?</h5></summary><p class="faq_informaciok">Minden adat titkosított formában kerül tárolásra, a rendszer több szintű biztonsági protokollt alkalmaz </p>
             </details>
             <hr>
             <details>
-                <summary><h5>Testre szabhatom a motivációs üzeneteket?</h5></summary><p class="faq_informaciok">Igen, az üzeneteket és célokat személyre szabhatod.</p>
+                <summary><h5>📋 Hogyan ellenőrizhetem egyszerre a személyes és a platformon tárolt adataimat?</h5></summary><p class="faq_informaciok">A beállítások menüpontban egy központi adatkezelési felület érhető el, ahol:
+
+megtekintheted és szerkesztheted a személyes adataidat (pl. céljaid, preferenciáid),</p>
             </details>
             </div>
         </div>
