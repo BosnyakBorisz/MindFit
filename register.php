@@ -1,6 +1,4 @@
 <?php
-    error_reporting(0);
-    ini_set('display_errors', 0);
 
     session_start();
 
@@ -92,7 +90,7 @@
     
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
-            $user_data = json_encode($user, JSON_UNESCAPED_UNICODE);
+            $user_data = json_encode($user,  JSON_UNESCAPED_UNICODE);
         } else {
             die("Nincs ilyen felhasználó.");
         }
@@ -102,7 +100,7 @@
         // Edzésterv létrehozása az AI API segítségével
         $api_url = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3";
         $api_key = ""; // Hugging Face API token
-        
+                
         $data = json_encode([
             "inputs" => "Generate a structured {$wantedWorkoutFrequency}-day hypertrophy workout plan for a {$age}-year-old man who weighs {$weight} kg, is {$height} cm tall, and aims to {$goal}. His current body fat percentage is {$currentBodyfat}, with a target of {$goalBodyfat}. 
         
@@ -126,9 +124,6 @@
             - Hamstring
             - Calves
 
-            The workout plan should be structured strictly in **HTML format** and formatted as follows:
-            - Each day’s workout should be contained within an HTML `<h2>` tag for the day (e.g., Monday).
-            - Each day should have a table with the class 'workout-table' containing the following columns: Exercise, Sets, Reps, Rest.
             - For each exercise, provide the following:
                 - **Exercise Name** (e.g., Barbell Squat)
                 - **Sets** (e.g., 4)
@@ -137,13 +132,9 @@
             - Ensure to do not exceed the time limit.
                 
             **DO NOT** include any comments, instructions, or suggestions beyond the workout plan.
-
-            If a day is not a workout day, assign it as 'Active Rest' or 'Regular Rest' based on the following:
-            - If the person prefers to stay lightly active, assign it as 'Active Rest'.
-            - If the person prefers complete relaxation, assign it as 'Regular Rest'.
-        
+            
             Example Structure (DO NOT copy, generate NEW data based on user inputs):
-            <h2>Monday</h2>
+            <h2>Name of the day</h2>
             <table class='workout-table'>
                 <thead>
                     <tr>
@@ -173,7 +164,7 @@
                         <td>8-12</td>
                         <td>60s</td>
                     </tr>
-                    <!-- More exercises for Monday here -->
+                    <!-- More exercises for the day here -->
                 </tbody>
             </table>
         
@@ -193,6 +184,10 @@
         
         $context = stream_context_create($options);
         $response = file_get_contents($api_url, false, $context);
+        if ($response === false) {
+            $error = error_get_last();
+            die("Nem sikerült edzéstervet generálni. Hiba: " . $error['message']);
+        }
         
         if ($response === false) {
             die("Nem sikerült edzéstervet generálni.");
@@ -210,7 +205,8 @@
         $workout_plan = $data[0]['generated_text'];
 
         // Clean the workout plan by removing the prompt part
-        $clean_workout_plan = preg_replace("#.*(<h2>Monday</h2>)#s", "$1", $workout_plan);
+        // $clean_workout_plan = preg_replace("#.*(<h2>Monday</h2>)#s", "$1", $workout_plan);
+        $clean_workout_plan = $workout_plan;
 
         $dictionary = [
             'Completed' => 'Kész',

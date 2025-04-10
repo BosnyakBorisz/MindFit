@@ -68,7 +68,7 @@
   <main>
     
     <h1 class="ms-5 mb-5">Üdvözlünk <?php echo "" . htmlspecialchars($_SESSION["username"]) ?>!</h1>
-    <p class="text-center" id="napiMoti">""</p>
+    <p class="text-center fst-italic" id="napiMoti">""</p>
 
     <section id="calorie">
 
