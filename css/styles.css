@@ -1330,11 +1330,13 @@ body {
 }
 
 /*bodymap*/
-#bodymap {
+/*#bodymap {
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
+
+    
 }
 #bodymap .container {
     display: flex;
@@ -1350,6 +1352,7 @@ body {
     top: 0;
     left: 0;
     position: absolute;
+    
 }
 #bodymap canvas {
     position: absolute;
@@ -1363,20 +1366,93 @@ body {
 }
 map area {
     cursor: pointer;
-}
+}*/
 
-#blog_box1{
-    padding: 10px;
-    background-color: var(--f);
-    border-radius: 10px;
+#bodymap {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+ #bodymap .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+  }
+.view {
+    position: relative;
+    flex: 1 1 500px; /* alapértelmezett szélesség, de csökkenhet kisebb képernyőn */
+    aspect-ratio: 600 / 1280;
+    min-width: 300px;
+    max-width: 600px;
+  }
+  
+  .view img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .view canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    pointer-events: none;
+  }
+  
+map area {
+    cursor: pointer;
 }
-
 /* From Uiverse.io by themrsami */  /*Thank you <3*/
-.hatter {
+#hatter {
     width: 100%;
     height: 100vh;
     background: rgba(29, 31, 32, 0.904)
     radial-gradient(var(--base-color) 10%, transparent 1%);
     background-size: 11px 11px;
 }
-  
+
+#blog_container{
+    padding: 0 15rem;
+}
+ 
+#blog_box1{
+    padding: 10px;
+    background-color: var(--f);
+    border-radius: 10px;
+    height: 15rem;
+}
+
+#blog_section2{
+    margin: 2rem 0 0 0;
+}
+
+#blog_box2{
+    margin: 2rem 0 0 0;
+    padding: 10px;
+    background-color: var(--f);
+    border-radius: 10px;
+}
+
+#blog_img{
+    margin: 2rem 0 0 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+#blog_box3{
+    margin: 2rem 0 0 0;
+    padding: 10px;
+    background-color: var(--f);
+    border-radius: 10px;
+}
