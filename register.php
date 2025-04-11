@@ -516,7 +516,7 @@
                                 <label class="workout-card" id="wanted-workout-frequency7-label">7x hetente
                                     <input class="hidden" type="radio" name="wanted-workout-frequency" id="wanted-workout-frequency7" value="7">
                                 </label> 
-                            </div>   
+                            </div>  
                             <p class="error" id="wantedWorkoutError"></p>
                             <button type="button" class="backgomb">Vissza</button>
                             <button type="button" onclick="nextStep8()" class="nextgomb">Következő</button>
@@ -592,9 +592,8 @@
                     </div>
                 
                     <div class="step">
-                        <div id="keret">
-                            <h2>Fókuszált izomcsoport</h2>
-                            <div class="d-flex flex-column">
+                            <h2 class="text-center">Fókuszált izomcsoport</h2>
+                            <!--<div class="d-flex flex-column">
                                 <div class="row">
                                     <div class="col-6"> 
                                         <label id="focusmuscle1-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
@@ -634,7 +633,11 @@
                                         </label>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
+                            <?php
+                                include("bodymap_male2.html")
+                            ?>
+                        <div id="keret">
                             <p class="error" id="fokuszError"></p>
                             <button type="button" class="backgomb">Vissza</button>
                             <button type="button" onclick="nextStep12()" class="nextgomb">Következő</button>
@@ -685,6 +688,7 @@
             </div>
         </form>
     </div>
+    <script src="js/bodymap.js"></script>
     <script src="js/nextStep.js"></script>
     <script src="js/showPass.js"></script>
 </body>
