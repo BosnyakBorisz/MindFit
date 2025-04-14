@@ -97,7 +97,7 @@
 
         // Edzésterv létrehozása az AI API segítségével
         $api_url = "https://api-inference.huggingface.co/models/deepseek-ai/DeepSeek-R1";
-        $api_key = "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"; // Hugging Face API token
+        $api_key = ""; // Hugging Face API token
                 
         $data = json_encode([
             "inputs" => "Generate a structured {$wantedWorkoutFrequency}-day hypertrophy workout plan for a {$age}-year-old man who weighs {$weight} kg, is {$height} cm tall, and aims to {$goal}. His current body fat percentage is {$currentBodyfat}, with a target of {$goalBodyfat}. 
