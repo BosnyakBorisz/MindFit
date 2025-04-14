@@ -621,8 +621,8 @@
             </div>
         </form>
     </div>
-    <script src="js/bodymap.js"></script>
     <script src="js/nextStep.js"></script>
     <script src="js/showPass.js"></script>
+    <!--<script src="js/bodymap_male.js"></script>-->
 </body>
 </html>
