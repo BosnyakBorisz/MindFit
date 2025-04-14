@@ -56,7 +56,7 @@
     </section>
 
     <section id="reviews">
-        <div class="container-fluid w-75">
+        <div class="container-fluid pb-5">
             <h1 class="mt-5 pt-5 text-center">Elégedett felhasználók</h1>
             <?php 
             
