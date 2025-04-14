@@ -7,6 +7,18 @@
         exit();
     }
 
+    include("database.php");
+
+    $email = $_SESSION["email"];
+
+    $stmt = $conn->prepare("SELECT id FROM users WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows === 0) {
+        session_destroy();
+    } 
 ?>
 
 <!DOCTYPE html>

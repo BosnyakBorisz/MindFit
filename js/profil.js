@@ -288,5 +288,12 @@ const motivaciosSzovegek = [
     "A legnehezebb napok építenek a legerősebb emberekké. Tarts ki! 🔥",
 ]
 
-const maiNap = new Date().getDay();
-document.getElementById("napiMoti").innerText = `"${motivaciosSzovegek[maiNap]}"`;
+const today = new Date().toISOString().slice(0, 10);
+
+let hash = 0;
+for (let i = 0; i < today.length; i++) {
+  hash += today.charCodeAt(i);
+}
+
+const index = hash % motivaciosSzovegek.length;
+document.getElementById("napiMoti").innerText = `"${motivaciosSzovegek[index]}"`;

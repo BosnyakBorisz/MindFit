@@ -7,10 +7,18 @@
         exit();
     }
 
-    include("database.php");
-
     $email = $_SESSION['email'];
 
+    include("database.php");
+
+    $stmt = $conn->prepare("SELECT id FROM users WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows === 0) {
+        session_destroy();
+    } 
 
     $sql = "SELECT *
             FROM users 
@@ -283,7 +291,7 @@
             </div>
           
     </div>
-
+    
     <?php
         include("footer.html")
     ?>

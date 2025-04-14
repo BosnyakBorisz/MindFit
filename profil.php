@@ -11,7 +11,6 @@
 
     include("database.php");
 
-
     $stmt = $conn->prepare("
     SELECT *
     FROM user_information 
