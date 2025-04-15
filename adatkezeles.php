@@ -10,10 +10,10 @@
     <style>
         body {
             line-height: 1.6;
-            background: var(--c);
+            background-color:#000000;
         }
         h1, h2 {
-            color: #2e7d32;
+            color: #dbd5d5;
             text-align: center;
         }
         ul {
@@ -23,10 +23,10 @@
             font-size: 1rem;
         }
         .adatkez {
-            color: #333;
+            color: #dbd5d5;
             max-width: 800px;
             margin: 10px;
-            background: white;
+            background-color:#181818;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);

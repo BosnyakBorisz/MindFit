@@ -36,7 +36,7 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
+            color: #dbd5d5;
         }
         .container {
             max-width: 1200px;
@@ -51,7 +51,7 @@
             gap: 30px;
         }
         .cardstres {
-            background: var(--a);
+            background-color: #2e2d2d;
             padding: 25px;
             border-radius: 20px;
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
@@ -88,7 +88,7 @@
             
             position: absolute;
             left: 0;
-            color: #4CAF50;
+            color:#2E7D32 ;
             font-size: 18px;
         }
         .cardstres .card-footer {
@@ -96,7 +96,7 @@
             font-size: 12px;
             font-weight: 600;
             width: 100%;
-            color: var(--h);
+            color: #2E7D32;
             text-align: center;
         }
         .social-icons {
@@ -113,6 +113,11 @@
         .social-icons a:hover {
             transform: scale(1.2);
         }
+        .text{
+            color:#dbd5d5;
+            text-align:center;
+        }
+        
     </style>
 </head>
 <body>
@@ -123,7 +128,7 @@
         ?>
     </header>
 
-        <h2 class="text-center text-white">Stresszkezelés</h2>
+        <h2 class="text">Stresszkezelés</h2>
 
     <div class="container">
         <div class="cardstres">
