@@ -257,7 +257,6 @@ let selectedGroups = []; // Több kijelölés támogatása
 const ORIGINAL_HEIGHT = 1280;*/
 
 
-
 function drawOverlayForCanvas(canvas, ctx) {
 ctx.clearRect(0, 0, canvas.width, canvas.height);
 
