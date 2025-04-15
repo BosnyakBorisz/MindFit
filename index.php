@@ -13,7 +13,7 @@
     
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
     
-            $conn = new mysqli("localhost", "root", "", "mindfit");
+            include("database.php");
     
             $stmt = $conn->prepare("SELECT id FROM subscribers WHERE email = ?");
             $stmt->bind_param("s", $email);
@@ -42,7 +42,7 @@
                         $mail->CharSet = 'UTF-8'; 
     
                         $mail->setFrom('turrmindfit@gmail.com', 'Feliratkozás sikeres');
-                        $mail->addAddress("csupormartin@turr.hu");
+                        $mail->addAddress($email);
     
                         $mail->isHTML(true);
                         $mail->Subject = 'Köszönjük, hogy feliratkoztál!';
