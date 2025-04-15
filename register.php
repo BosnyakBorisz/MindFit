@@ -582,7 +582,7 @@
                             <h2>Érzékeny testrész</h2>
                             <div class="d-flex flex-column">
                                 <div class="row">
-                                    <div class="col-6">
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                                         <label id="serult1-label" class="serulttest m-1 d-flex justify-content-center align-items-center">
                                             <input id="serult1" class="hidden" type="checkbox" name="injured[]" value="shoulder">
                                             <img class="st_kep" src="img/vall-fajdalom.jpg" alt="Váll">
@@ -596,7 +596,7 @@
                                             <input id="serult3" class="hidden" type="checkbox" name="injured[]" value="wrist">
                                         </label>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                                         <label id="serult4-label" class="serulttest m-1 d-flex justify-content-center align-items-center">
                                             <img class="st_kep" src="img/alsohati-fajdalom.jpg" alt="Alsóhát">
                                             <input id="serult4" class="hidden" type="checkbox" name="injured[]" value="lower back">
