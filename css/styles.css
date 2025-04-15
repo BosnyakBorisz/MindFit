@@ -1,13 +1,13 @@
 :root {
-    --a: #d8f3dc;
-    --b: #b7e4c7;
-    --c: #95d5b2;
-    --d: #74c69d;
-    --s: #52b788;
-    --f: #40916c;
-    --base-color: #2d6a4f;  
+    --a: #181818;
+    --b: #181818;
+    --c: #181818;
+    --d:#181818;
+    --s: #2e302f;
+    --f: #181818;
+    --base-color: #0f0f0f;  
     --h: #1b4332;
-    --text-color: #FFFFFF;
+    --text-color: #ffffff;
     --i: #081c15;
 }
 .link{
@@ -978,7 +978,44 @@ map area {
     border-radius: 10px;
 }
 
-
+.calorie-bg, .steps, .water, .w-plan-bg {
+    background-color: var(--f);
+}
+.progress-container {
+    margin: 0 auto; /* opcionális */
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.progress-circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: conic-gradient(var(--b) 0deg, #ddd 0deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.progress-calorie {
+    width: 85%;
+    height: 85%;
+    border-radius: 50%;
+    background-color: var(--h);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.progress-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+#waterbar {
+    height: 150px;
+    width: 30px;
+}
+  
 /*media - xs(0-576) sm(576-768) md(768-992) lg(992-1200) xl(1200-1500)*/
 @media only screen and (max-width: 2000px) {
     .index_box{
