@@ -978,7 +978,43 @@ map area {
     border-radius: 10px;
 }
 
-
+.calorie-bg, .steps, .water, .w-plan-bg {
+    background-color: var(--f);
+  }
+  .progress-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+  }
+  .progress-circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: conic-gradient(var(--b) 0deg, #ddd 0deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .progress-calorie {
+    width: 85%;
+    height: 85%;
+    border-radius: 50%;
+    background-color: var(--h);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .progress-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+  }
+  #waterbar {
+    height: 150px;
+    width: 30px;
+  }
+  
 /*media - xs(0-576) sm(576-768) md(768-992) lg(992-1200) xl(1200-1500)*/
 @media only screen and (max-width: 2000px) {
     .index_box{
