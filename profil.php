@@ -92,7 +92,7 @@
             
             <section id="steps-and-water">
                 <div class="row justify-content-center g-4 mb-4">   
-                    <div class="col-lg-5 col-md-5 col-sm-10 col-12 steps p-3 rounded-2 ">
+                    <div class="col-lg-5 col-md-5 col-sm-10 col-10 steps p-3 rounded-2 mx-1">
                         <h2>Lépés</h2>
                         <div class="d-flex align-items-center">
                             <svg height="30px" width="50px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000">
@@ -114,7 +114,7 @@
                         <button class="btn" onclick="lepesHozzaAd()" style="background-color: var(--h); color: white; width: 10rem; height: 3rem; font-size:1.2rem;">Hozzáadás</button>
                     </div>
 
-                    <div class="col-lg-5 col-md-5 col-sm-10 col-12 water p-3 rounded-2">
+                    <div class="col-lg-5 col-md-5 col-sm-10 col-10 water p-3 rounded-2 mx-1">
                         <h2>Víz</h2>
                         <h4 id="waterGoal">Cél: </h4>
                         <div class="d-flex align-items-center mb-2">
@@ -122,9 +122,11 @@
                           <label>ml</label>
                         </div>      
                         <button class="btn mb-3" onclick="vizHozzaAd()" style="background-color: var(--h); color: white; width: 10rem;">Hozzáadás</button>
-                        <div class="progress" id="waterbar" style="height: 150px; width: 30px;">
+                        <div>
+                            <div id="waterbar" class="progress d-flex flex-column-reverse me-5" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                 <div id="waterbarbar" class="progress-bar"></div>
-                        </div> 
+                            </div>
+                        </div>
                     </div>
 
                     <!--

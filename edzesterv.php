@@ -49,7 +49,7 @@
         $stmt->close();
 
         // Edzésterv létrehozása az AI API segítségével
-        $api_url = "https://api-inference.huggingface.co/models/mistralai/Mistral-Small-24B-Instruct-2501";
+        $api_url = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.1";
         $api_key = ""; // Hugging Face API token
                 
         $data = json_encode([
