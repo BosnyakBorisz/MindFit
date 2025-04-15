@@ -980,14 +980,15 @@ map area {
 
 .calorie-bg, .steps, .water, .w-plan-bg {
     background-color: var(--f);
-  }
-  .progress-container {
+}
+.progress-container {
+    margin: 0 auto; /* opcionális */
+    padding: 1rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2rem 0;
-  }
-  .progress-circle {
+}
+.progress-circle {
     width: 300px;
     height: 300px;
     border-radius: 50%;
@@ -995,8 +996,8 @@ map area {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .progress-calorie {
+}
+.progress-calorie {
     width: 85%;
     height: 85%;
     border-radius: 50%;
@@ -1004,16 +1005,16 @@ map area {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .progress-text {
+}
+.progress-text {
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--text-color);
-  }
-  #waterbar {
+}
+#waterbar {
     height: 150px;
     width: 30px;
-  }
+}
   
 /*media - xs(0-576) sm(576-768) md(768-992) lg(992-1200) xl(1200-1500)*/
 @media only screen and (max-width: 2000px) {

@@ -70,16 +70,16 @@
             <p class="text-center fst-italic" id="napiMoti">""</p>
         </div>
 
-        <div class="container my4">
+        <div class="container my-4">
             <section class="calories">
                 <div class="row justify-content-center mb-4">
                     <div class="col-lg-10 col-md-10 col-10 calorie-bg p-4 rounded-2">
                     <h2>Kalória</h2>
                     <div class="progress-container">
                         <div class="progress-circle d-flex align-items-center justify-content-center">
-                        <div class="progress-calorie d-flex align-items-center justify-content-center">
-                            <span id="calorie-text" class="progress-text position-absolute"></span>
-                        </div>
+                            <div class="progress-calorie d-flex align-items-center justify-content-center">
+                                <span id="calorie-text" class="progress-text position-absolute"></span>
+                            </div>
                         </div>
                     </div>
                     <div class="text-center">
@@ -91,8 +91,8 @@
             </section>
             
             <section id="steps-and-water">
-                <div class="row justify-content-center g-4 mb-4">
-                    <div class="col-lg-5 col-md-5 col-10 mx-1 steps p-3 rounded-2">
+                <div class="row justify-content-center g-4 mb-4">   
+                    <div class="col-lg-5 col-md-5 col-sm-10 col-12 steps p-3 rounded-2 ">
                         <h2>Lépés</h2>
                         <div class="d-flex align-items-center">
                             <svg height="30px" width="50px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000">
@@ -114,7 +114,7 @@
                         <button class="btn" onclick="lepesHozzaAd()" style="background-color: var(--h); color: white; width: 10rem; height: 3rem; font-size:1.2rem;">Hozzáadás</button>
                     </div>
 
-                    <div class="col-lg-5 col-md-5 col-10 mx-1 water p-3 rounded-2">
+                    <div class="col-lg-5 col-md-5 col-sm-10 col-12 water p-3 rounded-2">
                         <h2>Víz</h2>
                         <h4 id="waterGoal">Cél: </h4>
                         <div class="d-flex align-items-center mb-2">
