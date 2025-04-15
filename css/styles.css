@@ -350,467 +350,7 @@ html {
 /*ikonok*/
 /*footer*/
   
-/*media - xs(0-576) sm(576-768) md(768-992) lg(992-1200) xl(1200-1500)*/
-@media only screen and (max-width: 2000px) {
-    .index_box{
-        max-width: 55rem;
-    }
-    .index_box h1{
-        font-size: 2.3rem;
-    }
-    .index_box p{
-        font-size: 1.3rem;
-    }
-    .index_box button {
-        width: 18rem;
-        height: 4em;
-    }
-    .index_alcim{
-        padding: 2rem 0;
-        text-align: center;
-    }
-    .index_sokcim{
-        font-size: 1.9rem;
-    }  
-    .index_szoveg{
-        font-size: 1rem;
-    }
-      #footer-icons{
-          padding: 0 0 0 7rem;
-      }
-}
-@media only screen and (max-width: 1500px) {
-    .index_box{
-        max-width: 50rem;
-    }
-    .index_box h1{
-        font-size: 2.3rem;
-    }
-    .index_box p{
-        font-size: 1.1rem;
-    }
-    .index_box p:nth-child(2){
-        width: 37rem;
-    }
-    .index_box button {
-        width: 18rem;
-        height: 4em;
-    }
-    .index_alcim{
-        padding: 2rem 0;
-    }
-    .index_sokcim{
-        font-size: 1.9rem;
-    }  
-    .index_szoveg{
-        font-size: 1rem;
-    }
-      #footer-icons{
-          padding: 0 0 0 7rem;
-      }
-}
-@media only screen and (max-width: 1300px) {
 
-    .index_box h1{
-        font-size: 2.2rem;
-    }
-    .index_box p{
-        font-size: 1.1rem;
-    }
-    .index_box p:nth-child(2){
-        width: 37rem;
-    }
-    .index_box button {
-        width: 16rem;
-        height: 4em;
-    }
-}
-@media only screen and (max-width: 1200px) {
-    .index_box h1{
-        font-size: 2.2rem;
-    }
-    .index_box p{
-        font-size: 1.1rem;
-    }
-    .index_box p:nth-child(2){
-        width: 34rem;
-    }
-    .index_box button {
-        width: 16rem;
-        height: 4em;
-    }
-    .index_alcim{
-        padding: 2rem 0;
-    }
-    .index_sokcim{
-        font-size: 1.9rem;
-    }  
-    .index_szoveg{
-        font-size: 1rem;
-    }
-      #footer-icons{
-          padding: 0 0 0 6rem;
-      }
-}
-@media only screen and (max-width: 1100px) {
-    .index_box{
-        max-width: 46rem;
-    }
-    .index_box h1{
-        font-size: 2rem;
-    }
-    .index_box p{
-        font-size: 1rem;
-    }
-    .index_box p:nth-child(2){
-        width: 34rem;
-    }
-    .index_box button {
-        width: 16rem;
-        height: 4em;
-    }
-}
-@media only screen and (max-width: 992px) {
-    .index_box{
-        max-width: 44rem;
-    }
-    .index_box h1{
-        font-size: 1.9rem;
-    }
-    .index_box p{
-        font-size: 1rem;
-    }
-    .index_box p:nth-child(2){
-        width: 29rem;
-    }
-    .index_box button {
-        width: 16rem;
-        height: 3.5em;
-    }
-    .index_sokcim{
-        font-size: 1.5rem;
-    }  
-    .index_szoveg{
-        font-size: 0.9rem;
-    }
-      #footer-content{
-          padding: 0 6rem;
-      }
-      #footer-oszlop3{
-          padding: 0 0 0 1rem;
-      }
-      #footer-icons{
-          padding: 0 0 0 5rem;
-      }
-}
-@media only screen and (max-width: 850px) {
-    .index_box{
-        max-width: 42rem;
-    }
-    .index_box h1{
-        font-size: 1.8rem;
-    }
-    .index_box p{
-        font-size: 0.9rem;
-    }
-    .index_box p:nth-child(2){
-        width: 29rem;
-    }
-    .index_box button {
-        width: 15rem;
-        height: 3.5em;
-    }
-    .index_focim{
-        font-size: 1.9rem;
-    }
-    .index_foszoveg{
-        font-size: 1rem;
-    }
-    .index_alcim{
-        padding: 2rem 0;
-        font-size: 1.9rem;
-    }
-    .index_sokcim{
-        font-size: 1.4rem;
-    } 
-    .index_szoveg{
-        font-size: 0.8rem;
-    } 
-      #footer-content{
-          padding: 0 3rem;
-      }
-      #footer-icons{
-          padding: 0 0 0 2.5rem;
-      }
-}
-@media only screen and (max-width: 800px) {
-    .index_box{
-        max-width: 39rem;
-    }
-    .index_box h1{
-        font-size: 1.6rem;
-    }
-    .index_box p{
-        font-size: 0.9rem;
-    }
-    .index_box p:nth-child(2){
-        width: 27rem;
-    }
-    .index_box button {
-        width: 15rem;
-        height: 3.5em;
-    }
-    .index_focim{
-        font-size: 1.8rem;
-    }
-    .index_foszoveg{
-        font-size: 1rem;
-    }
-    #footer-content{
-        padding: 0 2rem;
-    }
-
-}
-@media only screen and (max-width: 768px) {
-    .index_box{
-        max-width: 35rem;
-    }
-    .index_box h1{
-        font-size: 1.5rem;
-    }
-    .index_box p{
-        font-size: 0.9rem;
-    }
-    .index_box p:nth-child(2){
-        width: 26rem;
-    }
-    .index_box button {
-        width: 13rem;
-        height: 3.3em;
-    }
-    .index_focim{
-        font-size: 1.6rem;
-    }
-    .index_foszoveg{
-        font-size: 1rem;
-    }
-    .index_alcim{
-        padding: 1rem 0rem;
-        font-size: 1.9rem;
-    }
-      #footer-oszlop1{
-          padding: 0.5rem 0;
-      }
-      #footer-oszlop2{
-          padding: 0.5rem 0;
-      }
-      #footer-oszlop3{
-          padding: 0.5rem 0 0.5rem 0rem;
-      }
-      #footer-icons{
-          padding: 0 0 0 0.5rem;
-      }
-
-      #faq {
-          width: 35rem;
-          margin: 0;
-      }
-
-      #faq h5{
-        font-size:1.1rem;
-      }
-
-      #bodymap .container{
-        grid-template-columns: 1fr;
-      }
-}
-@media only screen and (max-width: 700px) {
-    .index_box h1{
-        font-size: 1.5rem;
-    }
-    .index_box p{
-        font-size: 0.9rem;
-    }
-    .index_box p:nth-child(2){
-        width: 26rem;
-    }
-    .index_box button {
-        width: 13rem;
-        height: 3.3em;
-    }
-    .index_alcim{
-        font-size: 1.7rem;
-    }
-}  
-@media only screen and (max-width: 650px) {
-    .index_alcim{
-        font-size: 1.6rem;
-    }
-    .index_sokcim{
-        font-size: 1.3rem;
-    } 
-    .index_szoveg{
-        font-size: 0.8rem;
-    } 
-}  
-@media only screen and (max-width: 600px) {
-    .index_box{
-        max-width: 30rem;
-    }
-    .index_box h1{
-        font-size: 1.3rem;
-    }
-    .index_box p{
-        font-size: 0.9rem;
-    }
-    .index_box p:nth-child(2){
-        width: 22rem;
-    }
-    .index_box p:nth-child(1){
-        font-size: 0.8rem;
-    }
-    .index_box button {
-        width: 11rem;
-        height: 3.3em;
-    }
-    .index_focim{
-        font-size: 1.5rem;
-    }
-    .index_foszoveg{
-        font-size: 0.9rem;
-    }
-    .index_alcim{
-        font-size: 1.5rem;
-    }
-}     
-@media only screen and (max-width: 550px) {
-    .index_box h1{
-        font-size: 1.3rem;
-    }
-    .index_box p{
-        font-size: 0.9rem;
-    }
-    .index_box p:nth-child(2){
-        width: 22rem;
-    }
-    .index_box button {
-        width: 11rem;
-        height: 3.3em;
-    }
-    #faq {
-        width: 30rem;
-        margin: 0;
-    }
-    #faq h5{
-      font-size:1.1rem;
-    }
-}
-@media only screen and (max-width: 480px) {
-    .index_box{
-        left:5%;
-    }
-    .index_box h1{
-        font-size: 1.25rem;
-    }
-    .index_box p{
-        font-size: 0.8rem;
-    }
-    .index_box p:nth-child(2){
-        width: 22rem;
-    }
-    .index_box button {
-        width: 11rem;
-        height: 3.3em;
-    }
-    .index_alcim{
-        font-size: 1.5rem;
-    }
-    .index_sokcim{
-        font-size: 1.3rem;
-    } 
-    .index_szoveg{
-        font-size: 0.8rem;
-    } 
-    #faq {
-        width: 27rem;
-        margin: 0;
-    }
-    #faq h1{
-        font-size:1.5rem;
-    }
-    #faq h5{
-      font-size:1rem;
-    }
-}
-@media only screen and (max-width: 450px) {
-    .index_box h1{
-        font-size: 1.2rem;
-    }
-    .index_box p{
-        font-size: 0.8rem;
-    }
-    .index_box p:nth-child(2){
-        width: 22rem;
-    }
-    .index_box button {
-        width: 11rem;
-        height: 3.3em;
-    }
-}
-@media only screen and (max-width: 430px) {
-    .index_box h1{
-        font-size: 1.2rem;
-    }
-    .index_box p{
-        font-size: 0.8rem;
-    }
-    .index_box p:nth-child(2){
-        width: 22rem;
-    }
-    .index_box button {
-        width: 11rem;
-        height: 3.3em;
-    }
-    #faq {
-        width: 24rem;
-        margin: 0;
-    }
-    #faq h1{
-        font-size:1.5rem;
-    }
-    #faq h5{
-      font-size:0.9rem;
-    }
-}
-@media only screen and (max-width: 392px) {
-    .index_box h1{
-        font-size: 1.15rem;
-    }
-    .index_box p{
-        font-size: 0.75rem;
-    }
-    .index_box p:nth-child(2){
-        width: 19rem;
-    }
-    .index_box button {
-        width: 10rem;
-        height: 3rem;
-    }
-}
-@media only screen and (max-width: 382px) {
-    #faq {
-        width: 22rem;
-        margin: 0;
-    }
-    #faq h1{
-        font-size:1.3rem;
-    }
-    #faq h5{
-      font-size:0.8rem;
-    }
-}
-@media only screen and (max-width: 350px) {
-}
 #box1{
     display: flex;
     justify-content: center;
@@ -1436,4 +976,555 @@ map area {
     padding: 10px;
     background-color: var(--f);
     border-radius: 10px;
+}
+
+
+/*media - xs(0-576) sm(576-768) md(768-992) lg(992-1200) xl(1200-1500)*/
+@media only screen and (max-width: 2000px) {
+    .index_box{
+        max-width: 55rem;
+    }
+    .index_box h1{
+        font-size: 2.3rem;
+    }
+    .index_box p{
+        font-size: 1.3rem;
+    }
+    .index_box button {
+        width: 18rem;
+        height: 4em;
+    }
+    .index_alcim{
+        padding: 2rem 0;
+        text-align: center;
+    }
+    .index_sokcim{
+        font-size: 1.9rem;
+    }  
+    .index_szoveg{
+        font-size: 1rem;
+    }
+      #footer-icons{
+          padding: 0 0 0 7rem;
+      }
+}
+@media only screen and (max-width: 1500px) {
+    .index_box{
+        max-width: 50rem;
+    }
+    .index_box h1{
+        font-size: 2.3rem;
+    }
+    .index_box p{
+        font-size: 1.1rem;
+    }
+    .index_box p:nth-child(2){
+        width: 37rem;
+    }
+    .index_box button {
+        width: 18rem;
+        height: 4em;
+    }
+    .index_alcim{
+        padding: 2rem 0;
+    }
+    .index_sokcim{
+        font-size: 1.9rem;
+    }  
+    .index_szoveg{
+        font-size: 1rem;
+    }
+      #footer-icons{
+          padding: 0 0 0 7rem;
+      }
+}
+@media only screen and (max-width: 1300px) {
+
+    .index_box h1{
+        font-size: 2.2rem;
+    }
+    .index_box p{
+        font-size: 1.1rem;
+    }
+    .index_box p:nth-child(2){
+        width: 37rem;
+    }
+    .index_box button {
+        width: 16rem;
+        height: 4em;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .index_box h1{
+        font-size: 2.2rem;
+    }
+    .index_box p{
+        font-size: 1.1rem;
+    }
+    .index_box p:nth-child(2){
+        width: 34rem;
+    }
+    .index_box button {
+        width: 16rem;
+        height: 4em;
+    }
+    .index_alcim{
+        padding: 2rem 0;
+    }
+    .index_sokcim{
+        font-size: 1.9rem;
+    }  
+    .index_szoveg{
+        font-size: 1rem;
+    }
+      #footer-icons{
+          padding: 0 0 0 6rem;
+      }
+}
+@media only screen and (max-width: 1100px) {
+    .index_box{
+        max-width: 46rem;
+    }
+    .index_box h1{
+        font-size: 2rem;
+    }
+    .index_box p{
+        font-size: 1rem;
+    }
+    .index_box p:nth-child(2){
+        width: 34rem;
+    }
+    .index_box button {
+        width: 16rem;
+        height: 4em;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .index_box{
+        max-width: 44rem;
+    }
+    .index_box h1{
+        font-size: 1.9rem;
+    }
+    .index_box p{
+        font-size: 1rem;
+    }
+    .index_box p:nth-child(2){
+        width: 29rem;
+    }
+    .index_box button {
+        width: 16rem;
+        height: 3.5em;
+    }
+    .index_sokcim{
+        font-size: 1.5rem;
+    }  
+    .index_szoveg{
+        font-size: 0.9rem;
+    }
+      #footer-content{
+          padding: 0 6rem;
+      }
+      #footer-oszlop3{
+          padding: 0 0 0 1rem;
+      }
+      #footer-icons{
+          padding: 0 0 0 5rem;
+      }
+}
+@media only screen and (max-width: 850px) {
+    .index_box{
+        max-width: 42rem;
+    }
+    .index_box h1{
+        font-size: 1.8rem;
+    }
+    .index_box p{
+        font-size: 0.9rem;
+    }
+    .index_box p:nth-child(2){
+        width: 29rem;
+    }
+    .index_box button {
+        width: 15rem;
+        height: 3.5em;
+    }
+    .index_focim{
+        font-size: 1.9rem;
+    }
+    .index_foszoveg{
+        font-size: 1rem;
+    }
+    .index_alcim{
+        padding: 2rem 0;
+        font-size: 1.9rem;
+    }
+    .index_sokcim{
+        font-size: 1.4rem;
+    } 
+    .index_szoveg{
+        font-size: 0.8rem;
+    } 
+      #footer-content{
+          padding: 0 3rem;
+      }
+      #footer-icons{
+          padding: 0 0 0 2.5rem;
+      }
+}
+@media only screen and (max-width: 800px) {
+    .index_box{
+        max-width: 39rem;
+    }
+    .index_box h1{
+        font-size: 1.6rem;
+    }
+    .index_box p{
+        font-size: 0.9rem;
+    }
+    .index_box p:nth-child(2){
+        width: 27rem;
+    }
+    .index_box button {
+        width: 15rem;
+        height: 3.5em;
+    }
+    .index_focim{
+        font-size: 1.8rem;
+    }
+    .index_foszoveg{
+        font-size: 1rem;
+    }
+    #footer-content{
+        padding: 0 2rem;
+    }
+
+}
+@media only screen and (max-width: 768px) {
+    .index_box{
+        max-width: 35rem;
+    }
+    .index_box h1{
+        font-size: 1.5rem;
+    }
+    .index_box p{
+        font-size: 0.9rem;
+    }
+    .index_box p:nth-child(2){
+        width: 26rem;
+    }
+    .index_box button {
+        width: 13rem;
+        height: 3.3em;
+    }
+    .index_focim{
+        font-size: 1.6rem;
+    }
+    .index_foszoveg{
+        font-size: 1rem;
+    }
+    .index_alcim{
+        padding: 1rem 0rem;
+        font-size: 1.9rem;
+    }
+      #footer-oszlop1{
+          padding: 0.5rem 0;
+      }
+      #footer-oszlop2{
+          padding: 0.5rem 0;
+      }
+      #footer-oszlop3{
+          padding: 0.5rem 0 0.5rem 0rem;
+      }
+      #footer-icons{
+          padding: 0 0 0 0.5rem;
+      }
+
+      #faq {
+          width: 35rem;
+          margin: 0;
+      }
+
+      #faq h5{
+        font-size:1.1rem;
+      }
+
+      #bodymap .container{
+        grid-template-columns: 1fr;
+      }
+}
+@media only screen and (max-width: 700px) {
+    .index_box h1{
+        font-size: 1.5rem;
+    }
+    .index_box p{
+        font-size: 0.9rem;
+    }
+    .index_box p:nth-child(2){
+        width: 26rem;
+    }
+    .index_box button {
+        width: 13rem;
+        height: 3.3em;
+    }
+    .index_alcim{
+        font-size: 1.7rem;
+    }
+}  
+@media only screen and (max-width: 650px) {
+    .index_alcim{
+        font-size: 1.6rem;
+    }
+    .index_sokcim{
+        font-size: 1.3rem;
+    } 
+    .index_szoveg{
+        font-size: 0.8rem;
+    } 
+}  
+@media only screen and (max-width: 600px) {
+    .index_box{
+        max-width: 30rem;
+    }
+    .index_box h1{
+        font-size: 1.3rem;
+    }
+    .index_box p{
+        font-size: 0.9rem;
+    }
+    .index_box p:nth-child(2){
+        width: 22rem;
+    }
+    .index_box p:nth-child(1){
+        font-size: 0.8rem;
+    }
+    .index_box button {
+        width: 11rem;
+        height: 3.3em;
+    }
+    .index_focim{
+        font-size: 1.5rem;
+    }
+    .index_foszoveg{
+        font-size: 0.9rem;
+    }
+    .index_alcim{
+        font-size: 1.5rem;
+    }
+}     
+@media only screen and (max-width: 550px) {
+    .index_box h1{
+        font-size: 1.3rem;
+    }
+    .index_box p{
+        font-size: 0.9rem;
+    }
+    .index_box p:nth-child(2){
+        width: 22rem;
+    }
+    .index_box button {
+        width: 11rem;
+        height: 3.3em;
+    }
+    #faq {
+        width: 30rem;
+        margin: 0;
+    }
+    #faq h5{
+      font-size:1.1rem;
+    }
+
+    #keret{
+        background-color: transparent;
+        width: 25rem;
+        padding: 20px;
+        border-radius: 5px;
+        margin: auto;
+    }
+
+    .nextgomb{
+        font-size: 1rem;
+        width: 11rem;
+        height: 2.5rem;
+        margin: 1rem 0;
+    }
+
+    .backgomb{
+        font-size: 1rem;
+        width: 11rem;
+        height: 2.5rem;
+        margin: 1rem 0;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .index_box{
+        left:5%;
+    }
+    .index_box h1{
+        font-size: 1.25rem;
+    }
+    .index_box p{
+        font-size: 0.8rem;
+    }
+    .index_box p:nth-child(2){
+        width: 22rem;
+    }
+    .index_box button {
+        width: 11rem;
+        height: 3.3em;
+    }
+    .index_alcim{
+        font-size: 1.5rem;
+    }
+    .index_sokcim{
+        font-size: 1.3rem;
+    } 
+    .index_szoveg{
+        font-size: 0.8rem;
+    } 
+    #faq {
+        width: 27rem;
+        margin: 0;
+    }
+    #faq h1{
+        font-size:1.5rem;
+    }
+    #faq h5{
+      font-size:1rem;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .index_box h1{
+        font-size: 1.2rem;
+    }
+    .index_box p{
+        font-size: 0.8rem;
+    }
+    .index_box p:nth-child(2){
+        width: 22rem;
+    }
+    .index_box button {
+        width: 11rem;
+        height: 3.3em;
+    }
+
+    #keret{
+        background-color: transparent;
+        width: 22rem;
+        padding: 20px;
+        border-radius: 5px;
+        margin: auto;
+    }
+
+    .nextgomb{
+        font-size: 1rem;
+        width: 9.5rem;
+        height: 2.5rem;
+        margin: 1rem 0;
+    }
+
+    .backgomb{
+        font-size: 1rem;
+        width: 9.5rem;
+        height: 2.5rem;
+        margin: 1rem 0;
+    }
+}
+@media only screen and (max-width: 430px) {
+    .index_box h1{
+        font-size: 1.2rem;
+    }
+    .index_box p{
+        font-size: 0.8rem;
+    }
+    .index_box p:nth-child(2){
+        width: 22rem;
+    }
+    .index_box button {
+        width: 11rem;
+        height: 3.3em;
+    }
+    #faq {
+        width: 24rem;
+        margin: 0;
+    }
+    #faq h1{
+        font-size:1.5rem;
+    }
+    #faq h5{
+      font-size:0.9rem;
+    }
+
+    #keret{
+        background-color: transparent;
+        width: 21rem;
+        padding: 20px;
+        border-radius: 5px;
+        margin: auto;
+    }
+
+    .nextgomb{
+        font-size: 1rem;
+        width: 9rem;
+        height: 2.5rem;
+        margin: 1rem 0;
+    }
+
+    .backgomb{
+        font-size: 1rem;
+        width: 9rem;
+        height: 2.5rem;
+        margin: 1rem 0;
+    }
+}
+@media only screen and (max-width: 392px) {
+    .index_box h1{
+        font-size: 1.15rem;
+    }
+    .index_box p{
+        font-size: 0.75rem;
+    }
+    .index_box p:nth-child(2){
+        width: 19rem;
+    }
+    .index_box button {
+        width: 10rem;
+        height: 3rem;
+    }
+
+    #keret{
+        background-color: transparent;
+        width: 20rem;
+        padding: 20px;
+        border-radius: 5px;
+        margin: auto;
+    }
+
+    .nextgomb{
+        font-size: 1rem;
+        width: 8.5rem;
+        height: 2.5rem;
+        margin: 1rem 0;
+    }
+
+    .backgomb{
+        font-size: 1rem;
+        width: 8.5rem;
+        height: 2.5rem;
+        margin: 1rem 0;
+    }
+}
+@media only screen and (max-width: 382px) {
+    #faq {
+        width: 22rem;
+        margin: 0;
+    }
+    #faq h1{
+        font-size:1.3rem;
+    }
+    #faq h5{
+      font-size:0.8rem;
+    }
+}
+@media only screen and (max-width: 350px) {
 }
