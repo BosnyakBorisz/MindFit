@@ -1,6 +1,13 @@
 <?php
     session_start();
 
+    require 'PHPMailer/src/PHPMailer.php';
+    require 'PHPMailer/src/SMTP.php';
+    require 'PHPMailer/src/Exception.php';
+
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
+
     require 'database.php';
 
      if (!isset($_SESSION["email"])) {
@@ -34,8 +41,33 @@
     $delete_stmt = $conn->prepare("DELETE FROM users WHERE email = ?");
     $delete_stmt->bind_param("s", $email);
 
+    
     if ($delete_stmt->execute()) {
         session_destroy();
+        $mail = new PHPMailer(true);
+        try {
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'turrmindfit@gmail.com';
+            $mail->Password = 'knci jdwl iteb ytrh';
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;  
+            $mail->Port = 465;
+            $mail->CharSet = 'UTF-8'; 
+    
+            $mail->setFrom('turrmindfit@gmail.com', 'Fiók törlés sikeres');
+            $mail->addAddress($email);
+    
+            $mail->isHTML(true);
+            $mail->Subject = 'Fiók törölve';
+            $mail->Body    = '
+                <h2>Kedves felhasználó!</h2>
+                <p>A fiókod sikeresen törölve lett az oldalunkról.</p>';
+    
+            $mail->send();
+
+        } catch (Exception $e) {
+        }
         echo json_encode(["success" => true]);
         exit();
     } else {

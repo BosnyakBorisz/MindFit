@@ -20,8 +20,18 @@
 body {
     background-color: var(--base-color);
     color: var(--text-color);
+
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
+html {
+    scroll-behavior: smooth;
+      margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
 #pros-list svg{
     height:  120px;
     width: auto;
@@ -155,7 +165,7 @@ body {
 }
 
 .step { 
-   display: none;
+   display:none;
 }
 
 .step.active { 
@@ -163,14 +173,12 @@ body {
     justify-content: center;
 }
 
-
 .error {
     height: 25px;
     padding: 0;
     margin: 0;
     color: red;
 }
-
 
 .steps, .water {
     background-color: var(--f);
@@ -402,6 +410,7 @@ body {
       }
 }
 @media only screen and (max-width: 1300px) {
+
     .index_box h1{
         font-size: 2.2rem;
     }
@@ -557,9 +566,10 @@ body {
     .index_foszoveg{
         font-size: 1rem;
     }
-      #footer-content{
-          padding: 0 2rem;
-      }
+    #footer-content{
+        padding: 0 2rem;
+    }
+
 }
 @media only screen and (max-width: 768px) {
     .index_box{
@@ -608,6 +618,10 @@ body {
 
       #faq h5{
         font-size:1.1rem;
+      }
+
+      #bodymap .container{
+        grid-template-columns: 1fr;
       }
 }
 @media only screen and (max-width: 700px) {
@@ -1332,31 +1346,44 @@ body {
 /*bodymap*/
 #bodymap {
     margin: 0;
-    padding: 0;
+    padding:  0;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+    overflow-x: hidden;
 }
+
 #bodymap .container {
     display: flex;
+    flex-wrap: nowrap;
     gap: 20px;
+    max-width: 100%;
+    width: 100%;
+    justify-content: center;
 } 
 .view {
     position: relative;
-    width: 600px;
-    height: 1280px;
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 3 / 6.4;
+    flex: 1 1 auto;
 }
 #bodymap img {
     display: block;
     top: 0;
     left: 0;
-    position: absolute;
+    position: absolute;        
+    /*width: 100%;            
+    height: auto;*/     
+    height: 100%;
+    margin: 0rem 0 0 0;
 }
 #bodymap canvas {
     position: absolute;
     top: 0;
     left: 0;
-    width: 600px;
-    height: 1280px;
+    width: 100%;         
+    height: 100%;
     pointer-events: none;
     z-index: 2;
     display: block;
@@ -1365,18 +1392,48 @@ map area {
     cursor: pointer;
 }
 
-#blog_box1{
-    padding: 10px;
-    background-color: var(--f);
-    border-radius: 10px;
-}
-
-/* From Uiverse.io by themrsami */  /*Thank you <3*/
-.hatter {
+/*blog*/
+#hatter {
     width: 100%;
     height: 100vh;
     background: rgba(29, 31, 32, 0.904)
     radial-gradient(var(--base-color) 10%, transparent 1%);
     background-size: 11px 11px;
 }
-  
+
+#blog_container{
+    padding: 0 15rem;
+}
+ 
+#blog_box1{
+    padding: 10px;
+    background-color: var(--f);
+    border-radius: 10px;
+    height: 15rem;
+}
+
+#blog_section2{
+    margin: 2rem 0 0 0;
+}
+
+#blog_box2{
+    margin: 2rem 0 0 0;
+    padding: 10px;
+    background-color: var(--f);
+    border-radius: 10px;
+}
+
+#blog_img{
+    margin: 2rem 0 0 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+#blog_box3{
+    margin: 2rem 0 0 0;
+    padding: 10px;
+    background-color: var(--f);
+    border-radius: 10px;
+}

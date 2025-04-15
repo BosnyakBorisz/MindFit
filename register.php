@@ -1,6 +1,4 @@
 <?php
-    error_reporting(0);
-    ini_set('display_errors', 0);
 
     session_start();
 
@@ -92,17 +90,15 @@
     
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
-            $user_data = json_encode($user, JSON_UNESCAPED_UNICODE);
-        } else {
-            die("Nincs ilyen felhasználó.");
+            $user_data = json_encode($user,  JSON_UNESCAPED_UNICODE);
         }
     
         $stmt->close();
 
         // Edzésterv létrehozása az AI API segítségével
-        $api_url = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3";
+        $api_url = "https://api-inference.huggingface.co/models/deepseek-ai/DeepSeek-R1";
         $api_key = ""; // Hugging Face API token
-        
+                
         $data = json_encode([
             "inputs" => "Generate a structured {$wantedWorkoutFrequency}-day hypertrophy workout plan for a {$age}-year-old man who weighs {$weight} kg, is {$height} cm tall, and aims to {$goal}. His current body fat percentage is {$currentBodyfat}, with a target of {$goalBodyfat}. 
         
@@ -126,9 +122,6 @@
             - Hamstring
             - Calves
 
-            The workout plan should be structured strictly in **HTML format** and formatted as follows:
-            - Each day’s workout should be contained within an HTML `<h2>` tag for the day (e.g., Monday).
-            - Each day should have a table with the class 'workout-table' containing the following columns: Exercise, Sets, Reps, Rest.
             - For each exercise, provide the following:
                 - **Exercise Name** (e.g., Barbell Squat)
                 - **Sets** (e.g., 4)
@@ -137,13 +130,9 @@
             - Ensure to do not exceed the time limit.
                 
             **DO NOT** include any comments, instructions, or suggestions beyond the workout plan.
-
-            If a day is not a workout day, assign it as 'Active Rest' or 'Regular Rest' based on the following:
-            - If the person prefers to stay lightly active, assign it as 'Active Rest'.
-            - If the person prefers complete relaxation, assign it as 'Regular Rest'.
-        
-            Example Structure (DO NOT copy, generate NEW data based on user inputs):
-            <h2>Monday</h2>
+            
+            Example Structure:
+            <h2>Name of the day</h2>
             <table class='workout-table'>
                 <thead>
                     <tr>
@@ -173,32 +162,33 @@
                         <td>8-12</td>
                         <td>60s</td>
                     </tr>
-                    <!-- More exercises for Monday here -->
+                    <!-- More exercises for the day here -->
                 </tbody>
             </table>
         
             ONLY RETURN the generated workout plan in HTML format without any additional text, comments, or instructions."
         ]);
 
+        $promptLength = strlen($data);
         
-        
-        $options = [
-            "http" => [
-                "header" => "Authorization: Bearer " . $api_key . "\r\n" .
-                            "Content-Type: application/json\r\n",
-                "method" => "POST",
-                "content" => $data
-            ]
-        ];
-        
-        $context = stream_context_create($options);
-        $response = file_get_contents($api_url, false, $context);
-        
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $api_url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            'Authorization: Bearer ' . $api_key,
+            'Content-Type: application/json'
+        ]);
+
+        $response = curl_exec($ch);
+        curl_close($ch);
+
         if ($response === false) {
             die("Nem sikerült edzéstervet generálni.");
         }
-        
-        // AI API response is stored in $response
+
+        // Decode the JSON response
         $data = json_decode($response, true);
 
         // Check if the AI response contains the necessary data
@@ -210,91 +200,30 @@
         $workout_plan = $data[0]['generated_text'];
 
         // Clean the workout plan by removing the prompt part
-        $clean_workout_plan = preg_replace("#.*(<h2>Monday</h2>)#s", "$1", $workout_plan);
+        $clean_workout_plan = substr($workout_plan, $promptLength);
 
-        $dictionary = [
-            'Completed' => 'Kész',
-            'Exercise' => 'Gyakorlat',
-            'Sets' => 'Szettek',
-            'Reps' => 'Ismétlés',
-            'Rest' => 'Pihenő',
-            'Active' => 'Aktív',
-            'Day' => 'Nap',
-            'Monday' => 'Hétfő',
-            'Tuesday' => 'Kedd',
-            'Wednesday' => 'Szerda', 
-            'Thursday' => 'Csütörtök',
-            'Friday' => 'Péntek',
-            'Saturday' => 'Szombat',
-            'Sunday' => 'Vasárnap',
-            'Day' => 'Nap',
-            'Barbell Bench Press' => 'Fekvenyomás',
-            'Incline Barbell Bench Press' => 'Döntött pados fekvenyomás',
-            'Dumbbell Flyes' => 'Tárogatás kézisúlyzóval',
-            'Barbell Bentover Rows' => 'Döntött törzsű evezés rúddal',
-            'Wide-Grip Pull-ups' => 'Széles fogású húzódzkodás',
-            'Seated Cable Rows' => 'Evezés kábellel ülve',
-            'Bodyweight Planks' => 'Plank',
-            'Bodyweight Squats' => 'Sajáttestsúlyos guggolás',
-            'Bodyweight Lunges' => 'Kitörés',
-            'Close-grip Barbell Bench Press' => 'Szűk fogású fekvenyomás',
-            'Dumbbell Skull Crushers' => 'kézisúlyzós tricepsznyújtás(koponyatörés)',
-            'Seated Dumbbell Tricep Extension' => 'Ülő súlyzós tricepsznyújtás',
-            'Push-ups' => 'Fekvőtámasz',
-            'Bodyweight Dips' => 'Testsúlyos tolóckodás',
-            'Barbell Curls' => 'Sulyzós bicepsz hajlitás',
-            'Hammer Curls' => 'Kalapács bicepsz hajlítás',
-            'Leg Press' => 'Lábtoló',
-            'Lat Pulldown' => 'Széles fogású lehúzás',
-            'Seated Leg Curl' => 'Ülő combhajlító',
-            'Leg Extension' => 'Combfeszítő',
-            'Deadlift' => 'Felhúzás',
-            'Romanian Deadlift' => 'Román felhúzás',
-            'Kettlebell Swings' => 'Gömbsúlyzó lendités',
-            'Standing Calf Raises' => 'Álló vádliemelés',
-            'Seated Calf Raises' => 'Ülő vádliemelés',
-            'Overhead Shoulder Press' => 'Vállból nyomás rúddal',
-            'Lateral Raises' => 'Oldalsó emelés',
-            'Front Raises' => 'Elülső emelés',
-            'Rear Delt Flyes' => 'Hátsó vállra tárogatás',
-            'Bicep Curls' => 'Bicepsz hajlítás',
-            'Tricep Dips' => 'Tricepsz lenyomás',
-            'Chest Flyes' => 'Tárogatás',
-            'Chest Press' => 'géppel nyomás',
-            'Hip Thrust' => 'Csípőemelés',
-            'Leg Curl' => 'Lábhajlítás',
-            'Crunches' => 'Felülés',
-            'Russian Twists' => 'Orosz csavarás',
-            'Mountain Climbers' => 'Helyben futás fekvőtámaszban',
-            'Burpees' => 'Négyütemü felvőtámasz',
-            'Jumping Jacks' => 'Terpesz-zár',
-            'Squat Jumps' => 'Guggolás ugrás',
-            'Box Jumps' => 'Dobozra ugrás',
-            'Plank to Push-up' => 'Plank fekvőtámaszba',
-            'Wall Sit' => 'Fal mellett ülés',
-            'Leg Raises' => 'Lábemelés',
-            'Flutter Kicks' => 'Pillangó rúgás',
-            'V-Ups' => 'V-ülés',
-            'Hanging Leg Raises' => 'Függő lábemelés',
-            'Incline Dumbbell Press' => 'Döntött kézisúlyzóval nyomás',
-            'Decline Bench Press' => 'Lefelé döntött fekvenyomás',
-            'Cable Kickbacks' => 'Csigás tricepsz lenyomás',
-            'Tricep Kickbacks' => 'Tricepsz nyújtás(lórugás)',
-            'Dumbbell Rows' => 'Dumbbell evezés',
-            'T-Bar Rows' => 'T-bar rúddal evezés',
-            'Shrugs' => 'Vállvonogatás',
-            'Good Mornings' => 'Jó reggelt gyakorlat',
-            'Jump Rope' => 'Ugró kötél',
-        ];
+
+
+        $lines = file('translations.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        $translations = [];
+        
+        foreach ($lines as $index => $line) {
+            if (preg_match('/["\'](.+?)["\']\s*=>\s*["\'](.*?)["\'],?/', $line, $matches)) {
+                $key = $matches[1];
+                $value = $matches[2];
+                $translations[$key] = $value;
+            }
+        }
+        
     
-        function translate($text, $dictionary) {
-            foreach ($dictionary as $english => $hungarian) {
+        function translate($text, $translations) {
+            foreach ($translations as $english => $hungarian) {
                 $text = str_replace($english, $hungarian, $text);
             }
             return $text;
         }
         
-        $translated_workout_plan = translate($clean_workout_plan, $dictionary);
+        $translated_workout_plan = translate($clean_workout_plan, $translations);
 
         // Edzésterv mentése
         $stmt = $conn->prepare("INSERT INTO user_workout_plan (user_id, plan) VALUES (?, ?)");
@@ -520,7 +449,7 @@
                                 <label class="workout-card" id="wanted-workout-frequency7-label">7x hetente
                                     <input class="hidden" type="radio" name="wanted-workout-frequency" id="wanted-workout-frequency7" value="7">
                                 </label> 
-                            </div>   
+                            </div>  
                             <p class="error" id="wantedWorkoutError"></p>
                             <button type="button" class="backgomb">Vissza</button>
                             <button type="button" onclick="nextStep8()" class="nextgomb">Következő</button>
@@ -596,9 +525,8 @@
                     </div>
                 
                     <div class="step">
-                        <div id="keret">
-                            <h2>Fókuszált izomcsoport</h2>
-                            <div class="d-flex flex-column">
+                            <h2 class="text-center">Fókuszált izomcsoport</h2>
+                            <!--<div class="d-flex flex-column">
                                 <div class="row">
                                     <div class="col-6"> 
                                         <label id="focusmuscle1-label" class="d-flex justify-content-center p-2 m-1 fokuszaltizomcsoport">
@@ -638,7 +566,11 @@
                                         </label>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
+                            <?php
+                                include("bodymap_male2.html")
+                            ?>
+                        <div id="keret">
                             <p class="error" id="fokuszError"></p>
                             <button type="button" class="backgomb">Vissza</button>
                             <button type="button" onclick="nextStep12()" class="nextgomb">Következő</button>
@@ -689,8 +621,8 @@
             </div>
         </form>
     </div>
-
     <script src="js/nextStep.js"></script>
     <script src="js/showPass.js"></script>
+    <!--<script src="js/bodymap_male.js"></script>-->
 </body>
 </html>

@@ -589,10 +589,11 @@ function nextStep9() {
     const ttime4 = document.getElementById('wanted-workout-time4');
     const ttime5 = document.getElementById('wanted-workout-time5');
     const ttime6 = document.getElementById('wanted-workout-time6');
+    const ttime7 = document.getElementById('wanted-workout-time7');
     const ttimeError = document.getElementById("wantedTimeError");
 
 
-    if (!ttime1.checked && !ttime2.checked && !ttime3.checked && !ttime4.checked && !ttime5.checked && !ttime6.checked) {
+    if (!ttime1.checked && !ttime2.checked && !ttime3.checked && !ttime4.checked && !ttime5.checked && !ttime6.checked && !ttime7.checked) {
         ttimeError.textContent = "Válassz egy értéket!";
         document.getElementById("w-time1-label").style.border = "2px solid red";
         document.getElementById("w-time2-label").style.border = "2px solid red";
@@ -600,6 +601,7 @@ function nextStep9() {
         document.getElementById("w-time4-label").style.border = "2px solid red";
         document.getElementById("w-time5-label").style.border = "2px solid red";
         document.getElementById("w-time6-label").style.border = "2px solid red";
+        document.getElementById("w-time7-label").style.border = "2px solid red";
         valid = false;
     }
     else {
@@ -824,86 +826,6 @@ function nextStep12() {
     return valid;
 }
 
-const muscle1 = document.getElementById("focusmuscle1");
-const muscle2 = document.getElementById("focusmuscle2");
-const muscle3 = document.getElementById("focusmuscle3");
-const muscle4 = document.getElementById("focusmuscle4");
-const muscle5 = document.getElementById("focusmuscle5");
-const muscle6 = document.getElementById("focusmuscle6");
-const muscle7 = document.getElementById("focusmuscle7");
-const muscle8 = document.getElementById("focusmuscle8");
-
-muscle1.addEventListener("change", function() {
-    if (muscle1.checked) {
-        document.getElementById("focusmuscle1-label").style.border = "3px solid var(--c)";
-    }
-    else {
-        document.getElementById("focusmuscle1-label").style.border = "";
-    }
-});
-
-muscle2.addEventListener("change", function() {
-    if (muscle2.checked) {
-        document.getElementById("focusmuscle2-label").style.border = "3px solid var(--c)";
-    }
-    else {
-        document.getElementById("focusmuscle2-label").style.border = "";
-    }
-});
-
-muscle3.addEventListener("change", function() {
-    if (muscle3.checked) {
-        document.getElementById("focusmuscle3-label").style.border = "3px solid var(--c)";
-    }
-    else {
-        document.getElementById("focusmuscle3-label").style.border = "";
-    }
-});
-
-muscle4.addEventListener("change", function() {
-    if (muscle4.checked) {
-        document.getElementById("focusmuscle4-label").style.border = "3px solid var(--c)";
-    }
-    else {
-        document.getElementById("focusmuscle4-label").style.border = "";
-    }
-});
-
-muscle5.addEventListener("change", function() {
-    if (muscle5.checked) {
-        document.getElementById("focusmuscle5-label").style.border = "3px solid var(--c)";
-    }
-    else {
-        document.getElementById("focusmuscle5-label").style.border = "";
-    }
-});
-
-muscle6.addEventListener("change", function() {
-    if (muscle6.checked) {
-        document.getElementById("focusmuscle6-label").style.border = "3px solid var(--c)";
-    }
-    else {
-        document.getElementById("focusmuscle6-label").style.border = "";
-    }
-});
-
-muscle7.addEventListener("change", function() {
-    if (muscle7.checked) {
-        document.getElementById("focusmuscle7-label").style.border = "3px solid var(--c)";
-    }
-    else {
-        document.getElementById("focusmuscle7-label").style.border = "";
-    }
-});
-
-muscle8.addEventListener("change", function() {
-    if (muscle8.checked) {
-        document.getElementById("focusmuscle8-label").style.border = "3px solid var(--c)";
-    }
-    else {
-        document.getElementById("focusmuscle8-label").style.border = "";
-    }
-});
 
 const serult1 = document.getElementById("serult1");
 const serult2 = document.getElementById("serult2");
@@ -1013,7 +935,6 @@ document.querySelectorAll('.nextgomb').forEach(button => {
             }
         }
 
-        console.log("Valid értéke:", valid);
         if (!valid) return;
 
         currentStep.classList.remove('active');

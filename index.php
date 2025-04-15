@@ -1,3 +1,81 @@
+<?php
+    require 'PHPMailer/src/PHPMailer.php';
+    require 'PHPMailer/src/SMTP.php';
+    require 'PHPMailer/src/Exception.php';
+    
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
+    
+    $response = []; 
+    
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        $email = trim($_POST["email"]);
+    
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    
+            $conn = new mysqli("localhost", "root", "", "mindfit");
+    
+            $stmt = $conn->prepare("SELECT id FROM subscribers WHERE email = ?");
+            $stmt->bind_param("s", $email);
+            $stmt->execute();
+            $stmt->store_result();
+    
+            if ($stmt->num_rows === 0) {
+                $stmt = $conn->prepare("INSERT INTO subscribers (email) VALUES (?)");
+                $stmt->bind_param("s", $email);
+                $stmt->execute();
+    
+                if ($stmt->affected_rows > 0) {
+
+                    $mail = new PHPMailer(true);
+
+                    try {
+                        $unsubscribeLink = 'http://localhost/mindfit/mindfit/unsubscribe.php?email=' . urlencode($email);
+
+                        $mail->isSMTP();
+                        $mail->Host = 'smtp.gmail.com';
+                        $mail->SMTPAuth = true;
+                        $mail->Username = 'turrmindfit@gmail.com'; 
+                        $mail->Password = 'knci jdwl iteb ytrh';
+                        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;  
+                        $mail->Port = 465;
+                        $mail->CharSet = 'UTF-8'; 
+    
+                        $mail->setFrom('turrmindfit@gmail.com', 'Feliratkozás sikeres');
+                        $mail->addAddress("csupormartin@turr.hu");
+    
+                        $mail->isHTML(true);
+                        $mail->Subject = 'Köszönjük, hogy feliratkoztál!';
+                        $mail->Body    = "";
+                        $mail->Body    = "
+                        <p>Kedves felhasználó! Köszönjük, hogy feliratkoztál hírlevelünkre.</p>
+                        <a href='$unsubscribeLink'>Leiratkozás</a>";
+                        $mail->send();
+    
+                        $response['status'] = 'success';
+                        $response['message'] = '✅ Sikeresen feliratkoztál.';
+                    } catch (Exception $e) {
+                        // Return error response if email failed
+                        $response['status'] = 'error';
+                        $response['message'] = "❌ Hiba történt.";
+                    }
+                }
+            } else {
+                // If email is already subscribed
+                $response['status'] = 'info';
+                $response['message'] = '📧 Már feliratkoztál.';
+            }
+
+            $stmt->close();
+            $conn->close();
+        } else {
+            $response['status'] = 'error';
+            $response['message'] = '❌ elytelen email.';
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -56,7 +134,7 @@
     </section>
 
     <section id="reviews">
-        <div class="container-fluid w-75">
+        <div class="container-fluid pb-5">
             <h1 class="mt-5 pt-5 text-center">Elégedett felhasználók</h1>
             <?php 
             
@@ -173,7 +251,7 @@ megtekintheted és szerkesztheted a személyes adataidat (pl. céljaid, preferen
         <a href="adatkezeles.php" class="privacy-link" target="_blank">Adatvédelmi szabályzat</a>
         <button id="accept-privacy" class="btn btn-success m-2">Elfogadom</button>
     </div>
-  
+
     <script src="js/gdpr.js"></script>
 </body>
 </html> 
