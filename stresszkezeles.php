@@ -42,7 +42,7 @@
             max-width: 1200px;
             margin: 40px auto;
             padding: 30px;
-            background: var(--c);
+            background: #181818;
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
             border-radius: 15px;
             text-align: center;
@@ -51,7 +51,7 @@
             gap: 30px;
         }
         .cardstres {
-            background-color: #2e2d2d;
+            background-color: #2e302f;
             padding: 25px;
             border-radius: 20px;
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
