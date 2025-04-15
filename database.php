@@ -6,13 +6,13 @@
     $db_name = "mindfit";
     $conn = "";
 
+    $conn = mysqli_connect($db_server, $db_user, $db_pass, $db_name);
 
-    try {
-        $conn = mysqli_connect($db_server, $db_user, $db_pass, $db_name);
-        $conn->set_charset("utf8");
+    if (!$conn) {
+        die("Kapcsolódási hiba: " . mysqli_connect_error());
     }
-    catch (mysqli_sql_exception) {
 
-    }
+    $conn->set_charset("utf8");
+
     
 ?>
