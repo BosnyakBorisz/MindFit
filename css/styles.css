@@ -20,7 +20,6 @@
 body {
     background-color: var(--base-color);
     color: var(--text-color);
-
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -28,7 +27,7 @@ body {
 
 html {
     scroll-behavior: smooth;
-      margin: 0;
+    margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
@@ -551,7 +550,7 @@ html {
 }
 
 .privacy-link {
-    color: var(--b);
+    color: white;
 }
 
 .workout-table {
