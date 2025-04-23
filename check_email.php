@@ -1,10 +1,5 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "mindfit";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    include("database.php");
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);

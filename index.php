@@ -1,81 +1,3 @@
-<?php
-    require 'PHPMailer/src/PHPMailer.php';
-    require 'PHPMailer/src/SMTP.php';
-    require 'PHPMailer/src/Exception.php';
-    
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\Exception;
-    
-    $response = []; 
-    
-    if ($_SERVER["REQUEST_METHOD"] === "POST") {
-        $email = trim($_POST["email"]);
-    
-        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    
-            include("database.php");
-    
-            $stmt = $conn->prepare("SELECT id FROM subscribers WHERE email = ?");
-            $stmt->bind_param("s", $email);
-            $stmt->execute();
-            $stmt->store_result();
-    
-            if ($stmt->num_rows === 0) {
-                $stmt = $conn->prepare("INSERT INTO subscribers (email) VALUES (?)");
-                $stmt->bind_param("s", $email);
-                $stmt->execute();
-    
-                if ($stmt->affected_rows > 0) {
-
-                    $mail = new PHPMailer(true);
-
-                    try {
-                        $unsubscribeLink = 'http://localhost/mindfit/mindfit/unsubscribe.php?email=' . urlencode($email);
-
-                        $mail->isSMTP();
-                        $mail->Host = 'smtp.gmail.com';
-                        $mail->SMTPAuth = true;
-                        $mail->Username = 'turrmindfit@gmail.com'; 
-                        $mail->Password = 'knci jdwl iteb ytrh';
-                        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;  
-                        $mail->Port = 465;
-                        $mail->CharSet = 'UTF-8'; 
-    
-                        $mail->setFrom('turrmindfit@gmail.com', 'Feliratkozás sikeres');
-                        $mail->addAddress($email);
-    
-                        $mail->isHTML(true);
-                        $mail->Subject = 'Köszönjük, hogy feliratkoztál!';
-                        $mail->Body    = "";
-                        $mail->Body    = "
-                        <p>Kedves felhasználó! Köszönjük, hogy feliratkoztál hírlevelünkre.</p>
-                        <a href='$unsubscribeLink'>Leiratkozás</a>";
-                        $mail->send();
-    
-                        $response['status'] = 'success';
-                        $response['message'] = '✅ Sikeresen feliratkoztál.';
-                    } catch (Exception $e) {
-                        // Return error response if email failed
-                        $response['status'] = 'error';
-                        $response['message'] = "❌ Hiba történt.";
-                    }
-                }
-            } else {
-                // If email is already subscribed
-                $response['status'] = 'info';
-                $response['message'] = '📧 Már feliratkoztál.';
-            }
-
-            $stmt->close();
-            $conn->close();
-        } else {
-            $response['status'] = 'error';
-            $response['message'] = '❌ elytelen email.';
-        }
-    }
-
-?>
-
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -138,49 +60,49 @@
             <h1 class="mt-5 pt-5 text-center">Elégedett felhasználók</h1>
             <?php 
             
-            include("database.php");
+                include("database.php");
 
-            $sql = "SELECT * FROM reviews, users where users.id = reviews.user_id limit 3";
-            $result = mysqli_query($conn, $sql);
+                $sql = "SELECT * FROM reviews, users where users.id = reviews.user_id limit 3";
+                $result = mysqli_query($conn, $sql);
 
-            
-            if (mysqli_num_rows($result) > 0){
-
-                echo "
-                <div id='carouselExampleIndicators' class='carousel slide p-5'>
-                <div class='carousel-indicators'>
-                    <button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='0' class='active' aria-current='true' aria-label='Slide 1'></button>
-                    <button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='1' aria-label='Slide 2'></button>
-                    <button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='2' aria-label='Slide 3'></button>
-                </div>
-                <div class='carousel-inner mx-auto w-50'>
-                ";
-                $first = true;
-
-                while($row = mysqli_fetch_assoc($result)) {
-                    echo '<div class="carousel-item ' . ($first ? 'active' : '') . '">
-                    <p>' . htmlspecialchars($row['review_text']) . '</p>
-                    <p> - ' . htmlspecialchars($row['felhasznnev']) . '</p>
-                    </div>';
-                    $first = false;
-                }
-                    
-                echo "
-                </div>
-                <button class='carousel-control-prev' type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='prev'>
-                    <span class='carousel-control-prev-icon' aria-hidden='true'></span>
-                    <span class='visually-hidden'>Previous</span>
-                </button>
-                <button class='carousel-control-next' type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='next'>
-                    <span class='carousel-control-next-icon' aria-hidden='true'></span>
-                    <span class='visually-hidden'>Next</span>
-                </button>
-                </div>
-                ";
                 
-            }
+                if (mysqli_num_rows($result) > 0){
 
-                ?>
+                    echo "
+                    <div id='carouselExampleIndicators' class='carousel slide'>
+                    <div class='carousel-indicators'>
+                        <button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='0' class='active' aria-current='true' aria-label='Slide 1'></button>
+                        <button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='1' aria-label='Slide 2'></button>
+                        <button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='2' aria-label='Slide 3'></button>
+                    </div>
+                    <div class='carousel-inner mx-auto w-75' style='max-width: 50rem;'>
+                    ";
+                    $first = true;
+
+                    while($row = mysqli_fetch_assoc($result)) {
+                        echo '<div class="carousel-item ' . ($first ? 'active' : '') . '">
+                        <p>' . htmlspecialchars($row['review_text']) . '</p>
+                        <p> - ' . htmlspecialchars($row['felhasznnev']) . '</p>
+                        </div>';
+                        $first = false;
+                    }
+                        
+                    echo "
+                    </div>
+                    <button class='carousel-control-prev' type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='prev'>
+                        <span class='carousel-control-prev-icon' aria-hidden='true'></span>
+                        <span class='visually-hidden'>Previous</span>
+                    </button>
+                    <button class='carousel-control-next' type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='next'>
+                        <span class='carousel-control-next-icon' aria-hidden='true'></span>
+                        <span class='visually-hidden'>Next</span>
+                    </button>
+                    </div>
+                    ";
+                    
+                }
+
+            ?>
         </div>
     </section>
 
@@ -228,12 +150,6 @@
             <hr>
             <details>
                 <summary><h5>🛡️ Milyen biztonsági intézkedések védik az adataimat?</h5></summary><p class="faq_informaciok">Minden adat titkosított formában kerül tárolásra, a rendszer több szintű biztonsági protokollt alkalmaz </p>
-            </details>
-            <hr>
-            <details>
-                <summary><h5>📋 Hogyan ellenőrizhetem egyszerre a személyes és a platformon tárolt adataimat?</h5></summary><p class="faq_informaciok">A beállítások menüpontban egy központi adatkezelési felület érhető el, ahol:
-
-megtekintheted és szerkesztheted a személyes adataidat (pl. céljaid, preferenciáid),</p>
             </details>
             </div>
         </div>

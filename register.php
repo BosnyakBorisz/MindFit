@@ -17,7 +17,14 @@
 
 
         if (empty($username) || empty($email) || empty($password)) {
-            die("Az összes mezőt ki kell tölteni!");
+            die("
+                <p>Az összes mezőt ki kell tölteni! Átirányítás 5 másodperc múlva...</p>
+                <script>
+                    setTimeout(function() {
+                        window.location.href = 'register.php';
+                    }, 5000);
+                </script>
+            ");
         }
 
         $stmt = $conn->prepare("SELECT id FROM users WHERE email = ?");
@@ -26,7 +33,14 @@
         $stmt->store_result();
 
         if ($stmt->num_rows > 0) {
-            die("Az email már használatban van!");
+            die("
+                <p>Az email már használatban van. Átirányítás 5 másodperc múlva...</p>
+                <script>
+                    setTimeout(function() {
+                        window.location.href = 'register.php';
+                    }, 5000);
+                </script>
+            ");
         }
         $stmt->close();
 
@@ -35,7 +49,14 @@
         $stmt = $conn->prepare("INSERT INTO users (felhasznnev, email, jelszo) VALUES (?, ?, ?)");
         $stmt->bind_param("sss", $username, $email, $hash);
         if (!$stmt->execute()) {
-            die("Adatbázis hiba: ");
+            die("
+                <p>Adatbázis hiba. Átirányítás 5 másodperc múlva...</p>
+                <script>
+                    setTimeout(function() {
+                        window.location.href = 'register.php';
+                    }, 5000);
+                </script>
+            ");
         }
         $userID = $stmt->insert_id;
         $_SESSION["user_id"] = $userID;
@@ -66,16 +87,17 @@
             (user_id, nem, kor, testsuly, magassag, cel, testalkat, jelenlegi_testzsir, cel_testzsir, jelenlegi_edzes_per_het, kivant_edzes_per_het, kivant_edzes_hossza, edzes_helye, felszereltseg, fokuszalt_izomcsoport, serult_testrész)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-        $stmt->bind_param("isiiissiiiiissss", 
-            $userID, $sex, $age, $weight, $height, $goal, $bodytype, 
-            $currentBodyfat, $goalBodyfat, $workoutFrequency, 
-            $wantedWorkoutFrequency, $wantedWorkoutTime, $workoutPlace, 
-            $equipment, $focusedMuscle, $injured
+        $stmt->bind_param("isddssssssiissss", 
+        $userID, $sex, $age, $weight, $height, $goal, $bodytype, 
+        $currentBodyfat, $goalBodyfat, $workoutFrequency, 
+        $wantedWorkoutFrequency, $wantedWorkoutTime, $workoutPlace,
+        $equipment, $focusedMuscle, $injured
         );
-
+        
         if (!$stmt->execute()) {
-            die("Adatbázis hiba");
+            die("Hiba a mentés közben: " . $stmt->error);
         }
+
 
 
         $stmt->close();
@@ -185,7 +207,14 @@
         curl_close($ch);
 
         if ($response === false) {
-            die("Nem sikerült edzéstervet generálni.");
+            die("
+                <p>Nem sikerült edzéstervet generálni. Átirányítás 5 másodperc múlva...</p>
+                <script>
+                    setTimeout(function() {
+                        window.location.href = 'login.php';
+                    }, 5000);
+                </script>
+            ");
         }
 
         // Decode the JSON response
@@ -193,7 +222,14 @@
 
         // Check if the AI response contains the necessary data
         if (!isset($data[0]['generated_text'])) {
-            die("Nem sikerült edzéstervet generálni.");
+            die("
+                <p>Nem sikerült edzéstervet generálni. Átirányítás 5 másodperc múlva...</p>
+                <script>
+                    setTimeout(function() {
+                         window.location.href = 'login.php';
+                    }, 5000);
+                </script>
+            ");
         }
 
         // Extracting the raw workout plan
@@ -230,8 +266,15 @@
         $stmt->bind_param("is", $userID, $translated_workout_plan);
 
         if (!$stmt->execute()) {
-            die("Hiba: Nem sikerült elmenteni az edzéstervet.");
-        }
+            die("
+                <p>Nem sikerült elmenteni az edzéstervet. Átirányítás 5 másodperc múlva...</p>
+                <script>
+                    setTimeout(function() {
+                        window.location.href = 'login.php';
+                    }, 5000);
+                </script>
+            ");
+            }
 
         $stmt->close();
         $conn->close();
@@ -495,10 +538,10 @@
                                 <input class="hidden" type="radio" name="edzeshelye" id="workoutplace1" value="GYM" required>
                             </label>
                             <label class="workout-card" id="place2-label">Otthon
-                                <input class="hidden" type="radio" name="edzeshelye" id="workoutplace2" value="Home">
+                                <input class="hidden" type="radio" name="edzeshelye" id="workoutplace2" value="Home" required>
                             </label>
                             <label class="workout-card" id="place3-label">Hibrid
-                                <input class="hidden" type="radio" name="edzeshelye" id="workoutplace3" value="both in GYM and home">
+                                <input class="hidden" type="radio" name="edzeshelye" id="workoutplace3" value="both in GYM and home" required>
                             </label>
                             <p class="error" id="placeError"></p>
                             <button type="button" class="backgomb">Vissza</button>

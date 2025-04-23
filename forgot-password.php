@@ -47,12 +47,14 @@
                 $mail->Port = 465;
                 $mail->CharSet = 'UTF-8'; 
 
-                $mail->setFrom('turrmindfit@gmail.com', 'Jelszó-visszaállítás');
+                $mail->setFrom('turrmindfit@gmail.com', 'MindFit');
                 $mail->addAddress($email);
 
                 $mail->isHTML(true);
                 $mail->Subject = 'Jelszó visszaállítás';
-                $mail->Body    = "Kattints a linkre a jelszavad visszaállításához: <a href='$resetLink'>$resetLink</a>";
+                $mail->Body    = "
+                    Kattints a linkre a jelszavad visszaállításához: <a href='$resetLink'>$resetLink</a>
+                    <p>A visszaállító link 1 óráig érvényes.</p>";
 
                 $mail->send();
                 $message = "Ellenőrizd az e-mailed a visszaállító linkért!";
@@ -91,7 +93,7 @@
                                 <div class="message"><?php echo $message; ?></div>
                             <?php endif; ?> 
                             <button type="submit" class="backgomb" name="request-new-password">Elküldés</button>
-                            <p><a href="login.php">Mégse</a></p>
+                            <p><a href="login">Mégse</a></p>
                         </div>
                     </div>
                 </div>

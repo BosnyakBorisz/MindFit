@@ -55,7 +55,7 @@
             $mail->Port = 465;
             $mail->CharSet = 'UTF-8'; 
     
-            $mail->setFrom('turrmindfit@gmail.com', 'Fiók törlés sikeres');
+            $mail->setFrom('turrmindfit@gmail.com', 'MindFit');
             $mail->addAddress($email);
     
             $mail->isHTML(true);

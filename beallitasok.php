@@ -32,6 +32,7 @@
     $stmt->close();
 
     $user_id = $user["user_id"];
+    $serult_testrész_array = explode(',', $user['serult_testrész']);
 
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {

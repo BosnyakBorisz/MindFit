@@ -188,7 +188,14 @@
             $stmt->bind_param("is", $userID, $translated_workout_plan);
 
             if (!$stmt->execute()) {
-                die("Hiba: Nem sikerült elmenteni az edzéstervet.");
+                die("
+                    <p>Nem sikerült edzéstervet generálni. Átirányítás 5 másodperc múlva...</p>
+                    <script>
+                        setTimeout(function() {
+                            window.location.href = 'edzesterv.php';
+                        }, 5000);
+                    </script>
+                ");
             }
         }
 

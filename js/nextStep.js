@@ -404,311 +404,109 @@ function nextStep7() {
 }
 
 
-const freq1 = document.getElementById('workout-frequency1');
-const freq2 = document.getElementById('workout-frequency2');
-const freq3 = document.getElementById('workout-frequency3');
-const freq4 = document.getElementById('workout-frequency4');
 const freqError = document.getElementById('workoutError');
 
-freq1.addEventListener("change", function() {
-    if (freq1.checked) {
-        document.getElementById("workout-frequency1-label").style.border = "3px solid var(--c)";
-        document.getElementById("workout-frequency2-label").style.border = "";
-        document.getElementById("workout-frequency3-label").style.border = "";
-        document.getElementById("workout-frequency4-label").style.border = "";
-        document.getElementById("workoutError").textContent = "";
-    }
-});
-
-freq2.addEventListener("change", function() {
-    if (freq2.checked) {
-        document.getElementById("workout-frequency1-label").style.border = "";
-        document.getElementById("workout-frequency2-label").style.border = "3px solid var(--c)";
-        document.getElementById("workout-frequency3-label").style.border = "";
-        document.getElementById("workout-frequency4-label").style.border = "";
-        document.getElementById("workoutError").textContent = "";
-    }
-});
-
-freq3.addEventListener("change", function() {
-    if (freq3.checked) {
-        document.getElementById("workout-frequency1-label").style.border = "";
-        document.getElementById("workout-frequency2-label").style.border = "";
-        document.getElementById("workout-frequency3-label").style.border = "3px solid var(--c)";
-        document.getElementById("workout-frequency4-label").style.border = "";
-        document.getElementById("workoutError").textContent = "";
-    }
-});
-
-freq4.addEventListener("change", function() {
-    if (freq4.checked) {
-        document.getElementById("workout-frequency1-label").style.border = "";
-        document.getElementById("workout-frequency2-label").style.border = "";
-        document.getElementById("workout-frequency3-label").style.border = "";
-        document.getElementById("workout-frequency4-label").style.border = "3px solid var(--c)";
-        document.getElementById("workoutError").textContent = "";
-    }
-});
+for (let i = 1; i <= 4; i++) {
+    const input = document.getElementById(`workout-frequency${i}`);
+    input.addEventListener("change", function () {
+        if (input.checked) {
+            for (let j = 1; j <= 4; j++) {
+                const label = document.getElementById(`workout-frequency${j}-label`);
+                label.style.border = (i === j) ? "3px solid var(--c)" : "";
+            }
+            freqError.textContent = "";
+        }
+    });
+}
 
 
 
 function nextStep8() {
-
     let valid = true;
-
-    const wfreqq1 = document.getElementById('wanted-workout-frequency1');
-    const wfreqq2 = document.getElementById('wanted-workout-frequency2');
-    const wfreqq3 = document.getElementById('wanted-workout-frequency3');
-    const wfreqq4 = document.getElementById('wanted-workout-frequency4');
-    const wfreqq5 = document.getElementById('wanted-workout-frequency5');
-    const wfreqq6 = document.getElementById('wanted-workout-frequency6');
-    const wfreqq7 = document.getElementById('wanted-workout-frequency7');
     const wfreqError = document.getElementById('wantedWorkoutError');
+    let checked = false;
 
+    for (let i = 1; i <= 7; i++) {
+        const input = document.getElementById(`wanted-workout-frequency${i}`);
+        const label = document.getElementById(`wanted-workout-frequency${i}-label`);
 
-    if (!wfreqq1.checked && !wfreqq2.checked && !wfreqq3.checked && !wfreqq4.checked && !wfreqq5.checked && !wfreqq6.checked && !wfreqq7.checked) {
-        wfreqError.textContent = "Válassz egy értéket!";
-        document.getElementById("wanted-workout-frequency1-label").style.border = "2px solid red";
-        document.getElementById("wanted-workout-frequency2-label").style.border = "2px solid red";
-        document.getElementById("wanted-workout-frequency3-label").style.border = "2px solid red";
-        document.getElementById("wanted-workout-frequency4-label").style.border = "2px solid red";
-        document.getElementById("wanted-workout-frequency5-label").style.border = "2px solid red";
-        document.getElementById("wanted-workout-frequency6-label").style.border = "2px solid red";
-        document.getElementById("wanted-workout-frequency7-label").style.border = "2px solid red";
-        valid = false;
+        if (input.checked) {
+            checked = true;
+            label.style.border = "3px solid var(--c)";
+        } else {
+            label.style.border = "";
+        }
     }
-    else {
+
+    if (!checked) {
+        wfreqError.textContent = "Válassz egy értéket!";
+        for (let i = 1; i <= 7; i++) {
+            document.getElementById(`wanted-workout-frequency${i}-label`).style.border = "2px solid red";
+        }
+        valid = false;
+    } else {
         wfreqError.textContent = "";
     }
+
     return valid;
 }
 
-const wfreq1 = document.getElementById('wanted-workout-frequency1');
-const wfreq2 = document.getElementById('wanted-workout-frequency2');
-const wfreq3 = document.getElementById('wanted-workout-frequency3');
-const wfreq4 = document.getElementById('wanted-workout-frequency4');
-const wfreq5 = document.getElementById('wanted-workout-frequency5');
-const wfreq6 = document.getElementById('wanted-workout-frequency6');
-const wfreq7 = document.getElementById('wanted-workout-frequency7');
-const wfreqError = document.getElementById('wantedWorkoutError');
+for (let i = 1; i <= 7; i++) {
+    const input = document.getElementById(`wanted-workout-frequency${i}`);
+    input.addEventListener("change", function () {
+        if (input.checked) {
+            for (let j = 1; j <= 7; j++) {
+                const label = document.getElementById(`wanted-workout-frequency${j}-label`);
+                label.style.border = (i === j) ? "3px solid var(--c)" : "";
+            }
+            document.getElementById("wantedWorkoutError").textContent = "";
+        }
+    });
+}
 
-wfreq1.addEventListener("change", function() {
-    if (wfreq1.checked) {
-        document.getElementById("wanted-workout-frequency1-label").style.border = "3px solid var(--c)";
-        document.getElementById("wanted-workout-frequency2-label").style.border = "";
-        document.getElementById("wanted-workout-frequency3-label").style.border = "";
-        document.getElementById("wanted-workout-frequency4-label").style.border = "";
-        document.getElementById("wanted-workout-frequency5-label").style.border = "";
-        document.getElementById("wanted-workout-frequency6-label").style.border = "";
-        document.getElementById("wanted-workout-frequency7-label").style.border = "";
-        document.getElementById("wantedWorkoutError").textContent = "";
-    }
-});
 
-wfreq2.addEventListener("change", function() {
-    if (wfreq2.checked) {
-        document.getElementById("wanted-workout-frequency1-label").style.border = "";
-        document.getElementById("wanted-workout-frequency2-label").style.border = "3px solid var(--c)";
-        document.getElementById("wanted-workout-frequency3-label").style.border = "";
-        document.getElementById("wanted-workout-frequency4-label").style.border = "";
-        document.getElementById("wanted-workout-frequency5-label").style.border = "";
-        document.getElementById("wanted-workout-frequency6-label").style.border = "";
-        document.getElementById("wanted-workout-frequency7-label").style.border = "";
-        document.getElementById("wantedWorkoutError").textContent = "";
-    }
-});
-wfreq3.addEventListener("change", function() {
-    if (wfreq3.checked) {
-        document.getElementById("wanted-workout-frequency1-label").style.border = "";
-        document.getElementById("wanted-workout-frequency2-label").style.border = "";
-        document.getElementById("wanted-workout-frequency3-label").style.border = "3px solid var(--c)";
-        document.getElementById("wanted-workout-frequency4-label").style.border = "";
-        document.getElementById("wanted-workout-frequency5-label").style.border = "";
-        document.getElementById("wanted-workout-frequency6-label").style.border = "";
-        document.getElementById("wanted-workout-frequency7-label").style.border = "";
-        document.getElementById("wantedWorkoutError").textContent = "";
-    }
-});
-wfreq4.addEventListener("change", function() {
-    if (wfreq4.checked) {
-        document.getElementById("wanted-workout-frequency1-label").style.border = "";
-        document.getElementById("wanted-workout-frequency2-label").style.border = "";
-        document.getElementById("wanted-workout-frequency3-label").style.border = "";
-        document.getElementById("wanted-workout-frequency4-label").style.border = "3px solid var(--c)";
-        document.getElementById("wanted-workout-frequency5-label").style.border = "";
-        document.getElementById("wanted-workout-frequency6-label").style.border = "";
-        document.getElementById("wanted-workout-frequency7-label").style.border = "";
-        document.getElementById("wantedWorkoutError").textContent = "";
-    }
-});
-wfreq5.addEventListener("change", function() {
-    if (wfreq5.checked) {
-        document.getElementById("wanted-workout-frequency1-label").style.border = "";
-        document.getElementById("wanted-workout-frequency2-label").style.border = "";
-        document.getElementById("wanted-workout-frequency3-label").style.border = "";
-        document.getElementById("wanted-workout-frequency4-label").style.border = "";
-        document.getElementById("wanted-workout-frequency5-label").style.border = "3px solid var(--c)";
-        document.getElementById("wanted-workout-frequency6-label").style.border = "";
-        document.getElementById("wanted-workout-frequency7-label").style.border = "";
-        document.getElementById("wantedWorkoutError").textContent = "";
-    }
-});
-wfreq6.addEventListener("change", function() {
-    if (wfreq6.checked) {
-        document.getElementById("wanted-workout-frequency1-label").style.border = "";
-        document.getElementById("wanted-workout-frequency2-label").style.border = "";
-        document.getElementById("wanted-workout-frequency3-label").style.border = "";
-        document.getElementById("wanted-workout-frequency4-label").style.border = "";
-        document.getElementById("wanted-workout-frequency5-label").style.border = "";
-        document.getElementById("wanted-workout-frequency6-label").style.border = "3px solid var(--c)";
-        document.getElementById("wanted-workout-frequency7-label").style.border = "";
-        document.getElementById("wantedWorkoutError").textContent = "";
-    }
-});
-
-wfreq7.addEventListener("change", function() {
-    if (wfreq7.checked) {
-        document.getElementById("wanted-workout-frequency1-label").style.border = "";
-        document.getElementById("wanted-workout-frequency2-label").style.border = "";
-        document.getElementById("wanted-workout-frequency3-label").style.border = "";
-        document.getElementById("wanted-workout-frequency4-label").style.border = "";
-        document.getElementById("wanted-workout-frequency5-label").style.border = "";
-        document.getElementById("wanted-workout-frequency6-label").style.border = "";
-        document.getElementById("wanted-workout-frequency7-label").style.border = "3px solid var(--c)";
-        document.getElementById("wantedWorkoutError").textContent = "";
-    }
-});
 
 function nextStep9() {
-
     let valid = true;
-
-    const ttime1 = document.getElementById('wanted-workout-time1');
-    const ttime2 = document.getElementById('wanted-workout-time2');
-    const ttime3 = document.getElementById('wanted-workout-time3');
-    const ttime4 = document.getElementById('wanted-workout-time4');
-    const ttime5 = document.getElementById('wanted-workout-time5');
-    const ttime6 = document.getElementById('wanted-workout-time6');
-    const ttime7 = document.getElementById('wanted-workout-time7');
     const ttimeError = document.getElementById("wantedTimeError");
+    let checked = false;
 
-
-    if (!ttime1.checked && !ttime2.checked && !ttime3.checked && !ttime4.checked && !ttime5.checked && !ttime6.checked && !ttime7.checked) {
-        ttimeError.textContent = "Válassz egy értéket!";
-        document.getElementById("w-time1-label").style.border = "2px solid red";
-        document.getElementById("w-time2-label").style.border = "2px solid red";
-        document.getElementById("w-time3-label").style.border = "2px solid red";
-        document.getElementById("w-time4-label").style.border = "2px solid red";
-        document.getElementById("w-time5-label").style.border = "2px solid red";
-        document.getElementById("w-time6-label").style.border = "2px solid red";
-        document.getElementById("w-time7-label").style.border = "2px solid red";
-        valid = false;
+    for (let i = 1; i <= 7; i++) {
+        const timeInput = document.getElementById(`wanted-workout-time${i}`);
+        const label = document.getElementById(`w-time${i}-label`);
+        if (timeInput.checked) {
+            checked = true;
+            label.style.border = "3px solid var(--c)";
+        } else {
+            label.style.border = "";
+        }
     }
-    else {
+
+    if (!checked) {
+        ttimeError.textContent = "Válassz egy értéket!";
+        for (let i = 1; i <= 7; i++) {
+            document.getElementById(`w-time${i}-label`).style.border = "2px solid red";
+        }
+        valid = false;
+    } else {
         ttimeError.textContent = "";
     }
+
     return valid;
 }
 
-const time1 = document.getElementById('wanted-workout-time1');
-const time2 = document.getElementById('wanted-workout-time2');
-const time3 = document.getElementById('wanted-workout-time3');
-const time4 = document.getElementById('wanted-workout-time4');
-const time5 = document.getElementById('wanted-workout-time5');
-const time6 = document.getElementById('wanted-workout-time6');
-const time7 = document.getElementById('wanted-workout-time7');
-
-
-time1.addEventListener("change", function() {
-    if (time1.checked) {
-        document.getElementById("w-time1-label").style.border = "3px solid var(--c)";
-        document.getElementById("w-time2-label").style.border = "";
-        document.getElementById("w-time3-label").style.border = "";
-        document.getElementById("w-time4-label").style.border = "";
-        document.getElementById("w-time5-label").style.border = "";
-        document.getElementById("w-time6-label").style.border = "";
-        document.getElementById("w-time7-label").style.border = "";
-        document.getElementById("wantedTimeError").textContent = "";
-    }
-});
-
-time2.addEventListener("change", function() {
-    if (time2.checked) {
-        document.getElementById("w-time1-label").style.border = "";
-        document.getElementById("w-time2-label").style.border = "3px solid var(--c)";
-        document.getElementById("w-time3-label").style.border = "";
-        document.getElementById("w-time4-label").style.border = "";
-        document.getElementById("w-time5-label").style.border = "";
-        document.getElementById("w-time6-label").style.border = "";
-        document.getElementById("w-time7-label").style.border = "";
-        document.getElementById("wantedTimeError").textContent = "";
-    }
-});
-
-time3.addEventListener("change", function() {
-    if (time3.checked) {
-        document.getElementById("w-time1-label").style.border = "";
-        document.getElementById("w-time2-label").style.border = "";
-        document.getElementById("w-time3-label").style.border = "3px solid var(--c)";
-        document.getElementById("w-time4-label").style.border = "";
-        document.getElementById("w-time5-label").style.border = "";
-        document.getElementById("w-time6-label").style.border = "";
-        document.getElementById("w-time7-label").style.border = "";
-        document.getElementById("wantedTimeError").textContent = "";
-    }
-});
-
-time4.addEventListener("change", function() {
-    if (time4.checked) {
-        document.getElementById("w-time1-label").style.border = "";
-        document.getElementById("w-time2-label").style.border = "";
-        document.getElementById("w-time3-label").style.border = "";
-        document.getElementById("w-time4-label").style.border = "3px solid var(--c)";
-        document.getElementById("w-time5-label").style.border = "";
-        document.getElementById("w-time6-label").style.border = "";
-        document.getElementById("w-time7-label").style.border = "";
-        document.getElementById("wantedTimeError").textContent = "";
-    }
-});
-
-time5.addEventListener("change", function() {
-    if (time5.checked) {
-        document.getElementById("w-time1-label").style.border = "";
-        document.getElementById("w-time2-label").style.border = "";
-        document.getElementById("w-time3-label").style.border = "";
-        document.getElementById("w-time4-label").style.border = "";
-        document.getElementById("w-time5-label").style.border = "3px solid var(--c)";
-        document.getElementById("w-time6-label").style.border = "";
-        document.getElementById("w-time7-label").style.border = "";
-        document.getElementById("wantedTimeError").textContent = "";
-    }
-});
-
-time6.addEventListener("change", function() {
-    if (time6.checked) {
-        document.getElementById("w-time1-label").style.border = "";
-        document.getElementById("w-time2-label").style.border = "";
-        document.getElementById("w-time3-label").style.border = "";
-        document.getElementById("w-time4-label").style.border = "";
-        document.getElementById("w-time5-label").style.border = "";
-        document.getElementById("w-time6-label").style.border = "3px solid var(--c)";
-        document.getElementById("w-time7-label").style.border = "";
-        document.getElementById("wantedTimeError").textContent = "";
-    }
-});
-
-time7.addEventListener("change", function() {
-    if (time7.checked) {
-        document.getElementById("w-time1-label").style.border = "";
-        document.getElementById("w-time2-label").style.border = "";
-        document.getElementById("w-time3-label").style.border = "";
-        document.getElementById("w-time4-label").style.border = "";
-        document.getElementById("w-time5-label").style.border = "";
-        document.getElementById("w-time6-label").style.border = "";
-        document.getElementById("w-time7-label").style.border = "3px solid var(--c)";
-        document.getElementById("wantedTimeError").textContent = "";
-    }
-});
+for (let i = 1; i <= 7; i++) {
+    const timeInput = document.getElementById(`wanted-workout-time${i}`);
+    timeInput.addEventListener("change", () => {
+        if (timeInput.checked) {
+            for (let j = 1; j <= 7; j++) {
+                const label = document.getElementById(`w-time${j}-label`);
+                label.style.border = i === j ? "3px solid var(--c)" : "";
+            }
+            document.getElementById("wantedTimeError").textContent = "";
+        }
+    });
+}
 
 
 function nextStep10() {
@@ -733,37 +531,25 @@ function nextStep10() {
     return valid;
 }
 
-const place1 = document.getElementById('workoutplace1');
-const place2 = document.getElementById('workoutplace2');
-const place3 = document.getElementById('workoutplace3');
-placeError = document.getElementById("placeError");
+const placeError = document.getElementById("placeError");
 
-place1.addEventListener("change", function() {
-    if (place1.checked) {
-        document.getElementById("place1-label").style.border = "3px solid var(--c)";
-        document.getElementById("place2-label").style.border = "";
-        document.getElementById("place3-label").style.border = "";
-        placeError.textContent = "";
-    }
-});
+for (let i = 1; i <= 3; i++) {
+    const radio = document.getElementById(`workoutplace${i}`);
+    const label = document.getElementById(`place${i}-label`);
 
-place2.addEventListener("change", function() {
-    if (place2.checked) {
-        document.getElementById("place1-label").style.border = "";
-        document.getElementById("place2-label").style.border = "3px solid var(--c)";
-        document.getElementById("place3-label").style.border = "";
-        placeError.textContent = "";
-    }
-});
+    radio.addEventListener("change", () => {
+        // Reset all borders
+        for (let j = 1; j <= 3; j++) {
+            document.getElementById(`place${j}-label`).style.border = "";
+        }
 
-place3.addEventListener("change", function() {
-    if (place3.checked) {
-        document.getElementById("place1-label").style.border = "";
-        document.getElementById("place2-label").style.border = "";
-        document.getElementById("place3-label").style.border = "3px solid var(--c)";
-        placeError.textContent = "";
-    }
-});
+        // Highlight selected one
+        if (radio.checked) {
+            label.style.border = "3px solid var(--c)";
+            placeError.textContent = "";
+        }
+    });
+}
 
 
 function nextStep11() {
@@ -788,37 +574,24 @@ function nextStep11() {
     return valid;
 }
 
-const equ1 = document.getElementById('equipment1');
-const equ2 = document.getElementById('equipment2');
-const equ3 = document.getElementById('equipment3');
-const equError =  document.getElementById("felszereltsegError")
 
-equ1.addEventListener("change", function() {
-    if (equ1.checked) {
-        document.getElementById("equipment1-label").style.border = "3px solid var(--c)";
-        document.getElementById("equipment2-label").style.border = "";
-        document.getElementById("equipment3-label").style.border = "";
-        equError.textContent = "";
-    }
-});
+const equError = document.getElementById("felszereltsegError");
 
-equ2.addEventListener("change", function() {
-    if (equ2.checked) {
-        document.getElementById("equipment1-label").style.border = "";
-        document.getElementById("equipment2-label").style.border = "3px solid var(--c)";
-        document.getElementById("equipment3-label").style.border = "";
-        equError.textContent = "";
-    }
-});
+for (let i = 1; i <= 3; i++) {
+    const radio = document.getElementById(`equipment${i}`);
+    const label = document.getElementById(`equipment${i}-label`);
 
-equ3.addEventListener("change", function() {
-    if (equ3.checked) {
-        document.getElementById("equipment1-label").style.border = "";
-        document.getElementById("equipment2-label").style.border = "";
-        document.getElementById("equipment3-label").style.border = "3px solid var(--c)";
-        equError.textContent = "";
-    }
-});
+    radio.addEventListener("change", function () {
+        for (let j = 1; j <= 3; j++) {
+            document.getElementById(`equipment${j}-label`).style.border = "";
+        }
+        if (radio.checked) {
+            label.style.border = "3px solid var(--c)";
+            equError.textContent = "";
+        }
+    });
+}
+
 
 
 function nextStep12() {
@@ -827,66 +600,15 @@ function nextStep12() {
 }
 
 
-const serult1 = document.getElementById("serult1");
-const serult2 = document.getElementById("serult2");
-const serult3 = document.getElementById("serult3");
-const serult4 = document.getElementById("serult4");
-const serult5 = document.getElementById("serult5");
-const serult6 = document.getElementById("serult6");
+for (let i = 1; i <= 6; i++) {
+    const checkbox = document.getElementById(`serult${i}`);
+    const label = document.getElementById(`serult${i}-label`);
 
-serult1.addEventListener("change", function() {
-    if (serult1.checked) {
-        document.getElementById("serult1-label").style.border = "3px solid var(--c)";
-    }
-    else {
-        document.getElementById("serult1-label").style.border = "";
-    }
-});
+    checkbox.addEventListener("change", function () {
+        label.style.border = checkbox.checked ? "3px solid var(--c)" : "";
+    });
+}
 
-serult2.addEventListener("change", function() {
-    if (serult2.checked) {
-        document.getElementById("serult2-label").style.border = "3px solid var(--c)";
-    }
-    else {
-        document.getElementById("serult2-label").style.border = "";
-    }
-});
-
-serult3.addEventListener("change", function() {
-    if (serult3.checked) {
-        document.getElementById("serult3-label").style.border = "3px solid var(--c)";
-    }
-    else {
-        document.getElementById("serult3-label").style.border = "";
-    }
-});
-
-serult4.addEventListener("change", function() {
-    if (serult4.checked) {
-        document.getElementById("serult4-label").style.border = "3px solid var(--c)";
-    }
-    else {
-        document.getElementById("serult4-label").style.border = "";
-    }
-});
-
-serult5.addEventListener("change", function() {
-    if (serult5.checked) {
-        document.getElementById("serult5-label").style.border = "3px solid var(--c)";
-    }
-    else {
-        document.getElementById("serult5-label").style.border = "";
-    }
-});
-
-serult6.addEventListener("change", function() {
-    if (serult6.checked) {
-        document.getElementById("serult6-label").style.border = "3px solid var(--c)";
-    }
-    else {
-        document.getElementById("serult6-label").style.border = "";
-    }
-});
 
 //A lépegetés
 document.querySelectorAll('.nextgomb').forEach(button => {

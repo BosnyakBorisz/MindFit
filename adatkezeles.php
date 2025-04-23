@@ -10,7 +10,7 @@
     <style>
         body {
             line-height: 1.6;
-            background-color:#000000;
+            background-color: rgb(37, 37, 37);
         }
         h1, h2 {
             color: #dbd5d5;

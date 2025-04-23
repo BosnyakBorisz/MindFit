@@ -553,6 +553,15 @@ html {
     color: white;
 }
 
+.atajfot {
+    color: #fff; 
+    text-decoration: none;
+}
+
+.atajfot:hover {
+    color: rgb(194, 192, 192);
+}
+
 .workout-table {
     width: 80%;
     margin-bottom: 20px;

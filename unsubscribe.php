@@ -7,7 +7,7 @@
 
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
-            $conn = new mysqli('localhost', 'root', '', 'mindfit');
+            include("database.php");
 
             $stmt = $conn->prepare("DELETE FROM subscribers WHERE email = ?");
             $stmt->bind_param('s', $email);
